@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Override the app's ESM + bundler settings so scripts can run directly
+    // under Node.js without a bundler (tsx / ts-node execution).
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    // scripts/ lives at the workspace root, so we keep baseUrl and paths.
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
