@@ -87,7 +87,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          <div className="hero-reveal hero-reveal-delay-4 relative flex h-72 w-full items-center justify-center md:h-88 lg:h-136">
+          <div className="hidden sm:flex hero-reveal hero-reveal-delay-4 relative h-72 w-full items-center justify-center md:h-88 lg:h-136">
             <div className="pointer-events-none absolute inset-x-12 top-10 h-48 rounded-full bg-primary/10 blur-3xl" />
 
             <div

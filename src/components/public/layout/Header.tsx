@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/shared/ThemeToggle";
 
 const navMenus = [
   {
@@ -219,7 +218,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ThemeToggle />
           <Button
             asChild
             className="hidden rounded-full bg-[#ff8b2c] px-5 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(255,139,44,0.30)] hover:bg-[#ff9b41] md:inline-flex"
