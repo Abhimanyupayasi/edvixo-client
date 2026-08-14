@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 const navMenus = [
@@ -181,50 +180,6 @@ const navMenus = [
 export function Header() {
   const pathname = usePathname();
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
-  const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
-
-  useEffect(() => {
-    const btn = mobileToggleRef.current;
-    console.log("[Header] mounted. mobileToggle present:", !!btn);
-    if (btn && typeof window !== "undefined") {
-      const cs = window.getComputedStyle(btn);
-      console.log("[Header] mobileToggle computed:", {
-        display: cs.display,
-        visibility: cs.visibility,
-        className: btn.className,
-      });
-    }
-
-    const observer = new MutationObserver(() => {
-      const b = mobileToggleRef.current;
-      if (b && typeof window !== "undefined") {
-        const cs = window.getComputedStyle(b);
-        console.log("[Header] mutation - mobileToggle:", {
-          present: !!b,
-          display: cs.display,
-          visibility: cs.visibility,
-          className: b.className,
-        });
-      }
-    });
-
-    observer.observe(document.body, { attributes: true, childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, []);
-
-  const toggleMobileMenu = (label: string) => {
-    setOpenMobileMenu((current) =>
-      current === label ? null : label
-    );
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-    setOpenMobileMenu(null);
-  };
-
   const isActiveLink = (href: string) => {
     if (pathname === href) return true;
 
@@ -233,18 +188,45 @@ export function Header() {
 
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#111b2a] text-white shadow-[0_6px_30px_rgba(0,0,0,0.18)]"
+      className="
+        sticky
+        top-0
+        z-50
+        w-full
+        border-b
+        border-white/10
+        bg-[#071a2d]
+        text-white
+        shadow-[0_6px_30px_rgba(0,0,0,0.25)]
+      "
       role="banner"
     >
-      {/* Main Header Container */}
+      {/* MAIN HEADER */}
       <div className="mx-auto flex h-20 max-w-355 items-center justify-between px-4 md:px-6 lg:px-8">
-        {/* Logo */}
+
+        {/* LOGO */}
         <Link
           href="/"
           className="flex items-center gap-0 lg:select-none"
           aria-label="Edvixo homepage"
         >
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#ff8b2c] text-xl font-black text-white shadow-[0_10px_20px_rgba(255,139,44,0.35)]">
+          <span
+            className="
+              inline-flex
+              h-10
+              w-10
+              items-center
+              justify-center
+              rounded-md
+              border
+              border-[#ff8b2c]
+              bg-[#1555a5]
+              text-xl
+              font-black
+              text-white
+              shadow-[0_10px_20px_rgba(255,139,44,0.25)]
+            "
+          >
             E
           </span>
 
@@ -253,48 +235,50 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* DESKTOP NAVIGATION */}
         <nav
           className="hidden items-center gap-1 lg:flex"
           role="navigation"
           aria-label="Main navigation"
         >
           {navMenus.map((menu) => (
-            /*
-             * IMPORTANT:
-             * Do NOT use "relative" here.
-             *
-             * The dropdown is fixed to the viewport and centered.
-             */
             <div key={menu.label} className="group">
-              {/* Navigation Button */}
+
+              {/* NAVIGATION LINK */}
               <Link
                 href={menu.href}
-                className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                  isActiveLink(menu.href)
-                    ? "bg-white/8 text-white"
-                    : "text-slate-200/90 hover:bg-white/5 hover:text-white"
-                }`}
+                className={`
+                  flex
+                  items-center
+                  gap-2
+                  rounded-md
+                  px-4
+                  py-2
+                  text-sm
+                  font-semibold
+                  transition-all
+                  duration-200
+                  ${
+                    isActiveLink(menu.href)
+                      ? "bg-white/10 text-white"
+                      : "text-slate-200 hover:bg-white/5 hover:text-white"
+                  }
+                `}
               >
                 <span>{menu.label}</span>
 
-                <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                <ChevronDown
+                  className="
+                    h-4
+                    w-4
+                    transition-transform
+                    duration-200
+                    group-hover:rotate-180
+                  "
+                />
               </Link>
 
-              {/* 
-               * MEGA DROPDOWN
-               *
-               * fixed:
-               *   Positions dropdown relative to viewport.
-               *
-               * left-1/2:
-               *   Moves its left edge to center of viewport.
-               *
-               * -translate-x-1/2:
-               *   Moves dropdown back by half its own width.
-               *
-               * This keeps ALL dropdowns centered.
-               */}
+              {/* DROPDOWN */}
               <div
                 className="
                   pointer-events-none
@@ -319,21 +303,24 @@ export function Header() {
                 "
                 aria-hidden="true"
               >
-                {/* Dropdown Background */}
+
+                {/* DROPDOWN CONTAINER */}
                 <div
                   className="
                     overflow-hidden
                     rounded-xl
                     border
                     border-white/10
-                    bg-[#f4f5f3]
-                    text-[#111827]
-                    shadow-[0_18px_42px_rgba(15,23,42,0.28)]
+                    bg-[#071a2d]
+                    text-white
+                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
                   "
                 >
+
                   {/* SERVICES MEGA MENU */}
                   {menu.label === "Services" && menu.columns ? (
                     <div className="grid gap-6 p-6 lg:grid-cols-5">
+
                       {menu.columns.map((column) => (
                         <div
                           key={column.heading}
@@ -345,29 +332,31 @@ export function Header() {
                               font-black
                               uppercase
                               tracking-[0.16em]
-                              text-slate-500
+                              text-slate-400
                             "
                           >
                             {column.heading}
                           </h3>
 
                           <div className="space-y-1.5">
+
                             {column.items.map((item) => (
                               <Link
                                 key={`${column.heading}-${item.label}`}
                                 href={item.href}
                                 className="
+                                  group/service-item
                                   block
                                   rounded-md
                                   px-2
                                   py-2
                                   text-base
                                   font-medium
-                                  text-slate-700
+                                  text-slate-200
                                   transition-all
                                   duration-200
-                                  hover:bg-[#edf3ee]
-                                  hover:text-[#0f172a]
+                                  hover:bg-white/10
+                                  hover:text-white
                                 "
                               >
                                 <span
@@ -375,20 +364,24 @@ export function Header() {
                                     inline-block
                                     transition-transform
                                     duration-200
-                                    hover:translate-x-1
+                                    group-hover/service-item:translate-x-1
                                   "
                                 >
                                   {item.label}
                                 </span>
                               </Link>
                             ))}
+
                           </div>
                         </div>
                       ))}
+
                     </div>
                   ) : (
+
                     /* NORMAL DROPDOWN MENUS */
                     <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
+
                       {menu.items?.map((item) => (
                         <Link
                           key={`${menu.label}-${item.label}`}
@@ -400,11 +393,11 @@ export function Header() {
                             py-2
                             text-base
                             font-medium
-                            text-slate-700
+                            text-slate-200
                             transition-all
                             duration-200
-                            hover:bg-[#edf3ee]
-                            hover:text-[#0f172a]
+                            hover:bg-white/10
+                            hover:text-white
                           "
                         >
                           <span
@@ -419,16 +412,19 @@ export function Header() {
                           </span>
                         </Link>
                       ))}
+
                     </div>
                   )}
+
                 </div>
               </div>
             </div>
           ))}
         </nav>
 
-        {/* Consultation Button */}
+        {/* CONSULTATION BUTTON */}
         <div className="flex items-center gap-2 sm:gap-3">
+
           <Button
             asChild
             className="
@@ -449,153 +445,8 @@ export function Header() {
             </Link>
           </Button>
 
-          <button
-            ref={mobileToggleRef}
-            type="button"
-            onClick={() => {
-              setMobileMenuOpen((current) => !current);
-              setOpenMobileMenu(null);
-            }}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 lg:hidden"
-            aria-label={
-              mobileMenuOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-            }
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                className="h-6 w-6"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                className="h-6 w-6"
-                aria-hidden="true"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
         </div>
       </div>
-      {mobileMenuOpen && (
-        <div className="border-t border-white/10 bg-[#111b2a] lg:hidden">
-          <nav
-            className="mx-auto max-h-[calc(100vh-5rem)] max-w-355 overflow-y-auto px-4 py-4 md:px-6"
-            aria-label="Mobile navigation"
-          >
-            {navMenus.map((menu) => {
-              const hasDropdown =
-                Boolean(menu.items?.length) ||
-                Boolean(menu.columns?.length);
-
-              const isOpen = openMobileMenu === menu.label;
-              return (
-                <div
-                  key={menu.label}
-                  className="border-b border-white/10 last:border-b-0"
-                >
-                  <div className="flex items-center justify-between">
-
-                    <Link
-                      href={menu.href}
-                      onClick={closeMobileMenu}
-                      className={`flex-1 py-4 text-base font-medium transition-colors ${
-                        isActiveLink(menu.href)
-                          ? "text-[#ff8b2c]"
-                          : "text-slate-200 hover:text-white"
-                      }`}
-                    >
-                      {menu.label}
-                    </Link>
-                    {hasDropdown && (
-                      <button
-                        type="button"
-                        onClick={() => toggleMobileMenu(menu.label)}
-                        className="flex h-10 w-10 items-center justify-center rounded-md text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
-                        aria-label={`Toggle ${menu.label} submenu`}
-                        aria-expanded={isOpen}
-                      >
-                        <ChevronDown
-                          className={`h-5 w-5 transition-transform duration-200 ${
-                            isOpen ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    )}
-                  </div>
-                  {hasDropdown && isOpen && (
-                    <div className="pb-4 pl-3">
-                      {menu.label === "Services" &&
-                      menu.columns ? (
-                        <div className="space-y-5">
-                          {menu.columns.map((column) => (
-                            <div key={column.heading}>
-                              <h3 className="mb-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-500">
-                                {column.heading}
-                              </h3>
-                              <div className="space-y-1">
-                                {column.items.map((item) => (
-                                  <Link
-                                    key={`${column.heading}-${item.label}`}
-                                    href={item.href}
-                                    onClick={closeMobileMenu}
-                                    className="block rounded-md px-3 py-2.5 text-sm text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
-                                  >
-                                    {item.label}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="space-y-1">
-                          {menu.items?.map((item) => (
-                            <Link
-                              key={`${menu.label}-${item.label}`}
-                              href={item.href}
-                              onClick={closeMobileMenu}
-                              className="block rounded-md px-3 py-2.5 text-sm text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-            <div className="pt-5">
-              <Button
-                asChild
-                className="w-full rounded-full bg-[#ff8b2c] py-6 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(255,139,44,0.25)] hover:bg-[#ff9b41]"
-              >
-                <Link
-                  href="/contact"
-                  onClick={closeMobileMenu}
-                >
-                  Get Free Consultation
-                </Link>
-              </Button>
-        </div>
-        </nav>
-      </div>
-      )}
     </header>
   );
 }

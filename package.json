@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "build": "cross-env NEXT_TELEMETRY_DISABLED=1 next build",
     "analyze": "ANALYZE=true next build --webpack",
     "start": "node --env-file-if-exists=.env.local .next/standalone/server.js",
     "lint": "eslint",
