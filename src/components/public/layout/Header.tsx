@@ -39,7 +39,7 @@ const navMenus = [
             href: "/services/business-websites",
           },
           {
-            label: "HTML Development",
+            label: "Website Redesign",
             href: "/services/business-websites",
           },
           {
