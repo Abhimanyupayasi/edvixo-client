@@ -11,8 +11,9 @@ import {
   Send,
   ExternalLink,
 } from "lucide-react";
-import { SITE_URL } from "../../layout";
+import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
+import { SelectedProjectField } from "@/components/public/contact/SelectedProjectField";
 import {
   getLocalBusinessSchema,
   getBreadcrumbSchema,
@@ -207,6 +208,7 @@ export default function ContactPage() {
                 method="POST"
                 className="space-y-5"
               >
+                <SelectedProjectField />
                 {/* Name + Company */}
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <div className="space-y-2">
@@ -643,3 +645,4 @@ export default function ContactPage() {
     </>
   );
 }
+

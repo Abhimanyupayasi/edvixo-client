@@ -1,305 +1,313 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowUpRight,
-  ExternalLink,
-  Monitor,
-  Shield,
-  Smartphone,
-  BookOpen,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+"use client";
 
-type FeaturedProject = {
+import { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, ArrowRight, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type Project = {
   _id?: string;
   clientName?: string;
   isClientConfidential?: boolean;
   industry: string;
   title: string;
   description: string;
-  metrics: { value: string; label: string }[];
+  metrics: {
+    value: string;
+    label: string;
+  }[];
   tech: string[];
   slug: string;
-  liveUrl?: string;
   coverImage?: string;
   thumbnailImage?: string;
   imageAlt?: string;
-  completedAt?: string;
-  imageLeft?: boolean;
-  DeviceIcon?: LucideIcon;
-  imageBg?: string;
 };
 
 type FeaturedWorkSectionProps = {
-  projects?: FeaturedProject[];
+  projects?: Project[];
 };
 
-const DEVICE_ICONS: LucideIcon[] = [Monitor, Smartphone, BookOpen];
-const IMAGE_BACKGROUNDS = [
-  "from-[#EFF7F0] via-[#E5F1E8] to-[#DCEDE2]",
-  "from-[#F6F2EA] via-[#EEF4EC] to-[#DFEEE6]",
-  "from-[#EDF6F4] via-[#E3F0E9] to-[#F3EFE5]",
-];
-
-function getOptimizedCloudinaryUrl(url?: string, width = 1200) {
-  if (!url || !url.includes("res.cloudinary.com") || !url.includes("/upload/")) {
+function optimizedImage(url?: string, width = 900) {
+  if (
+    !url ||
+    !url.includes("res.cloudinary.com") ||
+    !url.includes("/upload/")
+  ) {
     return url;
   }
 
   return url.replace(
     "/upload/",
-    `/upload/f_auto,q_auto,dpr_auto,c_limit,w_${width}/`
+    `/upload/f_auto,q_auto,dpr_auto,c_limit,w_${width}/`,
   );
 }
 
-function getCompletedYear(date?: string) {
-  if (!date) return null;
+function ProjectCard({ project }: { project: Project }) {
+  const image = optimizedImage(
+    project.coverImage ?? project.thumbnailImage,
+    900,
+  );
 
-  const year = new Date(date).getFullYear();
-  return Number.isFinite(year) ? year : null;
+  return (
+    <article className="flex h-full min-h-[620px] flex-col overflow-hidden rounded-4xl border border-outline-variant/60 bg-surface-container-lowest shadow-[0_14px_34px_rgba(19,33,24,0.1)]">
+      {/* Project Image */}
+      <div className="relative aspect-16/10 shrink-0 overflow-hidden bg-surface-container">
+        {image ? (
+          <Image
+            src={image}
+            alt={project.imageAlt ?? project.title}
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 767px) 88vw, (max-width: 1023px) 45vw, 30vw"
+          />
+        ) : null}
+      </div>
+
+      {/* Project Content */}
+      <div className="flex flex-1 flex-col p-6">
+        {/* Category + Client */}
+        <div className="flex min-h-7 flex-wrap items-center gap-2">
+          <span className="rounded-full border border-outline-variant/60 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-on-surface-variant">
+            {project.industry}
+          </span>
+
+          {project.isClientConfidential ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-surface-container px-3 py-1 text-xs font-semibold text-on-surface-variant">
+              <Shield className="h-3.5 w-3.5" />
+              Confidential client
+            </span>
+          ) : project.clientName ? (
+            <span className="rounded-full bg-primary-container px-3 py-1 text-xs font-semibold text-on-primary-container">
+              {project.clientName}
+            </span>
+          ) : null}
+        </div>
+
+        {/* Title */}
+        <h3 className="mt-5 line-clamp-2 min-h-[4rem] text-2xl font-bold leading-tight text-on-background">
+          {project.title}
+        </h3>
+
+        {/* Description */}
+        <p className="mt-3 line-clamp-3 min-h-[5.25rem] text-sm leading-7 text-on-surface-variant">
+          {project.description}
+        </p>
+
+        {/* Metrics */}
+        <div className="mt-5 min-h-[72px]">
+          {project.metrics.length > 0 ? (
+            <div className="grid grid-cols-3 gap-2">
+              {project.metrics.slice(0, 3).map((metric) => (
+                <div
+                  key={metric.label}
+                  className="min-w-0 rounded-2xl bg-primary px-3 py-3 text-on-primary"
+                >
+                  <p className="truncate text-lg font-bold leading-none">
+                    {metric.value}
+                  </p>
+
+                  <p className="mt-1.5 line-clamp-2 text-[0.65rem] font-semibold uppercase tracking-[0.12em] text-on-primary/80">
+                    {metric.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        {/* Technology Tags */}
+        <div className="mt-5 min-h-[40px]">
+          {project.tech.length > 0 ? (
+            <div className="flex flex-wrap content-start gap-2">
+              {project.tech.slice(0, 4).map((tech) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-outline-variant/55 bg-surface px-2.5 py-1 text-xs font-medium text-on-surface-variant"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          ) : null}
+        </div>
+
+        {/* Actions */}
+        <div className="mt-auto flex flex-wrap gap-3 border-t border-outline-variant/45 pt-5">
+          <Button
+            asChild
+            className="h-10 rounded-full bg-primary px-5 text-sm font-semibold text-on-primary hover:bg-primary/90"
+          >
+            <Link href={`/work/${project.slug}`}>View Project</Link>
+          </Button>
+
+          <Button
+            asChild
+            variant="ghost"
+            className="h-10 rounded-full px-3 text-sm font-semibold text-primary hover:bg-primary/10 hover:text-primary"
+          >
+            <Link
+              href={`/contact?project=${encodeURIComponent(
+                project.title,
+              )}#contact-form`}
+            >
+              Send Inquiry
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </article>
+  );
 }
 
-export function FeaturedWorkSection({ projects = [] }: FeaturedWorkSectionProps) {
-  return (
-    <section className="bg-surface py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+export function FeaturedWorkSection({
+  projects = [],
+}: FeaturedWorkSectionProps) {
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-        <div className="mb-12 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+  if (!projects.length) {
+    return null;
+  }
+
+  const scrollCarousel = (direction: "left" | "right") => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) {
+      return;
+    }
+
+    const firstCard =
+      carousel.querySelector<HTMLElement>("[data-project-card]");
+
+    if (!firstCard) {
+      return;
+    }
+
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap = 24;
+
+    carousel.scrollBy({
+      left:
+        direction === "right"
+          ? cardWidth + gap
+          : -(cardWidth + gap),
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="bg-surface py-24" aria-label="Recent work">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-10 flex flex-col gap-5 md:mb-12 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="label-medium text-primary uppercase tracking-widest mb-2">
-              RECENT WORK
+            <p className="label-medium mb-2 uppercase tracking-widest text-primary">
+              Recent Work
             </p>
-            <h2 className="text-headline-large text-on-background font-bold leading-tight">
+
+            <h2 className="text-headline-large font-bold leading-tight text-on-background">
               Results for Real Businesses
             </h2>
+
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-on-surface-variant">
-              Featured case studies with the same public details visible on the full work page, rebuilt as cleaner
-              homepage banners.
+              A closer look at the strategy, craft, and measurable outcomes
+              behind selected Edvixo projects.
             </p>
           </div>
+
+          {/* Desktop Explore Button */}
           <Button
             asChild
             variant="outline"
-            className="hidden sm:inline-flex border-outline-variant text-on-background hover:bg-surface-container rounded-shape-sm h-10 px-5 label-large"
+            className="hidden h-10 rounded-shape-sm border-outline-variant px-5 text-on-background hover:bg-surface-container sm:inline-flex"
           >
-            <Link 
-              href="/work"
-              title="View all web development portfolio projects and case studies"
-            >
-              See All Projects →
+            <Link href="/work">
+              Explore All Projects
+              <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
         </div>
 
-        <div className="flex flex-col gap-6">
-          {projects.map((project, index) => {
-            const DeviceIcon = project.DeviceIcon ?? DEVICE_ICONS[index % DEVICE_ICONS.length];
-            const imageBg = project.imageBg ?? IMAGE_BACKGROUNDS[index % IMAGE_BACKGROUNDS.length];
-            const imageLeft =
-              typeof project.imageLeft === "boolean" ? project.imageLeft : index % 2 === 0;
-            const completedYear = getCompletedYear(project.completedAt);
-            const projectPreview = getOptimizedCloudinaryUrl(
-              project.coverImage ?? project.thumbnailImage,
-              1400
-            );
+        {/* Project Carousel */}
+        <div className="relative">
+          {/* Desktop Previous */}
+          <button
+            type="button"
+            onClick={() => scrollCarousel("left")}
+            aria-label="Previous projects"
+            className="absolute left-0 top-1/2 z-20 hidden h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-background shadow-md transition hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:flex"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
 
-            return (
-              <article
+          {/* Cards */}
+          <div
+            ref={carouselRef}
+            className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Project carousel"
+          >
+            {projects.map((project) => (
+              <div
                 key={project._id ?? project.slug}
-                className={`overflow-hidden rounded-4xl border border-outline-variant/60 bg-surface-container-lowest shadow-[0_18px_48px_rgba(19,33,24,0.08)] ${
-                  !imageLeft ? "" : ""
-                }`}
+                data-project-card
+                className="w-[88vw] shrink-0 snap-start md:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)]"
               >
-                <div
-                  className={`grid gap-0 lg:min-h-128 lg:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)] ${
-                    imageLeft ? "" : "lg:grid-cols-[minmax(22rem,0.92fr)_minmax(0,1.08fr)]"
-                  }`}
-                >
-                  <div
-                    className={`relative overflow-hidden border-outline-variant/50 bg-linear-to-br ${imageBg} px-5 py-5 sm:px-7 sm:py-7 lg:px-8 lg:py-8 ${
-                      imageLeft ? "lg:border-r" : "lg:order-2 lg:border-l"
-                    }`}
-                  >
-                    <div className="absolute inset-0 bg-surface-container-lowest" />
-                    <div className="relative flex h-full flex-col justify-between">
-                      <div className="flex items-center justify-between gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-on-surface-variant">
-                        <span>Featured Project {String(index + 1).padStart(2, "0")}</span>
-                        {completedYear ? <span>{completedYear}</span> : null}
-                      </div>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
 
-                      {projectPreview ? (
-                        <div className="relative mt-6 overflow-hidden rounded-[1.6rem] border border-black/10 bg-[#121714] shadow-[0_22px_48px_rgba(10,16,13,0.24)]">
-                          <div className="flex items-center gap-2 border-b border-white/10 px-4 py-3">
-                            <span className="h-2.5 w-2.5 rounded-full bg-[#FF6B6B]" />
-                            <span className="h-2.5 w-2.5 rounded-full bg-[#FFD166]" />
-                            <span className="h-2.5 w-2.5 rounded-full bg-[#06D6A0]" />
-                            <span className="ml-3 truncate rounded-full bg-white/8 px-3 py-1 text-[0.66rem] font-medium tracking-[0.18em] text-white/75">
-                              {project.liveUrl ? new URL(project.liveUrl).hostname.replace(/^www\./, "") : `${project.slug}.case-study`}
-                            </span>
-                          </div>
-                          <div className="relative aspect-16/10 overflow-hidden bg-[#0F1410]">
-                            <Image
-                              src={projectPreview}
-                              alt={project.imageAlt ?? project.title}
-                              fill
-                              loading={index === 0 ? "eager" : "lazy"}
-                              fetchPriority={index === 0 ? "high" : undefined}
-                              className="object-cover object-top transition-transform duration-700 hover:scale-[1.03]"
-                              sizes="(max-width: 1024px) 100vw, 56vw"
-                            />
-                          </div>
-                        </div>
-                      ) : (
-                        <div className="relative mt-6 flex aspect-16/10 items-center justify-center overflow-hidden rounded-[1.6rem] border border-outline-variant/40 bg-surface/85 shadow-[0_18px_44px_rgba(18,23,20,0.1)]">
-                          <div className="flex flex-col items-center gap-4 p-8 text-center">
-                            <div className="flex h-18 w-18 items-center justify-center rounded-3xl bg-primary text-on-primary shadow-[0_14px_30px_rgba(16,124,65,0.2)]">
-                              <DeviceIcon className="h-9 w-9" />
-                            </div>
-                            <div>
-                              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-on-surface-variant">
-                                {project.industry}
-                              </p>
-                              <p className="mt-2 text-xl font-bold text-on-background">{project.title}</p>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="mt-5 flex flex-wrap gap-2">
-                        {project.tech.slice(0, 3).map((tech) => (
-                          <span
-                            key={tech}
-                            className="rounded-full border border-outline-variant/45 bg-white/70 px-3 py-1 text-xs font-semibold text-on-surface-variant backdrop-blur-sm"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className={`flex flex-col justify-between p-6 sm:p-8 lg:p-10 ${imageLeft ? "" : "lg:order-1"}`}>
-                    <div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="inline-flex items-center rounded-full border border-outline-variant/60 bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-on-surface-variant">
-                          {project.industry}
-                        </span>
-                        {project.isClientConfidential ? (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-surface-container px-3 py-1 text-xs font-semibold text-on-surface-variant">
-                            <Shield className="h-3.5 w-3.5" />
-                            Confidential Client
-                          </span>
-                        ) : project.clientName ? (
-                          <span className="inline-flex items-center rounded-full bg-primary-container px-3 py-1 text-xs font-semibold text-on-primary-container">
-                            {project.clientName}
-                          </span>
-                        ) : null}
-                      </div>
-
-                      <h3 className="mt-5 text-3xl font-bold leading-tight text-on-background sm:text-[2.2rem]">
-                        {project.title}
-                      </h3>
-
-                      <p className="mt-4 max-w-xl text-base leading-8 text-on-surface-variant">
-                        {project.description}
-                      </p>
-
-                      {project.metrics.length > 0 ? (
-                        <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                          {project.metrics.map(({ value, label }) => (
-                            <div
-                              key={label}
-                              className="rounded-[1.4rem] bg-primary px-4 py-4 text-on-primary shadow-[0_14px_28px_rgba(16,124,65,0.16)]"
-                            >
-                              <p className="text-2xl font-bold leading-none">{value}</p>
-                              <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-on-primary/80">
-                                {label}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                      ) : null}
-
-                      {project.tech.length > 0 ? (
-                        <div className="mt-6 flex flex-wrap gap-2.5">
-                          {project.tech.map((tech) => (
-                            <span
-                              key={tech}
-                              className="rounded-full border border-outline-variant/55 bg-surface px-3 py-1.5 text-sm font-medium text-on-surface-variant"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      ) : null}
-                    </div>
-
-                    <div className="mt-8 flex flex-col gap-4 border-t border-outline-variant/45 pt-6 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="flex flex-wrap items-center gap-3">
-                        <Button
-                          asChild
-                          className="h-11 rounded-full bg-primary px-6 text-sm font-semibold text-on-primary hover:bg-primary/90"
-                        >
-                          <Link
-                            href={`/work/${project.slug}`}
-                            title={`View ${project.title} case study - Web development project by Sapnendra`}
-                          >
-                            View Case Study
-                          </Link>
-                        </Button>
-
-                        {project.liveUrl ? (
-                          <Button
-                            asChild
-                            variant="ghost"
-                            className="h-11 rounded-full px-1 text-sm font-semibold text-on-surface-variant hover:bg-transparent hover:text-on-background"
-                          >
-                            <a
-                              href={project.liveUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              title={`Visit ${project.title} live website`}
-                              className="inline-flex items-center gap-1.5"
-                            >
-                              Live Site
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          </Button>
-                        ) : null}
-                      </div>
-
-                      <Link
-                        href="/work"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-primary/80"
-                      >
-                        Browse full portfolio
-                        <ArrowUpRight className="h-4 w-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+          {/* Desktop Next */}
+          <button
+            type="button"
+            onClick={() => scrollCarousel("right")}
+            aria-label="Next projects"
+            className="absolute right-0 top-1/2 z-20 hidden h-11 w-11 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-background shadow-md transition hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary lg:flex"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
         </div>
 
-        {/* Mobile CTA */}
-        <div className="mt-8 flex sm:hidden justify-center">
+        {/* Mobile / Tablet Controls */}
+        <div className="mt-5 flex items-center justify-between gap-4 lg:hidden">
+          <p className="text-sm text-on-surface-variant">
+            Swipe to explore projects
+          </p>
+
+          <div className="flex gap-2">
+            <button
+              type="button"
+              onClick={() => scrollCarousel("left")}
+              aria-label="Previous projects"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-background transition hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <ArrowLeft className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() => scrollCarousel("right")}
+              aria-label="Next projects"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant bg-surface text-on-background transition hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Explore Button */}
+        <div className="mt-8 flex justify-center sm:hidden">
           <Button
             asChild
             variant="outline"
-            className="border-outline-variant text-on-background hover:bg-surface-container rounded-shape-sm h-10 px-5 label-large"
+            className="h-10 rounded-shape-sm border-outline-variant px-5 text-on-background hover:bg-surface-container"
           >
-            <Link 
-              href="/work"
-              title="View all web development projects"
-            >
-              See All Projects →
+            <Link href="/work">
+              Explore All Projects
+              <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
         </div>
-
       </div>
     </section>
   );

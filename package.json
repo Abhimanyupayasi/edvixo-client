@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "build": "cross-env NEXT_TELEMETRY_DISABLED=1 next build",
     "analyze": "ANALYZE=true next build --webpack",
     "start": "node --env-file-if-exists=.env.local .next/standalone/server.js",
     "lint": "eslint",
@@ -16,6 +16,7 @@
     "cleanup:demo": "tsx --env-file=.env.local scripts/cleanup-demo-data.ts"
   },
   "dependencies": {
+    "@gravity-ui/icons": "^2.21.0",
     "@hookform/resolvers": "^5.2.2",
     "@lottiefiles/dotlottie-react": "^0.18.7",
     "@react-email/components": "^1.0.9",
@@ -61,6 +62,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "cross-env": "^10.1.0",
     "dotenv": "^17.3.1",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",

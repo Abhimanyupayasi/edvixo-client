@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, Clock, MapPin } from "lucide-react";
 import PortfolioGrid from "@/components/public/work/PortfolioGrid";
-import { SITE_URL } from "../../layout";
+import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import { getPortfolioListSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
 
@@ -12,7 +12,26 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/work` },
 };
 
-const portfolioItems = [
+type PortfolioItem = {
+  _id: string;
+  isFeatured?: boolean;
+  industries?: string[];
+  title: string;
+  slug: string;
+  tagline: string;
+  clientIndustry?: string;
+  isClientConfidential?: boolean;
+  clientName?: string;
+  coverImage?: string;
+  thumbnailImage?: string;
+  imageAlt?: string;
+  liveUrl?: string;
+  completedAt?: string | Date;
+  results?: Array<{ value: string; label: string }>;
+  techStack?: Array<{ name: string }>;
+};
+
+const portfolioItems: PortfolioItem[] = [
   {
     _id: "work-1",
     title: "Dental Clinic Growth Website",
@@ -165,8 +184,9 @@ export default function WorkPage() {
         { name: "Case Studies", url: "https://edvixo.com/work" },
       ])} />
       <WorkHero />
-      <PortfolioGrid items={portfolioItems as any} industries={allIndustries} />
+      <PortfolioGrid items={portfolioItems} industries={allIndustries} />
       <WorkCTA />
     </main>
   );
 }
+

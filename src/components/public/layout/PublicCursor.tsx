@@ -43,19 +43,35 @@ export function PublicCursor() {
   const frameRef = useRef<number | null>(null);
   const targetRef = useRef({ x: 0, y: 0 });
   const ringRef = useRef({ x: 0, y: 0 });
+
   const [enabled, setEnabled] = useState(false);
-  const [cursor, setCursor] = useState<CursorState>(INITIAL_CURSOR_STATE);
+  const [cursor, setCursor] = useState<CursorState>(
+    INITIAL_CURSOR_STATE,
+  );
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") {
+      return;
+    }
 
-    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
-    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const mediaQuery = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    );
+
+    const reducedMotionQuery = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
 
     const updateEnabled = () => {
-      const nextEnabled = mediaQuery.matches && !reducedMotionQuery.matches;
+      const nextEnabled =
+        mediaQuery.matches && !reducedMotionQuery.matches;
+
       setEnabled(nextEnabled);
-      document.documentElement.classList.toggle("has-public-cursor", nextEnabled);
+
+      document.documentElement.classList.toggle(
+        "has-public-cursor",
+        nextEnabled,
+      );
     };
 
     updateEnabled();
@@ -64,7 +80,10 @@ export function PublicCursor() {
     reducedMotionQuery.addEventListener("change", updateEnabled);
 
     return () => {
-      document.documentElement.classList.remove("has-public-cursor");
+      document.documentElement.classList.remove(
+        "has-public-cursor",
+      );
+
       mediaQuery.removeEventListener("change", updateEnabled);
       reducedMotionQuery.removeEventListener("change", updateEnabled);
     };
@@ -72,13 +91,15 @@ export function PublicCursor() {
 
   useEffect(() => {
     if (!enabled || typeof window === "undefined") {
-      setCursor(INITIAL_CURSOR_STATE);
       return;
     }
 
     const animate = () => {
-      ringRef.current.x += (targetRef.current.x - ringRef.current.x) * 0.18;
-      ringRef.current.y += (targetRef.current.y - ringRef.current.y) * 0.18;
+      ringRef.current.x +=
+        (targetRef.current.x - ringRef.current.x) * 0.18;
+
+      ringRef.current.y +=
+        (targetRef.current.y - ringRef.current.y) * 0.18;
 
       setCursor((current) => ({
         ...current,
@@ -96,18 +117,35 @@ export function PublicCursor() {
         return;
       }
 
-      targetRef.current = { x: event.clientX, y: event.clientY };
-      ringRef.current = ringRef.current.x === 0 && ringRef.current.y === 0
-        ? { x: event.clientX, y: event.clientY }
-        : ringRef.current;
+      targetRef.current = {
+        x: event.clientX,
+        y: event.clientY,
+      };
 
-      const target = event.target instanceof Element ? event.target : null;
+      if (
+        ringRef.current.x === 0 &&
+        ringRef.current.y === 0
+      ) {
+        ringRef.current = {
+          x: event.clientX,
+          y: event.clientY,
+        };
+      }
+
+      const target =
+        event.target instanceof Element
+          ? event.target
+          : null;
 
       setCursor((current) => ({
         ...current,
         visible: true,
-        interactive: Boolean(target?.closest(INTERACTIVE_SELECTOR)),
-        text: Boolean(target?.closest(TEXT_INPUT_SELECTOR)),
+        interactive: Boolean(
+          target?.closest(INTERACTIVE_SELECTOR),
+        ),
+        text: Boolean(
+          target?.closest(TEXT_INPUT_SELECTOR),
+        ),
       }));
     };
 
@@ -125,7 +163,10 @@ export function PublicCursor() {
         return;
       }
 
-      setCursor((current) => ({ ...current, interactive: true }));
+      setCursor((current) => ({
+        ...current,
+        interactive: true,
+      }));
     };
 
     const handlePointerUp = (event: PointerEvent) => {
@@ -133,11 +174,16 @@ export function PublicCursor() {
         return;
       }
 
-      const target = event.target instanceof Element ? event.target : null;
+      const target =
+        event.target instanceof Element
+          ? event.target
+          : null;
 
       setCursor((current) => ({
         ...current,
-        interactive: Boolean(target?.closest(INTERACTIVE_SELECTOR)),
+        interactive: Boolean(
+          target?.closest(INTERACTIVE_SELECTOR),
+        ),
       }));
     };
 
@@ -146,22 +192,47 @@ export function PublicCursor() {
     };
 
     frameRef.current = window.requestAnimationFrame(animate);
-    window.addEventListener("pointermove", setTargetFromEvent, { passive: true });
+
+    window.addEventListener(
+      "pointermove",
+      setTargetFromEvent,
+      { passive: true },
+    );
+
     window.addEventListener("blur", hideCursor);
     window.addEventListener("pointerdown", handlePointerDown);
     window.addEventListener("pointerup", handlePointerUp);
-    document.documentElement.addEventListener("pointerleave", handlePointerLeave);
+
+    document.documentElement.addEventListener(
+      "pointerleave",
+      handlePointerLeave,
+    );
 
     return () => {
       if (frameRef.current !== null) {
         window.cancelAnimationFrame(frameRef.current);
       }
 
-      window.removeEventListener("pointermove", setTargetFromEvent);
+      window.removeEventListener(
+        "pointermove",
+        setTargetFromEvent,
+      );
+
       window.removeEventListener("blur", hideCursor);
-      window.removeEventListener("pointerdown", handlePointerDown);
-      window.removeEventListener("pointerup", handlePointerUp);
-      document.documentElement.removeEventListener("pointerleave", handlePointerLeave);
+      window.removeEventListener(
+        "pointerdown",
+        handlePointerDown,
+      );
+
+      window.removeEventListener(
+        "pointerup",
+        handlePointerUp,
+      );
+
+      document.documentElement.removeEventListener(
+        "pointerleave",
+        handlePointerLeave,
+      );
     };
   }, [enabled]);
 
@@ -175,13 +246,30 @@ export function PublicCursor() {
       className="pointer-events-none fixed inset-0 z-220"
     >
       <div
-        className={`public-cursor-ring ${cursor.visible ? "opacity-100" : "opacity-0"} ${cursor.interactive ? "public-cursor-ring-active" : ""}`}
+        className={`public-cursor-ring ${
+          cursor.visible
+            ? "opacity-100"
+            : "opacity-0"
+        } ${
+          cursor.interactive
+            ? "public-cursor-ring-active"
+            : ""
+        }`}
         style={{
           transform: `translate3d(${cursor.ringX}px, ${cursor.ringY}px, 0) translate(-50%, -50%)`,
         }}
       />
+
       <div
-        className={`public-cursor-dot ${cursor.visible ? "opacity-100" : "opacity-0"} ${cursor.interactive ? "public-cursor-dot-active" : ""}`}
+        className={`public-cursor-dot ${
+          cursor.visible
+            ? "opacity-100"
+            : "opacity-0"
+        } ${
+          cursor.interactive
+            ? "public-cursor-dot-active"
+            : ""
+        }`}
         style={{
           transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0) translate(-50%, -50%)`,
         }}

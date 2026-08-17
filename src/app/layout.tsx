@@ -1,20 +1,25 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
+
 import RouteScrollToTop from "@/components/shared/RouteScrollToTop";
 import { Toaster } from "@/components/ui/sonner";
+
+import {
+  SITE_URL,
+  SITE_NAME,
+  SITE_AUTHOR,
+  SITE_TWITTER,
+  DEFAULT_OG_IMAGE,
+} from "@/lib/site";
+
 import "./globals.css";
 
-export const SITE_URL = "https://edvixo.com";
-export const SITE_NAME = "Edvixo - Digital Solutions & Tech Talent Company";
-export const SITE_AUTHOR = "Edvixo";
-export const SITE_TWITTER = "@edvixo";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-default.jpg`;
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://edvixo.com"),
+  metadataBase: new URL(SITE_URL),
 
   title: {
-    default: "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
+    default:
+      "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
     template: "%s | Edvixo",
   },
 
@@ -36,7 +41,13 @@ export const metadata: Metadata = {
     "local SEO services",
   ],
 
-  authors: [{ name: SITE_AUTHOR, url: SITE_URL }],
+  authors: [
+    {
+      name: SITE_AUTHOR,
+      url: SITE_URL,
+    },
+  ],
+
   creator: SITE_AUTHOR,
   publisher: SITE_AUTHOR,
 
@@ -57,7 +68,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "Edvixo - Digital Solutions & Tech Talent",
-    title: "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
+    title:
+      "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
     description:
       "Edvixo helps businesses with digital products, web development, design, and tech talent support for scalable growth.",
     images: [
@@ -76,7 +88,7 @@ export const metadata: Metadata = {
     description:
       "Digital solutions and product development company for growing businesses.",
     images: ["/og-home.jpg"],
-    creator: "@edvixo",
+    creator: SITE_TWITTER,
   },
 
   verification: {
@@ -86,14 +98,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
     languages: {
-      "en": SITE_URL,
+      en: SITE_URL,
     },
   },
 
   icons: {
     icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      {
+        url: "/favicon.png",
+        type: "image/png",
+      },
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+      },
     ],
     shortcut: ["/favicon.png"],
     apple: [{ url: "/favicon.png" }],
@@ -107,8 +125,14 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#071b2b" },
-    { media: "(prefers-color-scheme: dark)", color: "#071b2b" },
+    {
+      media: "(prefers-color-scheme: light)",
+      color: "#071b2b",
+    },
+    {
+      media: "(prefers-color-scheme: dark)",
+      color: "#071b2b",
+    },
   ],
 };
 
@@ -118,12 +142,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-    >
+    <html lang="en" suppressHydrationWarning>
       <head />
-      <body className="font-sans antialiased bg-background text-on-background">
+
+      <body className="bg-background font-sans antialiased text-on-background">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

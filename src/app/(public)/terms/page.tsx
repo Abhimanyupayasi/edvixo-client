@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "@/app/layout";
+import { SITE_URL } from "@/lib/site";
 import LegalLayout from "@/components/public/legal/LegalLayout";
 
 export const metadata: Metadata = {
@@ -261,3 +261,4 @@ export default function TermsPage() {
     </LegalLayout>
   );
 }
+
