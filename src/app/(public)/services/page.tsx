@@ -40,7 +40,9 @@ export const metadata: Metadata = {
     "e-commerce website developer",
     "web development services",
   ],
-  alternates: { canonical: `${SITE_URL}/services` },
+  alternates: {
+    canonical: `${SITE_URL}/services`,
+  },
   openGraph: {
     url: `${SITE_URL}/services`,
     title: "Web Development Services - Websites, Stores & Dashboards",
@@ -246,37 +248,35 @@ function ServicesHero() {
   return (
     <section className="bg-surface-container-low py-24">
       <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-        {/* Overline */}
         <p className="uppercase tracking-widest text-xs font-semibold text-primary mb-4">
           Services
         </p>
 
-        {/* H1 */}
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-on-background mb-6 max-w-2xl mx-auto leading-tight">
           Everything Your Business
           <span className="text-primary"> Needs Online</span>
         </h1>
 
-        {/* Subtitle */}
         <p className="text-base md:text-body-large text-on-surface-variant max-w-xl mx-auto leading-relaxed">
           From a simple business website to a full online store with payments
           and bookings - I build exactly what your business needs, nothing more,
           nothing less.
         </p>
 
-        {/* Trust chips */}
         <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
-          {["Custom Quote in 24 Hours", "No tech jargon", "30-day support included"].map(
-            (label) => (
-              <span
-                key={label}
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-shape-full bg-surface-container border border-outline-variant text-sm font-medium text-on-surface-variant"
-              >
-                <CheckCircle2 className="w-4 h-4 text-primary" />
-                {label}
-              </span>
-            )
-          )}
+          {[
+            "Custom Quote in 24 Hours",
+            "No tech jargon",
+            "30-day support included",
+          ].map((label) => (
+            <span
+              key={label}
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-shape-full bg-surface-container border border-outline-variant text-sm font-medium text-on-surface-variant"
+            >
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              {label}
+            </span>
+          ))}
         </div>
       </div>
     </section>
@@ -290,40 +290,38 @@ function ServicesGrid() {
   return (
     <section className="bg-surface py-24">
       <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Section label */}
         <p className="uppercase tracking-widest text-xs font-semibold text-primary">
           What I Build
         </p>
 
-        {/* Cards grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {services.map((service) => {
             const Icon = service.icon;
+
             return (
               <article
                 key={service.slug}
                 className="bg-surface-container-lowest rounded-shape-md shadow-sm p-5 md:p-6 lg:p-8 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                {/* Top row: icon + title */}
                 <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center shrink-0">
                     <Icon className="w-7 h-7 text-on-primary-container" />
                   </div>
+
                   <h3 className="text-headline-small font-semibold text-on-background pt-2">
                     {service.title}
                   </h3>
                 </div>
 
-                {/* Description */}
                 <p className="text-body-medium text-on-surface-variant leading-relaxed">
                   {service.description}
                 </p>
 
-                {/* Who it's for */}
                 <div>
                   <p className="text-label-medium text-on-surface-variant mb-2">
                     Who it&apos;s for:
                   </p>
+
                   <div className="flex flex-wrap gap-2">
                     {service.whoItsFor.map((who) => (
                       <span
@@ -336,11 +334,11 @@ function ServicesGrid() {
                   </div>
                 </div>
 
-                {/* What you get */}
                 <ul className="space-y-2">
                   {service.whatYouGet.map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+
                       <span className="text-body-medium text-on-surface-variant">
                         {item}
                       </span>
@@ -348,17 +346,16 @@ function ServicesGrid() {
                   ))}
                 </ul>
 
-                {/* Pricing band */}
                 <div className="flex items-center justify-between bg-surface-container rounded-shape-md px-4 py-3 mt-auto">
                   <span className="text-xs text-on-surface-variant">
                     {service.startingFrom}
                   </span>
+
                   <span className="text-xs text-on-surface-variant">
                     Response in 24 hours
                   </span>
                 </div>
 
-                {/* CTA Button */}
                 <Link href={`/services/${service.slug}`}>
                   <button className="w-full py-3 rounded-shape-md bg-primary-container text-on-primary-container font-semibold text-sm text-center hover:bg-primary hover:text-on-primary transition-colors duration-200 cursor-pointer">
                     Learn More &rarr;
@@ -380,58 +377,64 @@ function WhyCustomSection() {
   return (
     <section className="bg-surface-container-low py-24">
       <div className="max-w-4xl mx-auto px-4 md:px-6 lg:px-8">
-        {/* Header */}
         <div className="max-w-2xl mx-auto text-center mb-12">
           <p className="uppercase tracking-widest text-xs font-semibold text-primary mb-4">
             Why Custom Built
           </p>
+
           <h2 className="text-headline-large font-semibold text-on-background">
             Why Not Just Use Wix or a Template?
           </h2>
         </div>
 
-        {/* Comparison table card */}
         <div className="bg-surface rounded-shape-md shadow-md overflow-hidden max-w-3xl mx-auto">
           <div className="overflow-x-auto md:overflow-visible">
             <table className="w-full min-w-125 md:min-w-0">
-            <thead className="bg-surface-container-high">
-              <tr>
-                <th className="text-left px-6 py-4 text-sm font-semibold text-on-surface-variant">
-                  Feature
-                </th>
-                <th className="text-center px-6 py-4">
-                  <span className="inline-flex items-center gap-1.5 bg-primary-container text-on-primary-container text-sm font-semibold px-3 py-1 rounded-shape-full">
-                    <CheckCircle2 className="w-4 h-4" />
-                    Custom Built by Me
-                  </span>
-                </th>
-                <th className="text-center px-6 py-4">
-                  <span className="inline-flex items-center gap-1.5 bg-surface-container text-on-surface-variant text-sm font-semibold px-3 py-1 rounded-shape-full">
-                    DIY Website Builders
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {comparisonRows.map((row, index) => (
-                <tr
-                  key={row}
-                  className={
-                    index % 2 === 0 ? "bg-surface-container-lowest" : "bg-surface"
-                  }
-                >
-                  <td className="px-6 py-4 text-sm font-medium text-on-background">
-                    {row}
-                  </td>
-                  <td className="text-center px-6 py-4">
-                    <CheckCircle2 className="w-5 h-5 text-primary mx-auto" />
-                  </td>
-                  <td className="text-center px-6 py-4">
-                    <XCircle className="w-5 h-5 text-error mx-auto" />
-                  </td>
+              <thead className="bg-surface-container-high">
+                <tr>
+                  <th className="text-left px-6 py-4 text-sm font-semibold text-on-surface-variant">
+                    Feature
+                  </th>
+
+                  <th className="text-center px-6 py-4">
+                    <span className="inline-flex items-center gap-1.5 bg-primary-container text-on-primary-container text-sm font-semibold px-3 py-1 rounded-shape-full">
+                      <CheckCircle2 className="w-4 h-4" />
+                      Custom Built by Me
+                    </span>
+                  </th>
+
+                  <th className="text-center px-6 py-4">
+                    <span className="inline-flex items-center gap-1.5 bg-surface-container text-on-surface-variant text-sm font-semibold px-3 py-1 rounded-shape-full">
+                      DIY Website Builders
+                    </span>
+                  </th>
                 </tr>
-              ))}
-            </tbody>
+              </thead>
+
+              <tbody>
+                {comparisonRows.map((row, index) => (
+                  <tr
+                    key={row}
+                    className={
+                      index % 2 === 0
+                        ? "bg-surface-container-lowest"
+                        : "bg-surface"
+                    }
+                  >
+                    <td className="px-6 py-4 text-sm font-medium text-on-background">
+                      {row}
+                    </td>
+
+                    <td className="text-center px-6 py-4">
+                      <CheckCircle2 className="w-5 h-5 text-primary mx-auto" />
+                    </td>
+
+                    <td className="text-center px-6 py-4">
+                      <XCircle className="w-5 h-5 text-error mx-auto" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         </div>
@@ -447,46 +450,81 @@ function ProcessReminder() {
   return (
     <section className="bg-surface py-16">
       <div className="max-w-5xl mx-auto px-6">
-        {/* Header */}
         <h2 className="text-headline-medium font-semibold text-on-background max-w-lg mx-auto text-center mb-12">
           Every Service Follows the Same Simple Process
         </h2>
 
-        {/* Steps */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-8 md:gap-4">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-4">
           {processSteps.map((step, index) => {
             const StepIcon = step.icon;
             const isLast = index === processSteps.length - 1;
+
             return (
               <div
                 key={step.number}
-                className="flex flex-col items-center text-center flex-1 relative"
+                className="
+                  flex
+                  flex-col
+                  items-center
+                  text-center
+                  flex-1
+                  relative
+                  w-full
+                  md:w-auto
+                "
               >
-                {/* Step number circle */}
-                <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-sm z-10">
+                {/* Step number */}
+                <div
+                  className="
+                    relative
+                    z-10
+                    w-10
+                    h-10
+                    rounded-full
+                    bg-primary-container
+                    flex
+                    items-center
+                    justify-center
+                    text-on-primary-container
+                    font-bold
+                    text-sm
+                  "
+                >
                   {step.number}
                 </div>
 
-                {/* Connector line */}
+                {/* Desktop connecting line ONLY */}
                 {!isLast && (
-                  <div className="hidden md:block absolute top-5 left-1/2 w-full h-px bg-outline-variant" />
+                  <div
+                    className="
+                      hidden
+                      md:block
+                      absolute
+                      z-0
+                      top-5
+                      left-1/2
+                      w-full
+                      h-px
+                      bg-outline-variant
+                    "
+                  />
                 )}
 
                 {/* Icon */}
-                <StepIcon className="w-6 h-6 text-primary mt-4" />
+                <StepIcon className="relative z-10 w-6 h-6 text-primary mt-4" />
 
                 {/* Title */}
-                <p className="font-semibold text-sm text-on-background mt-2">
+                <p className="relative z-10 font-semibold text-sm text-on-background mt-2">
                   {step.title}
                 </p>
 
                 {/* Description */}
-                <p className="text-xs text-on-surface-variant mt-1 max-w-28">
+                <p className="relative z-10 text-xs text-on-surface-variant mt-1 max-w-28">
                   {step.description}
                 </p>
 
                 {/* Time chip */}
-                <span className="mt-3 px-3 py-1 rounded-shape-full bg-secondary-container text-on-secondary-container text-xs font-medium">
+                <span className="relative z-10 mt-3 px-3 py-1 rounded-shape-full bg-secondary-container text-on-secondary-container text-xs font-medium">
                   {step.time}
                 </span>
               </div>
@@ -505,25 +543,23 @@ function ServicesCTA() {
   return (
     <section className="bg-primary py-24">
       <div className="max-w-2xl mx-auto px-6 text-center">
-        {/* Heading */}
         <h2 className="text-4xl font-medium text-white leading-tight">
           Not Sure Which Service You Need?
         </h2>
 
-        {/* Body */}
         <p className="text-white leading-relaxed mt-4">
           That&apos;s completely normal. Most business owners aren&apos;t sure
           either - that&apos;s what the free consultation call is for. Tell me
           about your business and I&apos;ll recommend exactly what you need.
         </p>
 
-        {/* Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <a href="/contact">
             <button className="px-8 py-4 rounded-shape-full bg-white text-primary font-semibold hover:bg-primary-container transition-colors duration-200 cursor-pointer">
               Book Free Consultation
             </button>
           </a>
+
           <a href="https://wa.me/919685238884">
             <button className="px-8 py-4 rounded-shape-full bg-tertiary-container text-on-tertiary-container font-semibold hover:opacity-90 transition-opacity duration-200 cursor-pointer">
               Chat on WhatsApp &rarr;
@@ -531,16 +567,17 @@ function ServicesCTA() {
           </a>
         </div>
 
-        {/* Trust signals */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-6">
           <span className="flex items-center gap-2 text-sm text-primary-container">
             <Phone className="w-4 h-4" />
             +91 96852 38884
           </span>
+
           <span className="flex items-center gap-2 text-sm text-primary-container">
             <Clock className="w-4 h-4" />
             Reply within 4 hours
           </span>
+
           <span className="flex items-center gap-2 text-sm text-primary-container">
             <MapPin className="w-4 h-4" />
             Remote · Worldwide
@@ -559,6 +596,7 @@ export default function ServicesPage() {
     <main>
       <JsonLd data={getLocalBusinessSchema()} />
       <JsonLd data={getFAQSchema(SERVICES_FAQS)} />
+
       <ServicesHero />
       <ServicesGrid />
       <WhyCustomSection />
@@ -566,5 +604,4 @@ export default function ServicesPage() {
       <ServicesCTA />
     </main>
   );
-}
-
+} 
