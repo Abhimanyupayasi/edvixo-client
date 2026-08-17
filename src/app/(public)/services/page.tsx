@@ -17,7 +17,7 @@ import {
   Clock,
   type LucideIcon,
 } from "lucide-react";
-import { SITE_URL } from "../../layout";
+import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import { getFAQSchema, getLocalBusinessSchema } from "@/lib/seo/schemas";
 
@@ -567,3 +567,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

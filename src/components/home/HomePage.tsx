@@ -1,6 +1,6 @@
 import { ArrowRight, Check, Code, PlanetEarth, Rocket, Shield, ShoppingBag, Smartphone } from "@gravity-ui/icons";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/public/layout/Footer";
+import { Header } from "@/components/public/layout/Header";
 
 const stats = [
   { value: "500+", label: "Projects Delivered" },

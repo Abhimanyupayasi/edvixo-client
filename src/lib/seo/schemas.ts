@@ -1,4 +1,4 @@
-import { SITE_AUTHOR, SITE_URL } from "@/app/layout";
+import { SITE_AUTHOR, SITE_URL } from "@/lib/site";
 
 export function getPersonSchema() {
   return {
@@ -216,3 +216,4 @@ export function getPortfolioListSchema(
     })),
   };
 }
+

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/public/contact/ContactForm";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
-import { SITE_URL } from "../../layout";
+import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import { getLocalBusinessSchema, getBreadcrumbSchema } from "@/lib/seo/schemas";
 
@@ -108,3 +108,4 @@ export default function ContactPage() {
     </>
   );
 }
+

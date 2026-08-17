@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "../layout";
+import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import {
   getLocalBusinessSchema,
@@ -10,8 +10,10 @@ import { HeroSection } from "@/components/public/home/HeroSection";
 import { IndustryMarquee } from "@/components/public/IndustryMarquee";
 import { ServicesSection } from "@/components/public/home/ServicesSection";
 import { FeaturedWorkSection } from "@/components/public/home/FeaturedWorkSection";
+import { WhyEdvixoSection } from "@/components/public/home/WhyEdvixoSection";
 import { ProcessSection } from "@/components/public/home/ProcessSection";
 import { TestimonialsSection } from "@/components/public/home/TestimonialsSection";
+import { FAQSection } from "@/components/public/home/FAQSection";
 import { CTABanner } from "@/components/public/home/CTABanner";
 
 export const metadata: Metadata = {
@@ -133,9 +135,12 @@ export default function HomePage() {
       <IndustryMarquee />
       <ServicesSection />
       <FeaturedWorkSection projects={featuredProjects} />
+      <WhyEdvixoSection />
       <ProcessSection />
       <TestimonialsSection testimonials={testimonials} />
+      <FAQSection />
       <CTABanner />
     </>
   );
 }
+

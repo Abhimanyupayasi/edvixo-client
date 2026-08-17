@@ -20,7 +20,7 @@ import {
   Search,
   Send,
 } from "lucide-react";
-import { SITE_URL } from "@/app/layout";
+import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Getting Started - How to Work With Sapnendra",
@@ -452,3 +452,4 @@ export default function DocsPage() {
     </div>
   );
 }
+

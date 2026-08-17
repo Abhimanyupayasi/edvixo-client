@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -205,35 +206,16 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-355 items-center justify-between px-4 md:px-6 lg:px-8">
 
         {/* LOGO */}
-        <Link
-          href="/"
-          className="flex items-center gap-0 lg:select-none"
-          aria-label="Edvixo homepage"
-        >
-          <span
-            className="
-              inline-flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-md
-              border
-              border-[#ff8b2c]
-              bg-[#1555a5]
-              text-xl
-              font-black
-              text-white
-              shadow-[0_10px_20px_rgba(255,139,44,0.25)]
-            "
-          >
-            E
-          </span>
-
-          <span className="ml-3 text-3xl font-black tracking-tight text-white">
-            EDVIXO
-          </span>
-        </Link>
+       <Link href="/" className="flex items-center">
+  <Image
+    src="/images/edvixo-logo.png"
+    alt="Edvixo"
+    width={190}
+    height={42}
+    priority
+    className="h-10 w-auto object-contain"
+  />
+</Link>
 
         {/* DESKTOP NAVIGATION */}
         <nav

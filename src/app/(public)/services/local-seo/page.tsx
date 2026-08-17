@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import JsonLd from "@/components/seo/JsonLd";
 import { getFAQSchema } from "@/lib/seo/schemas";
-import { SITE_URL } from "@/app/layout";
+import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
 export const revalidate = false;
@@ -625,3 +625,4 @@ export default function LocalSeoPage() {
     </>
   );
 }
+
