@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navMenus = [
@@ -127,6 +127,26 @@ export function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
+
+  const desktopNavRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        desktopNavRef.current &&
+        !desktopNavRef.current.contains(event.target as Node)
+      ) {
+        setOpenDesktopMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const isActiveLink = (href: string) => {
     if (pathname === href) return true;
@@ -179,130 +199,146 @@ export function Header() {
         </Link>
 
         {/* DESKTOP NAVIGATION */}
-        <nav
-          className="hidden items-center gap-1 lg:flex"
-          role="navigation"
-          aria-label="Main navigation"
-        >
-          {navMenus.map((menu) => (
-            <div key={menu.label} className="group">
+      <nav
+        ref={desktopNavRef}
+        className="hidden items-center gap-1 lg:flex"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        {navMenus.map((menu) => {
+          const hasDropdown =
+            Boolean(menu.items?.length) || Boolean(menu.columns?.length);
 
-              <Link
-                href={menu.href}
-                className={`
-                  flex
-                  items-center
-                  gap-2
-                  rounded-md
-                  px-4
-                  py-2
-                  text-sm
-                  font-semibold
-                  transition-all
-                  duration-200
-                  ${
-                    isActiveLink(menu.href)
-                      ? "bg-white/10 text-white"
-                      : "text-slate-200 hover:bg-white/5 hover:text-white"
-                  }
-                `}
-              >
-                <span>{menu.label}</span>
+          const isOpen = openDesktopMenu === menu.label;
 
-                <ChevronDown
-                  className="
-                    h-4
-                    w-4
-                    transition-transform
+          return (
+            <div key={menu.label} className="relative">
+              {/* TEXT + ARROW */}
+              <div className="flex items-center">
+                {/* MENU TEXT */}
+                <Link
+                  href={menu.href}
+                  className={`
+                    flex
+                    items-center
+                    rounded-md
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    transition-all
                     duration-200
-                    group-hover:rotate-180
-                  "
-                />
-              </Link>
+                    ${
+                      isActiveLink(menu.href)
+                        ? "bg-white/10 text-white"
+                        : "text-slate-200 hover:bg-white/5 hover:text-white"
+                    }
+                  `}
+                >
+                  {menu.label}
+                </Link>
 
-              {/* DESKTOP DROPDOWN */}
-              <div
-                className="
-                  pointer-events-none
-                  invisible
-                  fixed
-                  left-1/2
-                  top-20
-                  z-50
-                  w-[min(1180px,calc(100vw-48px))]
-                  -translate-x-1/2
-                  translate-y-3
-                  pt-3
-                  opacity-0
-                  transition-all
-                  duration-250
-                  ease-out
-                  group-hover:pointer-events-auto
-                  group-hover:visible
-                  group-hover:translate-y-0
-                  group-hover:opacity-100
-                "
-              >
+                {/* ARROW */}
+                {hasDropdown && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpenDesktopMenu((current) =>
+                        current === menu.label ? null : menu.label
+                      );
+                    }}
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      items-center
+                      justify-center
+                      rounded-md
+                      text-slate-300
+                      transition-colors
+                      hover:bg-white/10
+                      hover:text-white
+                    "
+                    aria-label={`Toggle ${menu.label} dropdown`}
+                    aria-expanded={isOpen}
+                  >
+                    <ChevronDown
+                      className={`
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-200
+                        ${isOpen ? "rotate-180" : ""}
+                      `}
+                    />
+                  </button>
+                )}
+            </div>
+
+              {/* DROPDOWN */}
+              {isOpen && (
                 <div
                   className="
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-[#071a2d]
-                    text-white
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                    fixed
+                    left-1/2
+                    top-20
+                    z-[100]
+                    w-[min(1180px,calc(100vw-48px))]
+                    -translate-x-1/2
+                    pt-3
                   "
                 >
-                  {menu.label === "Services" && menu.columns ? (
-                    <div className="grid gap-6 p-6 lg:grid-cols-5">
-                      {menu.columns.map((column) => (
-                        <div
-                          key={column.heading}
-                          className="space-y-3"
-                        >
-                          <h3
-                            className="
-                              text-xs
-                              font-black
-                              uppercase
-                              tracking-[0.16em]
-                              text-slate-400
-                            "
+                  <div
+                    className="
+                      overflow-hidden
+                      rounded-xl
+                      border
+                      border-white/10
+                      bg-[#071a2d]
+                      text-white
+                      shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                    "
+                  >
+                    {/* SERVICES */}
+                    {menu.label === "Services" && menu.columns ? (
+                      <div className="grid gap-6 p-6 lg:grid-cols-5">
+                        {menu.columns.map((column) => (
+                          <div
+                            key={column.heading}
+                            className="space-y-3"
                           >
-                            {column.heading}
-                          </h3>
+                            <h3
+                              className="
+                                text-xs
+                                font-black
+                                uppercase
+                                tracking-[0.16em]
+                                text-slate-400
+                              "
+                            >
+                              {column.heading}
+                            </h3>
 
-                          <div className="space-y-1.5">
-                            {column.items.map((item) => (
-                              <Link
-                                key={`${column.heading}-${item.label}`}
-                                href={item.href}
-                                className="
-                                  group/service-item
-                                  block
-                                  rounded-md
-                                  px-2
-                                  py-2
-                                  text-base
-                                  font-medium
-                                  text-slate-200
-                                  transition-all
-                                  duration-200
-                                  hover:bg-white/10
-                                  hover:text-white
-                                "
-                              >
-                                <span
+                            <div className="space-y-1.5">
+                              {column.items.map((item) => (
+                                <Link
+                                  key={`${column.heading}-${item.label}`}
+                                  href={item.href}
                                   className="
-                                    inline-block
-                                    transition-transform
+                                    block
+                                    rounded-md
+                                    px-2
+                                    py-2
+                                    text-base
+                                    font-medium
+                                    text-slate-200
+                                    transition-all
                                     duration-200
-                                    group-hover/service-item:translate-x-1
+                                    hover:bg-white/10
+                                    hover:text-white
                                   "
                                 >
                                   {item.label}
-                                </span>
                               </Link>
                             ))}
                           </div>
@@ -310,13 +346,13 @@ export function Header() {
                       ))}
                     </div>
                   ) : (
+                              /* OTHER DROPDOWNS */
                     <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
                       {menu.items?.map((item) => (
                         <Link
                           key={`${menu.label}-${item.label}`}
                           href={item.href}
                           className="
-                            group/item
                             rounded-lg
                             px-3
                             py-2
@@ -327,27 +363,20 @@ export function Header() {
                             duration-200
                             hover:bg-white/10
                             hover:text-white
-                          "
-                        >
-                          <span
-                            className="
-                              inline-block
-                              transition-transform
-                              duration-200
-                              group-hover/item:translate-x-1
-                            "
+                          "    
                           >
                             {item.label}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-          ))}
-        </nav>
+          );
+        })}
+      </nav>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-2 sm:gap-3">
