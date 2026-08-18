@@ -12,13 +12,14 @@ const navMenus = [
     label: "Company",
     href: "/about",
     items: [
-      { label: "Home", href: "/" },
-      { label: "About The Company", href: "/about" },
-      { label: "Meet The Team", href: "/about" },
-      { label: "Client Reviews", href: "/work" },
-      { label: "Company Brochure", href: "/docs" },
-      { label: "Career", href: "/contact" },
-      { label: "Life@Edvixo", href: "/about" },
+      { label: "About Edvixo", href: "/about" },
+      { label: "Meet Team", href: "/contact" },
+      { label: "Why Edvixo", href: "/about" },
+      { label: "Case Studies", href: "/about" },
+      { label: "Client Reviews", href: "/about" },
+      { label: "Life @ Edvixo", href: "/about" },
+      { label: "Careers", href: "/contact" },
+      { label: "Company Brochure", href: "/about" },
     ],
   },
   {
@@ -28,96 +29,127 @@ const navMenus = [
       {
         heading: "WEB DEVELOPMENT",
         items: [
-          { label: "Website Development", href: "/services/business-websites" },
-          { label: "PHP Development", href: "/services/business-websites" },
-          { label: "WordPress Development", href: "/services/business-websites" },
-          { label: "HTML Development", href: "/services/business-websites" },
-          { label: "Angular Development", href: "/services/business-websites" },
+          { label: "Business Website Development", href: "/about" },
+          { label: "Web Application Development", href: "/about" },
+          { label: "Custom Website Development", href: "/about" },
+          { label: "WordPress Development", href: "/about" },
+          { label: "Website Redesign", href: "/about" },
         ],
       },
       {
-        heading: "APP DEVELOPMENT",
+        heading: "MOBILE APP DEVELOPMENT",
         items: [
-          { label: "Mobile App Development", href: "/contact" },
-          { label: "iOS App Development", href: "/contact" },
           { label: "Android App Development", href: "/contact" },
-          { label: "Hybrid App Development", href: "/contact" },
+          { label: "iOS App Development", href: "/contact" },
+          { label: "Cross-Platform App Development", href: "/contact" },
+          { label: "App UI/UX Development", href: "/contact" },
+          { label: "App Maintenance", href: "/contact" },
         ],
       },
       {
-        heading: "ECOM DEVELOPMENT",
+        heading: "ECOMMERCE",
         items: [
-          { label: "E-Commerce Development", href: "/services/online-stores" },
-          { label: "WooCommerce Development", href: "/services/online-stores" },
-          { label: "Magento Development", href: "/services/online-stores" },
-          { label: "OpenCart Development", href: "/services/online-stores" },
+          { label: "Ecommerce Website Development", href: "/contact" },
+          { label: "Shopify Development", href: "/contact" },
+          { label: "WooCommerce Development", href: "/contact" },
+          { label: "Custom Ecommerce", href: "/contact" },
+          { label: "Ecommerce Maintenance", href: "/contact" },
         ],
       },
       {
         heading: "DESIGN",
         items: [
           { label: "UI/UX Design", href: "/contact" },
+          { label: "Website Design", href: "/about" },
+          { label: "App Design", href: "/contact" },
           { label: "Graphic Design", href: "/contact" },
-          { label: "App Prototype", href: "/contact" },
-          { label: "Web Design", href: "/services/website-redesign" },
+          { label: "Branding & Identity", href: "/about" },
         ],
       },
       {
-        heading: "MISCELLANEOUS",
+        heading: "SOFTWARE & DIGITAL",
         items: [
-          { label: "Software Development", href: "/services/dashboards" },
-          { label: "Digital Marketing", href: "/services/local-seo" },
-          { label: "Technical Support", href: "/contact" },
+          { label: "Custom Software Development", href: "/contact" },
+          { label: "CRM & ERP Development", href: "/contact" },
+          { label: "SaaS Development", href: "/contact" },
+          { label: "AI & Automation", href: "/contact" },
+          { label: "Digital Marketing & SEO", href: "/contact" },
         ],
       },
     ],
   },
   {
     label: "Games",
-    href: "/games",
+    href: "/contact",
     items: [
-      { label: "Game Development", href: "/services" },
-      { label: "Game Design", href: "/services" },
-      { label: "Mobile Games", href: "/services" },
-      { label: "VR/AR Experiences", href: "/services" },
-      { label: "QA & Testing", href: "/services" },
-      { label: "Live Ops", href: "/services" },
+      { label: "Game Development", href: "/contact" },
+      { label: "Game Design", href: "/contact" },
+      { label: "Mobile Games", href: "/contact" },
+      { label: "VR/AR Experiences", href: "/contact" },
+      { label: "QA & Testing", href: "/contact" },
+      { label: "Live Ops", href: "/contact" },
     ],
   },
   {
     label: "Solutions",
-    href: "/solutions",
+    href: "/contact",
     items: [
-      { label: "Hire Dedicated Developers", href: "/services" },
-      { label: "Startup Product Development", href: "/services" },
-      { label: "Business Automation", href: "/services" },
-      { label: "Cloud & DevOps Solutions", href: "/services" },
-      { label: "Maintenance & Support", href: "/services" },
-      { label: "Digital Transformation", href: "/services" },
+      { label: "Business Automation", href: "/contact" },
+      { label: "Digital Transformation", href: "/contact" },
+      { label: "Cloud & DevOps Solutions", href: "/contact" },
+      { label: "Startup Product Development", href: "/contact" },
+      { label: "Maintenance & Support", href: "/contact" },
+      { label: "Dedicated Development Teams", href: "/contact" },
     ],
   },
   {
     label: "Industries",
-    href: "/industries",
-    items: [
-      { label: "Healthcare", href: "/work" },
-      { label: "Education", href: "/work" },
-      { label: "SaaS", href: "/work" },
-      { label: "Retail", href: "/work" },
-      { label: "Real Estate", href: "/work" },
-      { label: "Hospitality", href: "/work" },
+    href: "/about",
+    columns: [
+      {
+        heading: "HEALTHCARE & FINANCE",
+        items: [
+          { label: "Healthcare", href: "/about" },
+          { label: "FinTech & Banking", href: "/about" },
+          { label: "Insurance", href: "/about" },
+        ],
+      },
+      {
+        heading: "EDUCATION & TECHNOLOGY",
+        items: [
+          { label: "Education & EdTech", href: "/about" },
+          { label: "Technology & SaaS", href: "/about" },
+          { label: "Media & Entertainment", href: "/about" },
+        ],
+      },
+      {
+        heading: "COMMERCE & PROPERTY",
+        items: [
+          { label: "Retail & E-Commerce", href: "/about" },
+          { label: "Real Estate & PropTech", href: "/about" },
+          { label: "Manufacturing", href: "/about" },
+        ],
+      },
+      {
+        heading: "TRAVEL, LOGISTICS & ENTERTAINMENT",
+        items: [
+          { label: "Logistics & Transportation", href: "/about" },
+          { label: "Travel & Hospitality", href: "/about" },
+          { label: "Sports & Gaming", href: "/about" },
+        ],
+      },
     ],
   },
   {
     label: "Portfolio",
-    href: "/work",
+    href: "/about",
     items: [
-      { label: "Case Studies", href: "/work" },
-      { label: "Client Results", href: "/work" },
-      { label: "Featured Projects", href: "/work" },
-      { label: "Success Stories", href: "/work" },
-      { label: "Industries", href: "/work" },
-      { label: "Process", href: "/services" },
+      { label: "Case Studies", href: "/about" },
+      { label: "Client Results", href: "/about" },
+      { label: "Featured Projects", href: "/about" },
+      { label: "Success Stories", href: "/about" },
+      { label: "Industries", href: "/about" },
+      { label: "Process", href: "/contact" },
     ],
   },
 ];
@@ -300,7 +332,7 @@ export function Header() {
                     "
                   >
                     {/* SERVICES */}
-                    {menu.label === "Services" && menu.columns ? (
+                    {menu.columns ? (
                       <div className="grid gap-6 p-6 lg:grid-cols-5">
                         {menu.columns.map((column) => (
                           <div
@@ -552,8 +584,7 @@ export function Header() {
                   {hasDropdown && isOpen && (
                     <div className="pb-4 pl-3">
 
-                      {menu.label === "Services" &&
-                      menu.columns ? (
+                      {menu.columns ? (
                         <div className="space-y-5">
 
                           {menu.columns.map((column) => (
