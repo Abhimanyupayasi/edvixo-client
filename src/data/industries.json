@@ -1,0 +1,217 @@
+{
+  "healthcare": {
+    "title": "Healthcare",
+    "slug": "healthcare",
+    "heroTitle": "Digital Solutions Built for Healthcare",
+    "heroDescription": "Build a professional digital presence that helps healthcare businesses earn trust, improve patient communication, and generate more enquiries.",
+    "whoItsFor": [
+      "Dental Clinics",
+      "Hospitals",
+      "Diagnostic Centres",
+      "Doctors",
+      "Health & Wellness"
+    ],
+    "problems": [
+      "Patients struggle to find accurate information online",
+      "Old websites reduce trust and credibility",
+      "Mobile users cannot easily contact the business",
+      "Appointments and enquiries are difficult to manage"
+    ],
+    "solutions": [
+      "Professional healthcare websites",
+      "Online appointment systems",
+      "Patient enquiry forms",
+      "Local SEO and Google Business optimisation",
+      "Mobile-first digital experiences"
+    ],
+    "features": [
+      "Responsive healthcare website",
+      "Service and treatment pages",
+      "Online appointment booking",
+      "WhatsApp enquiry integration",
+      "Local SEO setup",
+      "Mobile optimisation"
+    ],
+    "cta": "Build a Better Healthcare Experience"
+  },
+
+  "education": {
+    "title": "Education",
+    "slug": "education",
+    "heroTitle": "Digital Solutions for Education Businesses",
+    "heroDescription": "Help students and parents discover your institution, understand your courses, and take action through a clear digital experience.",
+    "whoItsFor": [
+      "Schools",
+      "Colleges",
+      "Coaching Institutes",
+      "Training Centres",
+      "EdTech Businesses"
+    ],
+    "problems": [
+      "Course information is difficult to find",
+      "Students cannot easily submit enquiries",
+      "Websites look outdated compared with competitors",
+      "Admissions information is scattered"
+    ],
+    "solutions": [
+      "Education websites",
+      "Course and program pages",
+      "Online enquiry systems",
+      "Admission funnels",
+      "Local SEO"
+    ],
+    "features": [
+      "Course catalogue",
+      "Admission enquiry forms",
+      "FAQ sections",
+      "Student-focused navigation",
+      "Mobile-friendly design",
+      "SEO-ready content structure"
+    ],
+    "cta": "Improve Your Education Business Online"
+  },
+
+  "saas": {
+    "title": "SaaS",
+    "slug": "saas",
+    "heroTitle": "Digital Products Built for SaaS Companies",
+    "heroDescription": "Create scalable digital experiences that clearly communicate your product, convert visitors, and support business growth.",
+    "whoItsFor": [
+      "SaaS Startups",
+      "B2B SaaS",
+      "B2C SaaS",
+      "Technology Startups",
+      "Software Companies"
+    ],
+    "problems": [
+      "Product value is difficult to communicate",
+      "Landing pages do not convert visitors",
+      "Users struggle to understand product features",
+      "The website does not scale with the product"
+    ],
+    "solutions": [
+      "SaaS websites",
+      "Product landing pages",
+      "Dashboard interfaces",
+      "Conversion-focused UX",
+      "Scalable web applications"
+    ],
+    "features": [
+      "Modern SaaS UI",
+      "Product feature pages",
+      "Conversion-focused landing pages",
+      "Responsive dashboards",
+      "Reusable components",
+      "Scalable architecture"
+    ],
+    "cta": "Build Your SaaS Product"
+  },
+
+  "retail": {
+    "title": "Retail",
+    "slug": "retail",
+    "heroTitle": "Digital Solutions for Retail Businesses",
+    "heroDescription": "Give your retail business a stronger online presence and make it easier for customers to discover, trust, and buy from you.",
+    "whoItsFor": [
+      "Retail Shops",
+      "Fashion Stores",
+      "Consumer Brands",
+      "Local Shops",
+      "D2C Businesses"
+    ],
+    "problems": [
+      "Customers cannot easily discover products",
+      "Business depends heavily on marketplaces",
+      "Product information is difficult to manage",
+      "Customers have no direct online buying experience"
+    ],
+    "solutions": [
+      "E-commerce websites",
+      "Product catalogues",
+      "Online payment integration",
+      "Inventory management",
+      "Local SEO"
+    ],
+    "features": [
+      "Product catalogue",
+      "Search and filtering",
+      "Online payments",
+      "Order management",
+      "Mobile shopping experience",
+      "Customer enquiry integration"
+    ],
+    "cta": "Take Your Retail Business Online"
+  },
+
+  "real-estate": {
+    "title": "Real Estate",
+    "slug": "real-estate",
+    "heroTitle": "Digital Solutions for Real Estate Businesses",
+    "heroDescription": "Showcase properties professionally and make it easier for buyers and tenants to discover listings and contact your team.",
+    "whoItsFor": [
+      "Real Estate Agencies",
+      "Property Developers",
+      "Brokers",
+      "Builders",
+      "Property Consultants"
+    ],
+    "problems": [
+      "Property listings are difficult to manage",
+      "Potential buyers cannot find relevant properties quickly",
+      "Enquiries are lost across multiple channels",
+      "The business lacks a professional digital presence"
+    ],
+    "solutions": [
+      "Real estate websites",
+      "Property listing systems",
+      "Property search and filtering",
+      "Lead generation forms",
+      "Local SEO"
+    ],
+    "features": [
+      "Property catalogue",
+      "Advanced property search",
+      "Property detail pages",
+      "Lead enquiry forms",
+      "WhatsApp integration",
+      "Location-based SEO"
+    ],
+    "cta": "Build a Better Real Estate Presence"
+  },
+
+  "hospitality": {
+    "title": "Hospitality",
+    "slug": "hospitality",
+    "heroTitle": "Digital Experiences for Hospitality Businesses",
+    "heroDescription": "Help guests discover your business, explore your services, make bookings, and connect with you through a better digital experience.",
+    "whoItsFor": [
+      "Restaurants",
+      "Hotels",
+      "Cafes",
+      "Resorts",
+      "Food Brands"
+    ],
+    "problems": [
+      "Customers cannot easily find important information",
+      "Booking and enquiry processes are manual",
+      "Businesses depend heavily on third-party platforms",
+      "Websites do not reflect the quality of the brand"
+    ],
+    "solutions": [
+      "Restaurant websites",
+      "Hotel websites",
+      "Online booking systems",
+      "Online menus",
+      "Local SEO"
+    ],
+    "features": [
+      "Mobile-first website",
+      "Online menu",
+      "Booking system",
+      "Location information",
+      "WhatsApp integration",
+      "Local search optimisation"
+    ],
+    "cta": "Improve Your Hospitality Experience"
+  }
+}

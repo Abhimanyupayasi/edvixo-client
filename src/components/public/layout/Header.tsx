@@ -73,41 +73,47 @@ const navMenus = [
     ],
   },
   {
-    label: "Games",
-    href: "/games",
-    items: [
-      { label: "Game Development", href: "/services" },
-      { label: "Game Design", href: "/services" },
-      { label: "Mobile Games", href: "/services" },
-      { label: "VR/AR Experiences", href: "/services" },
-      { label: "QA & Testing", href: "/services" },
-      { label: "Live Ops", href: "/services" },
-    ],
-  },
-  {
-    label: "Solutions",
-    href: "/solutions",
-    items: [
-      { label: "Hire Dedicated Developers", href: "/services" },
-      { label: "Startup Product Development", href: "/services" },
-      { label: "Business Automation", href: "/services" },
-      { label: "Cloud & DevOps Solutions", href: "/services" },
-      { label: "Maintenance & Support", href: "/services" },
-      { label: "Digital Transformation", href: "/services" },
-    ],
-  },
-  {
-    label: "Industries",
-    href: "/industries",
-    items: [
-      { label: "Healthcare", href: "/work" },
-      { label: "Education", href: "/work" },
-      { label: "SaaS", href: "/work" },
-      { label: "Retail", href: "/work" },
-      { label: "Real Estate", href: "/work" },
-      { label: "Hospitality", href: "/work" },
-    ],
-  },
+  label: "Solutions",
+  href: "/solutions",
+  items: [
+    {
+      label: "Hire Dedicated Developers",
+      href: "/solutions/hire-dedicated-developers",
+    },
+    {
+      label: "Startup Product Development",
+      href: "/solutions/startup-product-development",
+    },
+    {
+      label: "Business Automation",
+      href: "/solutions/business-automation",
+    },
+    {
+      label: "Cloud & DevOps Solutions",
+      href: "/solutions/cloud-devops-solutions",
+    },
+    {
+      label: "Maintenance & Support",
+      href: "/solutions/maintenance-support",
+    },
+    {
+      label: "Digital Transformation",
+      href: "/solutions/digital-transformation",
+    },
+  ],
+},
+ {
+  label: "Industries",
+  href: "/industries",
+  items: [
+    { label: "Healthcare", href: "/industries/healthcare" },
+    { label: "Education", href: "/industries/education" },
+    { label: "SaaS", href: "/industries/saas" },
+    { label: "Retail", href: "/industries/retail" },
+    { label: "Real Estate", href: "/industries/real-estate" },
+    { label: "Hospitality", href: "/industries/hospitality" },
+  ],
+},
   {
     label: "Portfolio",
     href: "/work",
