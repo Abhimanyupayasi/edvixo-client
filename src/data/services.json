@@ -1,0 +1,1213 @@
+{
+  "business-websites": {
+    "title": "Business Website",
+    "card": {
+  "description": "A professional, mobile-friendly website that makes your business look credible and trustworthy online. Built to load fast, rank on Google, and turn visitors into customers. Most local businesses see a significant increase in enquiries within the first 60 days.",
+  "whoItsFor": ["Restaurants", "Clinics", "Coaching", "Retail", "Any Business"],
+  "whatYouGet": [
+    "Custom design matching your brand",
+    "Mobile-optimised on all devices",
+    "Google-ready with basic SEO setup",
+    "Contact form + WhatsApp integration"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "A Website Your Business Can Be Proud Of",
+    "heroDescription": "Helping small businesses and agencies build high-performance MERN websites that turn Google searches into lifelong customers.",
+    "serviceLabel": "Business Website",
+    "trustChips": [
+      "Custom Quote in 24 Hours",
+      "10–14 Days · Ready to Launch"
+    ],
+    "heroCta": "Get a Free Quote",
+    "secondaryCta": "See Example Websites",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Commission Heavy",
+        "body": "Paying 15–30% commissions to third-party delivery platforms and directory listings cuts deep into your profits every single month.",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "Invisible on Google",
+        "body": "When customers search for services in your city, they find your competitors because you don't have a digital address.",
+        "icon": "EyeOff"
+      },
+      {
+        "title": "No Brand Control",
+        "body": "Relying on social media means you're at the mercy of algorithms. Your website is your own digital real estate.",
+        "icon": "ShieldOff"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT YOU GET",
+      "title": "Everything a Business Website Should Do",
+      "points": [
+        "Zero Ongoing Commissions - take all enquiries directly on your WhatsApp.",
+        "Automated Lead Capture - never miss a prospect with 24/7 contact forms.",
+        "Modern MERN Tech - lightning-fast loading using React and Node.js.",
+        "SEO Optimised - rank for keywords that actually bring in revenue."
+      ]
+    },
+    "features": [
+      {
+        "title": "Fast on Mobile",
+        "body": "Optimised for modern mobile networks, built for customers on mobile.",
+        "icon": "Smartphone"
+      },
+      {
+        "title": "Shows on Google",
+        "body": "SEO optimisation so customers can find you online.",
+        "icon": "Search"
+      },
+      {
+        "title": "24/7 Enquiries",
+        "body": "Your digital salesperson working while you sleep.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Every Device",
+        "body": "Looks stunning on Phones, Androids, and laptops.",
+        "icon": "Monitor"
+      }
+    ],
+    "process": [
+      {
+        "number": "1",
+        "title": "Free Call",
+        "body": "We discuss your goals and requirements."
+      },
+      {
+        "number": "2",
+        "title": "Design Approval",
+        "body": "Review the design before a single line of code."
+      },
+      {
+        "number": "3",
+        "title": "Development",
+        "body": "I build every page using modern MERN stack."
+      },
+      {
+        "number": "4",
+        "title": "Review",
+        "body": "You test on your device. We refine until perfect."
+      },
+      {
+        "number": "5",
+        "title": "Launch",
+        "body": "Live within 14 days. Ongoing support included."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Custom Premium Design",
+        "note": "No generic templates. Your brand's colors and style."
+      },
+      {
+        "label": "Mobile Responsive",
+        "note": "Perfect layout for all smartphones and tablets."
+      },
+      {
+        "label": "Google Map Setup",
+        "note": "Embedded map so people find your physical store."
+      },
+      {
+        "label": "SSL Certificate",
+        "note": "Secure HTTPS padlock for trust and security."
+      },
+      {
+        "label": "Contact Forms",
+        "note": "Professional forms that send leads to your email."
+      },
+      {
+        "label": "High-Res Stock Photos",
+        "note": "Professional images that match your industry."
+      },
+      {
+        "label": "WhatsApp Integration",
+        "note": "Floating button for direct customer chats."
+      },
+      {
+        "label": "On-Page SEO Setup",
+        "note": "Configuring keywords for Google ranking."
+      },
+      {
+        "label": "Post-Launch Support",
+        "note": "30 days of support to ensure smooth operations."
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "3×",
+          "label": "Average enquiry increase"
+        },
+        {
+          "stat": "10 days",
+          "label": "Fastest launch record"
+        },
+        {
+          "stat": "4.9 Stars",
+          "label": "Client satisfaction rating"
+        }
+      ],
+      "testimonial": {
+        "rating": 5,
+        "quote": "Sapnendra transformed our local manufacturing business. We used to get zero calls from the internet, now we get at least 4–5 high-quality leads every week. The WhatsApp button alone changed how we do business!",
+        "name": "Rajesh Kumar",
+        "role": "Owner, RK Techno & Exports",
+        "initials": "RK"
+      }
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "How long will it take to launch my website?",
+        "answer": "A standard business website is ready for your review within 10 days and goes live within 14 days after your final approval."
+      },
+      {
+        "question": "What do I need to provide?",
+        "answer": "Provide your logo, basic text about your services, and high-quality photos if you have them. If not, I can help you with stock images and professional copywriting for an extra fee."
+      },
+      {
+        "question": "What about domain and hosting?",
+        "answer": "I can recommend reliable, affordable hosting suited to your budget. Domain registration and hosting setup are handled end-to-end - you don't need any technical knowledge."
+      },
+      {
+        "question": "Who handles maintenance?",
+        "answer": "Every project includes 30 days of free post-launch support. After that, optional monthly maintenance packages are available covering content updates, security, and backups."
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Get Your Business Online?",
+      "description": "Free 15-minute consultation. No pitch. Just honest advice.",
+      "primary": "Get a Free Website Consultation",
+      "whatsapp": "Chat on WhatsApp →"
+    },
+    "cta": "Get a Free Quote"
+  },
+  "online-stores": {
+    "title": "Online Store",
+    "card": {
+  "description": "A complete e-commerce website where customers can browse products, add to cart, and pay online - directly through your own website. You keep 100% of every sale with no marketplace commission.",
+  "whoItsFor": ["Retail Shops", "Manufacturers", "Wholesalers", "Food Brands"],
+  "whatYouGet": [
+    "Product catalogue with search and filters",
+    "Online payment via secure gateways",
+    "Order management dashboard",
+    "Inventory tracking built in"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "Sell Directly. Keep 100% of Every Sale.",
+    "heroDescription": "Your own online store means customers pay you directly - no marketplace commissions. Full control over your brand, customers, and profits.",
+    "serviceLabel": "Online Store",
+    "trustChips": [
+      "Custom Quote in 24 Hours",
+      "10 Days · Ready to Launch"
+    ],
+    "heroCta": "Start Your Store Today",
+    "secondaryCta": "View Demo",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Heavy Commissions",
+        "body": "Platforms take 10%–30% of your sale value in commissions and fees, eating into your net profits.",
+        "icon": "DollarSign"
+      },
+      {
+        "title": "No Data Ownership",
+        "body": "You never see your customers' details or phone number. You can't market to them directly or build loyalty.",
+        "icon": "ShieldOff"
+      },
+      {
+        "title": "Competition Wars",
+        "body": "The platform shows your competitor's ads right on your product page. It is a constant race to the bottom price.",
+        "icon": "Swords"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT I BUILD",
+      "title": "Everything you need to scale your brand.",
+      "points": [
+        "A complete commerce solution for growing brands.",
+        "Beautiful product catalogue with variants and stock management.",
+        "Secure payment gateways and cash-on-delivery support.",
+        "Easy admin dashboard for orders, revenue and data."
+      ]
+    },
+    "features": [
+      {
+        "title": "Product Catalogue",
+        "body": "Beautifully displayed products with variants, stock management, and bulk import.",
+        "icon": "Package"
+      },
+      {
+        "title": "Secure Payments & COD",
+        "body": "Secure payment gateways for cards, wallets, and cash on delivery.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Admin Dashboard",
+        "body": "Manage orders, update status, track revenue, and export data in one place.",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Mobile Optimised",
+        "body": "70% of your sales happen on mobile. Your store will look stunning on every screen.",
+        "icon": "Smartphone"
+      }
+    ],
+    "process": [
+      {
+        "number": "1",
+        "title": "Free Call",
+        "body": "We discuss your goals and product catalogue."
+      },
+      {
+        "number": "2",
+        "title": "Design Approval",
+        "body": "I show you the visual mockup for approval."
+      },
+      {
+        "number": "3",
+        "title": "Development",
+        "body": "Build the store with full e-commerce functionality."
+      },
+      {
+        "number": "4",
+        "title": "Your Review",
+        "body": "You test the store and payment flow."
+      },
+      {
+        "number": "5",
+        "title": "Launch",
+        "body": "We go live and take your first order."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Payment Gateway Integration",
+        "note": "Secure and fast checkout with all payment modes."
+      },
+      {
+        "label": "WhatsApp Alerts",
+        "note": "Auto notifications for new orders on WhatsApp."
+      },
+      {
+        "label": "SEO Optimised",
+        "note": "Rank higher on Google with proper meta tags."
+      },
+      {
+        "label": "Stock Management",
+        "note": "Automatic inventory reduction after each sale."
+      },
+      {
+        "label": "Shipping Calculator",
+        "note": "Weight-based shipping charges for every order."
+      },
+      {
+        "label": "Customer Accounts",
+        "note": "Allow users to save delivery and track past orders."
+      },
+      {
+        "label": "Discount Engine",
+        "note": "Promo codes, auto discounts, and flash sale pricing."
+      },
+      {
+        "label": "Sales Reports",
+        "note": "Export calls on monthly sales and tax data."
+      },
+      {
+        "label": "Fast Loading",
+        "note": "Speed optimised to reduce cart abandonment."
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "3×",
+          "label": "PROFIT MARGIN INCREASE"
+        },
+        {
+          "stat": "10 Days",
+          "label": "AVERAGE LAUNCH TIME"
+        },
+        {
+          "stat": "4.9",
+          "label": "CLIENT SATISFACTION"
+        }
+      ]
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "How do I receive payments from customers?",
+        "answer": "We integrate secure payment gateways. Money is settled directly into your linked bank account within 1–2 days."
+      },
+      {
+        "question": "Is it difficult to manage the store myself?",
+        "answer": "Not at all. I build an easy-to-use dashboard. If you use Facebook or WhatsApp, you can manage this store. I also provide a 1-hour training call."
+      },
+      {
+        "question": "Do I need a GST number to start?",
+        "answer": "For starting, you can use your individual savings account for payments. However for long-term business and certain payment limits, a GST/Current account is recommended."
+      },
+      {
+        "question": "Can I sell products with different sizes and variants?",
+        "answer": "Yes. The product catalogue supports variants - size, colour, material, or any custom option you define. Each variant can have its own price and stock count."
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Get Your Business Online?",
+      "description": "Stop paying commissions and start building your own brand asset today.",
+      "primary": "Book a Strategy Call",
+      "whatsapp": "WhatsApp Me →"
+    },
+    "cta": "Start Your Store Today"
+  },
+  "booking-systems": {
+    "title": "Online Booking System",
+    "card": {
+  "description": "Let your customers book appointments online 24/7 - even while you're sleeping. Reduce missed calls, eliminate scheduling confusion, and send automatic reminders so clients never forget.",
+  "whoItsFor": ["Clinics", "Salons", "Gyms", "Coaching", "Legal Firms"],
+  "whatYouGet": [
+    "Real-time availability calendar",
+    "Automated WhatsApp and SMS reminders",
+    "Online advance payment option",
+    "Admin panel to manage all bookings"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "Let Customers Book Appointments While You Sleep",
+    "heroDescription": "An online booking system reduces no-shows, eliminates phone tag, and lets patients/clients book 24/7 without calling your receptionist.",
+    "serviceLabel": "Booking System",
+    "trustChips": [
+      "Custom Quote in 24 Hours",
+      "10 Days · Ready to Launch"
+    ],
+    "heroCta": "Book a Free Consultation",
+    "secondaryCta": "View Live Demo",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Receptionist overload",
+        "body": "Your receptionist spends 2–3 hours daily managing appointments by phone. That's not patient care.",
+        "icon": "Phone"
+      },
+      {
+        "title": "Expensive no-shows",
+        "body": "Appointment no-shows cost clinics and salons significant monthly revenue in lost bookings.",
+        "icon": "BellOff"
+      },
+      {
+        "title": "Missed after-hours calls",
+        "body": "Customers calling after hours or on Sunday get no answer - and book with your competitor instead.",
+        "icon": "MoonStar"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT I BUILD",
+      "title": "Smart Features for Seamless Scheduling",
+      "points": [
+        "A complete booking solution for businesses that rely on appointments.",
+        "Real-time availability so clients never double-book.",
+        "Automated reminders through WhatsApp and SMS.",
+        "Online payment collection and powerful booking management."
+      ]
+    },
+    "features": [
+      {
+        "title": "Real-time availability calendar",
+        "body": "Instantly updated slots so clients never double-book.",
+        "icon": "CalendarCheck"
+      },
+      {
+        "title": "Automated WhatsApp/SMS reminders",
+        "body": "Automatically remind clients before their appointment.",
+        "icon": "MessageSquare"
+      },
+      {
+        "title": "Online advance payment collection",
+        "body": "Collect deposits or full fees at the time of booking.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Admin panel to manage all bookings",
+        "body": "Powerful backend for you and your staff.",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Customer booking history",
+        "body": "Let clients view and manage their past and future slots.",
+        "icon": "Users"
+      },
+      {
+        "title": "Cancellation and rescheduling",
+        "body": "Empower clients to change bookings on their own rules.",
+        "icon": "RefreshCw"
+      }
+    ],
+    "process": [
+      {
+        "number": "1",
+        "title": "Free Call",
+        "body": "30-min discovery session to understand your business needs."
+      },
+      {
+        "number": "2",
+        "title": "Design Approval",
+        "body": "I send the design for your custom booking experience."
+      },
+      {
+        "number": "3",
+        "title": "Development",
+        "body": "Writing clean code and configuring booking pathways."
+      },
+      {
+        "number": "4",
+        "title": "Your Review",
+        "body": "Full session where you test the system and request tweaks."
+      },
+      {
+        "number": "5",
+        "title": "Launch",
+        "body": "Go live and training so you and your staff are confident."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Calendar management",
+        "note": "Manage available dates and appointment slots."
+      },
+      {
+        "label": "WhatsApp reminders",
+        "note": "Automatically remind clients about upcoming appointments."
+      },
+      {
+        "label": "Email confirmations",
+        "note": "Send booking confirmations and important updates by email."
+      },
+      {
+        "label": "Advance payment",
+        "note": "Collect deposits or full payment during booking."
+      },
+      {
+        "label": "Admin dashboard",
+        "note": "Manage all bookings from one central dashboard."
+      },
+      {
+        "label": "Customer portal",
+        "note": "Allow customers to view and manage their bookings."
+      },
+      {
+        "label": "Cancellation handling",
+        "note": "Manage cancellations according to your business rules."
+      },
+      {
+        "label": "Google Calendar sync",
+        "note": "Synchronise bookings with Google Calendar."
+      },
+      {
+        "label": "Mobile optimised",
+        "note": "Customers can book easily from mobile devices."
+      },
+      {
+        "label": "30-day support",
+        "note": "Support after launch to help ensure a smooth setup."
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "3×",
+          "label": "ENQUIRY INCREASE"
+        },
+        {
+          "stat": "10",
+          "label": "AVG. LAUNCH TIME"
+        },
+        {
+          "stat": "4.9/5",
+          "label": "CLIENT SATISFACTION"
+        }
+      ]
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "Can customers reschedule their own appointments?",
+        "answer": "Yes, you can set cutoff periods, such as requiring rescheduling 24 hours in advance. Clients get a personal link in their confirmation WhatsApp or email to manage their booking without calling you."
+      },
+      {
+        "question": "Can I require payment during the booking?",
+        "answer": "Yes. You can require full payment or a partial advance deposit at booking time using secure payment gateways. This can help reduce no-shows for high-value appointments."
+      },
+      {
+        "question": "How do the automatic reminders work?",
+        "answer": "The system can integrate with WhatsApp and SMS gateways and automatically trigger messages at intervals you choose, such as one day before and two hours before an appointment."
+      },
+      {
+        "question": "How do I block off holidays or personal time?",
+        "answer": "From the admin dashboard you can block any date, time slot, or recurring day. Customers will not see blocked slots as available."
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Get Your Business Online?",
+      "description": "Stop losing money to manual errors and missed calls. Build a professional booking system tailored for your unique workflow.",
+      "primary": "Schedule a Consultation",
+      "whatsapp": "WhatsApp Me →"
+    },
+    "cta": "Book a Free Consultation"
+  },
+  "local-seo": {
+    "title": "Local SEO & Google Presence",
+    "card": {
+  "description": "Get found when customers search for your services on Google - in your city, your state, and worldwide. I optimise your Google Business Profile and build location pages so your business appears before competitors in search results.",
+  "whoItsFor": ["Any Local Business", "Multi-branch Businesses", "New Businesses"],
+  "whatYouGet": [
+    "Google Business Profile setup and optimisation",
+    "Local keyword targeting for your city",
+    "Location pages added to your website",
+    "Monthly ranking progress report"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "Get Found on Google When Customers Search for You",
+    "heroDescription": "When someone in your city searches for what you do, you should be in the top 3 results. Most businesses aren't - but it's fixable.",
+    "serviceLabel": "Local SEO",
+    "trustChips": [
+      "Custom Quote in 24 Hours",
+      "Ongoing Growth"
+    ],
+    "heroCta": "Get Started",
+    "secondaryCta": "View Our Work",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Invisible on Google",
+        "body": "75% of customers research online before visiting. If you're not on page 1, you're invisible to most of them.",
+        "icon": "EyeOff"
+      },
+      {
+        "title": "Incomplete Google Profile",
+        "body": "Your Google Business Profile is incomplete or unclaimed — competitors appear in your place on Maps.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Slow Mobile Website",
+        "body": "Your website loads slowly on mobile — Google ranks fast sites higher, pushing you further down.",
+        "icon": "Smartphone"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT WE DO",
+      "title": "The Path to Page 1",
+      "points": [
+        "Optimise your Google Business Profile for local visibility.",
+        "Create location pages targeting the cities and areas you serve.",
+        "Research keywords your local customers actually search for.",
+        "Track rankings and growth with clear monthly reports.",
+        "Build a systematic review strategy for stronger reputation.",
+        "Maintain consistent business information across the web."
+      ]
+    },
+    "features": [
+      {
+        "title": "Google Business Profile",
+        "body": "Complete setup and strategic optimisation.",
+        "icon": "MapPin"
+      },
+      {
+        "title": "Location Pages",
+        "body": "City & Area targeting for local dominance.",
+        "icon": "FileText"
+      },
+      {
+        "title": "Keyword Research",
+        "body": "Targeting what your locals actually search.",
+        "icon": "Search"
+      },
+      {
+        "title": "Monthly Reports",
+        "body": "Clear reporting of rankings and growth.",
+        "icon": "BarChart2"
+      },
+      {
+        "title": "Review Strategy",
+        "body": "Systematic and reputation-managed automatically.",
+        "icon": "Star"
+      },
+      {
+        "title": "NAP Consistency",
+        "body": "Unified Name, Address, Phone across every web.",
+        "icon": "Layers"
+      }
+    ],
+    "process": [
+      {
+        "number": "1",
+        "title": "Free Call",
+        "body": "Understand your business and current Google presence."
+      },
+      {
+        "number": "2",
+        "title": "Design Approval",
+        "body": "Planning an SEO strategy tailored to your location."
+      },
+      {
+        "number": "3",
+        "title": "Development",
+        "body": "Implement local SEO and create content for ranking."
+      },
+      {
+        "number": "4",
+        "title": "Your Review",
+        "body": "Showing you exactly what's been done and the impact."
+      },
+      {
+        "number": "5",
+        "title": "Launch",
+        "body": "Go live and tracking results to you week by week."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Google Business Profile",
+        "note": "Optimising your listing for the local map pack."
+      },
+      {
+        "label": "Location Targeting",
+        "note": "Rank for high-intent keywords in specific cities."
+      },
+      {
+        "label": "Speed Optimisation",
+        "note": "Lightning-fast mobile performance across sites."
+      },
+      {
+        "label": "Google Search Console",
+        "note": "Full setup and first-month performance monitoring."
+      },
+      {
+        "label": "Sitemap Submission",
+        "note": "Helping Google index your pages instantly."
+      },
+      {
+        "label": "Review Strategy",
+        "note": "A workflow to gather more 5-star reviews."
+      },
+      {
+        "label": "Monthly Reports",
+        "note": "Data and insights sent to your inbox."
+      },
+      {
+        "label": "Competitor Analysis",
+        "note": "See what your rivals are doing and beat them."
+      },
+      {
+        "label": "Schema Markup",
+        "note": "Structured data to get rich search snippets."
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "Page 1",
+          "label": "AVG POSITION AFTER 60 DAYS"
+        },
+        {
+          "stat": "3×",
+          "label": "MORE GOOGLE PROFILE VIEWS"
+        },
+        {
+          "stat": "40%",
+          "label": "INCREASE IN DIRECTION REQUESTS"
+        }
+      ]
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "How long before I see results on Google?",
+        "answer": "Local SEO is a marathon, not a sprint. While some optimisations take effect in a few days, most clients see a significant boost in rankings and traffic within 45 to 60 days of the project completion."
+      },
+      {
+        "question": "Do I need a new website for Local SEO?",
+        "answer": "Not necessarily. If your existing website is functional and mobile-friendly, I can optimise it in place. I'll let you know honestly during our free call if a new site would significantly improve your results."
+      },
+      {
+        "question": "What is Google Business Profile?",
+        "answer": "It is the listing that appears on Google Maps and Search. Optimising it ensures your business hours, reviews, and location are accurate and prominently displayed when customers search for you."
+      },
+      {
+        "question": "Can you guarantee page 1 ranking?",
+        "answer": "No ethical SEO professional can guarantee a specific ranking - Google controls that. What I guarantee is best-practice optimisation, transparent monthly reporting, and consistent improvement over time."
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Get Your Business Online?",
+      "description": "Let's discuss how we can put your business in front of the local customers who are looking for you right now.",
+      "primary": "Get a Free Website Consultation",
+      "whatsapp": "Chat on WhatsApp →"
+    },
+    "cta": "Get Started"
+  },
+  "website-redesign": {
+    "title": "Website Redesign & Speed Fix",
+    "card": {
+  "description": "If your current website looks outdated, loads slowly, or isn't showing on Google - I'll fix it. A redesign makes it look better and work better: faster loading, better mobile experience, more enquiries.",
+  "whoItsFor": ["Any Existing Business", "Businesses Losing to Competitors"],
+  "whatYouGet": [
+    "Full visual redesign to current standards",
+    "Core Web Vitals performance optimisation",
+    "Mobile experience complete overhaul",
+    "Before and after performance report"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "Your Website Shouldn't Look Like It Was Built in 2015",
+    "heroDescription": "An outdated website loses you customers every day. A redesign doesn't just look better - it loads faster, ranks higher, and converts more visitors.",
+    "serviceLabel": "Website Redesign",
+    "trustChips": [
+      "Custom Quote in 24 Hours",
+      "3–4 Weeks · Typical"
+    ],
+    "heroCta": "Get Started",
+    "secondaryCta": "View Portfolio",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Slow site loses 53% of mobile visitors",
+        "body": "If your page takes more than 3 seconds to load, half your potential customers are gone before they even see your name.",
+        "icon": "Gauge"
+      },
+      {
+        "title": "Visitors judge quality by site quality",
+        "body": "Your website is your digital storefront. An unprofessional site makes your premium business look cheap and untrustworthy.",
+        "icon": "EyeOff"
+      },
+      {
+        "title": "Built for desktop in 2015...",
+        "body": "But visitors are on mobile in 2026. Pinched zooming and tiny buttons are driving your mobile leads to your competitors.",
+        "icon": "Monitor"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT WE DO",
+      "title": "Everything a Redesign Should Do",
+      "points": [
+        "I don't just change colours. I re-engineer your entire digital presence for the modern web.",
+        "Modern, high-conversion layouts that reflect your brand's authority.",
+        "Sub-2 second load times with Core Web Vitals optimisation.",
+        "A mobile-first experience with thumb-friendly navigation and responsive elements."
+      ]
+    },
+    "features": [
+      {
+        "title": "Visual Redesign",
+        "body": "Modern, high-conversion layouts that reflect your brand's authority and appeal to today's online consumers.",
+        "icon": "Layout"
+      },
+      {
+        "title": "Speed Optimisation",
+        "body": "Sub-2 second load times with Core Web Vitals optimisation. Your site will feel lightning-fast on every device.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Mobile-First Layout",
+        "body": "Designed specifically for the mobile user. Thumb-friendly navigation and responsive elements that work flawlessly.",
+        "icon": "Smartphone"
+      },
+      {
+        "title": "Performance Reports",
+        "body": "Transparent data. I provide detailed reports showing the before vs after improvements in speed and SEO score.",
+        "icon": "BarChart2"
+      }
+    ],
+    "process": [
+      {
+        "number": "1",
+        "title": "Free Call",
+        "body": "Understand your goals and audit your existing site."
+      },
+      {
+        "number": "2",
+        "title": "Design Approval",
+        "body": "Review and approve the full design before we build."
+      },
+      {
+        "number": "3",
+        "title": "Development",
+        "body": "Cutting-edge code, performance tuned and mobile-first."
+      },
+      {
+        "number": "4",
+        "title": "Your Review",
+        "body": "You test every page. We iterate until it's perfect."
+      },
+      {
+        "number": "5",
+        "title": "Launch",
+        "body": "Go live and train you on content updates."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Responsive Redesign",
+        "note": "Modern responsive layout for every screen size."
+      },
+      {
+        "label": "Speed Audit",
+        "note": "Identify performance bottlenecks and opportunities."
+      },
+      {
+        "label": "Content Migration",
+        "note": "Move your existing content into the new design."
+      },
+      {
+        "label": "WhatsApp Integration",
+        "note": "Make it easy for visitors to contact your business."
+      },
+      {
+        "label": "Optimised CTAs",
+        "note": "Improve calls-to-action for better conversions."
+      },
+      {
+        "label": "On-Page SEO",
+        "note": "Optimise pages for search visibility."
+      },
+      {
+        "label": "SSL Setup",
+        "note": "Secure HTTPS setup for your redesigned website."
+      },
+      {
+        "label": "30-Day Support",
+        "note": "Support after launch to ensure everything runs smoothly."
+      },
+      {
+        "label": "Security Hardening",
+        "note": "Additional security improvements for your website."
+      },
+      {
+        "label": "Form Setup",
+        "note": "Configure contact and enquiry forms."
+      },
+      {
+        "label": "Analytics Setup",
+        "note": "Track website performance and visitor behaviour."
+      },
+      {
+        "label": "Daily Backups",
+        "note": "Protect your website with regular backups."
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "2.4×",
+          "label": "SPEED IMPROVEMENT"
+        },
+        {
+          "stat": "60%",
+          "label": "LOWER BOUNCE RATE"
+        },
+        {
+          "stat": "30 Days",
+          "label": "AVG. COMPLETION"
+        }
+      ]
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "Will I lose my Google rankings after a redesign?",
+        "answer": "Actually, the opposite! While poor redesigns can hurt SEO, my process includes technical SEO migration. By improving site speed, mobile-responsiveness, and user experience, most clients see an increase in rankings within 2–4 weeks after launch."
+      },
+      {
+        "question": "How long does the entire process take?",
+        "answer": "Most redesigns are completed within 3–4 weeks. Simple sites can be done in as little as 10 days. I'll give you a precise timeline estimate on our free discovery call once I review your current site."
+      },
+      {
+        "question": "Who will handle the content migration?",
+        "answer": "I handle the heavy lifting. I will migrate your existing text and images to the new design, optimising them for web performance as I go. If you need new copywriting to boost sales, I can assist with that as an additional service."
+      },
+      {
+        "question": "What if I already have a host and domain?",
+        "answer": "No problem at all. I can deploy your redesigned site to your existing host and domain. If after reviewing your setup I think you'd benefit from a faster host, I'll make a recommendation - but there's never any pressure to change."
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to Get Your Business Online & Optimized?",
+      "description": "Don't let a 10-year-old website push away today's customers. Let's build something you're proud of.",
+      "primary": "Get a Free Consultation",
+      "whatsapp": "WhatsApp →"
+    },
+    "cta": "Get Started"
+  },
+  "dashboards": {
+    "title": "Business Dashboard",
+    "card": {
+  "description": "A private dashboard showing your business performance in one place - enquiries, orders, bookings, and revenue. No more checking five different apps. Everything your business generates on one screen.",
+  "whoItsFor": ["Mid-Size Businesses", "Multi-branch Firms", "Growing Businesses"],
+  "whatYouGet": [
+    "Custom metrics relevant to your business",
+    "Real-time data that updates automatically",
+    "Access for multiple team members",
+    "Mobile-friendly for checking on the go"
+  ],
+  "startingFrom": "Custom Quote"
+},
+    "heroTitle": "See Your Entire Business At a Glance - Every Day",
+    "heroDescription": "Stop managing your business on Excel. Get a live dashboard built for your specific operations that tracks sales, bookings, stock, and staff in one screen.",
+    "serviceLabel": "Business Dashboard",
+    "trustChips": [
+      "Built for Your Business",
+      "No Excel Needed",
+      "Works on Mobile"
+    ],
+    "heroCta": "Get Started",
+    "secondaryCta": "View Case Studies",
+    "secondaryCtaLink": "/work",
+    "problems": [
+      {
+        "title": "Slow visibility",
+        "body": "You discover a slow month only when the accountant calls. By then, 30 days of opportunity are already gone.",
+        "icon": "X"
+      },
+      {
+        "title": "No measurable staff view",
+        "body": "Staff tell you 'it was busy today' but you have no number to verify it - or compare it to last Tuesday.",
+        "icon": "X"
+      },
+      {
+        "title": "Unreliable spreadsheets",
+        "body": "Excel sheets get out of date, break formulas, or sit on someone else's laptop. Your data is never where you need it.",
+        "icon": "X"
+      }
+    ],
+    "whatYouGet": {
+      "label": "WHAT YOU GET",
+      "title": "A Unified View of Your Business",
+      "points": [
+        "Works on mobile or desktop",
+        "Live data syncing",
+        "No specialized training needed",
+        "Secure and private to you"
+      ]
+    },
+    "features": [
+      {
+        "title": "Live Revenue Tracking",
+        "body": "See today's sales vs yesterday and last week. Know if you are on track before the day ends - without opening a single spreadsheet.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Daily WhatsApp Summary",
+        "body": "Every morning, your key numbers land in WhatsApp. No login, no app to open - just the numbers you need to start the day right.",
+        "icon": "Bell"
+      },
+      {
+        "title": "Stock & Inventory Alerts",
+        "body": "Get notified when stock drops below your set threshold. Never run out of your top-selling items because nobody was watching the numbers.",
+        "icon": "Package"
+      },
+      {
+        "title": "Staff & Shift Reports",
+        "body": "See which staff handled the most orders and flag unusual patterns early. Small issues become visible before they become expensive problems.",
+        "icon": "Users"
+      }
+    ],
+    "process": [
+      {
+        "number": "01",
+        "title": "Discovery Call",
+        "body": "We map every number you currently track manually and identify what matters most."
+      },
+      {
+        "number": "02",
+        "title": "Data Mapping",
+        "body": "I identify where your data lives today and the cleanest way to connect it."
+      },
+      {
+        "number": "03",
+        "title": "Dashboard Design",
+        "body": "You review a prototype on your actual data before development starts."
+      },
+      {
+        "number": "04",
+        "title": "Build & Test",
+        "body": "Fully built and tested with real data from your own business."
+      },
+      {
+        "number": "05",
+        "title": "Handover",
+        "body": "Training session included. You own the dashboard completely - no ongoing dependency."
+      }
+    ],
+    "inclusions": [
+      {
+        "label": "Custom dashboard design",
+        "note": "Built for your business"
+      },
+      {
+        "label": "Mobile-friendly layout",
+        "note": "Check from your phone"
+      },
+      {
+        "label": "Live data connection",
+        "note": "Always up to date"
+      },
+      {
+        "label": "WhatsApp daily summary",
+        "note": "No login required"
+      },
+      {
+        "label": "Revenue & sales charts",
+        "note": "Visual, not spreadsheets"
+      },
+      {
+        "label": "Staff performance view",
+        "note": "Track your team"
+      },
+      {
+        "label": "Stock/inventory alerts",
+        "note": "Never run out"
+      },
+      {
+        "label": "30-day support",
+        "note": "Post-launch help"
+      },
+      {
+        "label": "Training session",
+        "note": "For you and your team"
+      }
+    ],
+    "results": {
+      "stats": [
+        {
+          "stat": "2 hrs",
+          "label": "SAVED EVERY WEEK"
+        },
+        {
+          "stat": "Day 1",
+          "label": "IMMEDIATE ROI"
+        },
+        {
+          "stat": "4.9★",
+          "label": "CLIENT SATISFACTION"
+        }
+      ],
+      "testimonial": {
+        "rating": 5,
+        "quote": "We used to calculate our daily sales and inventory by hand every evening. Now, I just open my phone and see the entire operation live. It's completely changed how I run my business.",
+        "name": "Amit K.",
+        "role": "Retail Store Owner",
+        "initials": "AK"
+      }
+    },
+    "consultation": {
+      "title": "Let's Talk About Your Project",
+      "description": "Every project is different. Share what you need and I'll send you a clear, detailed quote within 24 hours - no commitment, no pressure.",
+      "includedTitle": "Your Free Consultation Includes",
+      "included": [
+        "A clear breakdown of what I'd build for your business",
+        "Honest timeline and scope - no surprises later",
+        "A fixed-price quote tailored to your exact requirements",
+        "No obligation to proceed"
+      ],
+      "cta": "Get a Free Custom Quote",
+      "whatsappCta": "Or message on WhatsApp",
+      "whatsappUrl": "https://wa.me/919685238884"
+    },
+    "faqs": [
+      {
+        "question": "Does my business need to use special software for this to work?",
+        "answer": "No. The dashboard connects to whatever you already use - a POS machine, an order management app, or even a simple Google Sheet you fill in daily. I design the integration around your current workflow, not the other way around."
+      },
+      {
+        "question": "Can the dashboard connect to food delivery platforms or my POS machine?",
+        "answer": "Many popular platforms have data exports or APIs that allow connection. During the discovery call, we map out exactly what data you have and the best way to bring it into your dashboard. If a direct connection is not possible, a simple daily data entry form takes under 2 minutes."
+      },
+      {
+        "question": "What if my business data is currently in Excel sheets?",
+        "answer": "Excel is a perfect starting point. I can import your existing data into the dashboard so you see historical trends from day one - not just data going forward. Your old records do not go to waste."
+      },
+      {
+        "question": "Can my staff and manager use the dashboard too?",
+        "answer": "Yes. The dashboard supports multiple access levels. You as the owner see everything. A manager can see their section only. Staff can enter data without seeing financial figures. Access is controlled entirely by you."
+      }
+    ],
+    "finalCta": {
+      "title": "Stop Running Your Business on Guesswork",
+      "description": "Let's build a dashboard that gives you total clarity.",
+      "primary": "Get a Free Consultation",
+      "whatsapp": "WhatsApp →"
+    },
+    "cta": "Get Started"
+  }
+}

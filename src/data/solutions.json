@@ -1,0 +1,337 @@
+{
+  "hire-dedicated-developers": {
+    "title": "Hire Dedicated Developers",
+    "heroTitle": "Dedicated Developers for Your Growing Business",
+    "heroDescription": "Build and scale your digital products with dedicated developers who work as an extension of your team.",
+    "whoItsFor": [
+      "Startups",
+      "Growing Businesses",
+      "Software Companies",
+      "Agencies"
+    ],
+    "problems": [
+      "Difficulty finding skilled developers",
+      "High cost of maintaining a full development team",
+      "Project delays due to limited technical resources",
+      "Need for flexible development capacity"
+    ],
+    "solutions": [
+      "Dedicated Java and Spring developers",
+      "React and frontend developers",
+      "Full-stack development teams",
+      "Flexible development engagement"
+    ],
+    "features": [
+      "Dedicated development resources",
+      "Flexible team scaling",
+      "Regular project communication",
+      "Git and GitHub workflow",
+      "Agile development approach",
+      "Quality-focused development"
+    ],
+    "benefits": [
+      "Reduce hiring overhead",
+      "Scale your team faster",
+      "Maintain control over your project",
+      "Get flexible technical support"
+    ],
+    "process": [
+      "Understand your project requirements",
+      "Identify the required technical skills",
+      "Select suitable developers",
+      "Start development and collaboration",
+      "Review progress regularly"
+    ],
+    "faqs": [
+      {
+        "question": "Can I hire one dedicated developer?",
+        "answer": "Yes. You can start with a single developer or scale to a larger development team depending on your project requirements."
+      },
+      {
+        "question": "Can the developer work with our existing team?",
+        "answer": "Yes. Dedicated developers can work with your existing developers, designers, project managers, and business teams."
+      }
+    ],
+    "finalCta": "Build Your Development Team"
+  },
+
+  "startup-product-development": {
+    "title": "Startup Product Development",
+    "heroTitle": "Turn Your Startup Idea Into a Digital Product",
+    "heroDescription": "From idea validation to launch, build a scalable digital product designed around your startup's goals and customers.",
+    "whoItsFor": [
+      "Startup Founders",
+      "Early-Stage Companies",
+      "Entrepreneurs",
+      "New Product Teams"
+    ],
+    "problems": [
+      "Unclear product requirements",
+      "Limited development budget",
+      "Need to launch quickly",
+      "Difficulty choosing the right technology"
+    ],
+    "solutions": [
+      "MVP development",
+      "Custom web applications",
+      "Product UI development",
+      "Scalable backend systems"
+    ],
+    "features": [
+      "MVP-focused development",
+      "Responsive user interface",
+      "Scalable backend architecture",
+      "Database integration",
+      "API development",
+      "Deployment support"
+    ],
+    "benefits": [
+      "Launch your MVP faster",
+      "Reduce unnecessary development costs",
+      "Validate your idea with real users",
+      "Build a foundation for future growth"
+    ],
+    "process": [
+      "Understand the startup idea",
+      "Define MVP requirements",
+      "Create the product structure",
+      "Develop and test the MVP",
+      "Deploy and collect feedback"
+    ],
+    "faqs": [
+      {
+        "question": "Can you build an MVP from an idea?",
+        "answer": "Yes. We can help convert your initial idea into defined MVP requirements and develop the required digital product."
+      },
+      {
+        "question": "Can the product be scaled later?",
+        "answer": "Yes. The product can be structured with future scalability in mind so additional features can be added as the business grows."
+      }
+    ],
+    "finalCta": "Start Your Product"
+  },
+
+  "business-automation": {
+    "title": "Business Automation",
+    "heroTitle": "Automate Repetitive Business Processes",
+    "heroDescription": "Replace repetitive manual work with digital workflows that help your team save time, reduce errors, and work more efficiently.",
+    "whoItsFor": [
+      "Growing Businesses",
+      "Operations Teams",
+      "Service Businesses",
+      "Multi-Branch Businesses"
+    ],
+    "problems": [
+      "Too many repetitive manual tasks",
+      "Data is maintained across multiple systems",
+      "Employees spend time on routine processes",
+      "Manual processes cause avoidable errors"
+    ],
+    "solutions": [
+      "Custom business workflows",
+      "Automated enquiry management",
+      "Booking and order automation",
+      "Business dashboards"
+    ],
+    "features": [
+      "Custom workflow automation",
+      "Automated notifications",
+      "Data collection and processing",
+      "Dashboard integration",
+      "Role-based access",
+      "Business reporting"
+    ],
+    "benefits": [
+      "Save employee time",
+      "Reduce manual errors",
+      "Improve operational visibility",
+      "Create consistent workflows"
+    ],
+    "process": [
+      "Identify repetitive processes",
+      "Map the current workflow",
+      "Design the automated workflow",
+      "Develop and integrate the system",
+      "Test and optimise the workflow"
+    ],
+    "faqs": [
+      {
+        "question": "What kind of business processes can be automated?",
+        "answer": "Common examples include enquiry management, booking workflows, notifications, data processing, reporting, and internal business workflows."
+      },
+      {
+        "question": "Can automation work with our existing systems?",
+        "answer": "Depending on the available integrations and technical requirements, automation can be connected with existing business systems."
+      }
+    ],
+    "finalCta": "Automate Your Business"
+  },
+
+  "cloud-devops-solutions": {
+    "title": "Cloud & DevOps Solutions",
+    "heroTitle": "Reliable Cloud Infrastructure for Modern Applications",
+    "heroDescription": "Improve application deployment, reliability, and scalability with practical cloud and DevOps solutions.",
+    "whoItsFor": [
+      "Startups",
+      "SaaS Companies",
+      "Growing Businesses",
+      "Development Teams"
+    ],
+    "problems": [
+      "Manual deployments take too much time",
+      "Applications are difficult to monitor",
+      "Infrastructure becomes difficult to scale",
+      "Deployment environments are inconsistent"
+    ],
+    "solutions": [
+      "Cloud deployment",
+      "CI/CD workflows",
+      "Application monitoring",
+      "Infrastructure optimisation"
+    ],
+    "features": [
+      "Deployment automation",
+      "CI/CD pipeline setup",
+      "Environment configuration",
+      "Application monitoring",
+      "Scalable infrastructure",
+      "Performance optimisation"
+    ],
+    "benefits": [
+      "Faster deployments",
+      "More reliable releases",
+      "Better infrastructure visibility",
+      "Improved application scalability"
+    ],
+    "process": [
+      "Review the existing infrastructure",
+      "Identify deployment requirements",
+      "Design the cloud workflow",
+      "Configure deployment and monitoring",
+      "Test and optimise"
+    ],
+    "faqs": [
+      {
+        "question": "Can you deploy an existing application?",
+        "answer": "Yes. Existing applications can be reviewed and deployed to a suitable cloud environment based on their technical requirements."
+      },
+      {
+        "question": "Can you improve our existing deployment process?",
+        "answer": "Yes. Existing deployment workflows can be reviewed and improved using automation and CI/CD practices."
+      }
+    ],
+    "finalCta": "Improve Your Infrastructure"
+  },
+
+  "maintenance-support": {
+    "title": "Maintenance & Support",
+    "heroTitle": "Keep Your Website and Applications Running Smoothly",
+    "heroDescription": "Ongoing technical maintenance and support to keep your digital products secure, updated, reliable, and performing well.",
+    "whoItsFor": [
+      "Existing Businesses",
+      "Website Owners",
+      "SaaS Companies",
+      "Growing Teams"
+    ],
+    "problems": [
+      "Websites become outdated",
+      "Technical issues take time to resolve",
+      "Performance decreases over time",
+      "Small changes require developer support"
+    ],
+    "solutions": [
+      "Website maintenance",
+      "Bug fixing",
+      "Performance optimisation",
+      "Feature updates"
+    ],
+    "features": [
+      "Bug fixing",
+      "Performance monitoring",
+      "Content and feature updates",
+      "Technical troubleshooting",
+      "Security-focused maintenance",
+      "Ongoing development support"
+    ],
+    "benefits": [
+      "Reduce technical downtime",
+      "Keep your website updated",
+      "Improve performance",
+      "Get ongoing technical assistance"
+    ],
+    "process": [
+      "Review your existing system",
+      "Identify maintenance requirements",
+      "Prioritise issues and updates",
+      "Implement fixes and improvements",
+      "Monitor the system continuously"
+    ],
+    "faqs": [
+      {
+        "question": "Can you maintain a website built by another developer?",
+        "answer": "Yes. We can first review the existing website and technology stack and then determine the appropriate maintenance approach."
+      },
+      {
+        "question": "Can you handle small feature changes?",
+        "answer": "Yes. Ongoing support can include smaller improvements, bug fixes, content changes, and new feature development."
+      }
+    ],
+    "finalCta": "Get Technical Support"
+  },
+
+  "digital-transformation": {
+    "title": "Digital Transformation",
+    "heroTitle": "Transform Your Business With Better Digital Systems",
+    "heroDescription": "Modernise your business processes, customer experiences, and digital infrastructure with technology designed around your business goals.",
+    "whoItsFor": [
+      "Established Businesses",
+      "Growing Companies",
+      "Traditional Businesses",
+      "Multi-Department Teams"
+    ],
+    "problems": [
+      "Business processes depend on outdated systems",
+      "Different teams use disconnected tools",
+      "Customer experiences are inconsistent",
+      "Manual processes limit business growth"
+    ],
+    "solutions": [
+      "Digital business platforms",
+      "Process automation",
+      "Custom software development",
+      "Business dashboards"
+    ],
+    "features": [
+      "Custom digital systems",
+      "Process automation",
+      "System integrations",
+      "Business dashboards",
+      "Customer-facing platforms",
+      "Data-driven reporting"
+    ],
+    "benefits": [
+      "Improve operational efficiency",
+      "Connect business processes",
+      "Improve customer experience",
+      "Create scalable digital infrastructure"
+    ],
+    "process": [
+      "Understand current business processes",
+      "Identify digital transformation opportunities",
+      "Define the technology roadmap",
+      "Develop and integrate solutions",
+      "Measure and improve results"
+    ],
+    "faqs": [
+      {
+        "question": "What does digital transformation mean for a business?",
+        "answer": "It means using digital technology to improve business processes, customer experiences, operations, and decision-making."
+      },
+      {
+        "question": "Do we need to replace all our existing systems?",
+        "answer": "Not necessarily. Existing systems can often be integrated or improved depending on the business requirements."
+      }
+    ],
+    "finalCta": "Start Your Digital Transformation"
+  }
+}

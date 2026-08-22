@@ -1,0 +1,274 @@
+{
+  "dental-clinic-growth-website": {
+    "_id": "work-1",
+    "title": "Dental Clinic Growth Website",
+    "slug": "dental-clinic-growth-website",
+    "tagline": "A premium clinic website designed to increase trust and conversion from organic search.",
+    "isFeatured": true,
+    "clientName": "Bluebird Dental",
+    "clientIndustry": "Healthcare",
+    "clientLocation": "Bhopal, India",
+    "isClientConfidential": false,
+    "coverImage": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+    "thumbnailImage": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "Dental clinic website",
+    "liveUrl": "https://example.com",
+    "completedAt": "2025-01-15",
+    "duration": "3 weeks",
+
+    "industries": [
+      "Healthcare",
+      "Service Business"
+    ],
+
+    "overview": "A professional digital experience created for a dental clinic with a focus on trust, discoverability, and patient enquiries.",
+
+    "challenge": "The clinic had a dated website and weak local visibility. Patients did not trust the practice and many inquiries were lost on mobile devices.",
+
+    "approach": "We redesigned the website around clear service pages, trust-building content, mobile usability, and a simple consultation flow tailored for patient enquiries.",
+
+    "solution": "The new experience focused on presenting the clinic professionally while making it easier for potential patients to understand services and take the next step.",
+
+    "features": [
+      "Responsive healthcare website",
+      "Clear service presentation",
+      "Patient-focused content structure",
+      "Mobile-friendly enquiry experience",
+      "Search-friendly website structure",
+      "Conversion-focused consultation flow"
+    ],
+
+    "results": [
+      {
+        "value": "3x",
+        "label": "More Leads"
+      },
+      {
+        "value": "48%",
+        "label": "Higher Conversion"
+      },
+      {
+        "value": "2.4x",
+        "label": "Booking Speed"
+      }
+    ],
+
+    "techStack": [
+      {
+        "name": "Next.js"
+      },
+      {
+        "name": "Tailwind"
+      },
+      {
+        "name": "SEO"
+      }
+    ],
+
+    "sections": [
+      {
+        "heading": "Problem",
+        "content": "The clinic had a dated website and weak local visibility. Patients did not trust the practice and many inquiries were lost on mobile devices."
+      },
+      {
+        "heading": "Solution",
+        "content": "We redesigned the site around clear service pages, trust-building content, and a simple consultation flow tailored for patient inquiries."
+      },
+      {
+        "heading": "Outcome",
+        "content": "The new site improved appointment conversion and created a cleaner patient experience that matched the practice's premium positioning."
+      }
+    ],
+
+    "testimonial": null,
+
+    "gallery": [
+      {
+        "image": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Dental clinic website"
+      }
+    ]
+  },
+
+  "restaurant-ordering-experience": {
+    "_id": "work-2",
+    "title": "Restaurant Ordering Experience",
+    "slug": "restaurant-ordering-experience",
+    "tagline": "Built to help more local diners order online and discover the restaurant organically.",
+    "isFeatured": false,
+    "clientName": "Saffron Kitchen",
+    "clientIndustry": "Hospitality",
+    "clientLocation": "Remote",
+    "isClientConfidential": false,
+    "coverImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "thumbnailImage": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "Restaurant website",
+    "liveUrl": "https://example.com",
+    "completedAt": "2025-03-10",
+    "duration": "2 weeks",
+
+    "industries": [
+      "Hospitality",
+      "Local Business"
+    ],
+
+    "overview": "A mobile-first restaurant experience designed to improve online ordering and local customer discovery.",
+
+    "challenge": "The restaurant relied on social media and existing third-party listings. It lacked an online experience that felt premium and easy to trust.",
+
+    "approach": "We focused on a mobile-first experience, clear menu presentation, stronger visual communication, and a simple path toward online ordering.",
+
+    "solution": "The website created a stronger direct digital presence for the restaurant while making the ordering journey easier for local diners.",
+
+    "features": [
+      "Mobile-first restaurant website",
+      "Online menu presentation",
+      "Ordering-focused user journey",
+      "Restaurant brand presentation",
+      "Local discovery optimisation",
+      "Clear customer action points"
+    ],
+
+    "results": [
+      {
+        "value": "41%",
+        "label": "More Orders"
+      },
+      {
+        "value": "22%",
+        "label": "Lower Bounce"
+      },
+      {
+        "value": "7 days",
+        "label": "Launch"
+      }
+    ],
+
+    "techStack": [
+      {
+        "name": "Next.js"
+      },
+      {
+        "name": "CMS"
+      },
+      {
+        "name": "Analytics"
+      }
+    ],
+
+    "sections": [
+      {
+        "heading": "Problem",
+        "content": "The restaurant relied on social media and existing third-party listings. It lacked an online experience that felt premium and easy to trust."
+      },
+      {
+        "heading": "Solution",
+        "content": "We crafted a mobile-first ordering page, menu presentation, and brand visuals that made the restaurant easier to discover and easier to buy from."
+      },
+      {
+        "heading": "Outcome",
+        "content": "The result was a better online ordering journey and stronger local visibility, while helping the owner manage the business more efficiently."
+      }
+    ],
+
+    "testimonial": null,
+
+    "gallery": [
+      {
+        "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Restaurant website"
+      }
+    ]
+  },
+
+  "admissions-website-redesign": {
+    "_id": "work-3",
+    "title": "Admissions Website Redesign",
+    "slug": "admissions-website-redesign",
+    "tagline": "A cleaner online admissions funnel for educational institutes and coaching businesses.",
+    "isFeatured": false,
+    "clientName": "BrightPath Academy",
+    "clientIndustry": "Education",
+    "clientLocation": "Delhi, India",
+    "isClientConfidential": false,
+    "coverImage": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    "thumbnailImage": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    "imageAlt": "Education website",
+    "liveUrl": "https://example.com",
+    "completedAt": "2025-05-22",
+    "duration": "4 weeks",
+
+    "industries": [
+      "Education",
+      "Local Business"
+    ],
+
+    "overview": "A redesigned admissions experience helping educational institutes present their courses clearly and generate more student enquiries.",
+
+    "challenge": "The institute had information scattered across different channels and a signup flow that discouraged visitors from taking action.",
+
+    "approach": "We organised the information around the prospective student's journey, with clearer course information, FAQs, and strong calls to action.",
+
+    "solution": "The new website created a higher-trust admissions funnel that made it easier for prospective students to understand the institute and submit an enquiry.",
+
+    "features": [
+      "Admissions-focused website",
+      "Course information sections",
+      "FAQ presentation",
+      "Student enquiry flow",
+      "Mobile-friendly experience",
+      "Clear calls to action"
+    ],
+
+    "results": [
+      {
+        "value": "2x",
+        "label": "More Enquiries"
+      },
+      {
+        "value": "94%",
+        "label": "Mobile Friendly"
+      },
+      {
+        "value": "15%",
+        "label": "More Signups"
+      }
+    ],
+
+    "techStack": [
+      {
+        "name": "React"
+      },
+      {
+        "name": "Next.js"
+      },
+      {
+        "name": "Forms"
+      }
+    ],
+
+    "sections": [
+      {
+        "heading": "Problem",
+        "content": "The institute had information scattered across different channels and a signup flow that discouraged visitors from taking action."
+      },
+      {
+        "heading": "Solution",
+        "content": "We created a higher-trust admissions funnel with course information, FAQs, and clear calls to action for enrollment queries."
+      },
+      {
+        "heading": "Outcome",
+        "content": "The website made it easier for prospects to understand the value and get in touch without friction."
+      }
+    ],
+
+    "testimonial": null,
+
+    "gallery": [
+      {
+        "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+        "alt": "Education website"
+      }
+    ]
+  }
+}
