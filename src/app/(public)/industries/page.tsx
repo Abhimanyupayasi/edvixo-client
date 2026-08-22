@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import IndustriesSection from "@/components/public/industries/IndustriesSection";
+import IndustriesSection from "@/components/industries/IndustriesSection";
 
 export const metadata: Metadata = {
   title: "Industries - Edvixo Digital Solutions",

@@ -115,7 +115,7 @@ export default function DocsPage() {
                       Browse Case Studies
                     </p>
                     <p className="text-xs leading-relaxed text-on-surface-variant">
-                      Visit /work to see real projects with measurable results. Filter
+                      Visit /portfolio to see real projects with measurable results. Filter
                       by industry to find businesses similar to yours.
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export default function DocsPage() {
                 </div>
 
                 <Link
-                  href="/work"
+                  href="/portfolio"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
                 >
                   View My Work
@@ -441,7 +441,7 @@ export default function DocsPage() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/work"
+              href="/portfolio"
               className="inline-flex items-center gap-2 rounded-shape-full border-2 border-on-primary px-8 py-4 font-bold text-on-primary transition-colors hover:bg-on-primary/10"
             >
               View My Work →

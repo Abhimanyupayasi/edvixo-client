@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import TableOfContents from "@/components/public/legal/TableOfContents";
+import TableOfContents from "@/components/legal/TableOfContents";
 
 interface LegalLayoutProps {
   title: string;

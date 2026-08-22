@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import portfolio from "@/data/portfolio.json";
-import PortfolioSection from "@/components/public/portfolio/PortfolioSection";
+import PortfolioSection from "@/components/portfolio/PortfolioSection";
 import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import {

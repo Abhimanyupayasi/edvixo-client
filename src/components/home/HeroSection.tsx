@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Monitor, Star, TrendingUp } from "lucide-react";
-import { HeroInteractiveShell } from "@/components/public/home/HeroInteractiveShell";
+import { HeroInteractiveShell } from "@/components/home/HeroInteractiveShell";
 
 const trustStats: { value: string; label: string }[] = [
   { value: "15+", label: "BUSINESSES SERVED" },
@@ -52,7 +52,7 @@ export function HeroSection() {
                 asChild
                 className="hero-cta-secondary group relative h-12 w-full overflow-hidden rounded-2xl border border-outline-variant/80 bg-surface/72 px-8 text-base font-semibold text-on-background shadow-[0_12px_30px_rgba(24,29,25,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface md:w-auto dark:border-primary/20 dark:bg-surface-container-high/70 dark:shadow-[0_16px_34px_rgba(0,0,0,0.28)] dark:hover:bg-surface-container-highest"
               >
-                <Link href="/work">
+                <Link href="/portfolio">
                   <span className="relative z-10">View Case Studies</span>
                 </Link>
               </Button>
