@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+
 import { SITE_URL } from "@/lib/site";
+
 import JsonLd from "@/components/seo/JsonLd";
+
 import {
   getLocalBusinessSchema,
   getPersonSchema,
   getWebsiteSchema,
 } from "@/lib/seo/schemas";
+
 import { HeroSection } from "@/components/public/home/HeroSection";
 import { IndustryMarquee } from "@/components/public/IndustryMarquee";
 import { ServicesSection } from "@/components/public/home/ServicesSection";
@@ -47,6 +51,7 @@ const featuredProjects = [
     imageAlt: "Dental clinic website showcase",
     completedAt: "2025-01-15",
   },
+
   {
     _id: "project-2",
     clientName: "Saffron Kitchen",
@@ -64,12 +69,13 @@ const featuredProjects = [
     slug: "restaurant-ordering-experience",
     liveUrl: "https://example.com",
     coverImage:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
+      "https://i.pinimg.com/1200x/63/0d/f3/630df316f45dbd829d590e286cea1389.jpg",
     thumbnailImage:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Restaurant website showcase",
+      "https://i.pinimg.com/1200x/63/0d/f3/630df316f45dbd829d590e286cea1389.jpg",
+    imageAlt: "Saffron Kitchen restaurant website showcase",
     completedAt: "2025-03-10",
   },
+
   {
     _id: "project-3",
     clientName: "BrightPath Academy",
@@ -86,11 +92,15 @@ const featuredProjects = [
     tech: ["React", "Next.js", "Forms", "Performance"],
     slug: "admissions-website-redesign",
     liveUrl: "https://example.com",
+
+    // New Admissions image
     coverImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+      "https://i.pinimg.com/1200x/71/17/c8/7117c853954a10dcfb4dbc32077dedf8.jpg",
+
     thumbnailImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Education website showcase",
+      "https://i.pinimg.com/1200x/71/17/c8/7117c853954a10dcfb4dbc32077dedf8.jpg",
+
+    imageAlt: "BrightPath Academy admissions website showcase",
     completedAt: "2025-05-22",
   },
 ];
@@ -105,6 +115,7 @@ const testimonials = [
     business: "Bluebird Dental",
     avatar: "AM",
   },
+
   {
     _id: "review-2",
     stars: 5,
@@ -114,6 +125,7 @@ const testimonials = [
     business: "Saffron Kitchen",
     avatar: "NG",
   },
+
   {
     _id: "review-3",
     stars: 5,
@@ -131,16 +143,24 @@ export default function HomePage() {
       <JsonLd data={getPersonSchema()} />
       <JsonLd data={getLocalBusinessSchema()} />
       <JsonLd data={getWebsiteSchema()} />
+
       <HeroSection />
+
       <IndustryMarquee />
+
       <ServicesSection />
+
       <FeaturedWorkSection projects={featuredProjects} />
+
       <WhyEdvixoSection />
+
       <ProcessSection />
+
       <TestimonialsSection testimonials={testimonials} />
+
       <FAQSection />
+
       <CTABanner />
     </>
   );
 }
-

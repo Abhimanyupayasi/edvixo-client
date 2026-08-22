@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+
 import bundleAnalyzer from "@next/bundle-analyzer";
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -7,11 +8,14 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   output: "standalone",
+
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     dangerouslyAllowSVG: false,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'none'; sandbox;",
+
     remotePatterns: [
       { protocol: "https", hostname: "res.cloudinary.com" },
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
@@ -19,17 +23,23 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "api.dicebear.com" },
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "source.unsplash.com" },
-      // Development placeholder images (picsum.photos)
+
+      // Pinterest images
+      { protocol: "https", hostname: "i.pinimg.com" },
+
+      // Development placeholder images
       { protocol: "https", hostname: "picsum.photos" },
       { protocol: "https", hostname: "fastly.picsum.photos" },
     ],
   },
+
   compiler: {
     removeConsole:
       process.env.NODE_ENV === "production"
         ? { exclude: ["error", "warn"] }
         : false,
   },
+
   // Allow file uploads via Server Actions (up to 5 MB)
   experimental: {
     optimizeCss: true,
@@ -38,6 +48,7 @@ const nextConfig: NextConfig = {
       bodySizeLimit: "5mb",
     },
   },
+
   async headers() {
     return [
       {
@@ -61,34 +72,41 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=(), payment=()",
+            value:
+              "camera=(), microphone=(), geolocation=(), payment=()",
           },
           {
             key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
+            value:
+              "max-age=63072000; includeSubDomains; preload",
           },
         ],
       },
+
       {
         source: "/_next/static/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
+            value:
+              "public, max-age=31536000, immutable",
           },
         ],
       },
+
       {
         source: "/images/(.*)",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=604800, stale-while-revalidate=86400",
+            value:
+              "public, max-age=604800, stale-while-revalidate=86400",
           },
         ],
       },
     ];
   },
+
   compress: true,
 };
 
