@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
-import { SelectedProjectField } from "@/components/public/contact/SelectedProjectField";
+import { SelectedProjectField } from "@/components/contact/SelectedProjectField";
 import {
   getLocalBusinessSchema,
   getBreadcrumbSchema,

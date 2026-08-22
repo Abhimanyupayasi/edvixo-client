@@ -1,9 +1,9 @@
-import { Header } from "@/components/public/layout/Header";
-import { Footer } from "@/components/public/layout/Footer";
-import { WhatsAppFAB } from "@/components/public/layout/WhatsAppFAB";
-import { LenisProvider } from "@/components/public/layout/LenisProvider";
-import { PublicCursor } from "@/components/public/layout/PublicCursor";
-// import BottomNavLazy from "@/components/public/BottomNavLazy";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFAB } from "@/components/layout/WhatsAppFAB";
+import { LenisProvider } from "@/components/layout/LenisProvider";
+import { PublicCursor } from "@/components/layout/PublicCursor";
+// import BottomNavLazy from "@/components/BottomNavLazy";
 
 export default function PublicLayout({
   children,

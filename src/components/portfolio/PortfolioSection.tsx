@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -26,10 +26,12 @@ type PortfolioItem = {
   liveUrl?: string;
   completedAt?: string;
   duration?: string;
+
   results?: Array<{
     value: string;
     label: string;
   }>;
+
   techStack?: Array<{
     name: string;
   }>;
@@ -39,37 +41,161 @@ interface PortfolioSectionProps {
   items: PortfolioItem[];
 }
 
+type PortfolioView =
+  | "case-studies"
+  | "results"
+  | "featured"
+  | "success"
+  | "industries";
+
 export default function PortfolioSection({
   items,
 }: PortfolioSectionProps) {
+  const [view, setView] = useState<PortfolioView>("case-studies");
   const [selectedIndustry, setSelectedIndustry] = useState("All");
 
+  /*
+   * Read the Portfolio menu selection from the URL.
+   *
+   * Examples:
+   * /portfolio?view=case-studies
+   * /portfolio?view=results
+   * /portfolio?view=featured
+   * /portfolio?view=success
+   * /portfolio?view=industries
+   */
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const currentView = params.get("view");
+
+    if (
+      currentView === "case-studies" ||
+      currentView === "results" ||
+      currentView === "featured" ||
+      currentView === "success" ||
+      currentView === "industries"
+    ) {
+      setView(currentView);
+    } else {
+      setView("case-studies");
+    }
+
+    const currentIndustry = params.get("industry");
+
+    if (currentIndustry) {
+      setSelectedIndustry(currentIndustry);
+    }
+  }, []);
+
   const industries = Array.from(
-    new Set(items.flatMap((item) => item.industries ?? []))
+    new Set(items.flatMap((item) => item.industries ?? [])),
   ).sort();
 
+  /*
+   * First apply the selected Portfolio menu view.
+   */
+  let viewItems = items;
+
+  if (view === "featured") {
+    viewItems = items.filter((item) => item.isFeatured);
+  }
+
+  if (view === "results") {
+    viewItems = items.filter(
+      (item) => item.results && item.results.length > 0,
+    );
+  }
+
+  if (view === "success") {
+    viewItems = items.filter(
+      (item) =>
+        (item.results && item.results.length > 0) ||
+        item.isFeatured,
+    );
+  }
+
+  /*
+   * Industries view shows all projects initially,
+   * then allows filtering by industry.
+   */
+  if (view === "industries" && selectedIndustry !== "All") {
+    viewItems = items.filter((item) =>
+      item.industries?.includes(selectedIndustry),
+    );
+  }
+
+  /*
+   * If the user selects an industry from the filter bar,
+   * apply it to every view.
+   */
   const filteredItems =
     selectedIndustry === "All"
-      ? items
-      : items.filter((item) =>
-          item.industries?.includes(selectedIndustry)
+      ? viewItems
+      : viewItems.filter((item) =>
+          item.industries?.includes(selectedIndustry),
         );
 
-  const featuredItem = filteredItems.find(
-    (item) => item.isFeatured
-  );
+  const featuredItem =
+    view === "featured"
+      ? filteredItems.find((item) => item.isFeatured)
+      : filteredItems.find((item) => item.isFeatured);
 
   const regularItems = filteredItems.filter(
-    (item) => item._id !== featuredItem?._id
+    (item) => item._id !== featuredItem?._id,
   );
+
+  const getViewTitle = () => {
+    switch (view) {
+      case "results":
+        return "Client Results";
+
+      case "featured":
+        return "Featured Projects";
+
+      case "success":
+        return "Success Stories";
+
+      case "industries":
+        return "Projects by Industry";
+
+      case "case-studies":
+      default:
+        return "Case Studies";
+    }
+  };
 
   return (
     <section className="bg-surface">
-      {/* Filter Bar */}
+      {/* VIEW TITLE */}
+      <div className="border-b border-outline-variant bg-surface-container-low">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary">
+            Portfolio
+          </p>
+
+          <h2 className="mt-2 text-3xl font-bold text-on-background">
+            {getViewTitle()}
+          </h2>
+
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-on-surface-variant">
+            Explore Edvixo projects, case studies, client outcomes,
+            and digital experiences built for real businesses.
+          </p>
+        </div>
+      </div>
+
+      {/* INDUSTRY FILTER */}
       <div className="sticky top-16 z-10 border-y border-outline-variant bg-surface">
         <div className="mx-auto flex max-w-7xl gap-3 overflow-x-auto px-4 py-4 sm:px-6 lg:px-8 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           <button
-            onClick={() => setSelectedIndustry("All")}
+            type="button"
+            onClick={() => {
+              setSelectedIndustry("All");
+
+              const url = new URL(window.location.href);
+              url.searchParams.delete("industry");
+              window.history.replaceState({}, "", url.toString());
+            }}
             className={
               selectedIndustry === "All"
                 ? "flex shrink-0 items-center gap-1.5 rounded-shape-full bg-primary-container px-5 py-2 text-sm font-semibold text-on-primary-container"
@@ -79,13 +205,21 @@ export default function PortfolioSection({
             {selectedIndustry === "All" && (
               <CheckCircle2 className="h-4 w-4" />
             )}
+
             All
           </button>
 
           {industries.map((industry) => (
             <button
+              type="button"
               key={industry}
-              onClick={() => setSelectedIndustry(industry)}
+              onClick={() => {
+                setSelectedIndustry(industry);
+
+                const url = new URL(window.location.href);
+                url.searchParams.set("industry", industry);
+                window.history.replaceState({}, "", url.toString());
+              }}
               className={
                 selectedIndustry === industry
                   ? "flex shrink-0 items-center gap-1.5 rounded-shape-full bg-primary-container px-5 py-2 text-sm font-semibold text-on-primary-container"
@@ -95,13 +229,14 @@ export default function PortfolioSection({
               {selectedIndustry === industry && (
                 <CheckCircle2 className="h-4 w-4" />
               )}
+
               {industry}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Portfolio Content */}
+      {/* PORTFOLIO CONTENT */}
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         {filteredItems.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-24 text-center">
@@ -113,11 +248,21 @@ export default function PortfolioSection({
 
             <p className="mb-8 max-w-sm text-on-surface-variant">
               New projects are added regularly. Check back soon
-              or browse all work to see what&apos;s available.
+              or browse all case studies.
             </p>
 
             <button
-              onClick={() => setSelectedIndustry("All")}
+              type="button"
+              onClick={() => {
+                setView("case-studies");
+                setSelectedIndustry("All");
+
+                window.history.replaceState(
+                  {},
+                  "",
+                  "/portfolio?view=case-studies",
+                );
+              }}
               className="rounded-shape-full bg-primary-container px-6 py-3 text-sm font-semibold text-on-primary-container transition-colors hover:bg-primary hover:text-on-primary"
             >
               See All Projects
@@ -125,11 +270,11 @@ export default function PortfolioSection({
           </div>
         ) : (
           <>
-            {/* Featured Project */}
+            {/* FEATURED PROJECT */}
             {featuredItem && (
               <article className="mb-10 overflow-hidden rounded-shape-lg border border-outline-variant bg-surface-container-lowest shadow-sm">
                 <div className="grid lg:grid-cols-2">
-                  {/* Image */}
+                  {/* IMAGE */}
                   <div className="relative min-h-[320px] lg:min-h-[430px]">
                     {featuredItem.coverImage && (
                       <Image
@@ -145,7 +290,7 @@ export default function PortfolioSection({
                     )}
                   </div>
 
-                  {/* Content */}
+                  {/* CONTENT */}
                   <div className="flex flex-col justify-center p-6 md:p-10 lg:p-12">
                     <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
                       Featured Project
@@ -170,12 +315,12 @@ export default function PortfolioSection({
                               >
                                 {industry}
                               </span>
-                            )
+                            ),
                           )}
                         </div>
                       )}
 
-                    {/* Results */}
+                    {/* RESULTS */}
                     {featuredItem.results &&
                       featuredItem.results.length > 0 && (
                         <div className="mb-8 grid grid-cols-3 gap-3">
@@ -208,7 +353,7 @@ export default function PortfolioSection({
               </article>
             )}
 
-            {/* Regular Projects */}
+            {/* REGULAR PROJECTS */}
             {regularItems.length > 0 && (
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
                 {regularItems.map((item) => (
@@ -216,7 +361,7 @@ export default function PortfolioSection({
                     key={item._id}
                     className="group overflow-hidden rounded-shape-lg border border-outline-variant bg-surface-container-lowest shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                   >
-                    {/* Image */}
+                    {/* IMAGE */}
                     <div className="relative aspect-[16/10] overflow-hidden">
                       {item.thumbnailImage && (
                         <Image
@@ -232,7 +377,7 @@ export default function PortfolioSection({
                       )}
                     </div>
 
-                    {/* Content */}
+                    {/* CONTENT */}
                     <div className="p-6">
                       <div className="mb-3 flex flex-wrap gap-2">
                         {item.industries?.map((industry) => (
@@ -253,7 +398,7 @@ export default function PortfolioSection({
                         {item.tagline}
                       </p>
 
-                      {/* Results */}
+                      {/* RESULTS */}
                       {item.results &&
                         item.results.length > 0 && (
                           <div className="mb-6 grid grid-cols-3 gap-2">
@@ -274,7 +419,7 @@ export default function PortfolioSection({
                           </div>
                         )}
 
-                      {/* Tech Stack */}
+                      {/* TECH STACK */}
                       {item.techStack &&
                         item.techStack.length > 0 && (
                           <div className="mb-6 flex flex-wrap gap-2">

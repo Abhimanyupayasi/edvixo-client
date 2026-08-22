@@ -15,12 +15,13 @@ const navMenus = [
       { label: "Home", href: "/" },
       { label: "About The Company", href: "/about" },
       { label: "Meet The Team", href: "/about" },
-      { label: "Client Reviews", href: "/work" },
+      { label: "Client Reviews", href: "/portfolio" },
       { label: "Company Brochure", href: "/docs" },
       { label: "Career", href: "/contact" },
       { label: "Life@Edvixo", href: "/about" },
     ],
   },
+
   {
     label: "Services",
     href: "/services",
@@ -28,13 +29,29 @@ const navMenus = [
       {
         heading: "WEB DEVELOPMENT",
         items: [
-          { label: "Website Development", href: "/services/business-websites" },
-          { label: "PHP Development", href: "/services/business-websites" },
-          { label: "WordPress Development", href: "/services/business-websites" },
-          { label: "HTML Development", href: "/services/business-websites" },
-          { label: "Angular Development", href: "/services/business-websites" },
+          {
+            label: "Website Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "PHP Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "WordPress Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "HTML Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "Angular Development",
+            href: "/services/business-websites",
+          },
         ],
       },
+
       {
         heading: "APP DEVELOPMENT",
         items: [
@@ -44,88 +61,119 @@ const navMenus = [
           { label: "Hybrid App Development", href: "/contact" },
         ],
       },
+
       {
         heading: "ECOM DEVELOPMENT",
         items: [
-          { label: "E-Commerce Development", href: "/services/online-stores" },
-          { label: "WooCommerce Development", href: "/services/online-stores" },
-          { label: "Magento Development", href: "/services/online-stores" },
-          { label: "OpenCart Development", href: "/services/online-stores" },
+          {
+            label: "E-Commerce Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "WooCommerce Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "Magento Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "OpenCart Development",
+            href: "/services/online-stores",
+          },
         ],
       },
+
       {
         heading: "DESIGN",
         items: [
           { label: "UI/UX Design", href: "/contact" },
           { label: "Graphic Design", href: "/contact" },
           { label: "App Prototype", href: "/contact" },
-          { label: "Web Design", href: "/services/website-redesign" },
+          {
+            label: "Web Design",
+            href: "/services/website-redesign",
+          },
         ],
       },
+
       {
         heading: "MISCELLANEOUS",
         items: [
-          { label: "Software Development", href: "/services/dashboards" },
-          { label: "Digital Marketing", href: "/services/local-seo" },
-          { label: "Technical Support", href: "/contact" },
+          {
+            label: "Software Development",
+            href: "/services/dashboards",
+          },
+          {
+            label: "Digital Marketing",
+            href: "/services/local-seo",
+          },
+          {
+            label: "Technical Support",
+            href: "/contact",
+          },
         ],
       },
     ],
   },
+
   {
-  label: "Solutions",
-  href: "/solutions",
-  items: [
-    {
-      label: "Hire Dedicated Developers",
-      href: "/solutions/hire-dedicated-developers",
-    },
-    {
-      label: "Startup Product Development",
-      href: "/solutions/startup-product-development",
-    },
-    {
-      label: "Business Automation",
-      href: "/solutions/business-automation",
-    },
-    {
-      label: "Cloud & DevOps Solutions",
-      href: "/solutions/cloud-devops-solutions",
-    },
-    {
-      label: "Maintenance & Support",
-      href: "/solutions/maintenance-support",
-    },
-    {
-      label: "Digital Transformation",
-      href: "/solutions/digital-transformation",
-    },
-  ],
-},
- {
-  label: "Industries",
-  href: "/industries",
-  items: [
-    { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "Education", href: "/industries/education" },
-    { label: "SaaS", href: "/industries/saas" },
-    { label: "Retail", href: "/industries/retail" },
-    { label: "Real Estate", href: "/industries/real-estate" },
-    { label: "Hospitality", href: "/industries/hospitality" },
-  ],
-},
-  {
-    label: "Portfolio",
-    href: "/work",
+    label: "Solutions",
+    href: "/solutions",
     items: [
-      { label: "Case Studies", href: "/work" },
-      { label: "Client Results", href: "/work" },
-      { label: "Featured Projects", href: "/work" },
-      { label: "Success Stories", href: "/work" },
-      { label: "Industries", href: "/work" },
-      { label: "Process", href: "/services" },
+      {
+        label: "Hire Dedicated Developers",
+        href: "/solutions/hire-dedicated-developers",
+      },
+      {
+        label: "Startup Product Development",
+        href: "/solutions/startup-product-development",
+      },
+      {
+        label: "Business Automation",
+        href: "/solutions/business-automation",
+      },
+      {
+        label: "Cloud & DevOps Solutions",
+        href: "/solutions/cloud-devops-solutions",
+      },
+      {
+        label: "Maintenance & Support",
+        href: "/solutions/maintenance-support",
+      },
+      {
+        label: "Digital Transformation",
+        href: "/solutions/digital-transformation",
+      },
     ],
   },
+
+  {
+    label: "Industries",
+    href: "/industries",
+    items: [
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "Education", href: "/industries/education" },
+      { label: "SaaS", href: "/industries/saas" },
+      { label: "Retail", href: "/industries/retail" },
+      { label: "Real Estate", href: "/industries/real-estate" },
+      { label: "Hospitality", href: "/industries/hospitality" },
+    ],
+  },
+
+  // Portfolio is intentionally a direct link.
+ {
+  label: "Portfolio",
+  href: "/portfolio",
+  items: [
+    { label: "Case Studies", href: "/portfolio?view=case-studies" },
+    { label: "Client Results", href: "/portfolio?view=results" },
+    { label: "Featured Projects", href: "/portfolio?view=featured" },
+    { label: "Success Stories", href: "/portfolio?view=success" },
+    { label: "Industries", href: "/portfolio?view=industries" },
+    { label: "Process", href: "/services" },
+  ],
+},
 ];
 
 export function Header() {
@@ -136,12 +184,13 @@ export function Header() {
 
   const isActiveLink = (href: string) => {
     if (pathname === href) return true;
+
     return pathname.startsWith(`${href}/`);
   };
 
   const toggleMobileMenu = (label: string) => {
     setOpenMobileMenu((current) =>
-      current === label ? null : label
+      current === label ? null : label,
     );
   };
 
@@ -167,7 +216,6 @@ export function Header() {
     >
       {/* MAIN HEADER */}
       <div className="mx-auto flex h-20 max-w-355 items-center justify-between px-4 md:px-6 lg:px-8">
-
         {/* LOGO */}
         <Link
           href="/"
@@ -190,174 +238,186 @@ export function Header() {
           role="navigation"
           aria-label="Main navigation"
         >
-          {navMenus.map((menu) => (
-            <div key={menu.label} className="group">
+          {navMenus.map((menu) => {
+            const hasDropdown =
+              Boolean(menu.items?.length) ||
+              Boolean(menu.columns?.length);
 
-              <Link
-                href={menu.href}
-                className={`
-                  flex
-                  items-center
-                  gap-2
-                  rounded-md
-                  px-4
-                  py-2
-                  text-sm
-                  font-semibold
-                  transition-all
-                  duration-200
-                  ${
-                    isActiveLink(menu.href)
-                      ? "bg-white/10 text-white"
-                      : "text-slate-200 hover:bg-white/5 hover:text-white"
-                  }
-                `}
-              >
-                <span>{menu.label}</span>
-
-                <ChevronDown
-                  className="
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-200
-                    group-hover:rotate-180
-                  "
-                />
-              </Link>
-
-              {/* DESKTOP DROPDOWN */}
+            return (
               <div
-                className="
-                  pointer-events-none
-                  invisible
-                  fixed
-                  left-1/2
-                  top-20
-                  z-50
-                  w-[min(1180px,calc(100vw-48px))]
-                  -translate-x-1/2
-                  translate-y-3
-                  pt-3
-                  opacity-0
-                  transition-all
-                  duration-250
-                  ease-out
-                  group-hover:pointer-events-auto
-                  group-hover:visible
-                  group-hover:translate-y-0
-                  group-hover:opacity-100
-                "
+                key={menu.label}
+                className={hasDropdown ? "group" : ""}
               >
-                <div
-                  className="
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-[#071a2d]
-                    text-white
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
-                  "
+                <Link
+                  href={menu.href}
+                  className={`
+                    flex
+                    items-center
+                    gap-2
+                    rounded-md
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    transition-all
+                    duration-200
+                    ${
+                      isActiveLink(menu.href)
+                        ? "bg-white/10 text-white"
+                        : "text-slate-200 hover:bg-white/5 hover:text-white"
+                    }
+                  `}
                 >
-                  {menu.label === "Services" && menu.columns ? (
-                    <div className="grid gap-6 p-6 lg:grid-cols-5">
-                      {menu.columns.map((column) => (
-                        <div
-                          key={column.heading}
-                          className="space-y-3"
-                        >
-                          <h3
-                            className="
-                              text-xs
-                              font-black
-                              uppercase
-                              tracking-[0.16em]
-                              text-slate-400
-                            "
-                          >
-                            {column.heading}
-                          </h3>
+                  <span>{menu.label}</span>
 
-                          <div className="space-y-1.5">
-                            {column.items.map((item) => (
-                              <Link
-                                key={`${column.heading}-${item.label}`}
-                                href={item.href}
+                  {hasDropdown && (
+                    <ChevronDown
+                      className="
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-200
+                        group-hover:rotate-180
+                      "
+                    />
+                  )}
+                </Link>
+
+                {/* DESKTOP DROPDOWN */}
+                {hasDropdown && (
+                  <div
+                    className="
+                      pointer-events-none
+                      invisible
+                      fixed
+                      left-1/2
+                      top-20
+                      z-50
+                      w-[min(1180px,calc(100vw-48px))]
+                      -translate-x-1/2
+                      translate-y-3
+                      pt-3
+                      opacity-0
+                      transition-all
+                      duration-250
+                      ease-out
+                      group-hover:pointer-events-auto
+                      group-hover:visible
+                      group-hover:translate-y-0
+                      group-hover:opacity-100
+                    "
+                  >
+                    <div
+                      className="
+                        overflow-hidden
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-[#071a2d]
+                        text-white
+                        shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                      "
+                    >
+                      {menu.label === "Services" &&
+                      menu.columns ? (
+                        <div className="grid gap-6 p-6 lg:grid-cols-5">
+                          {menu.columns.map((column) => (
+                            <div
+                              key={column.heading}
+                              className="space-y-3"
+                            >
+                              <h3
                                 className="
-                                  group/service-item
-                                  block
-                                  rounded-md
-                                  px-2
-                                  py-2
-                                  text-base
-                                  font-medium
-                                  text-slate-200
-                                  transition-all
-                                  duration-200
-                                  hover:bg-white/10
-                                  hover:text-white
+                                  text-xs
+                                  font-black
+                                  uppercase
+                                  tracking-[0.16em]
+                                  text-slate-400
                                 "
                               >
-                                <span
-                                  className="
-                                    inline-block
-                                    transition-transform
-                                    duration-200
-                                    group-hover/service-item:translate-x-1
-                                  "
-                                >
-                                  {item.label}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
+                                {column.heading}
+                              </h3>
+
+                              <div className="space-y-1.5">
+                                {column.items.map((item) => (
+                                  <Link
+                                    key={`${column.heading}-${item.label}`}
+                                    href={item.href}
+                                    className="
+                                      group/service-item
+                                      block
+                                      rounded-md
+                                      px-2
+                                      py-2
+                                      text-base
+                                      font-medium
+                                      text-slate-200
+                                      transition-all
+                                      duration-200
+                                      hover:bg-white/10
+                                      hover:text-white
+                                    "
+                                  >
+                                    <span
+                                      className="
+                                        inline-block
+                                        transition-transform
+                                        duration-200
+                                        group-hover/service-item:translate-x-1
+                                      "
+                                    >
+                                      {item.label}
+                                    </span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
                         </div>
-                      ))}
+                      ) : (
+                        <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
+                          {menu.items?.map((item) => (
+                            <Link
+                              key={`${menu.label}-${item.label}`}
+                              href={item.href}
+                              className="
+                                group/item
+                                rounded-lg
+                                px-3
+                                py-2
+                                text-base
+                                font-medium
+                                text-slate-200
+                                transition-all
+                                duration-200
+                                hover:bg-white/10
+                                hover:text-white
+                              "
+                            >
+                              <span
+                                className="
+                                  inline-block
+                                  transition-transform
+                                  duration-200
+                                  group-hover/item:translate-x-1
+                                "
+                              >
+                                {item.label}
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  ) : (
-                    <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
-                      {menu.items?.map((item) => (
-                        <Link
-                          key={`${menu.label}-${item.label}`}
-                          href={item.href}
-                          className="
-                            group/item
-                            rounded-lg
-                            px-3
-                            py-2
-                            text-base
-                            font-medium
-                            text-slate-200
-                            transition-all
-                            duration-200
-                            hover:bg-white/10
-                            hover:text-white
-                          "
-                        >
-                          <span
-                            className="
-                              inline-block
-                              transition-transform
-                              duration-200
-                              group-hover/item:translate-x-1
-                            "
-                          >
-                            {item.label}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </nav>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-2 sm:gap-3">
-
           {/* DESKTOP CONSULTATION */}
           <Button
             asChild
@@ -465,7 +525,8 @@ export function Header() {
                 Boolean(menu.items?.length) ||
                 Boolean(menu.columns?.length);
 
-              const isOpen = openMobileMenu === menu.label;
+              const isOpen =
+                openMobileMenu === menu.label;
 
               return (
                 <div
@@ -473,7 +534,6 @@ export function Header() {
                   className="border-b border-white/10 last:border-b-0"
                 >
                   <div className="flex items-center justify-between">
-
                     <Link
                       href={menu.href}
                       onClick={closeMobileMenu}
@@ -496,7 +556,9 @@ export function Header() {
                     {hasDropdown && (
                       <button
                         type="button"
-                        onClick={() => toggleMobileMenu(menu.label)}
+                        onClick={() =>
+                          toggleMobileMenu(menu.label)
+                        }
                         className="
                           flex
                           h-10
@@ -528,14 +590,11 @@ export function Header() {
                   {/* MOBILE SUBMENU */}
                   {hasDropdown && isOpen && (
                     <div className="pb-4 pl-3">
-
                       {menu.label === "Services" &&
                       menu.columns ? (
                         <div className="space-y-5">
-
                           {menu.columns.map((column) => (
                             <div key={column.heading}>
-
                               <h3
                                 className="
                                   mb-2
@@ -571,14 +630,11 @@ export function Header() {
                                   </Link>
                                 ))}
                               </div>
-
                             </div>
                           ))}
-
                         </div>
                       ) : (
                         <div className="space-y-1">
-
                           {menu.items?.map((item) => (
                             <Link
                               key={`${menu.label}-${item.label}`}
@@ -599,10 +655,8 @@ export function Header() {
                               {item.label}
                             </Link>
                           ))}
-
                         </div>
                       )}
-
                     </div>
                   )}
                 </div>
@@ -633,7 +687,6 @@ export function Header() {
                 </Link>
               </Button>
             </div>
-
           </nav>
         </div>
       )}
