@@ -3,7 +3,7 @@ import { Footer } from "@/components/public/layout/Footer";
 import { WhatsAppFAB } from "@/components/public/layout/WhatsAppFAB";
 import { LenisProvider } from "@/components/public/layout/LenisProvider";
 import { PublicCursor } from "@/components/public/layout/PublicCursor";
-import BottomNavLazy from "@/components/public/BottomNavLazy";
+// import BottomNavLazy from "@/components/public/BottomNavLazy";
 
 export default function PublicLayout({
   children,
@@ -23,7 +23,7 @@ export default function PublicLayout({
         <Header />
         <main className="pb-28 lg:pb-0" id="main-content" role="main">{children}</main>
         <Footer />
-        <BottomNavLazy />
+        {/* <BottomNavLazy /> */}
         <WhatsAppFAB />
       </div>
     </LenisProvider>

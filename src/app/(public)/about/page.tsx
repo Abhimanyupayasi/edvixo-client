@@ -68,7 +68,7 @@ export default function ContactPage() {
       <div className="bg-surface-container-low py-16 text-center">
         <div className="mx-auto max-w-2xl px-4">
           <p className="label-medium text-primary uppercase tracking-widest mb-3">
-            ABOUT
+            COMPANY
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-on-background mb-6 leading-tight">
             Let&apos;s Talk About

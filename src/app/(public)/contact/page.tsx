@@ -203,12 +203,14 @@ export default function ContactPage() {
                 </p>
               </div>
 
+              {/* ==================== FORMSPREE FORM ==================== */}
               <form
-                action="/api/contact"
+                action="https://formspree.io/f/xqpzgykz"
                 method="POST"
                 className="space-y-5"
               >
                 <SelectedProjectField />
+
                 {/* Name + Company */}
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <div className="space-y-2">
@@ -645,4 +647,3 @@ export default function ContactPage() {
     </>
   );
 }
-

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navMenus = [
@@ -12,13 +12,14 @@ const navMenus = [
     label: "Company",
     href: "/about",
     items: [
-      { label: "Home", href: "/" },
-      { label: "About The Company", href: "/about" },
-      { label: "Meet The Team", href: "/about" },
-      { label: "Client Reviews", href: "/work" },
-      { label: "Company Brochure", href: "/docs" },
-      { label: "Career", href: "/contact" },
-      { label: "Life@Edvixo", href: "/about" },
+      { label: "About Edvixo", href: "/about" },
+      { label: "Meet Team", href: "/contact" },
+      { label: "Why Edvixo", href: "/about" },
+      { label: "Case Studies", href: "/about" },
+      { label: "Client Reviews", href: "/about" },
+      { label: "Life @ Edvixo", href: "/about" },
+      { label: "Careers", href: "/contact" },
+      { label: "Company Brochure", href: "/about" },
     ],
   },
   {
@@ -28,51 +29,117 @@ const navMenus = [
       {
         heading: "WEB DEVELOPMENT",
         items: [
-          { label: "Website Development", href: "/services/business-websites" },
-          { label: "PHP Development", href: "/services/business-websites" },
-          { label: "WordPress Development", href: "/services/business-websites" },
-          { label: "HTML Development", href: "/services/business-websites" },
-          { label: "Angular Development", href: "/services/business-websites" },
+          { label: "Business Website Development", href: "/about" },
+          { label: "Web Application Development", href: "/about" },
+          { label: "Custom Website Development", href: "/about" },
+          { label: "WordPress Development", href: "/about" },
+          { label: "Website Redesign", href: "/about" },
         ],
       },
       {
-        heading: "APP DEVELOPMENT",
+        heading: "MOBILE APP DEVELOPMENT",
         items: [
-          { label: "Mobile App Development", href: "/contact" },
-          { label: "iOS App Development", href: "/contact" },
           { label: "Android App Development", href: "/contact" },
-          { label: "Hybrid App Development", href: "/contact" },
+          { label: "iOS App Development", href: "/contact" },
+          { label: "Cross-Platform App Development", href: "/contact" },
+          { label: "App UI/UX Development", href: "/contact" },
+          { label: "App Maintenance", href: "/contact" },
         ],
       },
       {
-        heading: "ECOM DEVELOPMENT",
+        heading: "ECOMMERCE",
         items: [
-          { label: "E-Commerce Development", href: "/services/online-stores" },
-          { label: "WooCommerce Development", href: "/services/online-stores" },
-          { label: "Magento Development", href: "/services/online-stores" },
-          { label: "OpenCart Development", href: "/services/online-stores" },
+          { label: "Ecommerce Website Development", href: "/contact" },
+          { label: "Shopify Development", href: "/contact" },
+          { label: "WooCommerce Development", href: "/contact" },
+          { label: "Custom Ecommerce", href: "/contact" },
+          { label: "Ecommerce Maintenance", href: "/contact" },
         ],
       },
       {
         heading: "DESIGN",
         items: [
           { label: "UI/UX Design", href: "/contact" },
+          { label: "Website Design", href: "/about" },
+          { label: "App Design", href: "/contact" },
           { label: "Graphic Design", href: "/contact" },
-          { label: "App Prototype", href: "/contact" },
-          { label: "Web Design", href: "/services/website-redesign" },
+          { label: "Branding & Identity", href: "/about" },
         ],
       },
       {
-        heading: "MISCELLANEOUS",
+        heading: "SOFTWARE & DIGITAL",
         items: [
-          { label: "Software Development", href: "/services/dashboards" },
-          { label: "Digital Marketing", href: "/services/local-seo" },
-          { label: "Technical Support", href: "/contact" },
+          { label: "Custom Software Development", href: "/contact" },
+          { label: "CRM & ERP Development", href: "/contact" },
+          { label: "SaaS Development", href: "/contact" },
+          { label: "AI & Automation", href: "/contact" },
+          { label: "Digital Marketing & SEO", href: "/contact" },
         ],
       },
     ],
   },
   {
+    label: "Games",
+    href: "/contact",
+    items: [
+      { label: "Game Development", href: "/contact" },
+      { label: "Game Design", href: "/contact" },
+      { label: "Mobile Games", href: "/contact" },
+      { label: "VR/AR Experiences", href: "/contact" },
+      { label: "QA & Testing", href: "/contact" },
+      { label: "Live Ops", href: "/contact" },
+    ],
+  },
+  {
+    label: "Solutions",
+    href: "/contact",
+    items: [
+      { label: "Business Automation", href: "/contact" },
+      { label: "Digital Transformation", href: "/contact" },
+      { label: "Cloud & DevOps Solutions", href: "/contact" },
+      { label: "Startup Product Development", href: "/contact" },
+      { label: "Maintenance & Support", href: "/contact" },
+      { label: "Dedicated Development Teams", href: "/contact" },
+    ],
+  },
+  {
+    label: "Industries",
+    href: "/about",
+    columns: [
+      {
+        heading: "HEALTHCARE & FINANCE",
+        items: [
+          { label: "Healthcare", href: "/about" },
+          { label: "FinTech & Banking", href: "/about" },
+          { label: "Insurance", href: "/about" },
+        ],
+      },
+      {
+        heading: "EDUCATION & TECHNOLOGY",
+        items: [
+          { label: "Education & EdTech", href: "/about" },
+          { label: "Technology & SaaS", href: "/about" },
+          { label: "Media & Entertainment", href: "/about" },
+        ],
+      },
+      {
+        heading: "COMMERCE & PROPERTY",
+        items: [
+          { label: "Retail & E-Commerce", href: "/about" },
+          { label: "Real Estate & PropTech", href: "/about" },
+          { label: "Manufacturing", href: "/about" },
+        ],
+      },
+      {
+        heading: "TRAVEL, LOGISTICS & ENTERTAINMENT",
+        items: [
+          { label: "Logistics & Transportation", href: "/about" },
+          { label: "Travel & Hospitality", href: "/about" },
+          { label: "Sports & Gaming", href: "/about" },
+        ],
+      },
+    ],
+  },
   label: "Solutions",
   href: "/solutions",
   items: [
@@ -116,14 +183,14 @@ const navMenus = [
 },
   {
     label: "Portfolio",
-    href: "/work",
+    href: "/about",
     items: [
-      { label: "Case Studies", href: "/work" },
-      { label: "Client Results", href: "/work" },
-      { label: "Featured Projects", href: "/work" },
-      { label: "Success Stories", href: "/work" },
-      { label: "Industries", href: "/work" },
-      { label: "Process", href: "/services" },
+      { label: "Case Studies", href: "/about" },
+      { label: "Client Results", href: "/about" },
+      { label: "Featured Projects", href: "/about" },
+      { label: "Success Stories", href: "/about" },
+      { label: "Industries", href: "/about" },
+      { label: "Process", href: "/contact" },
     ],
   },
 ];
@@ -133,6 +200,26 @@ export function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
+
+  const desktopNavRef = useRef<HTMLElement>(null);
+
+    useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        desktopNavRef.current &&
+        !desktopNavRef.current.contains(event.target as Node)
+      ) {
+        setOpenDesktopMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const isActiveLink = (href: string) => {
     if (pathname === href) return true;
@@ -185,130 +272,146 @@ export function Header() {
         </Link>
 
         {/* DESKTOP NAVIGATION */}
-        <nav
-          className="hidden items-center gap-1 lg:flex"
-          role="navigation"
-          aria-label="Main navigation"
-        >
-          {navMenus.map((menu) => (
-            <div key={menu.label} className="group">
+      <nav
+        ref={desktopNavRef}
+        className="hidden items-center gap-1 lg:flex"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        {navMenus.map((menu) => {
+          const hasDropdown =
+            Boolean(menu.items?.length) || Boolean(menu.columns?.length);
 
-              <Link
-                href={menu.href}
-                className={`
-                  flex
-                  items-center
-                  gap-2
-                  rounded-md
-                  px-4
-                  py-2
-                  text-sm
-                  font-semibold
-                  transition-all
-                  duration-200
-                  ${
-                    isActiveLink(menu.href)
-                      ? "bg-white/10 text-white"
-                      : "text-slate-200 hover:bg-white/5 hover:text-white"
-                  }
-                `}
-              >
-                <span>{menu.label}</span>
+          const isOpen = openDesktopMenu === menu.label;
 
-                <ChevronDown
-                  className="
-                    h-4
-                    w-4
-                    transition-transform
+          return (
+            <div key={menu.label} className="relative">
+              {/* TEXT + ARROW */}
+              <div className="flex items-center">
+                {/* MENU TEXT */}
+                <Link
+                  href={menu.href}
+                  className={`
+                    flex
+                    items-center
+                    rounded-md
+                    px-4
+                    py-2
+                    text-sm
+                    font-semibold
+                    transition-all
                     duration-200
-                    group-hover:rotate-180
-                  "
-                />
-              </Link>
+                    ${
+                      isActiveLink(menu.href)
+                        ? "bg-white/10 text-white"
+                        : "text-slate-200 hover:bg-white/5 hover:text-white"
+                    }
+                  `}
+                >
+                  {menu.label}
+                </Link>
 
-              {/* DESKTOP DROPDOWN */}
-              <div
-                className="
-                  pointer-events-none
-                  invisible
-                  fixed
-                  left-1/2
-                  top-20
-                  z-50
-                  w-[min(1180px,calc(100vw-48px))]
-                  -translate-x-1/2
-                  translate-y-3
-                  pt-3
-                  opacity-0
-                  transition-all
-                  duration-250
-                  ease-out
-                  group-hover:pointer-events-auto
-                  group-hover:visible
-                  group-hover:translate-y-0
-                  group-hover:opacity-100
-                "
-              >
+                {/* ARROW */}
+                {hasDropdown && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpenDesktopMenu((current) =>
+                        current === menu.label ? null : menu.label
+                      );
+                    }}
+                    className="
+                      flex
+                      h-8
+                      w-8
+                      items-center
+                      justify-center
+                      rounded-md
+                      text-slate-300
+                      transition-colors
+                      hover:bg-white/10
+                      hover:text-white
+                    "
+                    aria-label={`Toggle ${menu.label} dropdown`}
+                    aria-expanded={isOpen}
+                  >
+                    <ChevronDown
+                      className={`
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-200
+                        ${isOpen ? "rotate-180" : ""}
+                      `}
+                    />
+                  </button>
+                )}
+            </div>
+
+              {/* DROPDOWN */}
+              {isOpen && (
                 <div
                   className="
-                    overflow-hidden
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-[#071a2d]
-                    text-white
-                    shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                    fixed
+                    left-1/2
+                    top-20
+                    z-[100]
+                    w-[min(1180px,calc(100vw-48px))]
+                    -translate-x-1/2
+                    pt-3
                   "
                 >
-                  {menu.label === "Services" && menu.columns ? (
-                    <div className="grid gap-6 p-6 lg:grid-cols-5">
-                      {menu.columns.map((column) => (
-                        <div
-                          key={column.heading}
-                          className="space-y-3"
-                        >
-                          <h3
-                            className="
-                              text-xs
-                              font-black
-                              uppercase
-                              tracking-[0.16em]
-                              text-slate-400
-                            "
+                  <div
+                    className="
+                      overflow-hidden
+                      rounded-xl
+                      border
+                      border-white/10
+                      bg-[#071a2d]
+                      text-white
+                      shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                    "
+                  >
+                    {/* SERVICES */}
+                    {menu.columns ? (
+                      <div className="grid gap-6 p-6 lg:grid-cols-5">
+                        {menu.columns.map((column) => (
+                          <div
+                            key={column.heading}
+                            className="space-y-3"
                           >
-                            {column.heading}
-                          </h3>
+                            <h3
+                              className="
+                                text-xs
+                                font-black
+                                uppercase
+                                tracking-[0.16em]
+                                text-slate-400
+                              "
+                            >
+                              {column.heading}
+                            </h3>
 
-                          <div className="space-y-1.5">
-                            {column.items.map((item) => (
-                              <Link
-                                key={`${column.heading}-${item.label}`}
-                                href={item.href}
-                                className="
-                                  group/service-item
-                                  block
-                                  rounded-md
-                                  px-2
-                                  py-2
-                                  text-base
-                                  font-medium
-                                  text-slate-200
-                                  transition-all
-                                  duration-200
-                                  hover:bg-white/10
-                                  hover:text-white
-                                "
-                              >
-                                <span
+                            <div className="space-y-1.5">
+                              {column.items.map((item) => (
+                                <Link
+                                  key={`${column.heading}-${item.label}`}
+                                  href={item.href}
                                   className="
-                                    inline-block
-                                    transition-transform
+                                    block
+                                    rounded-md
+                                    px-2
+                                    py-2
+                                    text-base
+                                    font-medium
+                                    text-slate-200
+                                    transition-all
                                     duration-200
-                                    group-hover/service-item:translate-x-1
+                                    hover:bg-white/10
+                                    hover:text-white
                                   "
                                 >
                                   {item.label}
-                                </span>
                               </Link>
                             ))}
                           </div>
@@ -316,13 +419,13 @@ export function Header() {
                       ))}
                     </div>
                   ) : (
+                              /* OTHER DROPDOWNS */
                     <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
                       {menu.items?.map((item) => (
                         <Link
                           key={`${menu.label}-${item.label}`}
                           href={item.href}
                           className="
-                            group/item
                             rounded-lg
                             px-3
                             py-2
@@ -333,27 +436,20 @@ export function Header() {
                             duration-200
                             hover:bg-white/10
                             hover:text-white
-                          "
-                        >
-                          <span
-                            className="
-                              inline-block
-                              transition-transform
-                              duration-200
-                              group-hover/item:translate-x-1
-                            "
+                          "    
                           >
                             {item.label}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-          ))}
-        </nav>
+          );
+        })}
+      </nav>
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-2 sm:gap-3">
@@ -529,8 +625,7 @@ export function Header() {
                   {hasDropdown && isOpen && (
                     <div className="pb-4 pl-3">
 
-                      {menu.label === "Services" &&
-                      menu.columns ? (
+                      {menu.columns ? (
                         <div className="space-y-5">
 
                           {menu.columns.map((column) => (
