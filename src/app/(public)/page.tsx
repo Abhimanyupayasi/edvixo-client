@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import portfolio from "@/data/portfolio.json";
 
 import { SITE_URL } from "@/lib/site";
 
@@ -10,15 +11,15 @@ import {
   getWebsiteSchema,
 } from "@/lib/seo/schemas";
 
-import { HeroSection } from "@/components/public/home/HeroSection";
-import { IndustryMarquee } from "@/components/public/IndustryMarquee";
-import { ServicesSection } from "@/components/public/home/ServicesSection";
-import { FeaturedWorkSection } from "@/components/public/home/FeaturedWorkSection";
-import { WhyEdvixoSection } from "@/components/public/home/WhyEdvixoSection";
-import { ProcessSection } from "@/components/public/home/ProcessSection";
-import { TestimonialsSection } from "@/components/public/home/TestimonialsSection";
-import { FAQSection } from "@/components/public/home/FAQSection";
-import { CTABanner } from "@/components/public/home/CTABanner";
+import { HeroSection } from "@/components/home/HeroSection";
+import { IndustryMarquee } from "@/components/home/IndustryMarquee";
+import { ServicesSection } from "@/components/home/ServicesSection";
+import { FeaturedWorkSection } from "@/components/home/FeaturedWorkSection";
+import { WhyEdvixoSection } from "@/components/home/WhyEdvixoSection";
+import { ProcessSection } from "@/components/home/ProcessSection";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { FAQSection } from "@/components/home/FAQSection";
+import { CTABanner } from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
   title: "Edvixo - Digital Solutions & Tech Talent for Businesses",
@@ -27,83 +28,25 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
-const featuredProjects = [
-  {
-    _id: "project-1",
-    clientName: "Bluebird Dental",
-    isClientConfidential: false,
-    industry: "Healthcare",
-    title: "Dental Clinic Growth Website",
-    description:
-      "A premium website for a dental clinic focused on appointments, trust, and treatment visibility.",
-    metrics: [
-      { value: "3x", label: "More Leads" },
-      { value: "2.4x", label: "Faster Booking" },
-      { value: "48%", label: "Higher Conversion" },
-    ],
-    tech: ["Next.js", "TypeScript", "Tailwind", "SEO"],
-    slug: "dental-clinic-growth-website",
-    liveUrl: "https://example.com",
-    coverImage:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
-    thumbnailImage:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Dental clinic website showcase",
-    completedAt: "2025-01-15",
-  },
-
-  {
-    _id: "project-2",
-    clientName: "Saffron Kitchen",
-    isClientConfidential: false,
-    industry: "Hospitality",
-    title: "Restaurant Ordering Experience",
-    description:
-      "Professional restaurant website built to improve online ordering and local search visibility.",
-    metrics: [
-      { value: "41%", label: "More Orders" },
-      { value: "22%", label: "Lower Bounce" },
-      { value: "7 days", label: "Launch" },
-    ],
-    tech: ["Next.js", "CMS", "Analytics", "Design System"],
-    slug: "restaurant-ordering-experience",
-    liveUrl: "https://example.com",
-    coverImage:
-      "https://i.pinimg.com/1200x/63/0d/f3/630df316f45dbd829d590e286cea1389.jpg",
-    thumbnailImage:
-      "https://i.pinimg.com/1200x/63/0d/f3/630df316f45dbd829d590e286cea1389.jpg",
-    imageAlt: "Saffron Kitchen restaurant website showcase",
-    completedAt: "2025-03-10",
-  },
-
-  {
-    _id: "project-3",
-    clientName: "BrightPath Academy",
-    isClientConfidential: false,
-    industry: "Education",
-    title: "Admissions Website Redesign",
-    description:
-      "A simplified admissions funnel built to handle course inquiries and lead collection confidently.",
-    metrics: [
-      { value: "2x", label: "More Enquiries" },
-      { value: "94%", label: "Mobile Friendly" },
-      { value: "15%", label: "More Signups" },
-    ],
-    tech: ["React", "Next.js", "Forms", "Performance"],
-    slug: "admissions-website-redesign",
-    liveUrl: "https://example.com",
-
-    // New Admissions image
-    coverImage:
-      "https://i.pinimg.com/1200x/71/17/c8/7117c853954a10dcfb4dbc32077dedf8.jpg",
-
-    thumbnailImage:
-      "https://i.pinimg.com/1200x/71/17/c8/7117c853954a10dcfb4dbc32077dedf8.jpg",
-
-    imageAlt: "BrightPath Academy admissions website showcase",
-    completedAt: "2025-05-22",
-  },
-];
+const featuredProjects = Object.values(portfolio)
+  .filter((project) => project.isFeatured)
+  .map((project) => ({
+    _id: project._id,
+    clientName: project.clientName,
+    isClientConfidential: project.isClientConfidential,
+    industry:
+      project.clientIndustry ??
+      project.industries?.[0] ??
+      "Business",
+    title: project.title,
+    description: project.tagline,
+    metrics: project.results ?? [],
+    tech: (project.techStack ?? []).map((item) => item.name),
+    slug: project.slug,
+    coverImage: project.coverImage,
+    thumbnailImage: project.thumbnailImage,
+    imageAlt: project.imageAlt,
+  }));
 
 const testimonials = [
   {

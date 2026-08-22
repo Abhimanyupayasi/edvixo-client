@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 
 import portfolio from "@/data/portfolio.json";
-import PortfolioDetail from "@/components/public/portfolio/PortfolioDetail";
+import PortfolioDetail from "@/components/portfolio/PortfolioDetail";
 import { SITE_URL } from "@/lib/site";
 
 type PortfolioSlug = keyof typeof portfolio;

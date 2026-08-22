@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/public/contact/ContactForm";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Linkedin, ChevronDown } from "lucide-react";
 import { SITE_URL } from "@/lib/site";

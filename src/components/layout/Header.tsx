@@ -15,12 +15,13 @@ const navMenus = [
       { label: "Home", href: "/" },
       { label: "About The Company", href: "/about" },
       { label: "Meet The Team", href: "/about" },
-      { label: "Client Reviews", href: "/work" },
+      { label: "Client Reviews", href: "/portfolio" },
       { label: "Company Brochure", href: "/docs" },
       { label: "Career", href: "/contact" },
       { label: "Life@Edvixo", href: "/about" },
     ],
   },
+
   {
     label: "Services",
     href: "/services",
@@ -28,13 +29,29 @@ const navMenus = [
       {
         heading: "WEB DEVELOPMENT",
         items: [
-          { label: "Website Development", href: "/services/business-websites" },
-          { label: "PHP Development", href: "/services/business-websites" },
-          { label: "WordPress Development", href: "/services/business-websites" },
-          { label: "HTML Development", href: "/services/business-websites" },
-          { label: "Angular Development", href: "/services/business-websites" },
+          {
+            label: "Website Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "PHP Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "WordPress Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "HTML Development",
+            href: "/services/business-websites",
+          },
+          {
+            label: "Angular Development",
+            href: "/services/business-websites",
+          },
         ],
       },
+
       {
         heading: "APP DEVELOPMENT",
         items: [
@@ -44,86 +61,134 @@ const navMenus = [
           { label: "Hybrid App Development", href: "/contact" },
         ],
       },
+
       {
         heading: "ECOM DEVELOPMENT",
         items: [
-          { label: "E-Commerce Development", href: "/services/online-stores" },
-          { label: "WooCommerce Development", href: "/services/online-stores" },
-          { label: "Magento Development", href: "/services/online-stores" },
-          { label: "OpenCart Development", href: "/services/online-stores" },
+          {
+            label: "E-Commerce Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "WooCommerce Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "Magento Development",
+            href: "/services/online-stores",
+          },
+          {
+            label: "OpenCart Development",
+            href: "/services/online-stores",
+          },
         ],
       },
+
       {
         heading: "DESIGN",
         items: [
           { label: "UI/UX Design", href: "/contact" },
           { label: "Graphic Design", href: "/contact" },
           { label: "App Prototype", href: "/contact" },
-          { label: "Web Design", href: "/services/website-redesign" },
+          {
+            label: "Web Design",
+            href: "/services/website-redesign",
+          },
         ],
       },
+
       {
         heading: "MISCELLANEOUS",
         items: [
-          { label: "Software Development", href: "/services/dashboards" },
-          { label: "Digital Marketing", href: "/services/local-seo" },
-          { label: "Technical Support", href: "/contact" },
+          {
+            label: "Software Development",
+            href: "/services/dashboards",
+          },
+          {
+            label: "Digital Marketing",
+            href: "/services/local-seo",
+          },
+          {
+            label: "Technical Support",
+            href: "/contact",
+          },
         ],
       },
     ],
   },
+
   {
-  label: "Solutions",
-  href: "/solutions",
-  items: [
-    {
-      label: "Hire Dedicated Developers",
-      href: "/solutions/hire-dedicated-developers",
-    },
-    {
-      label: "Startup Product Development",
-      href: "/solutions/startup-product-development",
-    },
-    {
-      label: "Business Automation",
-      href: "/solutions/business-automation",
-    },
-    {
-      label: "Cloud & DevOps Solutions",
-      href: "/solutions/cloud-devops-solutions",
-    },
-    {
-      label: "Maintenance & Support",
-      href: "/solutions/maintenance-support",
-    },
-    {
-      label: "Digital Transformation",
-      href: "/solutions/digital-transformation",
-    },
-  ],
-},
- {
-  label: "Industries",
-  href: "/industries",
-  items: [
-    { label: "Healthcare", href: "/industries/healthcare" },
-    { label: "Education", href: "/industries/education" },
-    { label: "SaaS", href: "/industries/saas" },
-    { label: "Retail", href: "/industries/retail" },
-    { label: "Real Estate", href: "/industries/real-estate" },
-    { label: "Hospitality", href: "/industries/hospitality" },
-  ],
-},
+    label: "Solutions",
+    href: "/solutions",
+    items: [
+      {
+        label: "Hire Dedicated Developers",
+        href: "/solutions/hire-dedicated-developers",
+      },
+      {
+        label: "Startup Product Development",
+        href: "/solutions/startup-product-development",
+      },
+      {
+        label: "Business Automation",
+        href: "/solutions/business-automation",
+      },
+      {
+        label: "Cloud & DevOps Solutions",
+        href: "/solutions/cloud-devops-solutions",
+      },
+      {
+        label: "Maintenance & Support",
+        href: "/solutions/maintenance-support",
+      },
+      {
+        label: "Digital Transformation",
+        href: "/solutions/digital-transformation",
+      },
+    ],
+  },
+
+  {
+    label: "Industries",
+    href: "/industries",
+    items: [
+      { label: "Healthcare", href: "/industries/healthcare" },
+      { label: "Education", href: "/industries/education" },
+      { label: "SaaS", href: "/industries/saas" },
+      { label: "Retail", href: "/industries/retail" },
+      { label: "Real Estate", href: "/industries/real-estate" },
+      { label: "Hospitality", href: "/industries/hospitality" },
+    ],
+  },
+
   {
     label: "Portfolio",
-    href: "/work",
+    href: "/portfolio",
     items: [
-      { label: "Case Studies", href: "/work" },
-      { label: "Client Results", href: "/work" },
-      { label: "Featured Projects", href: "/work" },
-      { label: "Success Stories", href: "/work" },
-      { label: "Industries", href: "/work" },
-      { label: "Process", href: "/services" },
+      {
+        label: "Case Studies",
+        href: "/portfolio?view=case-studies",
+      },
+      {
+        label: "Client Results",
+        href: "/portfolio?view=results",
+      },
+      {
+        label: "Featured Projects",
+        href: "/portfolio?view=featured",
+      },
+      {
+        label: "Success Stories",
+        href: "/portfolio?view=success",
+      },
+      {
+        label: "Industries",
+        href: "/portfolio?view=industries",
+      },
+      {
+        label: "Process",
+        href: "/services",
+      },
     ],
   },
 ];
@@ -132,23 +197,39 @@ export function Header() {
   const pathname = usePathname();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
-  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
+  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(
+    null
+  );
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(
+    null
+  );
+
   const desktopNavRef = useRef<HTMLElement>(null);
 
+  // Close desktop dropdown when clicking outside the navigation.
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (desktopNavRef.current && !desktopNavRef.current.contains(event.target as Node)) {
+      if (
+        desktopNavRef.current &&
+        !desktopNavRef.current.contains(event.target as Node)
+      ) {
         setOpenDesktopMenu(null);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const isActiveLink = (href: string) => {
-    if (pathname === href) return true;
-    return pathname.startsWith(`${href}/`);
+    const cleanHref = href.split("?")[0];
+
+    if (pathname === cleanHref) return true;
+
+    return pathname.startsWith(`${cleanHref}/`);
   };
 
   const toggleMobileMenu = (label: string) => {
@@ -160,6 +241,10 @@ export function Header() {
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setOpenMobileMenu(null);
+  };
+
+  const closeDesktopMenu = () => {
+    setOpenDesktopMenu(null);
   };
 
   return (
@@ -205,67 +290,158 @@ export function Header() {
         >
           {navMenus.map((menu) => {
             const hasDropdown =
-              Boolean(menu.items?.length) || Boolean(menu.columns?.length);
+              Boolean(menu.items?.length) ||
+              Boolean(menu.columns?.length);
+
             const isOpen = openDesktopMenu === menu.label;
 
             return (
-              <div key={menu.label} className="relative">
+              <div
+                key={menu.label}
+                className="relative"
+              >
+                {/* MENU BUTTON / LINK */}
                 {hasDropdown ? (
                   <button
                     type="button"
-                    onClick={() =>
+                    onClick={() => {
                       setOpenDesktopMenu((current) =>
-                        current === menu.label ? null : menu.label
-                      )
-                    }
-                    className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-all duration-200 ${
-                      isOpen || isActiveLink(menu.href)
-                        ? "bg-white/10 text-white"
-                        : "text-slate-200 hover:bg-white/5 hover:text-white"
-                    }`}
+                        current === menu.label
+                          ? null
+                          : menu.label
+                      );
+                    }}
+                    className={`
+                      flex
+                      items-center
+                      gap-2
+                      rounded-md
+                      px-4
+                      py-2
+                      text-sm
+                      font-semibold
+                      transition-all
+                      duration-200
+                      ${
+                        isOpen || isActiveLink(menu.href)
+                          ? "bg-white/10 text-white"
+                          : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      }
+                    `}
                     aria-expanded={isOpen}
                     aria-haspopup="true"
                   >
                     <span>{menu.label}</span>
+
                     <ChevronDown
-                      className={`h-4 w-4 transition-transform duration-200 ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
+                      className={`
+                        h-4
+                        w-4
+                        transition-transform
+                        duration-200
+                        ${isOpen ? "rotate-180" : ""}
+                      `}
                     />
                   </button>
                 ) : (
                   <Link
                     href={menu.href}
-                    className={`flex items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition-all duration-200 ${
-                      isActiveLink(menu.href)
-                        ? "bg-white/10 text-white"
-                        : "text-slate-200 hover:bg-white/5 hover:text-white"
-                    }`}
+                    className={`
+                      flex
+                      items-center
+                      gap-2
+                      rounded-md
+                      px-4
+                      py-2
+                      text-sm
+                      font-semibold
+                      transition-all
+                      duration-200
+                      ${
+                        isActiveLink(menu.href)
+                          ? "bg-white/10 text-white"
+                          : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      }
+                    `}
                   >
                     <span>{menu.label}</span>
                   </Link>
                 )}
 
                 {/* DESKTOP DROPDOWN */}
-                {isOpen && (
-                  <div className="fixed left-1/2 top-20 z-50 w-[min(1180px,calc(100vw-48px))] -translate-x-1/2 pt-3">
-                    <div className="overflow-hidden rounded-xl border border-white/10 bg-[#071a2d] text-white shadow-[0_20px_50px_rgba(0,0,0,0.45)]">
-                      {menu.label === "Services" && menu.columns ? (
+                {hasDropdown && isOpen && (
+                  <div
+                    className="
+                      fixed
+                      left-1/2
+                      top-20
+                      z-50
+                      w-[min(1180px,calc(100vw-48px))]
+                      -translate-x-1/2
+                      pt-3
+                    "
+                  >
+                    <div
+                      className="
+                        overflow-hidden
+                        rounded-xl
+                        border
+                        border-white/10
+                        bg-[#071a2d]
+                        text-white
+                        shadow-[0_20px_50px_rgba(0,0,0,0.45)]
+                      "
+                    >
+                      {/* SERVICES MEGA MENU */}
+                      {menu.label === "Services" &&
+                      menu.columns ? (
                         <div className="grid gap-6 p-6 lg:grid-cols-5">
                           {menu.columns.map((column) => (
-                            <div key={column.heading} className="space-y-3">
-                              <h3 className="text-xs font-black uppercase tracking-[0.16em] text-slate-400">
+                            <div
+                              key={column.heading}
+                              className="space-y-3"
+                            >
+                              <h3
+                                className="
+                                  text-xs
+                                  font-black
+                                  uppercase
+                                  tracking-[0.16em]
+                                  text-slate-400
+                                "
+                              >
                                 {column.heading}
                               </h3>
+
                               <div className="space-y-1.5">
                                 {column.items.map((item) => (
                                   <Link
                                     key={`${column.heading}-${item.label}`}
                                     href={item.href}
-                                    onClick={() => setOpenDesktopMenu(null)}
-                                    className="group/service-item block rounded-md px-2 py-2 text-base font-medium text-slate-200 transition-all duration-200 hover:bg-white/10 hover:text-white"
+                                    onClick={closeDesktopMenu}
+                                    className="
+                                      group/service-item
+                                      block
+                                      rounded-md
+                                      px-2
+                                      py-2
+                                      text-base
+                                      font-medium
+                                      text-slate-200
+                                      transition-all
+                                      duration-200
+                                      hover:bg-white/10
+                                      hover:text-white
+                                    "
                                   >
-                                    <span className="inline-block transition-transform duration-200 group-hover/service-item:translate-x-1">
+                                    <span
+                                      className="
+                                        inline-block
+                                        transition-transform
+                                        duration-200
+                                        group-hover/service-item:translate-x-1
+                                      "
+                                    >
                                       {item.label}
                                     </span>
                                   </Link>
@@ -275,15 +451,35 @@ export function Header() {
                           ))}
                         </div>
                       ) : (
+                        /* NORMAL DROPDOWN */
                         <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
                           {menu.items?.map((item) => (
                             <Link
                               key={`${menu.label}-${item.label}`}
                               href={item.href}
-                              onClick={() => setOpenDesktopMenu(null)}
-                              className="group/item rounded-lg px-3 py-2 text-base font-medium text-slate-200 transition-all duration-200 hover:bg-white/10 hover:text-white"
+                              onClick={closeDesktopMenu}
+                              className="
+                                group/item
+                                rounded-lg
+                                px-3
+                                py-2
+                                text-base
+                                font-medium
+                                text-slate-200
+                                transition-all
+                                duration-200
+                                hover:bg-white/10
+                                hover:text-white
+                              "
                             >
-                              <span className="inline-block transition-transform duration-200 group-hover/item:translate-x-1">
+                              <span
+                                className="
+                                  inline-block
+                                  transition-transform
+                                  duration-200
+                                  group-hover/item:translate-x-1
+                                "
+                              >
                                 {item.label}
                               </span>
                             </Link>
@@ -328,6 +524,7 @@ export function Header() {
             onClick={() => {
               setMobileMenuOpen((current) => !current);
               setOpenMobileMenu(null);
+              setOpenDesktopMenu(null);
             }}
             className="
               inline-flex
@@ -408,15 +605,21 @@ export function Header() {
                 Boolean(menu.items?.length) ||
                 Boolean(menu.columns?.length);
 
-              const isOpen = openMobileMenu === menu.label;
+              const isOpen =
+                openMobileMenu === menu.label;
 
               return (
                 <div
                   key={menu.label}
-                  className="border-b border-white/10 last:border-b-0"
+                  className="
+                    border-b
+                    border-white/10
+                    last:border-b-0
+                  "
                 >
                   <div className="flex items-center justify-between">
 
+                    {/* MOBILE MAIN LINK */}
                     <Link
                       href={menu.href}
                       onClick={closeMobileMenu}
@@ -436,10 +639,13 @@ export function Header() {
                       {menu.label}
                     </Link>
 
+                    {/* MOBILE DROPDOWN BUTTON */}
                     {hasDropdown && (
                       <button
                         type="button"
-                        onClick={() => toggleMobileMenu(menu.label)}
+                        onClick={() =>
+                          toggleMobileMenu(menu.label)
+                        }
                         className="
                           flex
                           h-10
@@ -472,13 +678,12 @@ export function Header() {
                   {hasDropdown && isOpen && (
                     <div className="pb-4 pl-3">
 
+                      {/* SERVICES */}
                       {menu.label === "Services" &&
                       menu.columns ? (
                         <div className="space-y-5">
-
                           {menu.columns.map((column) => (
                             <div key={column.heading}>
-
                               <h3
                                 className="
                                   mb-2
@@ -514,14 +719,12 @@ export function Header() {
                                   </Link>
                                 ))}
                               </div>
-
                             </div>
                           ))}
-
                         </div>
                       ) : (
+                        /* NORMAL MOBILE SUBMENU */
                         <div className="space-y-1">
-
                           {menu.items?.map((item) => (
                             <Link
                               key={`${menu.label}-${item.label}`}
@@ -542,10 +745,8 @@ export function Header() {
                               {item.label}
                             </Link>
                           ))}
-
                         </div>
                       )}
-
                     </div>
                   )}
                 </div>
@@ -576,7 +777,6 @@ export function Header() {
                 </Link>
               </Button>
             </div>
-
           </nav>
         </div>
       )}

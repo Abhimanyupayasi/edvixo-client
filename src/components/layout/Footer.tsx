@@ -12,9 +12,9 @@ const serviceLinks = [
 ];
 
 const workLinks = [
-  { href: "/work", label: "Our Works" },
+  { href: "/portfolio", label: "Our Works" },
   { href: "/services", label: "Services" },
-  { href: "/work/arya-family-restaurant", label: "Case Study" },
+  { href: "/portfolio/restaurant-ordering-experience", label: "Case Study" },
   { href: "/contact", label: "Contact" },
 ];
 

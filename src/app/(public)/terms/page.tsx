@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
-import LegalLayout from "@/components/public/legal/LegalLayout";
+import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Terms of Service - Sapnendra Jaiswal",
