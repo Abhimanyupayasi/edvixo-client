@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import portfolio from "@/data/portfolio.json";
 
 import { SITE_URL } from "@/lib/site";
+
 import JsonLd from "@/components/seo/JsonLd";
+
 import {
   getLocalBusinessSchema,
   getPersonSchema,
@@ -56,6 +58,7 @@ const testimonials = [
     business: "Bluebird Dental",
     avatar: "AM",
   },
+
   {
     _id: "review-2",
     stars: 5,
@@ -65,6 +68,7 @@ const testimonials = [
     business: "Saffron Kitchen",
     avatar: "NG",
   },
+
   {
     _id: "review-3",
     stars: 5,
@@ -84,13 +88,21 @@ export default function HomePage() {
       <JsonLd data={getWebsiteSchema()} />
 
       <HeroSection />
+
       <IndustryMarquee />
+
       <ServicesSection />
+
       <FeaturedWorkSection projects={featuredProjects} />
+
       <WhyEdvixoSection />
+
       <ProcessSection />
+
       <TestimonialsSection testimonials={testimonials} />
+
       <FAQSection />
+
       <CTABanner />
     </>
   );
