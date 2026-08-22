@@ -205,12 +205,12 @@ export function getPortfolioListSchema(
     name: "Web Development Portfolio - Business Websites",
     description:
       "Case studies of websites built for restaurants, clinics, coaching institutes, and retailers worldwide.",
-    url: `${SITE_URL}/work`,
+    url: `${SITE_URL}/portfolio`,
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: item.title,
-      url: `${SITE_URL}/work/${item.slug}`,
+      url: `${SITE_URL}/portfolio/${item.slug}`,
       image: item.coverImage,
       description: item.excerpt,
     })),

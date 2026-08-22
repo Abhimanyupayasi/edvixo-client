@@ -26,7 +26,7 @@ const MORE_ITEMS = [
     label: "Portfolio",
     description: "Showcase of my work",
     icon: FolderOpen,
-    href: "/work",
+    href: "/portfolio",
   },
 ];
 

@@ -138,7 +138,7 @@ function ProjectCard({ project }: { project: Project }) {
             asChild
             className="h-10 rounded-full bg-primary px-5 text-sm font-semibold text-on-primary hover:bg-primary/90"
           >
-            <Link href={`/work/${project.slug}`}>View Project</Link>
+            <Link href={`/portfolio/${project.slug}`}>View Project</Link>
           </Button>
 
           <Button
@@ -221,7 +221,7 @@ export function FeaturedWorkSection({
             variant="outline"
             className="hidden h-10 rounded-shape-sm border-outline-variant px-5 text-on-background hover:bg-surface-container sm:inline-flex"
           >
-            <Link href="/work">
+            <Link href="/portfolio">
               Explore All Projects
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>
@@ -302,7 +302,7 @@ export function FeaturedWorkSection({
             variant="outline"
             className="h-10 rounded-shape-sm border-outline-variant px-5 text-on-background hover:bg-surface-container"
           >
-            <Link href="/work">
+            <Link href="/portfolio">
               Explore All Projects
               <ArrowRight className="ml-1.5 h-4 w-4" />
             </Link>

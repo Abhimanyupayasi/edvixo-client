@@ -119,7 +119,7 @@ export default function NotFoundPage() {
         </Link>
 
         <Link
-          href="/work"
+          href="/portfolio"
           className="inline-flex items-center gap-2 bg-primary-container text-on-primary-container rounded-shape-full px-8 py-3.5 font-semibold text-sm hover:opacity-90 active:scale-95 transition-all duration-200 w-full sm:w-auto justify-center"
         >
           What are you looking for?

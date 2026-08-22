@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const BottomNav = dynamic(() => import("@/components/public/BottomNav"), {
+const BottomNav = dynamic(() => import("./BottomNav"), {
   ssr: false,
 });
 
