@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const navMenus = [
@@ -161,42 +161,90 @@ const navMenus = [
     ],
   },
 
-  // Portfolio is intentionally a direct link.
- {
-  label: "Portfolio",
-  href: "/portfolio",
-  items: [
-    { label: "Case Studies", href: "/portfolio?view=case-studies" },
-    { label: "Client Results", href: "/portfolio?view=results" },
-    { label: "Featured Projects", href: "/portfolio?view=featured" },
-    { label: "Success Stories", href: "/portfolio?view=success" },
-    { label: "Industries", href: "/portfolio?view=industries" },
-    { label: "Process", href: "/services" },
-  ],
-},
+  {
+    label: "Portfolio",
+    href: "/portfolio",
+    items: [
+      {
+        label: "Case Studies",
+        href: "/portfolio?view=case-studies",
+      },
+      {
+        label: "Client Results",
+        href: "/portfolio?view=results",
+      },
+      {
+        label: "Featured Projects",
+        href: "/portfolio?view=featured",
+      },
+      {
+        label: "Success Stories",
+        href: "/portfolio?view=success",
+      },
+      {
+        label: "Industries",
+        href: "/portfolio?view=industries",
+      },
+      {
+        label: "Process",
+        href: "/services",
+      },
+    ],
+  },
 ];
 
 export function Header() {
   const pathname = usePathname();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(null);
+  const [openMobileMenu, setOpenMobileMenu] = useState<string | null>(
+    null
+  );
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(
+    null
+  );
+
+  const desktopNavRef = useRef<HTMLElement>(null);
+
+  // Close desktop dropdown when clicking outside the navigation.
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        desktopNavRef.current &&
+        !desktopNavRef.current.contains(event.target as Node)
+      ) {
+        setOpenDesktopMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const isActiveLink = (href: string) => {
-    if (pathname === href) return true;
+    const cleanHref = href.split("?")[0];
 
-    return pathname.startsWith(`${href}/`);
+    if (pathname === cleanHref) return true;
+
+    return pathname.startsWith(`${cleanHref}/`);
   };
 
   const toggleMobileMenu = (label: string) => {
     setOpenMobileMenu((current) =>
-      current === label ? null : label,
+      current === label ? null : label
     );
   };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setOpenMobileMenu(null);
+  };
+
+  const closeDesktopMenu = () => {
+    setOpenDesktopMenu(null);
   };
 
   return (
@@ -216,6 +264,7 @@ export function Header() {
     >
       {/* MAIN HEADER */}
       <div className="mx-auto flex h-20 max-w-355 items-center justify-between px-4 md:px-6 lg:px-8">
+
         {/* LOGO */}
         <Link
           href="/"
@@ -234,6 +283,7 @@ export function Header() {
 
         {/* DESKTOP NAVIGATION */}
         <nav
+          ref={desktopNavRef}
           className="hidden items-center gap-1 lg:flex"
           role="navigation"
           aria-label="Main navigation"
@@ -243,68 +293,92 @@ export function Header() {
               Boolean(menu.items?.length) ||
               Boolean(menu.columns?.length);
 
+            const isOpen = openDesktopMenu === menu.label;
+
             return (
               <div
                 key={menu.label}
-                className={hasDropdown ? "group" : ""}
+                className="relative"
               >
-                <Link
-                  href={menu.href}
-                  className={`
-                    flex
-                    items-center
-                    gap-2
-                    rounded-md
-                    px-4
-                    py-2
-                    text-sm
-                    font-semibold
-                    transition-all
-                    duration-200
-                    ${
-                      isActiveLink(menu.href)
-                        ? "bg-white/10 text-white"
-                        : "text-slate-200 hover:bg-white/5 hover:text-white"
-                    }
-                  `}
-                >
-                  <span>{menu.label}</span>
+                {/* MENU BUTTON / LINK */}
+                {hasDropdown ? (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setOpenDesktopMenu((current) =>
+                        current === menu.label
+                          ? null
+                          : menu.label
+                      );
+                    }}
+                    className={`
+                      flex
+                      items-center
+                      gap-2
+                      rounded-md
+                      px-4
+                      py-2
+                      text-sm
+                      font-semibold
+                      transition-all
+                      duration-200
+                      ${
+                        isOpen || isActiveLink(menu.href)
+                          ? "bg-white/10 text-white"
+                          : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      }
+                    `}
+                    aria-expanded={isOpen}
+                    aria-haspopup="true"
+                  >
+                    <span>{menu.label}</span>
 
-                  {hasDropdown && (
                     <ChevronDown
-                      className="
+                      className={`
                         h-4
                         w-4
                         transition-transform
                         duration-200
-                        group-hover:rotate-180
-                      "
+                        ${isOpen ? "rotate-180" : ""}
+                      `}
                     />
-                  )}
-                </Link>
+                  </button>
+                ) : (
+                  <Link
+                    href={menu.href}
+                    className={`
+                      flex
+                      items-center
+                      gap-2
+                      rounded-md
+                      px-4
+                      py-2
+                      text-sm
+                      font-semibold
+                      transition-all
+                      duration-200
+                      ${
+                        isActiveLink(menu.href)
+                          ? "bg-white/10 text-white"
+                          : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      }
+                    `}
+                  >
+                    <span>{menu.label}</span>
+                  </Link>
+                )}
 
                 {/* DESKTOP DROPDOWN */}
-                {hasDropdown && (
+                {hasDropdown && isOpen && (
                   <div
                     className="
-                      pointer-events-none
-                      invisible
                       fixed
                       left-1/2
                       top-20
                       z-50
                       w-[min(1180px,calc(100vw-48px))]
                       -translate-x-1/2
-                      translate-y-3
                       pt-3
-                      opacity-0
-                      transition-all
-                      duration-250
-                      ease-out
-                      group-hover:pointer-events-auto
-                      group-hover:visible
-                      group-hover:translate-y-0
-                      group-hover:opacity-100
                     "
                   >
                     <div
@@ -318,6 +392,7 @@ export function Header() {
                         shadow-[0_20px_50px_rgba(0,0,0,0.45)]
                       "
                     >
+                      {/* SERVICES MEGA MENU */}
                       {menu.label === "Services" &&
                       menu.columns ? (
                         <div className="grid gap-6 p-6 lg:grid-cols-5">
@@ -343,6 +418,7 @@ export function Header() {
                                   <Link
                                     key={`${column.heading}-${item.label}`}
                                     href={item.href}
+                                    onClick={closeDesktopMenu}
                                     className="
                                       group/service-item
                                       block
@@ -375,11 +451,13 @@ export function Header() {
                           ))}
                         </div>
                       ) : (
+                        /* NORMAL DROPDOWN */
                         <div className="grid gap-5 p-6 sm:grid-cols-2 lg:grid-cols-3">
                           {menu.items?.map((item) => (
                             <Link
                               key={`${menu.label}-${item.label}`}
                               href={item.href}
+                              onClick={closeDesktopMenu}
                               className="
                                 group/item
                                 rounded-lg
@@ -418,6 +496,7 @@ export function Header() {
 
         {/* RIGHT SIDE */}
         <div className="flex items-center gap-2 sm:gap-3">
+
           {/* DESKTOP CONSULTATION */}
           <Button
             asChild
@@ -445,6 +524,7 @@ export function Header() {
             onClick={() => {
               setMobileMenuOpen((current) => !current);
               setOpenMobileMenu(null);
+              setOpenDesktopMenu(null);
             }}
             className="
               inline-flex
@@ -531,9 +611,15 @@ export function Header() {
               return (
                 <div
                   key={menu.label}
-                  className="border-b border-white/10 last:border-b-0"
+                  className="
+                    border-b
+                    border-white/10
+                    last:border-b-0
+                  "
                 >
                   <div className="flex items-center justify-between">
+
+                    {/* MOBILE MAIN LINK */}
                     <Link
                       href={menu.href}
                       onClick={closeMobileMenu}
@@ -553,6 +639,7 @@ export function Header() {
                       {menu.label}
                     </Link>
 
+                    {/* MOBILE DROPDOWN BUTTON */}
                     {hasDropdown && (
                       <button
                         type="button"
@@ -590,6 +677,8 @@ export function Header() {
                   {/* MOBILE SUBMENU */}
                   {hasDropdown && isOpen && (
                     <div className="pb-4 pl-3">
+
+                      {/* SERVICES */}
                       {menu.label === "Services" &&
                       menu.columns ? (
                         <div className="space-y-5">
@@ -634,6 +723,7 @@ export function Header() {
                           ))}
                         </div>
                       ) : (
+                        /* NORMAL MOBILE SUBMENU */
                         <div className="space-y-1">
                           {menu.items?.map((item) => (
                             <Link
