@@ -31,22 +31,17 @@ export function MegaMenu({
   onNavigate,
 }: MegaMenuProps) {
   /*
-    We use only the first item from each column.
-
-    Each header dropdown therefore becomes:
-
-    1 card = 1 main category
-
-    Example Services:
-    Web Development
-    App Development
-    Ecom Development
-    Design
-    Miscellaneous
-  */
+   * Each column becomes ONE clean card.
+   *
+   * The first item supplies:
+   * - description
+   * - destination URL
+   *
+   * This keeps the dropdown simple and attractive.
+   */
 
   const cards = columns.map((column) => {
-    const firstItem = column.items[0];
+    const firstItem = column.items?.[0];
 
     return {
       title: column.title,
@@ -58,122 +53,102 @@ export function MegaMenu({
   });
 
   return (
-    <div
-      className="
-        w-full
-        rounded-2xl
-        border
-        border-white/10
-        bg-[#071a2d]
-        p-4
-        shadow-[0_25px_70px_rgba(0,0,0,0.45)]
-        sm:p-5
-        lg:p-9
-      "
-    >
+    <div className="mega-menu">
       <div
         className="
           grid
           grid-cols-1
-          gap-4
+          gap-3
           sm:grid-cols-2
           lg:grid-cols-5
         "
       >
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <Link
             key={card.title}
             href={card.href}
             onClick={onNavigate}
-            className="
-              group
-              min-h-[280px]
-              rounded-2xl
-              border
-              border-white/[0.08]
-              bg-[#0d2237]
-              p-7
-              transition-all
-              duration-300
-
-              hover:-translate-y-1
-              hover:border-[#ff8b2c]/40
-              hover:bg-[#102940]
-              hover:shadow-[0_15px_35px_rgba(0,0,0,0.25)]
-
-              sm:min-h-[270px]
-              lg:min-h-[280px]
-            "
+            className="mega-card"
+            style={
+              {
+                animationDelay: `${index * 55}ms`,
+              } as React.CSSProperties
+            }
           >
-            {/* =========================================
-                ORANGE LINE
-            ========================================= */}
+            {/* =================================================
+                SUBTLE ORANGE GLOW
+            ================================================= */}
 
-            <div
-              className="
-                mb-7
-                h-1
-                w-14
-                rounded-full
-                bg-[#ff8b2c]
-                transition-all
-                duration-300
-                group-hover:w-20
-              "
-            />
+            <span className="mega-card-glow" />
 
-            {/* =========================================
+            {/* =================================================
+                ORANGE ACCENT LINE
+            ================================================= */}
+
+            <span className="mega-card-line" />
+
+            {/* =================================================
                 TITLE
-            ========================================= */}
+            ================================================= */}
 
             <h3
               className="
-                text-[16px]
+                relative
+                text-[14px]
                 font-extrabold
                 uppercase
-                leading-6
-                tracking-[0.06em]
+                leading-5
+                tracking-[0.055em]
                 text-white
+                sm:text-[15px]
               "
             >
               {card.title}
             </h3>
 
-            {/* =========================================
+            {/* =================================================
                 DESCRIPTION
-            ========================================= */}
+            ================================================= */}
 
             <p
               className="
-                mt-6
-                max-w-[260px]
-                text-[15px]
-                leading-7
+                relative
+                mt-3
+                max-w-[220px]
+                text-[12px]
+                leading-5
                 text-slate-400
+                sm:text-[13px]
+                sm:leading-6
               "
             >
               {card.description}
             </p>
 
-            {/* =========================================
+            {/* =================================================
                 EXPLORE
-            ========================================= */}
+            ================================================= */}
 
-            <div
+            <span
               className="
-                mt-7
+                relative
+                mt-auto
                 inline-flex
                 items-center
-                text-[15px]
+                gap-1
+                pt-4
+                text-[12px]
                 font-bold
                 text-[#ff8b2c]
-                transition-transform
-                duration-200
-                group-hover:translate-x-1
+                sm:text-[13px]
               "
             >
-              Explore →
-            </div>
+              Explore
+
+              <span className="mega-card-arrow">
+                →
+              </span>
+            </span>
           </Link>
         ))}
       </div>
