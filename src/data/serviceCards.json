@@ -1,0 +1,125 @@
+{
+  "business-website": {
+    "title": "Business Website",
+    "slug": "business-website",
+    "route": "/services/web-development",
+    "description": "A professional, mobile-friendly website that makes your business look credible and trustworthy online. Built to load fast, rank on Google, and turn visitors into customers.",
+    "whoItsFor": [
+      "Restaurants",
+      "Clinics",
+      "Coaching",
+      "Retail",
+      "Any Business"
+    ],
+    "whatYouGet": [
+      "Custom design matching your brand",
+      "Mobile-optimised on all devices",
+      "Google-ready with basic SEO setup",
+      "Contact form + WhatsApp integration"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  },
+
+  "online-store": {
+    "title": "Online Store",
+    "slug": "online-store",
+    "route": "/services/ecom-development",
+    "description": "A complete e-commerce website where customers can browse products, add to cart, and pay online directly through your own website. You keep 100% of every sale with no marketplace commission.",
+    "whoItsFor": [
+      "Retail Shops",
+      "Manufacturers",
+      "Wholesalers",
+      "Food Brands"
+    ],
+    "whatYouGet": [
+      "Product catalogue with search and filters",
+      "Online payment via secure gateways",
+      "Order management dashboard",
+      "Inventory tracking built in"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  },
+
+  "online-booking-system": {
+    "title": "Online Booking System",
+    "slug": "online-booking-system",
+    "route": "/services/miscellaneous",
+    "description": "Let your customers book appointments online 24/7 — even while you're sleeping. Reduce missed calls, eliminate scheduling confusion, and send automatic reminders so clients never forget.",
+    "whoItsFor": [
+      "Clinics",
+      "Salons",
+      "Gyms",
+      "Coaching",
+      "Legal Firms"
+    ],
+    "whatYouGet": [
+      "Real-time availability calendar",
+      "Automated WhatsApp and SMS reminders",
+      "Online advance payment option",
+      "Admin panel to manage all bookings"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  },
+
+  "local-seo-google-presence": {
+    "title": "Local SEO & Google Presence",
+    "slug": "local-seo-google-presence",
+    "route": "/services/miscellaneous",
+    "description": "Get found when customers search for your services on Google — in your city, state, and worldwide. Optimise your Google Business Profile and build local citations so your business appears before competitors in search results.",
+    "whoItsFor": [
+      "Any Local Business",
+      "Multi-Branch Businesses",
+      "New Businesses"
+    ],
+    "whatYouGet": [
+      "Google Business Profile setup and optimisation",
+      "Local keyword targeting for your city",
+      "Local location pages added to your website",
+      "Monthly ranking progress report"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  },
+
+  "website-redesign-speed-fix": {
+    "title": "Website Redesign & Speed Fix",
+    "slug": "website-redesign-speed-fix",
+    "route": "/services/design",
+    "description": "If your current website looks outdated, loads slowly, or isn't showing on Google — fix it. A redesign makes it look better and work better: faster loading, better mobile experience, more enquiries.",
+    "whoItsFor": [
+      "Any Existing Business",
+      "Businesses Losing To Competitors"
+    ],
+    "whatYouGet": [
+      "Full visual redesign to current standards",
+      "Core Web Vitals performance optimisation",
+      "Mobile experience complete overhaul",
+      "Before and after performance report"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  },
+
+  "business-dashboard": {
+    "title": "Business Dashboard",
+    "slug": "business-dashboard",
+    "route": "/services/app-development",
+    "description": "A private dashboard showing your business performance in one place — enquiries, orders, bookings, and revenue. No more checking five different apps. Everything your business generates in one screen.",
+    "whoItsFor": [
+      "Mid-Size Businesses",
+      "Multi-Branch Firms",
+      "Growing Businesses"
+    ],
+    "whatYouGet": [
+      "Custom metrics relevant to your business",
+      "Real-time data that updates automatically",
+      "Access for multiple team members",
+      "Mobile-friendly for checking on the go"
+    ],
+    "startingFrom": "Custom Quote",
+    "responseTime": "Response in 24 hours"
+  }
+}

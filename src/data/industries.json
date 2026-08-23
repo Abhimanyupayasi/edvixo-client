@@ -213,5 +213,41 @@
       "Local search optimisation"
     ],
     "cta": "Improve Your Hospitality Experience"
+  },
+
+  "other": {
+    "title": "Other Industries",
+    "slug": "other",
+    "heroTitle": "Digital Solutions for Every Industry",
+    "heroDescription": "Flexible digital solutions designed for businesses across different industries, helping them build stronger digital experiences, improve operations, and grow online.",
+    "whoItsFor": [
+      "Professional Services",
+      "Startups",
+      "Local Businesses",
+      "Service Businesses",
+      "Growing Businesses"
+    ],
+    "problems": [
+      "Business processes rely heavily on manual work",
+      "Customers struggle to find information online",
+      "The existing digital presence does not support growth",
+      "Different business tools are difficult to manage"
+    ],
+    "solutions": [
+      "Business websites",
+      "Custom web applications",
+      "Business automation",
+      "Digital marketing solutions",
+      "Technical support"
+    ],
+    "features": [
+      "Responsive website",
+      "Custom business features",
+      "Mobile optimisation",
+      "Lead enquiry integration",
+      "SEO-ready structure",
+      "Ongoing technical support"
+    ],
+    "cta": "Build Your Digital Business Presence"
   }
 }

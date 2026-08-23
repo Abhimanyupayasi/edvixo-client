@@ -1,300 +1,36 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import {
   ArrowLeft,
   ArrowRight,
-  BarChart3,
-  Bot,
   CheckCircle2,
-  Cloud,
-  Code2,
-  Database,
-  Globe,
-  Layers3,
-  Settings,
-  Smartphone,
   Sparkles,
-  Zap,
+  Target,
+  Layers3,
+  Rocket,
+  ShieldCheck,
+  Workflow,
 } from "lucide-react";
 
-type Solution = {
-  slug: string;
-  title: string;
-  label: string;
-  icon: any;
-  heroTitle: string;
-  description: string;
-  overview: string;
-  benefits: string[];
-  features: {
-    title: string;
-    description: string;
-  }[];
-};
+import solutions from "@/data/solutions.json";
 
-const solutions: Solution[] = [
-  {
-    slug: "custom-web-development",
-    title: "Custom Web Development",
-    label: "Web Development",
-    icon: Globe,
-    heroTitle: "Websites That Turn Visitors Into Customers",
-    description:
-      "Modern, responsive, and high-performing websites designed around your business goals.",
-    overview:
-      "A professional website is more than an online presence. It should communicate your value clearly, build trust, work smoothly on every device, and guide visitors toward taking action.",
-    benefits: [
-      "Professional digital presence",
-      "Responsive across all devices",
-      "SEO-friendly architecture",
-      "Fast and performance-focused",
-      "Easy to maintain and scale",
-      "Conversion-focused user experience",
-    ],
-    features: [
-      {
-        title: "Responsive Design",
-        description:
-          "Your website works smoothly across mobile, tablet, laptop, and desktop screens.",
-      },
-      {
-        title: "SEO-Friendly Structure",
-        description:
-          "Clean page structure and technical foundations that make your website easier to discover.",
-      },
-      {
-        title: "Performance Optimisation",
-        description:
-          "Fast-loading pages designed to provide a better experience for your visitors.",
-      },
-      {
-        title: "Conversion-Focused UX",
-        description:
-          "Clear content, calls to action, and user journeys designed around your business objectives.",
-      },
-    ],
-  },
+type SolutionSlug = keyof typeof solutions;
 
-  {
-    slug: "web-application-development",
-    title: "Web Application Development",
-    label: "Web Applications",
-    icon: Code2,
-    heroTitle: "Powerful Web Applications Built For Your Workflow",
-    description:
-      "Custom web applications that simplify operations and provide better digital experiences.",
-    overview:
-      "When a normal website is not enough, a web application can help automate business processes, manage information, connect systems, and provide users with powerful functionality.",
-    benefits: [
-      "Custom business workflows",
-      "Secure authentication",
-      "Database-driven applications",
-      "API integrations",
-      "Scalable architecture",
-      "Role-based access",
-    ],
-    features: [
-      {
-        title: "Custom Functionality",
-        description:
-          "Features are designed around the actual requirements of your business instead of forcing your workflow into a generic platform.",
-      },
-      {
-        title: "Secure Authentication",
-        description:
-          "User authentication and access control can be built according to your application requirements.",
-      },
-      {
-        title: "API Integration",
-        description:
-          "Connect your application with external services, platforms, payment systems, or internal tools.",
-      },
-      {
-        title: "Scalable Architecture",
-        description:
-          "The application can be structured so that new features can be added as your business grows.",
-      },
-    ],
-  },
+/* =========================================================
+   STATIC PARAMS
+========================================================= */
 
-  {
-    slug: "business-automation",
-    title: "Business Automation",
-    label: "Automation",
-    icon: Bot,
-    heroTitle: "Automate Repetitive Work And Save Time",
-    description:
-      "Smart business automation that reduces manual tasks and connects your digital workflow.",
-    overview:
-      "Many businesses spend valuable time repeating the same tasks every day. Automation can reduce unnecessary manual work and create more consistent processes.",
-    benefits: [
-      "Reduce repetitive tasks",
-      "Improve workflow efficiency",
-      "Automated notifications",
-      "Connect multiple systems",
-      "Reduce manual errors",
-      "Save employee time",
-    ],
-    features: [
-      {
-        title: "Workflow Automation",
-        description:
-          "Automate repetitive processes that currently require manual intervention.",
-      },
-      {
-        title: "Notifications & Alerts",
-        description:
-          "Send useful notifications when important events or business actions occur.",
-      },
-      {
-        title: "System Integration",
-        description:
-          "Connect different tools and services so information can move between them more efficiently.",
-      },
-      {
-        title: "Process Optimisation",
-        description:
-          "Analyse the existing workflow and identify opportunities to simplify and automate it.",
-      },
-    ],
-  },
-
-  {
-    slug: "business-dashboards",
-    title: "Business Dashboards",
-    label: "Business Intelligence",
-    icon: BarChart3,
-    heroTitle: "See Your Business Data In One Place",
-    description:
-      "Clear dashboards that help you monitor sales, operations, inventory, and performance.",
-    overview:
-      "Business information is often spread across spreadsheets, applications, and different systems. A central dashboard can bring important information together and make it easier to understand.",
-    benefits: [
-      "Centralised business data",
-      "Sales and revenue tracking",
-      "Visual performance reports",
-      "Inventory monitoring",
-      "Operational insights",
-      "Better decision making",
-    ],
-    features: [
-      {
-        title: "Revenue Tracking",
-        description:
-          "Monitor important sales and revenue information through a simple visual interface.",
-      },
-      {
-        title: "Performance Charts",
-        description:
-          "Convert raw business information into easy-to-understand charts and metrics.",
-      },
-      {
-        title: "Inventory Monitoring",
-        description:
-          "Track stock information and identify important inventory changes.",
-      },
-      {
-        title: "Business Reports",
-        description:
-          "Present important business information in structured reports that are easier to analyse.",
-      },
-    ],
-  },
-
-  {
-    slug: "cloud-solutions",
-    title: "Cloud Solutions",
-    label: "Cloud & Infrastructure",
-    icon: Cloud,
-    heroTitle: "Reliable Cloud Infrastructure For Modern Applications",
-    description:
-      "Scalable cloud solutions designed for application deployment, reliability, and performance.",
-    overview:
-      "Modern applications need reliable infrastructure to run smoothly. Cloud solutions provide flexible environments where applications, databases, and services can be deployed and managed.",
-    benefits: [
-      "Scalable infrastructure",
-      "Reliable application hosting",
-      "Cloud deployment",
-      "Database configuration",
-      "Performance optimisation",
-      "Flexible infrastructure",
-    ],
-    features: [
-      {
-        title: "Application Deployment",
-        description:
-          "Deploy modern applications to suitable cloud environments and keep them accessible to users.",
-      },
-      {
-        title: "Cloud Hosting",
-        description:
-          "Use cloud infrastructure that can scale according to the needs of the application.",
-      },
-      {
-        title: "Database Setup",
-        description:
-          "Configure and connect application databases according to the project requirements.",
-      },
-      {
-        title: "Performance Optimisation",
-        description:
-          "Identify infrastructure bottlenecks and improve application performance where required.",
-      },
-    ],
-  },
-
-  {
-    slug: "maintenance-support",
-    title: "Maintenance & Support",
-    label: "Support & Maintenance",
-    icon: Settings,
-    heroTitle: "Keep Your Digital Product Running Smoothly",
-    description:
-      "Ongoing technical support, updates, monitoring, and improvements after launch.",
-    overview:
-      "Launching a website or application is only the beginning. Regular maintenance helps keep your digital product secure, updated, reliable, and ready for future improvements.",
-    benefits: [
-      "Bug fixing",
-      "Security updates",
-      "Performance monitoring",
-      "Technical support",
-      "Feature improvements",
-      "Ongoing maintenance",
-    ],
-    features: [
-      {
-        title: "Bug Fixing",
-        description:
-          "Identify and resolve issues that affect the functionality or user experience of your website or application.",
-      },
-      {
-        title: "Security Updates",
-        description:
-          "Keep project dependencies and important technical components updated where required.",
-      },
-      {
-        title: "Performance Monitoring",
-        description:
-          "Monitor the application and identify areas where performance can be improved.",
-      },
-      {
-        title: "Technical Support",
-        description:
-          "Get ongoing assistance when technical issues or new requirements appear.",
-      },
-    ],
-  },
-];
-
-function getSolution(slug: string) {
-  return solutions.find((solution) => solution.slug === slug);
-}
-
-export async function generateStaticParams() {
-  return solutions.map((solution) => ({
-    slug: solution.slug,
+export function generateStaticParams() {
+  return Object.keys(solutions).map((slug) => ({
+    slug,
   }));
 }
+
+/* =========================================================
+   METADATA
+========================================================= */
 
 export async function generateMetadata({
   params,
@@ -302,19 +38,28 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const solution = getSolution(slug);
+
+  const solution = solutions[slug as SolutionSlug];
 
   if (!solution) {
     return {
-      title: "Solution Not Found",
+      title: "Solution Not Found - Edvixo",
+      robots: {
+        index: false,
+        follow: false,
+      },
     };
   }
 
   return {
-    title: `${solution.title} | Edvixo`,
-    description: solution.description,
+    title: `${solution.title} Solutions - Edvixo`,
+    description: solution.heroDescription,
   };
 }
+
+/* =========================================================
+   PAGE
+========================================================= */
 
 export default async function SolutionDetailPage({
   params,
@@ -322,164 +67,597 @@ export default async function SolutionDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const solution = getSolution(slug);
+
+  const solution = solutions[slug as SolutionSlug];
 
   if (!solution) {
-    return (
-      <main className="min-h-screen bg-background px-4 py-24 text-on-background">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            404
-          </p>
+    notFound();
+  }
 
-          <h1 className="mt-4 text-4xl font-bold">
-            Solution Not Found
-          </h1>
+  return (
+    <main className="min-h-screen overflow-hidden bg-background text-on-background">
 
-          <p className="mt-4 text-on-surface-variant">
-            The solution you are looking for does not exist.
-          </p>
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section className="relative overflow-hidden bg-surface-container-low py-20 md:py-28 lg:py-32">
+
+        {/* Ambient background glow */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -left-40
+            top-0
+            h-[420px]
+            w-[420px]
+            rounded-full
+            bg-primary/10
+            blur-[130px]
+          "
+        />
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            -right-40
+            bottom-0
+            h-[500px]
+            w-[500px]
+            rounded-full
+            bg-primary/10
+            blur-[150px]
+          "
+        />
+
+        {/* Grid effect */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            opacity-[0.035]
+            [background-image:linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)]
+            [background-size:64px_64px]
+          "
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          {/* Back button */}
 
           <Link
             href="/solutions"
-            className="mt-8 inline-flex items-center gap-2 rounded-shape-full bg-primary px-6 py-3 text-sm font-semibold text-on-primary"
+            className="
+              group
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              border
+              border-outline-variant
+              bg-surface/70
+              px-4
+              py-2
+              text-sm
+              font-medium
+              text-on-surface-variant
+              backdrop-blur-xl
+              transition-all
+              duration-300
+              hover:-translate-x-1
+              hover:border-primary/50
+              hover:text-primary
+            "
           >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Solutions
+            <ArrowLeft
+              className="
+                h-4
+                w-4
+                transition-transform
+                duration-300
+                group-hover:-translate-x-1
+              "
+            />
+
+            All Solutions
           </Link>
-        </div>
-      </main>
-    );
-  }
 
-  const Icon = solution.icon;
+          {/* Hero content */}
 
-  return (
-    <main className="bg-background text-on-background">
+          <div className="mx-auto mt-14 max-w-5xl text-center">
 
-      {/* HERO */}
-      <section className="bg-surface-container-low py-20 md:py-28">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+            {/* Label */}
 
-          {/* BREADCRUMB */}
-          <nav className="mb-10 flex items-center gap-2 text-sm text-on-surface-variant">
-            <Link
-              href="/solutions"
-              className="transition-colors hover:text-primary"
+            <div
+              className="
+                mx-auto
+                mb-7
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                border
+                border-primary/30
+                bg-primary/10
+                px-4
+                py-2
+                text-xs
+                font-bold
+                uppercase
+                tracking-[0.18em]
+                text-primary
+                shadow-[0_0_30px_rgba(255,139,44,0.08)]
+              "
             >
-              Solutions
-            </Link>
+              <Sparkles className="h-4 w-4" />
 
-            <span>/</span>
-
-            <span className="font-medium text-on-background">
               {solution.title}
-            </span>
-          </nav>
-
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-
-            {/* LEFT */}
-            <div>
-
-              <div className="mb-6 inline-flex items-center gap-2 rounded-shape-full bg-secondary-container px-4 py-2 text-sm font-semibold text-on-secondary-container">
-                <Icon className="h-4 w-4" />
-                {solution.label}
-              </div>
-
-              <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-                {solution.heroTitle}
-              </h1>
-
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-on-surface-variant md:text-lg">
-                {solution.description}
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 rounded-shape-full bg-primary px-6 py-3 text-sm font-semibold text-on-primary transition-opacity hover:opacity-90"
-                >
-                  Discuss Your Project
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-
-                <Link
-                  href="/solutions"
-                  className="inline-flex items-center gap-2 rounded-shape-full border border-outline-variant bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:bg-surface-container"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  All Solutions
-                </Link>
-
-              </div>
             </div>
 
-            {/* RIGHT VISUAL */}
-            <div className="flex justify-center">
-              <div className="relative flex h-80 w-full max-w-md items-center justify-center overflow-hidden rounded-shape-md border border-outline-variant bg-surface shadow-lg">
+            {/* Main heading */}
 
-                <div className="absolute h-64 w-64 rounded-full border border-primary/20" />
+            <h1
+              className="
+                text-4xl
+                font-black
+                leading-[1.02]
+                tracking-[-0.04em]
+                md:text-5xl
+                lg:text-6xl
+                xl:text-7xl
+              "
+            >
+              {solution.heroTitle}
+            </h1>
 
-                <div className="absolute h-48 w-48 rounded-full border border-primary/20" />
+            {/* Description */}
 
-                <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-primary-container text-on-primary-container shadow-lg">
-                  <Icon className="h-12 w-12" />
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* OVERVIEW */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
-
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-            OVERVIEW
-          </p>
-
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Built Around Your Business
-          </h2>
-
-          <p className="mt-6 text-lg leading-relaxed text-on-surface-variant">
-            {solution.overview}
-          </p>
-
-        </div>
-      </section>
-
-      {/* BENEFITS */}
-      <section className="bg-surface-container-low py-20 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
-
-          <div className="mb-12">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-              BENEFITS
+            <p
+              className="
+                mx-auto
+                mt-7
+                max-w-3xl
+                text-base
+                leading-8
+                text-on-surface-variant
+                md:text-lg
+                lg:text-xl
+              "
+            >
+              {solution.heroDescription}
             </p>
 
-            <h2 className="text-3xl font-bold md:text-4xl">
-              What You Get
-            </h2>
+            {/* CTA buttons */}
+
+            <div className="mt-9 flex flex-wrap justify-center gap-3">
+
+              <Link
+                href="/contact"
+                className="
+                  group
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  bg-primary
+                  px-7
+                  py-3.5
+                  text-sm
+                  font-bold
+                  text-on-primary
+                  shadow-[0_10px_35px_rgba(255,139,44,0.20)]
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:shadow-[0_15px_45px_rgba(255,139,44,0.30)]
+                "
+              >
+                {solution.finalCta}
+
+                <ArrowRight
+                  className="
+                    h-4
+                    w-4
+                    transition-transform
+                    duration-300
+                    group-hover:translate-x-1
+                  "
+                />
+              </Link>
+
+              <Link
+                href="/portfolio"
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-outline-variant
+                  bg-surface/60
+                  px-7
+                  py-3.5
+                  text-sm
+                  font-semibold
+                  backdrop-blur-xl
+                  transition-all
+                  duration-300
+                  hover:-translate-y-1
+                  hover:border-primary/40
+                  hover:bg-surface-container
+                "
+              >
+                View Our Work
+              </Link>
+
+            </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Hero stats */}
 
-            {solution.benefits.map((benefit) => (
-              <div
-                key={benefit}
-                className="flex items-start gap-3 rounded-shape-md border border-outline-variant bg-surface p-5"
-              >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-3 sm:grid-cols-3">
 
-                <span className="text-sm font-medium">
-                  {benefit}
+            {[
+              {
+                icon: Target,
+                title: "Business Focused",
+                text: "Built around real goals",
+              },
+              {
+                icon: Layers3,
+                title: "Scalable",
+                text: "Designed to grow with you",
+              },
+              {
+                icon: Rocket,
+                title: "Practical",
+                text: "Focused on useful outcomes",
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <div
+                  key={item.title}
+                  className="
+                    group
+                    rounded-2xl
+                    border
+                    border-outline-variant
+                    bg-surface/60
+                    p-5
+                    text-left
+                    backdrop-blur-xl
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-primary/30
+                    hover:bg-surface
+                  "
+                >
+                  <div className="flex items-center gap-3">
+
+                    <div
+                      className="
+                        flex
+                        h-10
+                        w-10
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-xl
+                        bg-primary/10
+                      "
+                    >
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+
+                    <div>
+                      <p className="text-sm font-bold">
+                        {item.title}
+                      </p>
+
+                      <p className="mt-0.5 text-xs text-on-surface-variant">
+                        {item.text}
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          WHO WE HELP
+      ===================================================== */}
+
+      <section className="py-20 md:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+
+            {/* Heading */}
+
+            <div>
+
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                WHO WE HELP
+              </p>
+
+              <h2 className="text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+                Built for Businesses
+                <span className="block text-primary">
+                  Like Yours
                 </span>
+              </h2>
+
+              <p className="mt-5 max-w-lg leading-7 text-on-surface-variant">
+                Our {solution.title.toLowerCase()} solutions are designed
+                around the needs of teams that want practical technology
+                without unnecessary complexity.
+              </p>
+
+            </div>
+
+            {/* Cards */}
+
+            <div className="grid gap-3 sm:grid-cols-2">
+
+              {solution.whoItsFor.map((item, index) => (
+                <div
+                  key={item}
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-2xl
+                    border
+                    border-outline-variant
+                    bg-surface
+                    p-6
+                    transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:border-primary/40
+                    hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)]
+                  "
+                >
+
+                  <span className="absolute right-5 top-5 text-xs font-bold text-on-surface-variant/25">
+                    0{index + 1}
+                  </span>
+
+                  <div
+                    className="
+                      mb-5
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-primary/10
+                      transition-transform
+                      duration-300
+                      group-hover:scale-110
+                    "
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-primary" />
+                  </div>
+
+                  <h3 className="font-bold">
+                    {item}
+                  </h3>
+
+                </div>
+              ))}
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          PROBLEMS
+      ===================================================== */}
+
+      <section className="bg-surface-container-low py-20 md:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          <div className="grid gap-12 lg:grid-cols-2">
+
+            {/* Left */}
+
+            <div className="lg:sticky lg:top-24 lg:self-start">
+
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                COMMON CHALLENGES
+              </p>
+
+              <h2 className="max-w-xl text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+                Problems Shouldn&apos;t
+                <span className="block text-primary">
+                  Slow You Down
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-lg leading-7 text-on-surface-variant">
+                We help businesses replace inefficient processes and
+                technology limitations with practical digital solutions.
+              </p>
+
+            </div>
+
+            {/* Right */}
+
+            <div className="space-y-4">
+
+              {solution.problems.map((problem, index) => (
+                <div
+                  key={problem}
+                  className="
+                    group
+                    flex
+                    items-start
+                    gap-4
+                    rounded-2xl
+                    border
+                    border-outline-variant
+                    bg-surface
+                    p-5
+                    transition-all
+                    duration-300
+                    hover:-translate-y-1
+                    hover:border-primary/40
+                    hover:shadow-xl
+                    md:p-6
+                  "
+                >
+
+                  <div
+                    className="
+                      flex
+                      h-10
+                      w-10
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-primary/10
+                      text-sm
+                      font-black
+                      text-primary
+                    "
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </div>
+
+                  <p className="pt-2 text-sm leading-6 text-on-surface-variant md:text-base">
+                    {problem}
+                  </p>
+
+                </div>
+              ))}
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          SOLUTIONS WE PROVIDE
+      ===================================================== */}
+
+      <section className="py-20 md:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          <div className="mb-12 max-w-2xl">
+
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              WHAT WE BUILD
+            </p>
+
+            <h2 className="text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+              Solutions for {solution.title}
+            </h2>
+
+            <p className="mt-4 leading-7 text-on-surface-variant">
+              Practical solutions designed around your business
+              requirements and long-term goals.
+            </p>
+
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+
+            {solution.solutions.map((item, index) => (
+              <div
+                key={item}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-3xl
+                  border
+                  border-outline-variant
+                  bg-surface
+                  p-7
+                  transition-all
+                  duration-500
+                  hover:-translate-y-2
+                  hover:border-primary/40
+                  hover:shadow-[0_25px_70px_rgba(0,0,0,0.18)]
+                "
+              >
+
+                {/* Background glow */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    -right-20
+                    -top-20
+                    h-40
+                    w-40
+                    rounded-full
+                    bg-primary/10
+                    opacity-0
+                    blur-3xl
+                    transition-opacity
+                    duration-500
+                    group-hover:opacity-100
+                  "
+                />
+
+                <div className="relative flex items-start justify-between">
+
+                  <div
+                    className="
+                      flex
+                      h-12
+                      w-12
+                      items-center
+                      justify-center
+                      rounded-2xl
+                      bg-primary-container
+                      transition-all
+                      duration-300
+                      group-hover:scale-110
+                      group-hover:rotate-3
+                    "
+                  >
+                    <Layers3 className="h-6 w-6 text-primary" />
+                  </div>
+
+                  <span className="text-xs font-black tracking-[0.2em] text-on-surface-variant/30">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                </div>
+
+                <h3 className="relative mt-6 text-xl font-bold">
+                  {item}
+                </h3>
+
+                <div className="relative mt-5 h-1 w-8 rounded-full bg-primary transition-all duration-500 group-hover:w-16" />
+
               </div>
             ))}
 
@@ -487,45 +665,69 @@ export default async function SolutionDetailPage({
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
 
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
+      {/* =====================================================
+          FEATURES
+      ===================================================== */}
+
+      <section className="bg-surface-container-low py-20 md:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          <div className="mb-12 text-center">
+
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
               FEATURES
             </p>
 
-            <h2 className="text-3xl font-bold md:text-4xl">
-              Everything You Need
+            <h2 className="text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+              What We Can Deliver
             </h2>
 
-            <p className="mt-4 text-on-surface-variant">
-              The solution can be adapted to your exact business requirements.
-            </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
-            {solution.features.map((feature, index) => (
+            {solution.features.map((feature) => (
               <div
-                key={feature.title}
-                className="rounded-shape-md border border-outline-variant bg-surface p-7"
+                key={feature}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-2xl
+                  border
+                  border-outline-variant
+                  bg-surface
+                  p-6
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:border-primary/40
+                  hover:shadow-xl
+                "
               >
 
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-shape-md bg-primary-container text-on-primary-container">
-                  {index === 0 && <Zap className="h-5 w-5" />}
-                  {index === 1 && <Layers3 className="h-5 w-5" />}
-                  {index === 2 && <Database className="h-5 w-5" />}
-                  {index === 3 && <Smartphone className="h-5 w-5" />}
+                <div
+                  className="
+                    mb-5
+                    flex
+                    h-11
+                    w-11
+                    items-center
+                    justify-center
+                    rounded-xl
+                    bg-primary/10
+                    transition-transform
+                    duration-300
+                    group-hover:scale-110
+                  "
+                >
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
                 </div>
 
-                <h3 className="text-xl font-bold">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-relaxed text-on-surface-variant">
-                  {feature.description}
+                <p className="text-sm leading-6 text-on-surface-variant">
+                  {feature}
                 </p>
 
               </div>
@@ -535,91 +737,290 @@ export default async function SolutionDetailPage({
         </div>
       </section>
 
-      {/* PROCESS */}
-      <section className="bg-surface-container-low py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-4 md:px-6 lg:px-8">
 
-          <div className="mb-12 text-center">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-              OUR PROCESS
-            </p>
+      {/* =====================================================
+          BENEFITS
+      ===================================================== */}
 
-            <h2 className="text-3xl font-bold md:text-4xl">
-              From Idea To Solution
-            </h2>
-          </div>
+      <section className="py-20 md:py-24">
 
-          <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
 
-            <div className="rounded-shape-md border border-outline-variant bg-surface p-6">
-              <span className="text-sm font-bold text-primary">
-                01
-              </span>
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
 
-              <h3 className="mt-4 font-bold">
-                Understand
-              </h3>
+            <div>
 
-              <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
-                We understand your business, requirements, users, and goals.
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+                BUSINESS IMPACT
               </p>
+
+              <h2 className="text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+                Technology That Creates
+                <span className="block text-primary">
+                  Real Value
+                </span>
+              </h2>
+
+              <p className="mt-5 max-w-lg leading-7 text-on-surface-variant">
+                The goal is not simply to add technology. The goal is to
+                create measurable improvements in how your business operates
+                and grows.
+              </p>
+
             </div>
 
-            <div className="rounded-shape-md border border-outline-variant bg-surface p-6">
-              <span className="text-sm font-bold text-primary">
-                02
-              </span>
+            <div className="grid gap-4 sm:grid-cols-2">
 
-              <h3 className="mt-4 font-bold">
-                Build
-              </h3>
+              {solution.benefits.map((benefit, index) => (
+                <div
+                  key={benefit}
+                  className="
+                    group
+                    rounded-2xl
+                    border
+                    border-outline-variant
+                    bg-surface-container-low
+                    p-6
+                    transition-all
+                    duration-300
+                    hover:-translate-y-2
+                    hover:border-primary/40
+                    hover:bg-surface
+                    hover:shadow-xl
+                  "
+                >
 
-              <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
-                We design and develop the solution around the agreed
-                requirements.
-              </p>
-            </div>
+                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-black text-on-primary">
+                    {index + 1}
+                  </div>
 
-            <div className="rounded-shape-md border border-outline-variant bg-surface p-6">
-              <span className="text-sm font-bold text-primary">
-                03
-              </span>
+                  <p className="text-sm font-semibold leading-6">
+                    {benefit}
+                  </p>
 
-              <h3 className="mt-4 font-bold">
-                Improve
-              </h3>
+                </div>
+              ))}
 
-              <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
-                We test, optimise, launch, and continue improving the
-                solution.
-              </p>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
 
-          <Sparkles className="mx-auto h-8 w-8 text-white" />
+      {/* =====================================================
+          PROCESS
+      ===================================================== */}
 
-          <h2 className="mt-5 text-3xl font-bold text-white md:text-4xl">
-            Ready To Build Your Solution?
+      <section className="bg-surface-container-low py-20 md:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+
+          <div className="mb-12 max-w-2xl">
+
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              OUR PROCESS
+            </p>
+
+            <h2 className="text-3xl font-black tracking-tight md:text-4xl lg:text-5xl">
+              From Idea to
+              <span className="text-primary"> Execution</span>
+            </h2>
+
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+
+            {solution.process.map((step, index) => (
+              <div
+                key={step}
+                className="
+                  group
+                  relative
+                  rounded-2xl
+                  border
+                  border-outline-variant
+                  bg-surface
+                  p-6
+                  transition-all
+                  duration-300
+                  hover:-translate-y-2
+                  hover:border-primary/40
+                  hover:shadow-xl
+                "
+              >
+
+                <div className="mb-6 flex items-center justify-between">
+
+                  <div
+                    className="
+                      flex
+                      h-11
+                      w-11
+                      items-center
+                      justify-center
+                      rounded-xl
+                      bg-primary
+                      text-sm
+                      font-black
+                      text-on-primary
+                      shadow-lg
+                    "
+                  >
+                    {index + 1}
+                  </div>
+
+                  <Workflow className="h-5 w-5 text-primary/30 transition-colors duration-300 group-hover:text-primary" />
+
+                </div>
+
+                <p className="text-sm font-semibold leading-6">
+                  {step}
+                </p>
+
+              </div>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          FAQ
+      ===================================================== */}
+
+      <section className="py-20 md:py-24">
+
+        <div className="mx-auto max-w-4xl px-4 md:px-6 lg:px-8">
+
+          <div className="mb-12 text-center">
+
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              FAQ
+            </p>
+
+            <h2 className="text-3xl font-black tracking-tight md:text-4xl">
+              Frequently Asked Questions
+            </h2>
+
+          </div>
+
+          <div className="space-y-4">
+
+            {solution.faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="
+                  group
+                  rounded-2xl
+                  border
+                  border-outline-variant
+                  bg-surface
+                  p-6
+                  transition-all
+                  duration-300
+                  open:border-primary/40
+                  open:bg-surface-container-low
+                  open:shadow-xl
+                "
+              >
+
+                <summary
+                  className="
+                    cursor-pointer
+                    list-none
+                    pr-8
+                    text-base
+                    font-bold
+                    marker:hidden
+                  "
+                >
+                  {faq.question}
+                </summary>
+
+                <p className="mt-4 max-w-3xl leading-7 text-on-surface-variant">
+                  {faq.answer}
+                </p>
+
+              </details>
+            ))}
+
+          </div>
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          FINAL CTA
+      ===================================================== */}
+
+      <section className="relative overflow-hidden bg-primary py-20 md:py-28">
+
+        {/* Glow */}
+
+        <div
+          className="
+            pointer-events-none
+            absolute
+            left-1/2
+            top-1/2
+            h-[500px]
+            w-[500px]
+            -translate-x-1/2
+            -translate-y-1/2
+            rounded-full
+            bg-white/10
+            blur-[120px]
+          "
+        />
+
+        <div className="relative mx-auto max-w-4xl px-6 text-center">
+
+          <ShieldCheck className="mx-auto h-10 w-10 text-white/80" />
+
+          <h2 className="mt-6 text-3xl font-black tracking-tight text-white md:text-4xl lg:text-5xl">
+            {solution.finalCta}
           </h2>
 
-          <p className="mt-4 leading-relaxed text-primary-container">
-            Tell us about your business requirement and let's discuss the
-            right approach for your project.
+          <p className="mx-auto mt-5 max-w-2xl leading-8 text-primary-container">
+            Let&apos;s discuss your requirements and create a practical
+            digital solution designed around your business.
           </p>
 
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center gap-2 rounded-shape-full bg-white px-7 py-3 text-sm font-semibold text-primary transition-opacity hover:opacity-90"
+            className="
+              group
+              mt-9
+              inline-flex
+              items-center
+              gap-2
+              rounded-full
+              bg-white
+              px-8
+              py-4
+              text-sm
+              font-bold
+              text-primary
+              shadow-xl
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:shadow-2xl
+            "
           >
-            Start a Conversation
-            <ArrowRight className="h-4 w-4" />
+            Get Free Consultation
+
+            <ArrowRight
+              className="
+                h-4
+                w-4
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
           </Link>
 
         </div>
