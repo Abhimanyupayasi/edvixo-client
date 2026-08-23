@@ -1,0 +1,291 @@
+{
+  "about": {
+    "title": "About Edvixo",
+    "slug": "about",
+    "heroTitle": "Digital Solutions Built Around Your Business",
+    "heroDescription": "Learn about Edvixo, our vision, our approach, and how we help businesses build reliable digital products and technology solutions.",
+    "cardDescription": "Learn about Edvixo, our vision, team and digital expertise.",
+    "whoItsFor": [
+      "Growing Businesses",
+      "Startups",
+      "Agencies",
+      "Technology Teams"
+    ],
+    "problems": [
+      "Businesses need reliable digital technology partners",
+      "Digital projects can become difficult to manage",
+      "Technology decisions can create unnecessary complexity",
+      "Businesses need solutions aligned with their goals"
+    ],
+    "solutions": [
+      "Business-focused digital solutions",
+      "Modern web experiences",
+      "Scalable technology systems",
+      "Practical technical support"
+    ],
+    "features": [
+      "Business-focused approach",
+      "Modern technology solutions",
+      "Responsive digital experiences",
+      "Scalable development practices",
+      "Clear communication",
+      "Long-term technical support"
+    ],
+    "benefits": [
+      "Work with a practical technology partner",
+      "Build solutions around real business requirements",
+      "Reduce unnecessary technical complexity",
+      "Create technology that can grow with your business"
+    ],
+    "process": [
+      "Understand your business and requirements",
+      "Define the right digital approach",
+      "Plan the solution and technology",
+      "Build and test the product",
+      "Launch and continuously improve"
+    ],
+    "faqs": [
+      {
+        "question": "What does Edvixo do?",
+        "answer": "Edvixo builds digital products, websites, applications, business systems, and technology solutions for growing businesses."
+      },
+      {
+        "question": "Does Edvixo work with startups?",
+        "answer": "Yes. We work with startups, growing businesses, agencies, and teams that need practical digital technology solutions."
+      }
+    ],
+    "finalCta": "Build With Edvixo"
+  },
+
+  "team": {
+    "title": "Meet Our Team",
+    "slug": "team",
+    "heroTitle": "Meet the People Behind Edvixo",
+    "heroDescription": "A focused team working across design, development, technology, and digital solutions to help businesses move forward.",
+    "cardDescription": "Meet the people behind our digital products and solutions.",
+    "whoItsFor": [
+      "Startups",
+      "Growing Businesses",
+      "Agencies",
+      "Product Teams"
+    ],
+    "problems": [
+      "Businesses need dependable technical expertise",
+      "Projects require multiple technology skills",
+      "Teams need clear communication and collaboration",
+      "Technical work needs to stay focused on business goals"
+    ],
+    "solutions": [
+      "Web development expertise",
+      "Application development",
+      "UI and UX implementation",
+      "Business technology solutions"
+    ],
+    "features": [
+      "Development expertise",
+      "Modern web technologies",
+      "Product-focused thinking",
+      "Collaborative project approach",
+      "Responsive communication",
+      "Business-focused execution"
+    ],
+    "benefits": [
+      "Access focused technical expertise",
+      "Work with a collaborative team",
+      "Keep projects aligned with business goals",
+      "Build reliable digital products"
+    ],
+    "process": [
+      "Understand the project requirements",
+      "Assign the appropriate expertise",
+      "Plan the development approach",
+      "Build and review the solution",
+      "Launch and provide ongoing support"
+    ],
+    "faqs": [
+      {
+        "question": "What type of projects does the team work on?",
+        "answer": "The team works on websites, web applications, business systems, digital products, ecommerce experiences, and other technology solutions."
+      },
+      {
+        "question": "Can your team work with our existing team?",
+        "answer": "Yes. We can collaborate with existing business, design, and development teams depending on the project requirements."
+      }
+    ],
+    "finalCta": "Work With Our Team"
+  },
+
+  "why-edvixo": {
+    "title": "Why Edvixo",
+    "slug": "why-edvixo",
+    "heroTitle": "A Practical Technology Partner for Growing Businesses",
+    "heroDescription": "Edvixo focuses on building useful, scalable, and business-focused digital solutions instead of unnecessary complexity.",
+    "cardDescription": "Discover what makes Edvixo a reliable digital technology partner.",
+    "whoItsFor": [
+      "Growing Businesses",
+      "Startups",
+      "Agencies",
+      "Established Companies"
+    ],
+    "problems": [
+      "Technology projects become unnecessarily complicated",
+      "Businesses struggle to find reliable technical partners",
+      "Digital products need to deliver measurable business value",
+      "Projects can lose focus without clear communication"
+    ],
+    "solutions": [
+      "Business-focused development",
+      "Scalable digital architecture",
+      "Clear project communication",
+      "Long-term technical partnership"
+    ],
+    "features": [
+      "Business-first thinking",
+      "Modern technology",
+      "Responsive communication",
+      "Scalable solutions",
+      "Practical implementation",
+      "Long-term support"
+    ],
+    "benefits": [
+      "Focus on business outcomes",
+      "Reduce unnecessary complexity",
+      "Build scalable technology",
+      "Have a dependable technical partner"
+    ],
+    "process": [
+      "Understand your business goals",
+      "Identify the technology requirements",
+      "Design a practical solution",
+      "Develop and test the product",
+      "Launch, measure, and improve"
+    ],
+    "faqs": [
+      {
+        "question": "Why should I choose Edvixo?",
+        "answer": "Edvixo focuses on practical digital solutions designed around business requirements, scalability, usability, and long-term growth."
+      },
+      {
+        "question": "Do you provide support after launch?",
+        "answer": "Yes. Ongoing maintenance, improvements, technical support, and feature development can be provided based on your requirements."
+      }
+    ],
+    "finalCta": "Start a Project With Edvixo"
+  },
+
+  "case-studies": {
+    "title": "Case Studies",
+    "slug": "case-studies",
+    "heroTitle": "Digital Solutions Built for Real Business Results",
+    "heroDescription": "Explore selected projects and digital experiences built to solve practical business problems and create better customer experiences.",
+    "cardDescription": "Explore selected projects, experiences and successful client solutions.",
+    "whoItsFor": [
+      "Business Owners",
+      "Startups",
+      "Agencies",
+      "Product Teams"
+    ],
+    "problems": [
+      "Businesses need technology that solves real problems",
+      "Digital experiences must support business objectives",
+      "Poor user experiences can reduce conversions",
+      "Technology needs to work reliably in real-world situations"
+    ],
+    "solutions": [
+      "Business websites",
+      "Web applications",
+      "Ecommerce experiences",
+      "Custom digital systems"
+    ],
+    "features": [
+      "Responsive user experiences",
+      "Conversion-focused interfaces",
+      "Business-oriented functionality",
+      "Mobile-first implementation",
+      "Scalable architecture",
+      "Performance-focused development"
+    ],
+    "benefits": [
+      "See practical examples of our work",
+      "Understand our development approach",
+      "Explore different digital solutions",
+      "Evaluate potential solutions for your business"
+    ],
+    "process": [
+      "Understand the business challenge",
+      "Define the project objectives",
+      "Design the digital experience",
+      "Develop and test the solution",
+      "Launch and measure the outcome"
+    ],
+    "faqs": [
+      {
+        "question": "What type of projects are included in your case studies?",
+        "answer": "Case studies can include websites, applications, ecommerce experiences, business systems, and other digital solutions."
+      },
+      {
+        "question": "Can you build something similar for our business?",
+        "answer": "Yes. Each project can be adapted around your business requirements, customers, goals, and technology needs."
+      }
+    ],
+    "finalCta": "Discuss Your Project"
+  },
+
+  "client-reviews": {
+    "title": "Client Reviews",
+    "slug": "client-reviews",
+    "heroTitle": "What Businesses Say About Working With Edvixo",
+    "heroDescription": "Discover feedback and experiences from businesses that have worked with Edvixo on digital products and technology solutions.",
+    "cardDescription": "See what our clients say about working with Edvixo.",
+    "whoItsFor": [
+      "Business Owners",
+      "Startup Founders",
+      "Agency Teams",
+      "Product Teams"
+    ],
+    "problems": [
+      "Businesses need dependable technology partners",
+      "Communication is important throughout a project",
+      "Clients need solutions that match their requirements",
+      "Long-term support matters after launch"
+    ],
+    "solutions": [
+      "Clear project communication",
+      "Business-focused development",
+      "Reliable technical implementation",
+      "Ongoing support"
+    ],
+    "features": [
+      "Transparent communication",
+      "Requirement-focused development",
+      "Responsive collaboration",
+      "Modern technology",
+      "Ongoing technical support",
+      "Long-term partnership"
+    ],
+    "benefits": [
+      "Understand the client experience",
+      "See how we approach projects",
+      "Build confidence before starting",
+      "Understand our support approach"
+    ],
+    "process": [
+      "Understand client requirements",
+      "Plan the project",
+      "Build and review the solution",
+      "Collect feedback",
+      "Improve and support the product"
+    ],
+    "faqs": [
+      {
+        "question": "How do you work with clients?",
+        "answer": "We begin by understanding requirements and business goals, then plan, develop, review, and improve the solution through clear communication."
+      },
+      {
+        "question": "Can clients request changes during development?",
+        "answer": "Yes. Project changes can be discussed and evaluated based on scope, requirements, timeline, and technical impact."
+      }
+    ],
+    "finalCta": "Start Your Project With Us"
+  }
+}

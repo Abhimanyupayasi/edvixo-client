@@ -1,8 +1,8 @@
 {
-  "hire-dedicated-developers": {
-    "title": "Hire Dedicated Developers",
-    "heroTitle": "Dedicated Developers for Your Growing Business",
-    "heroDescription": "Build and scale your digital products with dedicated developers who work as an extension of your team.",
+  "development": {
+    "title": "Development",
+    "heroTitle": "Build Powerful Digital Products",
+    "heroDescription": "Build and scale modern websites, applications, and digital products with practical development solutions.",
     "whoItsFor": [
       "Startups",
       "Growing Businesses",
@@ -10,111 +10,55 @@
       "Agencies"
     ],
     "problems": [
-      "Difficulty finding skilled developers",
-      "High cost of maintaining a full development team",
-      "Project delays due to limited technical resources",
-      "Need for flexible development capacity"
+      "Need skilled development resources",
+      "Project development takes too long",
+      "Existing technology needs improvement",
+      "Need scalable digital products"
     ],
     "solutions": [
-      "Dedicated Java and Spring developers",
-      "React and frontend developers",
-      "Full-stack development teams",
-      "Flexible development engagement"
+      "Web development",
+      "Mobile application development",
+      "Custom software development",
+      "Product development"
     ],
     "features": [
-      "Dedicated development resources",
-      "Flexible team scaling",
-      "Regular project communication",
-      "Git and GitHub workflow",
-      "Agile development approach",
-      "Quality-focused development"
+      "Responsive web applications",
+      "Mobile application development",
+      "Custom software solutions",
+      "API development",
+      "Database integration",
+      "Scalable architecture"
     ],
     "benefits": [
-      "Reduce hiring overhead",
-      "Scale your team faster",
-      "Maintain control over your project",
+      "Launch products faster",
+      "Build scalable technology",
+      "Reduce development complexity",
       "Get flexible technical support"
     ],
     "process": [
-      "Understand your project requirements",
-      "Identify the required technical skills",
-      "Select suitable developers",
-      "Start development and collaboration",
-      "Review progress regularly"
+      "Understand your requirements",
+      "Define the technology approach",
+      "Design the product structure",
+      "Develop and test the solution",
+      "Deploy and improve the product"
     ],
     "faqs": [
       {
-        "question": "Can I hire one dedicated developer?",
-        "answer": "Yes. You can start with a single developer or scale to a larger development team depending on your project requirements."
+        "question": "Can you develop a complete digital product?",
+        "answer": "Yes. We can support the development of websites, applications, APIs, and complete digital products based on your requirements."
       },
       {
-        "question": "Can the developer work with our existing team?",
-        "answer": "Yes. Dedicated developers can work with your existing developers, designers, project managers, and business teams."
+        "question": "Can you work with our existing development team?",
+        "answer": "Yes. Our developers can collaborate with your existing technical and business teams."
       }
     ],
-    "finalCta": "Build Your Development Team"
+    "finalCta": "Start Your Development Project"
   },
 
-  "startup-product-development": {
-    "title": "Startup Product Development",
-    "heroTitle": "Turn Your Startup Idea Into a Digital Product",
-    "heroDescription": "From idea validation to launch, build a scalable digital product designed around your startup's goals and customers.",
-    "whoItsFor": [
-      "Startup Founders",
-      "Early-Stage Companies",
-      "Entrepreneurs",
-      "New Product Teams"
-    ],
-    "problems": [
-      "Unclear product requirements",
-      "Limited development budget",
-      "Need to launch quickly",
-      "Difficulty choosing the right technology"
-    ],
-    "solutions": [
-      "MVP development",
-      "Custom web applications",
-      "Product UI development",
-      "Scalable backend systems"
-    ],
-    "features": [
-      "MVP-focused development",
-      "Responsive user interface",
-      "Scalable backend architecture",
-      "Database integration",
-      "API development",
-      "Deployment support"
-    ],
-    "benefits": [
-      "Launch your MVP faster",
-      "Reduce unnecessary development costs",
-      "Validate your idea with real users",
-      "Build a foundation for future growth"
-    ],
-    "process": [
-      "Understand the startup idea",
-      "Define MVP requirements",
-      "Create the product structure",
-      "Develop and test the MVP",
-      "Deploy and collect feedback"
-    ],
-    "faqs": [
-      {
-        "question": "Can you build an MVP from an idea?",
-        "answer": "Yes. We can help convert your initial idea into defined MVP requirements and develop the required digital product."
-      },
-      {
-        "question": "Can the product be scaled later?",
-        "answer": "Yes. The product can be structured with future scalability in mind so additional features can be added as the business grows."
-      }
-    ],
-    "finalCta": "Start Your Product"
-  },
-
-  "business-automation": {
-    "title": "Business Automation",
-    "heroTitle": "Automate Repetitive Business Processes",
-    "heroDescription": "Replace repetitive manual work with digital workflows that help your team save time, reduce errors, and work more efficiently.",
+  "business": {
+    "title": "Business",
+    "heroTitle": "Make Your Business Work Smarter",
+    "heroDescription": "Improve business operations with practical digital automation, workflows, and technology solutions.",
     "whoItsFor": [
       "Growing Businesses",
       "Operations Teams",
@@ -123,15 +67,15 @@
     ],
     "problems": [
       "Too many repetitive manual tasks",
-      "Data is maintained across multiple systems",
-      "Employees spend time on routine processes",
-      "Manual processes cause avoidable errors"
+      "Business data is spread across systems",
+      "Employees spend time on routine work",
+      "Manual processes create avoidable errors"
     ],
     "solutions": [
-      "Custom business workflows",
-      "Automated enquiry management",
-      "Booking and order automation",
-      "Business dashboards"
+      "Business automation",
+      "Workflow automation",
+      "Business dashboards",
+      "Digital process improvement"
     ],
     "features": [
       "Custom workflow automation",
@@ -150,13 +94,13 @@
     "process": [
       "Identify repetitive processes",
       "Map the current workflow",
-      "Design the automated workflow",
+      "Design the digital workflow",
       "Develop and integrate the system",
       "Test and optimise the workflow"
     ],
     "faqs": [
       {
-        "question": "What kind of business processes can be automated?",
+        "question": "What business processes can be automated?",
         "answer": "Common examples include enquiry management, booking workflows, notifications, data processing, reporting, and internal business workflows."
       },
       {
@@ -167,10 +111,10 @@
     "finalCta": "Automate Your Business"
   },
 
-  "cloud-devops-solutions": {
-    "title": "Cloud & DevOps Solutions",
+  "cloud": {
+    "title": "Cloud",
     "heroTitle": "Reliable Cloud Infrastructure for Modern Applications",
-    "heroDescription": "Improve application deployment, reliability, and scalability with practical cloud and DevOps solutions.",
+    "heroDescription": "Improve application deployment, reliability, security, and scalability with practical cloud and DevOps solutions.",
     "whoItsFor": [
       "Startups",
       "SaaS Companies",
@@ -180,7 +124,7 @@
     "problems": [
       "Manual deployments take too much time",
       "Applications are difficult to monitor",
-      "Infrastructure becomes difficult to scale",
+      "Infrastructure is difficult to scale",
       "Deployment environments are inconsistent"
     ],
     "solutions": [
@@ -223,10 +167,10 @@
     "finalCta": "Improve Your Infrastructure"
   },
 
-  "maintenance-support": {
-    "title": "Maintenance & Support",
-    "heroTitle": "Keep Your Website and Applications Running Smoothly",
-    "heroDescription": "Ongoing technical maintenance and support to keep your digital products secure, updated, reliable, and performing well.",
+  "support": {
+    "title": "Support",
+    "heroTitle": "Keep Your Digital Products Running Smoothly",
+    "heroDescription": "Ongoing technical maintenance and support to keep your websites and digital products secure, updated, reliable, and performing well.",
     "whoItsFor": [
       "Existing Businesses",
       "Website Owners",
@@ -279,8 +223,8 @@
     "finalCta": "Get Technical Support"
   },
 
-  "digital-transformation": {
-    "title": "Digital Transformation",
+  "transformation": {
+    "title": "Transformation",
     "heroTitle": "Transform Your Business With Better Digital Systems",
     "heroDescription": "Modernise your business processes, customer experiences, and digital infrastructure with technology designed around your business goals.",
     "whoItsFor": [

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { MegaMenu, type MegaMenuColumn } from "./MegaMenu";
@@ -27,6 +27,20 @@ type NavMenu = {
 
 /* =========================================================
    COMPANY
+
+   NEW COMPANY ROUTES:
+
+   /company/about
+   /company/team
+   /company/why-edvixo
+   /company/case-studies
+   /company/client-reviews
+
+   Old routes such as:
+   /about
+   /portfolio
+
+   are NOT used by the Company menu.
 ========================================================= */
 
 const companyColumns: MegaMenuColumn[] = [
@@ -37,7 +51,7 @@ const companyColumns: MegaMenuColumn[] = [
         label: "About Edvixo",
         description:
           "Learn about Edvixo, our vision, team and digital expertise.",
-        href: "/about",
+        href: "/company/about",
       },
     ],
   },
@@ -49,7 +63,7 @@ const companyColumns: MegaMenuColumn[] = [
         label: "Meet The Team",
         description:
           "Meet the people behind our digital products and solutions.",
-        href: "/about",
+        href: "/company/team",
       },
     ],
   },
@@ -61,7 +75,7 @@ const companyColumns: MegaMenuColumn[] = [
         label: "Why Edvixo",
         description:
           "Discover what makes Edvixo a reliable digital technology partner.",
-        href: "/about",
+        href: "/company/why-edvixo",
       },
     ],
   },
@@ -73,7 +87,7 @@ const companyColumns: MegaMenuColumn[] = [
         label: "Case Studies",
         description:
           "Explore selected projects, experiences and successful client solutions.",
-        href: "/portfolio",
+        href: "/company/case-studies",
       },
     ],
   },
@@ -85,7 +99,7 @@ const companyColumns: MegaMenuColumn[] = [
         label: "Client Reviews",
         description:
           "See what our clients say about working with Edvixo.",
-        href: "/portfolio",
+        href: "/company/client-reviews",
       },
     ],
   },
@@ -93,6 +107,25 @@ const companyColumns: MegaMenuColumn[] = [
 
 /* =========================================================
    SERVICES
+
+   ONLY THESE 5 SERVICE ROUTES ARE USED:
+
+   /services/web-development
+   /services/app-development
+   /services/ecom-development
+   /services/design
+   /services/miscellaneous
+
+   Old routes such as:
+
+   /services/business-websites
+   /services/online-stores
+   /services/booking-systems
+   /services/local-seo
+   /services/website-redesign
+   /services/dashboards
+
+   ARE NOT USED BY THIS HEADER.
 ========================================================= */
 
 const servicesColumns: MegaMenuColumn[] = [
@@ -100,9 +133,9 @@ const servicesColumns: MegaMenuColumn[] = [
     title: "WEB DEVELOPMENT",
     items: [
       {
-        label: "Website Development",
+        label: "Web Development",
         description:
-          "Modern websites, business platforms and web applications.",
+          "Modern websites, web applications and business platforms built for performance and growth.",
         href: "/services/web-development",
       },
     ],
@@ -112,9 +145,9 @@ const servicesColumns: MegaMenuColumn[] = [
     title: "APP DEVELOPMENT",
     items: [
       {
-        label: "Mobile App Development",
+        label: "App Development",
         description:
-          "Mobile applications for iOS, Android and cross-platform.",
+          "Scalable mobile applications and digital experiences for modern businesses.",
         href: "/services/app-development",
       },
     ],
@@ -124,9 +157,9 @@ const servicesColumns: MegaMenuColumn[] = [
     title: "ECOM DEVELOPMENT",
     items: [
       {
-        label: "E-Commerce Development",
+        label: "Ecom Development",
         description:
-          "High-converting e-commerce stores and online shopping platforms.",
+          "High-performing ecommerce stores and shopping experiences designed to convert.",
         href: "/services/ecom-development",
       },
     ],
@@ -136,9 +169,9 @@ const servicesColumns: MegaMenuColumn[] = [
     title: "DESIGN",
     items: [
       {
-        label: "UI/UX Design",
+        label: "Design",
         description:
-          "UI/UX, graphic, web and product design experiences.",
+          "Modern UI/UX and product design experiences that strengthen your brand.",
         href: "/services/design",
       },
     ],
@@ -148,9 +181,9 @@ const servicesColumns: MegaMenuColumn[] = [
     title: "MISCELLANEOUS",
     items: [
       {
-        label: "Software Development",
+        label: "Miscellaneous",
         description:
-          "Software development, digital marketing and technical support.",
+          "Booking systems, local SEO, dashboards and practical digital solutions for growing businesses.",
         href: "/services/miscellaneous",
       },
     ],
@@ -166,10 +199,10 @@ const solutionsColumns: MegaMenuColumn[] = [
     title: "DEVELOPMENT",
     items: [
       {
-        label: "Hire Dedicated Developers",
+        label: "Development",
         description:
-          "Build your product with dedicated developers and experienced technology teams.",
-        href: "/solutions/hire-dedicated-developers",
+          "Build scalable websites, applications and custom software.",
+        href: "/solutions/development",
       },
     ],
   },
@@ -178,10 +211,10 @@ const solutionsColumns: MegaMenuColumn[] = [
     title: "BUSINESS",
     items: [
       {
-        label: "Business Automation",
+        label: "Business",
         description:
-          "Improve business operations with practical digital automation solutions.",
-        href: "/solutions/business-automation",
+          "Improve business processes with practical digital solutions.",
+        href: "/solutions/business",
       },
     ],
   },
@@ -190,10 +223,10 @@ const solutionsColumns: MegaMenuColumn[] = [
     title: "CLOUD",
     items: [
       {
-        label: "Cloud & DevOps",
+        label: "Cloud",
         description:
-          "Reliable cloud and DevOps solutions for modern digital products.",
-        href: "/solutions/cloud-devops-solutions",
+          "Modern cloud infrastructure, deployment and DevOps solutions.",
+        href: "/solutions/cloud",
       },
     ],
   },
@@ -202,10 +235,10 @@ const solutionsColumns: MegaMenuColumn[] = [
     title: "SUPPORT",
     items: [
       {
-        label: "Maintenance & Support",
+        label: "Support",
         description:
-          "Keep your website and digital products secure, updated and reliable.",
-        href: "/solutions/maintenance-support",
+          "Maintenance, security, updates and ongoing technical support.",
+        href: "/solutions/support",
       },
     ],
   },
@@ -214,10 +247,10 @@ const solutionsColumns: MegaMenuColumn[] = [
     title: "TRANSFORMATION",
     items: [
       {
-        label: "Digital Transformation",
+        label: "Transformation",
         description:
-          "Modernize your business through scalable digital technology solutions.",
-        href: "/solutions/digital-transformation",
+          "Modernize business operations with scalable digital technology.",
+        href: "/solutions/transformation",
       },
     ],
   },
@@ -234,7 +267,7 @@ const industriesColumns: MegaMenuColumn[] = [
       {
         label: "Healthcare",
         description:
-          "Digital websites and platforms designed for healthcare businesses.",
+          "Digital solutions for healthcare businesses and organizations.",
         href: "/industries/healthcare",
       },
     ],
@@ -246,7 +279,7 @@ const industriesColumns: MegaMenuColumn[] = [
       {
         label: "Education",
         description:
-          "Digital platforms and websites for schools, colleges and education businesses.",
+          "Digital platforms for schools, colleges and education businesses.",
         href: "/industries/education",
       },
     ],
@@ -258,7 +291,7 @@ const industriesColumns: MegaMenuColumn[] = [
       {
         label: "Retail",
         description:
-          "Digital solutions that help retail businesses grow and connect with customers.",
+          "Digital experiences that help retail businesses grow.",
         href: "/industries/retail",
       },
     ],
@@ -270,7 +303,7 @@ const industriesColumns: MegaMenuColumn[] = [
       {
         label: "Real Estate",
         description:
-          "Modern websites and digital platforms for property businesses.",
+          "Modern websites and platforms for property businesses.",
         href: "/industries/real-estate",
       },
     ],
@@ -282,8 +315,8 @@ const industriesColumns: MegaMenuColumn[] = [
       {
         label: "Other Industries",
         description:
-          "Flexible digital solutions for SaaS, hospitality, restaurants and more.",
-        href: "/industries",
+          "Flexible digital solutions for businesses across industries.",
+        href: "/industries/other",
       },
     ],
   },
@@ -300,7 +333,7 @@ const portfolioColumns: MegaMenuColumn[] = [
       {
         label: "All Projects",
         description:
-          "Explore our complete collection of digital projects and solutions.",
+          "Explore our complete collection of digital projects.",
         href: "/portfolio",
       },
     ],
@@ -310,9 +343,9 @@ const portfolioColumns: MegaMenuColumn[] = [
     title: "FEATURED WORK",
     items: [
       {
-        label: "Featured Projects",
+        label: "Featured Work",
         description:
-          "Explore selected projects and highlighted work created by Edvixo.",
+          "Explore selected projects created by Edvixo.",
         href: "/portfolio?view=featured",
       },
     ],
@@ -324,7 +357,7 @@ const portfolioColumns: MegaMenuColumn[] = [
       {
         label: "Case Studies",
         description:
-          "Discover the story, process and results behind selected projects.",
+          "Discover the process and results behind selected projects.",
         href: "/portfolio?view=case-studies",
       },
     ],
@@ -336,7 +369,7 @@ const portfolioColumns: MegaMenuColumn[] = [
       {
         label: "Client Results",
         description:
-          "See the results and outcomes delivered for our clients.",
+          "See outcomes delivered for our clients.",
         href: "/portfolio?view=results",
       },
     ],
@@ -360,35 +393,46 @@ const portfolioColumns: MegaMenuColumn[] = [
 ========================================================= */
 
 const navMenus: NavMenu[] = [
+  /* =======================================================
+     COMPANY
+  ======================================================= */
+
   {
     label: "Company",
-    href: "/about",
+
+    // IMPORTANT:
+    // Company no longer points directly to /about.
+    href: "/company/about",
 
     items: [
       {
         label: "About Edvixo",
-        href: "/about",
+        href: "/company/about",
       },
       {
         label: "Meet The Team",
-        href: "/about",
+        href: "/company/team",
       },
       {
         label: "Why Edvixo",
-        href: "/about",
+        href: "/company/why-edvixo",
       },
       {
         label: "Case Studies",
-        href: "/portfolio",
+        href: "/company/case-studies",
       },
       {
         label: "Client Reviews",
-        href: "/portfolio",
+        href: "/company/client-reviews",
       },
     ],
 
     megaColumns: companyColumns,
   },
+
+  /* =======================================================
+     SERVICES
+  ======================================================= */
 
   {
     label: "Services",
@@ -420,6 +464,10 @@ const navMenus: NavMenu[] = [
     megaColumns: servicesColumns,
   },
 
+  /* =======================================================
+     SOLUTIONS
+  ======================================================= */
+
   {
     label: "Solutions",
     href: "/solutions",
@@ -427,28 +475,32 @@ const navMenus: NavMenu[] = [
     items: [
       {
         label: "Development",
-        href: "/solutions/hire-dedicated-developers",
+        href: "/solutions/development",
       },
       {
         label: "Business",
-        href: "/solutions/business-automation",
+        href: "/solutions/business",
       },
       {
         label: "Cloud",
-        href: "/solutions/cloud-devops-solutions",
+        href: "/solutions/cloud",
       },
       {
         label: "Support",
-        href: "/solutions/maintenance-support",
+        href: "/solutions/support",
       },
       {
         label: "Transformation",
-        href: "/solutions/digital-transformation",
+        href: "/solutions/transformation",
       },
     ],
 
     megaColumns: solutionsColumns,
   },
+
+  /* =======================================================
+     INDUSTRIES
+  ======================================================= */
 
   {
     label: "Industries",
@@ -473,12 +525,16 @@ const navMenus: NavMenu[] = [
       },
       {
         label: "Other Industries",
-        href: "/industries",
+        href: "/industries/other",
       },
     ],
 
     megaColumns: industriesColumns,
   },
+
+  /* =======================================================
+     PORTFOLIO
+  ======================================================= */
 
   {
     label: "Portfolio",
@@ -518,68 +574,120 @@ const navMenus: NavMenu[] = [
 export function Header() {
   const pathname = usePathname();
 
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] =
+    useState(false);
 
   const [openMobileMenu, setOpenMobileMenu] =
     useState<string | null>(null);
 
+  /*
+   * ONLY ONE desktop dropdown can be open at a time.
+   */
   const [openDesktopMenu, setOpenDesktopMenu] =
     useState<string | null>(null);
 
-  const desktopNavRef = useRef<HTMLElement>(null);
-
   /* =======================================================
-     CLOSE DESKTOP MENU WHEN CLICKING OUTSIDE
+     CLOSE DESKTOP MENU WHEN CLICKING OUTSIDE HEADER
   ======================================================= */
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        desktopNavRef.current &&
-        !desktopNavRef.current.contains(event.target as Node)
-      ) {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target;
+
+      if (!(target instanceof HTMLElement)) {
+        return;
+      }
+
+      if (!target.closest("[data-header-root]")) {
         setOpenDesktopMenu(null);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener(
+      "mousedown",
+      handleOutsideClick,
+    );
 
     return () => {
       document.removeEventListener(
         "mousedown",
-        handleClickOutside
+        handleOutsideClick,
       );
     };
   }, []);
 
   /* =======================================================
-     HELPERS
+     CLOSE MENUS AFTER ROUTE CHANGE
+  ======================================================= */
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setOpenMobileMenu(null);
+    setOpenDesktopMenu(null);
+  }, [pathname]);
+
+  /* =======================================================
+     ACTIVE ROUTE HELPER
   ======================================================= */
 
   const isActiveLink = (href: string) => {
     const cleanHref = href.split("?")[0];
 
-    if (pathname === cleanHref) {
-      return true;
+    if (cleanHref === "/") {
+      return pathname === "/";
     }
 
-    return pathname.startsWith(`${cleanHref}/`);
-  };
-
-  const toggleMobileMenu = (label: string) => {
-    setOpenMobileMenu((current) =>
-      current === label ? null : label
+    return (
+      pathname === cleanHref ||
+      pathname.startsWith(`${cleanHref}/`)
     );
   };
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-    setOpenMobileMenu(null);
+  /* =======================================================
+     DESKTOP MENU TOGGLE
+  ======================================================= */
+
+  const toggleDesktopMenu = (label: string) => {
+    setOpenDesktopMenu((current) => {
+      if (current === label) {
+        return null;
+      }
+
+      return label;
+    });
   };
 
-  const closeDesktopMenu = () => {
-    setOpenDesktopMenu(null);
+  /* =======================================================
+     MOBILE MENU TOGGLE
+  ======================================================= */
+
+  const toggleMobileMenu = (label: string) => {
+    setOpenMobileMenu((current) => {
+      if (current === label) {
+        return null;
+      }
+
+      return label;
+    });
   };
+
+  /* =======================================================
+     CLOSE EVERYTHING
+  ======================================================= */
+
+  const closeAllMenus = () => {
+    setOpenDesktopMenu(null);
+    setOpenMobileMenu(null);
+    setMobileMenuOpen(false);
+  };
+
+  /* =======================================================
+     CURRENT DESKTOP DROPDOWN
+  ======================================================= */
+
+  const activeDesktopMenu = navMenus.find(
+    (menu) => menu.label === openDesktopMenu,
+  );
 
   /* =======================================================
      RENDER
@@ -587,10 +695,11 @@ export function Header() {
 
   return (
     <header
+      data-header-root
       className="
         sticky
         top-0
-        z-50
+        z-[100]
         w-full
         border-b
         border-white/10
@@ -601,7 +710,7 @@ export function Header() {
       role="banner"
     >
       {/* ===================================================
-          MAIN HEADER
+          HEADER BAR
       =================================================== */}
 
       <div
@@ -623,6 +732,7 @@ export function Header() {
 
         <Link
           href="/"
+          onClick={closeAllMenus}
           className="flex shrink-0 items-center"
           aria-label="Edvixo homepage"
         >
@@ -646,7 +756,6 @@ export function Header() {
         ================================================= */}
 
         <nav
-          ref={desktopNavRef}
           className="
             hidden
             items-center
@@ -657,91 +766,63 @@ export function Header() {
           aria-label="Main navigation"
         >
           {navMenus.map((menu) => {
+            /*
+             * Desktop active state is based ONLY on the
+             * currently opened dropdown.
+             *
+             * This guarantees that only one header option
+             * is highlighted at a time.
+             */
+
             const isOpen =
               openDesktopMenu === menu.label;
 
             return (
-              <div
+              <button
                 key={menu.label}
-                className="relative"
-              >
-                {/* HEADER BUTTON */}
+                type="button"
+                onClick={() =>
+                  toggleDesktopMenu(menu.label)
+                }
+                className={`
+                  group
+                  flex
+                  items-center
+                  gap-1.5
+                  rounded-lg
+                  px-4
+                  py-3
+                  text-sm
+                  font-semibold
+                  transition-all
+                  duration-200
 
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpenDesktopMenu((current) =>
-                      current === menu.label
-                        ? null
-                        : menu.label
-                    );
-                  }}
+                  ${
+                    isOpen
+                      ? "bg-[#20364b] text-white shadow-[0_8px_20px_rgba(0,0,0,0.18)]"
+                      : "text-slate-200 hover:bg-white/5 hover:text-white"
+                  }
+                `}
+                aria-expanded={isOpen}
+                aria-haspopup="true"
+              >
+                <span>{menu.label}</span>
+
+                <ChevronDown
                   className={`
-                    flex
-                    items-center
-                    gap-2
-                    rounded-lg
-                    px-4
-                    py-3
-                    text-sm
-                    font-semibold
-                    transition-all
+                    h-4
+                    w-4
+                    transition-transform
                     duration-200
 
                     ${
-                      isOpen || isActiveLink(menu.href)
-                        ? "bg-white/10 text-white"
-                        : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      isOpen
+                        ? "rotate-180"
+                        : ""
                     }
                   `}
-                  aria-expanded={isOpen}
-                  aria-haspopup="true"
-                >
-                  <span>{menu.label}</span>
-
-                  <ChevronDown
-                    className={`
-                      h-4
-                      w-4
-                      transition-transform
-                      duration-200
-                      ${isOpen ? "rotate-180" : ""}
-                    `}
-                  />
-                </button>
-
-                {/* =================================================
-                    DESKTOP MEGA MENU
-                ================================================= */}
-
-                {isOpen && (
-                  <div
-                    className="
-                      fixed
-                      left-0
-                      right-0
-                      top-20
-                      z-50
-                      px-3
-                      pt-4
-                      sm:px-5
-                      lg:px-8
-                    "
-                  >
-                    <div
-                      className="
-                        mx-auto
-                        max-w-[1480px]
-                      "
-                    >
-                      <MegaMenu
-                        columns={menu.megaColumns}
-                        onNavigate={closeDesktopMenu}
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
+                />
+              </button>
             );
           })}
         </nav>
@@ -750,8 +831,17 @@ export function Header() {
             RIGHT SIDE
         ================================================= */}
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* DESKTOP CONSULTATION */}
+        <div
+          className="
+            flex
+            items-center
+            gap-2
+            sm:gap-3
+          "
+        >
+          {/* =================================================
+              DESKTOP CTA
+          ================================================= */}
 
           <Button
             asChild
@@ -764,22 +854,33 @@ export function Header() {
               font-semibold
               text-white
               shadow-[0_10px_20px_rgba(255,139,44,0.30)]
+              transition-all
+              duration-200
+              hover:-translate-y-0.5
               hover:bg-[#ff9b41]
               md:inline-flex
               lg:px-7
             "
           >
-            <Link href="/contact">
+            <Link
+              href="/contact"
+              onClick={closeAllMenus}
+            >
               Get Free Consultation
             </Link>
           </Button>
 
-          {/* MOBILE BUTTON */}
+          {/* =================================================
+              MOBILE MENU BUTTON
+          ================================================= */}
 
           <button
             type="button"
             onClick={() => {
-              setMobileMenuOpen((current) => !current);
+              setMobileMenuOpen(
+                (current) => !current,
+              );
+
               setOpenMobileMenu(null);
               setOpenDesktopMenu(null);
             }}
@@ -789,12 +890,13 @@ export function Header() {
               w-10
               items-center
               justify-center
-              rounded-md
+              rounded-lg
               border
               border-white/10
               bg-white/5
               text-white
-              transition-colors
+              transition-all
+              duration-200
               hover:bg-white/10
               lg:hidden
             "
@@ -841,7 +943,36 @@ export function Header() {
       </div>
 
       {/* =====================================================
-          MOBILE MENU
+          DESKTOP MEGA MENU
+      ===================================================== */}
+
+      {activeDesktopMenu && (
+        <div
+          className="
+            fixed
+            left-1/2
+            top-20
+            z-[999]
+            w-[calc(100vw-32px)]
+            max-w-[1480px]
+            -translate-x-1/2
+            pt-3
+            lg:block
+          "
+        >
+          <MegaMenu
+            columns={
+              activeDesktopMenu.megaColumns
+            }
+            onNavigate={() =>
+              setOpenDesktopMenu(null)
+            }
+          />
+        </div>
+      )}
+
+      {/* =====================================================
+          MOBILE NAVIGATION
       ===================================================== */}
 
       {mobileMenuOpen && (
@@ -860,7 +991,7 @@ export function Header() {
               max-w-[1480px]
               overflow-y-auto
               px-4
-              py-4
+              py-3
               md:px-6
             "
             aria-label="Mobile navigation"
@@ -878,21 +1009,31 @@ export function Header() {
                     last:border-b-0
                   "
                 >
-                  {/* MOBILE HEADER */}
+                  {/* =========================================
+                      MOBILE NAV ROW
+                  ========================================= */}
 
-                  <div className="flex items-center justify-between">
+                  <div
+                    className="
+                      flex
+                      items-center
+                      justify-between
+                    "
+                  >
                     <Link
                       href={menu.href}
-                      onClick={closeMobileMenu}
+                      onClick={closeAllMenus}
                       className={`
                         flex-1
                         py-4
                         text-base
-                        font-medium
+                        font-semibold
                         transition-colors
 
                         ${
-                          isActiveLink(menu.href)
+                          isActiveLink(
+                            menu.href,
+                          )
                             ? "text-[#ff8b2c]"
                             : "text-slate-200 hover:text-white"
                         }
@@ -904,7 +1045,9 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() =>
-                        toggleMobileMenu(menu.label)
+                        toggleMobileMenu(
+                          menu.label,
+                        )
                       }
                       className="
                         flex
@@ -912,7 +1055,7 @@ export function Header() {
                         w-10
                         items-center
                         justify-center
-                        rounded-md
+                        rounded-lg
                         text-slate-300
                         transition-colors
                         hover:bg-white/5
@@ -927,21 +1070,34 @@ export function Header() {
                           w-5
                           transition-transform
                           duration-200
-                          ${isOpen ? "rotate-180" : ""}
+
+                          ${
+                            isOpen
+                              ? "rotate-180"
+                              : ""
+                          }
                         `}
                       />
                     </button>
                   </div>
 
-                  {/* MOBILE SUBMENU */}
+                  {/* =========================================
+                      MOBILE DROPDOWN
+                  ========================================= */}
 
                   {isOpen && (
-                    <div className="pb-5 pl-1">
+                    <div
+                      className="
+                        overflow-hidden
+                        pb-5
+                        pl-1
+                      "
+                    >
                       <div
                         className="
                           grid
                           grid-cols-1
-                          gap-3
+                          gap-2.5
                         "
                       >
                         {menu.megaColumns.map(
@@ -949,14 +1105,16 @@ export function Header() {
                             const item =
                               column.items[0];
 
+                            if (!item) {
+                              return null;
+                            }
+
                             return (
                               <Link
                                 key={`${menu.label}-${column.title}`}
-                                href={
-                                  item?.href || "#"
-                                }
+                                href={item.href}
                                 onClick={
-                                  closeMobileMenu
+                                  closeAllMenus
                                 }
                                 className="
                                   group
@@ -964,67 +1122,69 @@ export function Header() {
                                   border
                                   border-white/10
                                   bg-[#0d2237]
-                                  p-5
+                                  px-4
+                                  py-4
                                   transition-all
-                                  duration-200
+                                  duration-300
+                                  hover:-translate-y-0.5
                                   hover:border-[#ff8b2c]/40
                                   hover:bg-[#102940]
                                 "
                               >
-                                {/* Orange line */}
-
                                 <div
                                   className="
-                                    mb-4
+                                    mb-3
                                     h-1
-                                    w-10
+                                    w-9
                                     rounded-full
                                     bg-[#ff8b2c]
+                                    transition-all
+                                    duration-300
+                                    group-hover:w-14
                                   "
                                 />
-
-                                {/* Title */}
 
                                 <h3
                                   className="
                                     text-sm
                                     font-extrabold
                                     uppercase
-                                    tracking-[0.05em]
+                                    tracking-[0.04em]
                                     text-white
                                   "
                                 >
                                   {column.title}
                                 </h3>
 
-                                {/* Description */}
-
                                 <p
                                   className="
-                                    mt-3
-                                    text-sm
-                                    leading-6
+                                    mt-2
+                                    text-xs
+                                    leading-5
                                     text-slate-400
                                   "
                                 >
-                                  {item?.description}
+                                  {
+                                    item.description
+                                  }
                                 </p>
-
-                                {/* Explore */}
 
                                 <div
                                   className="
-                                    mt-4
-                                    text-sm
+                                    mt-3
+                                    text-xs
                                     font-bold
                                     text-[#ff8b2c]
+                                    transition-transform
+                                    duration-200
+                                    group-hover:translate-x-1
                                   "
                                 >
                                   Explore →
                                 </div>
                               </Link>
                             );
-                          }
+                          },
                         )}
                       </div>
                     </div>
@@ -1033,7 +1193,9 @@ export function Header() {
               );
             })}
 
-            {/* MOBILE CONSULTATION */}
+            {/* ===============================================
+                MOBILE CTA
+            =============================================== */}
 
             <div className="pt-5">
               <Button
@@ -1047,12 +1209,14 @@ export function Header() {
                   font-semibold
                   text-white
                   shadow-[0_10px_20px_rgba(255,139,44,0.25)]
+                  transition-all
+                  duration-200
                   hover:bg-[#ff9b41]
                 "
               >
                 <Link
                   href="/contact"
-                  onClick={closeMobileMenu}
+                  onClick={closeAllMenus}
                 >
                   Get Free Consultation
                 </Link>
