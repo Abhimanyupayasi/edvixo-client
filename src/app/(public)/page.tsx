@@ -29,24 +29,39 @@ export const metadata: Metadata = {
 };
 
 const featuredProjects = Object.values(portfolio)
-  .filter((project) => project.isFeatured)
-  .map((project) => ({
-    _id: project._id,
-    clientName: project.clientName,
-    isClientConfidential: project.isClientConfidential,
-    industry:
-      project.clientIndustry ??
-      project.industries?.[0] ??
-      "Business",
-    title: project.title,
-    description: project.tagline,
-    metrics: project.results ?? [],
-    tech: (project.techStack ?? []).map((item) => item.name),
-    slug: project.slug,
-    coverImage: project.coverImage,
-    thumbnailImage: project.thumbnailImage,
-    imageAlt: project.imageAlt,
-  }));
+  .map((project) => {
+    let localImage = project.coverImage;
+
+    if (project.slug === "dental-clinic-growth-website") {
+      localImage = "/images/portfolio/dental-clinic.png";
+    }
+
+    if (project.slug === "admissions-website-redesign") {
+      localImage = "/images/portfolio/education.png";
+    }
+
+    if (project.slug === "restaurant-ordering-experience") {
+      localImage = "/images/portfolio/restaurant.png";
+    }
+
+    return {
+      _id: project._id,
+      clientName: project.clientName,
+      isClientConfidential: project.isClientConfidential,
+      industry:
+        project.clientIndustry ??
+        project.industries?.[0] ??
+        "Business",
+      title: project.title,
+      description: project.tagline,
+      metrics: project.results ?? [],
+      tech: (project.techStack ?? []).map((item) => item.name),
+      slug: project.slug,
+      coverImage: localImage,
+      thumbnailImage: localImage,
+      imageAlt: project.imageAlt,
+    };
+  });
 
 const testimonials = [
   {

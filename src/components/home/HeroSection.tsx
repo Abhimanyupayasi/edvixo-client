@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+
 import {
   ArrowUpRight,
   CalendarCheck,
   CheckCircle,
-  Monitor,
   Star,
   TrendingUp,
   Users,
@@ -62,13 +64,27 @@ const conversionData = [
 
 export function HeroSection() {
   return (
-    <HeroInteractiveShell className="bg-surface-container-lowest pt-16 pb-10 lg:pt-20 lg:pb-14">
+    <HeroInteractiveShell
+      className="
+        relative
+        overflow-hidden
+        bg-[#061a29]
+        bg-[url('/images/homepage-bg.jpg')]
+        bg-cover
+        bg-center
+        bg-no-repeat
+        pt-16
+        pb-10
+        lg:pt-20
+        lg:pb-14
+      "
+    >
+      {/* Transparent background overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-[#061a29]/60" />
+
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-8">
-          {/* =========================================================
-              LEFT SIDE
-          ========================================================= */}
-
+          {/* LEFT SIDE */}
           <div className="text-center lg:text-left">
             {/* Trust Badge */}
             <div className="hero-reveal hero-reveal-delay-1 mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-outline-variant/70 bg-surface/70 px-4 py-2 shadow-sm backdrop-blur-sm lg:mx-0">
@@ -114,7 +130,11 @@ export function HeroSection() {
                 variant="outline"
                 className="hero-cta-secondary relative h-12 w-full rounded-2xl border-outline-variant/70 bg-surface/60 px-8 text-base font-semibold text-on-background shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-surface sm:w-auto"
               >
-                <Link href="/work">View Case Studies</Link>
+                <Link href="/portfolio">
+                  <span className="relative z-10">
+                    View Case Studies
+                  </span>
+                </Link>
               </Button>
             </div>
 
@@ -150,18 +170,12 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* =========================================================
-              RIGHT SIDE — DATA DASHBOARD
-          ========================================================= */}
-
+          {/* RIGHT SIDE — DATA DASHBOARD */}
           <div className="relative hidden h-[500px] w-full items-center justify-center sm:flex lg:h-[540px]">
             {/* Background Glow */}
             <div className="pointer-events-none absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[90px]" />
 
-            {/* =====================================================
-                MAIN DASHBOARD
-            ===================================================== */}
-
+            {/* MAIN DASHBOARD */}
             <div className="relative z-10 w-[82%] max-w-[470px]">
               <div className="overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,#18251f,#111b17)] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 {/* Browser Header */}
@@ -205,6 +219,7 @@ export function HeroSection() {
                     <div className="rounded-2xl border border-orange-400/30 bg-orange-400/10 p-3">
                       <div className="mb-2 flex items-center justify-between">
                         <Users className="h-3.5 w-3.5 text-orange-400" />
+
                         <ArrowUpRight className="h-3 w-3 text-orange-300" />
                       </div>
 
@@ -272,12 +287,10 @@ export function HeroSection() {
 
                       {/* Chart */}
                       <div className="relative h-[125px] overflow-hidden rounded-2xl bg-emerald-200/10 px-3 pb-3 pt-2">
-                        {/* Grid */}
                         <div className="absolute inset-x-3 top-7 h-px bg-white/5" />
                         <div className="absolute inset-x-3 top-1/2 h-px bg-white/5" />
                         <div className="absolute inset-x-3 bottom-7 h-px bg-white/5" />
 
-                        {/* Bars */}
                         <div className="relative flex h-full items-end justify-between gap-2">
                           {chartData.map((item) => (
                             <div
@@ -411,7 +424,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* 127 CUSTOMER ENQUIRIES FLOATING CARD */}
+            {/* CUSTOMER ENQUIRIES FLOATING CARD */}
             <div className="hero-float-slow absolute left-0 top-10 z-20 w-[245px] rounded-[24px] border border-orange-300/20 bg-[#17304d]/95 px-4 py-3 shadow-[0_20px_45px_rgba(0,0,0,0.35)] backdrop-blur-md">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-orange-400/10">
