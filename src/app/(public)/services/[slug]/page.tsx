@@ -1,3 +1,4 @@
+import ServiceHeroVisual from "@/components/services/ServiceHeroVisual";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -9,6 +10,10 @@ import {
 } from "lucide-react";
 
 import services from "@/data/services.json";
+
+import ServiceResults from "@/components/services/ServiceResults";
+import ServiceFaq from "@/components/services/ServiceFaq";
+import ServiceFinalCta from "@/components/services/ServiceFinalCta";
 
 type ServiceSlug = keyof typeof services;
 
@@ -100,6 +105,7 @@ export default async function ServiceDetailPage({
             {/* Trust chips */}
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
+
               {service.trustChips.map((chip) => (
                 <span
                   key={chip}
@@ -108,6 +114,7 @@ export default async function ServiceDetailPage({
                   ✓ {chip}
                 </span>
               ))}
+
             </div>
 
             {/* CTA */}
@@ -128,12 +135,21 @@ export default async function ServiceDetailPage({
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-7 py-3.5 text-sm font-bold text-white transition duration-300 hover:border-[#ff8b2c]/40 hover:bg-[#ff8b2c]/10"
               >
                 {service.secondaryCta}
+
               </Link>
 
             </div>
+
           </div>
+
         </div>
       </section>
+
+      {/* =========================================================
+          WEB DEVELOPMENT VISUAL
+      ========================================================= */}
+
+      <ServiceHeroVisual />
 
       {/* =========================================================
           WHO IT'S FOR
@@ -310,6 +326,7 @@ export default async function ServiceDetailPage({
                 <div className="mb-8 flex items-center justify-between">
 
                   <div>
+
                     <p className="text-xs uppercase tracking-widest text-slate-500">
                       Edvixo
                     </p>
@@ -317,10 +334,13 @@ export default async function ServiceDetailPage({
                     <h3 className="mt-2 text-xl font-bold">
                       Digital Growth
                     </h3>
+
                   </div>
 
                   <div className="h-12 w-12 rounded-2xl bg-[#ff8b2c]/10 p-3">
+
                     <div className="h-full w-full rounded-xl bg-[#ff8b2c]" />
+
                   </div>
 
                 </div>
@@ -347,12 +367,14 @@ export default async function ServiceDetailPage({
                       </div>
 
                       <div className="mt-3 h-1 overflow-hidden rounded-full bg-white/10">
+
                         <div
                           className="h-full rounded-full bg-[#ff8b2c]"
                           style={{
                             width: `${65 + index * 8}%`,
                           }}
                         />
+
                       </div>
 
                     </div>
@@ -535,128 +557,28 @@ export default async function ServiceDetailPage({
       </section>
 
       {/* =========================================================
-          RESULTS
+          OUTCOME / RESULTS
       ========================================================= */}
 
-      <section className="py-20 md:py-24">
-
-        <div className="mx-auto max-w-5xl px-5 md:px-8">
-
-          <div className="grid gap-5 sm:grid-cols-3">
-
-            {service.results.stats.map((stat) => (
-
-              <div
-                key={stat.label}
-                className="rounded-3xl border border-white/10 bg-white/[0.035] p-8 text-center transition duration-500 hover:-translate-y-2 hover:border-[#ff8b2c]/40"
-              >
-
-                <div className="text-4xl font-black text-[#ff8b2c] md:text-5xl">
-                  {stat.stat}
-                </div>
-
-                <p className="mt-3 text-xs font-bold uppercase tracking-widest text-slate-500">
-                  {stat.label}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-      </section>
+      <ServiceResults />
 
       {/* =========================================================
           FAQ
       ========================================================= */}
 
-      <section className="border-y border-white/10 bg-[#081d2d] py-20 md:py-28">
-
-        <div className="mx-auto max-w-4xl px-5 md:px-8">
-
-          <div className="mb-12 text-center">
-
-            <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-[#ff8b2c]">
-              FAQ
-            </p>
-
-            <h2 className="text-3xl font-black md:text-5xl">
-              Frequently asked questions
-            </h2>
-
-          </div>
-
-          <div className="space-y-4">
-
-            {service.faqs.map((faq) => (
-
-              <details
-                key={faq.question}
-                className="group rounded-2xl border border-white/10 bg-[#0b2235] p-6 transition hover:border-[#ff8b2c]/40"
-              >
-
-                <summary className="cursor-pointer list-none pr-8 font-bold">
-                  {faq.question}
-                </summary>
-
-                <p className="mt-4 leading-7 text-slate-400">
-                  {faq.answer}
-                </p>
-
-              </details>
-
-            ))}
-
-          </div>
-
-        </div>
-      </section>
+      <ServiceFaq items={service.faqs} />
 
       {/* =========================================================
           FINAL CTA
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-[#ff8b2c] py-20 md:py-28">
-
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.2),transparent_30%),radial-gradient(circle_at_80%_80%,rgba(0,0,0,0.15),transparent_30%)]" />
-
-        <div className="relative mx-auto max-w-4xl px-5 text-center md:px-8">
-
-          <h2 className="text-3xl font-black text-white md:text-5xl">
-            {service.finalCta.title}
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl leading-7 text-white/80">
-            {service.finalCta.description}
-          </p>
-
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
-
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 text-sm font-black text-[#071827] transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
-            >
-              {service.finalCta.primary}
-
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-
-            <a
-              href={service.consultation.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-4 text-sm font-black text-white backdrop-blur transition hover:bg-white/20"
-            >
-              {service.finalCta.whatsapp}
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
+      <ServiceFinalCta
+        title={service.finalCta.title}
+        description={service.finalCta.description}
+        primary={service.finalCta.primary}
+        whatsapp={service.finalCta.whatsapp}
+        whatsappUrl={service.consultation.whatsappUrl}
+      />
 
     </main>
   );
