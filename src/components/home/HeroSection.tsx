@@ -69,7 +69,7 @@ export function HeroSection() {
         relative
         overflow-hidden
         bg-[#061a29]
-        bg-[url('/images/homepage-bg.jpg')]
+        bg-[url('/images/homepage-bg.webp')]
         bg-cover
         bg-center
         bg-no-repeat

@@ -1,4 +1,4 @@
-/* ── Google Fonts: Plus Jakarta Sans - must be first @import before all rules ─ */
+/* ── Google Fonts ───────────────────────────────────────────── */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,opsz,wght@0,6..18,200..800;1,6..18,200..800&display=swap");
 
 @import "tailwindcss";
@@ -6,34 +6,29 @@
 
 /* ─────────────────────────────────────────────────────────────────────────────
    EDVIXO DARK NAVY / ORANGE DESIGN TOKENS
-   Canonical site palette. This replaces the older green theme globally.
    ───────────────────────────────────────────────────────────────────────────── */
+
 :root {
-  /* Primary */
   --color-primary: #ff8b2c;
   --color-on-primary: #ffffff;
   --color-primary-container: rgba(255, 139, 44, 0.15);
   --color-on-primary-container: #fff4eb;
 
-  /* Secondary */
   --color-secondary: #90a9c7;
   --color-on-secondary: #081827;
   --color-secondary-container: rgba(144, 169, 199, 0.18);
   --color-on-secondary-container: #edf4ff;
 
-  /* Tertiary */
   --color-tertiary: #f6c56b;
   --color-on-tertiary: #1c1200;
   --color-tertiary-container: rgba(246, 197, 107, 0.18);
   --color-on-tertiary-container: #fff2d6;
 
-  /* Error */
   --color-error: #ff6b6b;
   --color-on-error: #ffffff;
   --color-error-container: rgba(255, 107, 107, 0.12);
   --color-on-error-container: #ffe4e4;
 
-  /* Surface / Background */
   --color-background: #071b2b;
   --color-on-background: #edf3fb;
   --color-surface: #0d2135;
@@ -41,14 +36,12 @@
   --color-surface-variant: #18314b;
   --color-on-surface-variant: #bfd2e7;
 
-  /* Utility */
   --color-outline: #2d4a67;
   --color-outline-variant: #1b3045;
   --color-inverse-surface: #edf3fb;
   --color-inverse-on-surface: #0d2135;
   --color-inverse-primary: #ff8b2c;
 
-  /* Surface Containers */
   --color-surface-container-lowest: #061722;
   --color-surface-container-low: #0d2135;
   --color-surface-container: #122b41;
@@ -62,20 +55,28 @@
   --card-foreground: 210 30% 95%;
   --popover: 213 38% 12%;
   --popover-foreground: 210 30% 95%;
+
   --primary: 27 100% 60%;
   --primary-foreground: 0 0% 100%;
+
   --secondary: 215 28% 55%;
   --secondary-foreground: 210 30% 95%;
+
   --muted: 214 28% 18%;
   --muted-foreground: 210 20% 79%;
+
   --accent: 27 100% 60%;
   --accent-foreground: 0 0% 100%;
+
   --destructive: 0 82% 69%;
   --destructive-foreground: 0 0% 100%;
+
   --border: 214 24% 26%;
   --input: 214 24% 26%;
   --ring: 27 100% 60%;
+
   --radius: 0.75rem;
+
   --chart-1: 27 100% 60%;
   --chart-2: 214 28% 55%;
   --chart-3: 201 90% 70%;
@@ -88,7 +89,6 @@
   --sidebar-primary: 27 100% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 27 100% 60%;
-  --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 214 24% 26%;
   --sidebar-ring: 27 100% 60%;
 }
@@ -99,29 +99,35 @@ html.dark {
   --color-on-primary: #ffffff;
   --color-primary-container: rgba(255, 139, 44, 0.15);
   --color-on-primary-container: #fff4eb;
+
   --color-secondary: #90a9c7;
   --color-on-secondary: #081827;
   --color-secondary-container: rgba(144, 169, 199, 0.18);
   --color-on-secondary-container: #edf4ff;
+
   --color-tertiary: #f6c56b;
   --color-on-tertiary: #1c1200;
   --color-tertiary-container: rgba(246, 197, 107, 0.18);
   --color-on-tertiary-container: #fff2d6;
+
   --color-error: #ff6b6b;
   --color-on-error: #ffffff;
   --color-error-container: rgba(255, 107, 107, 0.12);
   --color-on-error-container: #ffe4e4;
+
   --color-background: #071b2b;
   --color-on-background: #edf3fb;
   --color-surface: #0d2135;
   --color-on-surface: #edf3fb;
   --color-surface-variant: #18314b;
   --color-on-surface-variant: #bfd2e7;
+
   --color-outline: #2d4a67;
   --color-outline-variant: #1b3045;
   --color-inverse-surface: #edf3fb;
   --color-inverse-on-surface: #0d2135;
   --color-inverse-primary: #ff8b2c;
+
   --color-surface-container-lowest: #061722;
   --color-surface-container-low: #0d2135;
   --color-surface-container: #122b41;
@@ -134,19 +140,26 @@ html.dark {
   --card-foreground: 210 30% 95%;
   --popover: 213 38% 12%;
   --popover-foreground: 210 30% 95%;
+
   --primary: 27 100% 60%;
   --primary-foreground: 0 0% 100%;
+
   --secondary: 215 28% 55%;
   --secondary-foreground: 210 30% 95%;
+
   --muted: 214 28% 18%;
   --muted-foreground: 210 20% 79%;
+
   --accent: 27 100% 60%;
   --accent-foreground: 0 0% 100%;
+
   --destructive: 0 82% 69%;
   --destructive-foreground: 0 0% 100%;
+
   --border: 214 24% 26%;
   --input: 214 24% 26%;
   --ring: 27 100% 60%;
+
   --chart-1: 27 100% 60%;
   --chart-2: 214 28% 55%;
   --chart-3: 201 90% 70%;
@@ -158,7 +171,6 @@ html.dark {
   --sidebar-primary: 27 100% 60%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 27 100% 60%;
-  --sidebar-accent-foreground: 0 0% 100%;
   --sidebar-border: 214 24% 26%;
   --sidebar-ring: 27 100% 60%;
 }
@@ -172,13 +184,21 @@ html.dark {
     border-color: hsl(var(--border));
   }
 
-  /* Scrollbar - hidden globally, Lenis handles smooth scroll */
+  /*
+   * Keep the native scrollbar hidden.
+   * Avoid adding extra scroll effects here.
+   */
   * {
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE / Edge legacy */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
+
   *::-webkit-scrollbar {
-    display: none;                /* Chrome / Safari / Opera */
+    display: none;
+  }
+
+  html {
+    scroll-behavior: auto;
   }
 
   body {
@@ -186,14 +206,12 @@ html.dark {
     font-family: "Plus Jakarta Sans", sans-serif;
   }
 
-  /* Accessible focus indicator - visible on all backgrounds */
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* Remove outline for mouse users (only show for keyboard) */
   :focus:not(:focus-visible) {
     outline: none;
   }
@@ -202,16 +220,19 @@ html.dark {
 /* ─────────────────────────────────────────────────────────────────────────────
    COMPONENT UTILITIES
    ───────────────────────────────────────────────────────────────────────────── */
+
 @layer utilities {
-  /* Section spacing */
   .section-padding {
     @apply py-24 md:py-12;
   }
 
-  /* Max content width */
   .content-width {
     @apply mx-auto max-w-300 px-6;
   }
+
+  /* =========================================================
+     HERO ANIMATIONS
+     ========================================================= */
 
   @keyframes heroReveal {
     0% {
@@ -249,8 +270,9 @@ html.dark {
 
   .hero-reveal {
     opacity: 0;
-    animation: heroReveal 720ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    will-change: transform, opacity;
+    animation:
+      heroReveal 720ms cubic-bezier(0.22, 1, 0.36, 1)
+      forwards;
     backface-visibility: hidden;
   }
 
@@ -278,13 +300,23 @@ html.dark {
     animation-delay: 760ms;
   }
 
+  /*
+   * Slightly slower floating animations.
+   * Same visual effect with less continuous movement.
+   */
   .hero-float-slow {
-    animation: heroFloatSlow 5.8s ease-in-out infinite;
+    animation:
+      heroFloatSlow 7s ease-in-out infinite;
   }
 
   .hero-float-medium {
-    animation: heroFloatMedium 4.8s ease-in-out infinite;
+    animation:
+      heroFloatMedium 6s ease-in-out infinite;
   }
+
+  /* =========================================================
+     HERO CTA
+     ========================================================= */
 
   .hero-cta-primary::before,
   .hero-cta-secondary::before {
@@ -301,7 +333,9 @@ html.dark {
       transparent
     );
     opacity: 0;
-    transition: left 420ms ease, opacity 320ms ease;
+    transition:
+      left 420ms ease,
+      opacity 320ms ease;
   }
 
   .hero-cta-primary:hover::before,
@@ -310,22 +344,43 @@ html.dark {
     opacity: 1;
   }
 
+  /* =========================================================
+     HERO PREVIEW CARD
+     ========================================================= */
+
   .hero-preview-card {
-    transform: perspective(1600px) rotateX(4deg) rotateY(-5deg);
-    transition: transform 360ms ease, box-shadow 360ms ease;
-    will-change: transform;
+    transform:
+      perspective(1600px)
+      rotateX(4deg)
+      rotateY(-5deg);
+    transition:
+      transform 360ms ease,
+      box-shadow 360ms ease;
   }
 
   .hero-shell:hover .hero-preview-card {
-    transform: perspective(1600px) rotateX(2deg) rotateY(-2deg);
+    transform:
+      perspective(1600px)
+      rotateX(2deg)
+      rotateY(-2deg);
   }
+
+  /* =========================================================
+     CUSTOM CURSOR
+     ========================================================= */
 
   .public-cursor-ring,
   .public-cursor-dot {
     position: fixed;
     left: 0;
     top: 0;
+
+    /*
+     * Keep transform animation smooth.
+     * Don't use backdrop-filter on the cursor.
+     */
     will-change: transform, opacity;
+
     transition:
       opacity 180ms ease,
       width 220ms ease,
@@ -339,56 +394,142 @@ html.dark {
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 9999px;
-    border: 1px solid color-mix(in srgb, var(--color-primary) 42%, white 12%);
-    background: color-mix(in srgb, var(--color-primary-container) 34%, transparent);
+
+    border: 1px solid
+      color-mix(
+        in srgb,
+        var(--color-primary) 42%,
+        white 12%
+      );
+
+    background:
+      color-mix(
+        in srgb,
+        var(--color-primary-container) 34%,
+        transparent
+      );
+
     box-shadow:
-      0 0 0 1px color-mix(in srgb, white 30%, transparent),
-      0 12px 28px color-mix(in srgb, var(--color-primary) 10%, transparent);
-    backdrop-filter: blur(8px);
+      0 0 0 1px
+        color-mix(
+          in srgb,
+          white 30%,
+          transparent
+        ),
+      0 12px 28px
+        color-mix(
+          in srgb,
+          var(--color-primary) 10%,
+          transparent
+        );
+
+    /*
+     * Removed backdrop blur for performance.
+     */
+    backdrop-filter: none;
   }
 
   .public-cursor-dot {
     width: 0.45rem;
     height: 0.45rem;
     border-radius: 9999px;
+
     background: var(--color-primary);
-    box-shadow: 0 0 18px color-mix(in srgb, var(--color-primary) 30%, transparent);
+
+    box-shadow:
+      0 0 18px
+        color-mix(
+          in srgb,
+          var(--color-primary) 30%,
+          transparent
+        );
   }
 
   .public-cursor-ring-active {
     width: 3.6rem;
     height: 3.6rem;
-    border-color: color-mix(in srgb, var(--color-primary) 72%, white 12%);
-    background: color-mix(in srgb, var(--color-primary-container) 50%, transparent);
+
+    border-color:
+      color-mix(
+        in srgb,
+        var(--color-primary) 72%,
+        white 12%
+      );
+
+    background:
+      color-mix(
+        in srgb,
+        var(--color-primary-container) 50%,
+        transparent
+      );
+
     box-shadow:
-      0 0 0 1px color-mix(in srgb, white 46%, transparent),
-      0 18px 40px color-mix(in srgb, var(--color-primary) 18%, transparent);
+      0 0 0 1px
+        color-mix(
+          in srgb,
+          white 46%,
+          transparent
+        ),
+      0 18px 40px
+        color-mix(
+          in srgb,
+          var(--color-primary) 18%,
+          transparent
+        );
   }
 
   .public-cursor-dot-active {
     width: 0.65rem;
     height: 0.65rem;
-    background: color-mix(in srgb, var(--color-primary) 82%, black 6%);
+
+    background:
+      color-mix(
+        in srgb,
+        var(--color-primary) 82%,
+        black 6%
+      );
   }
+
+  /* =========================================================
+     PUBLIC CURSOR
+     ========================================================= */
 
   @media (hover: hover) and (pointer: fine) {
     .has-public-cursor .public-cursor-scope,
     .has-public-cursor .public-cursor-scope a,
     .has-public-cursor .public-cursor-scope button,
     .has-public-cursor .public-cursor-scope summary,
-    .has-public-cursor .public-cursor-scope [role="button"],
-    .has-public-cursor .public-cursor-scope [role="link"],
-    .has-public-cursor .public-cursor-scope label[for] {
+    .has-public-cursor
+      .public-cursor-scope
+      [role="button"],
+    .has-public-cursor
+      .public-cursor-scope
+      [role="link"],
+    .has-public-cursor
+      .public-cursor-scope
+      label[for] {
       cursor: none;
     }
 
-    .has-public-cursor .public-cursor-scope input,
-    .has-public-cursor .public-cursor-scope textarea,
-    .has-public-cursor .public-cursor-scope select,
-    .has-public-cursor .public-cursor-scope [contenteditable="true"] {
+    .has-public-cursor
+      .public-cursor-scope
+      input,
+    .has-public-cursor
+      .public-cursor-scope
+      textarea,
+    .has-public-cursor
+      .public-cursor-scope
+      select,
+    .has-public-cursor
+      .public-cursor-scope
+      [contenteditable="true"] {
       cursor: text;
     }
   }
+
+  /* =========================================================
+     REDUCED MOTION
+     ========================================================= */
 
   @media (prefers-reduced-motion: reduce) {
     .hero-reveal,
@@ -411,16 +552,16 @@ html.dark {
       display: none;
     }
   }
-
 }
+
 /* =========================================================
    EDVIXO MEGA MENU
    SMALL + PREMIUM + SMOOTH
-========================================================= */
+   ========================================================= */
 
 /* =========================================================
    MENU ENTRANCE
-========================================================= */
+   ========================================================= */
 
 @keyframes megaMenuIn {
   0% {
@@ -435,15 +576,19 @@ html.dark {
 }
 
 .mega-menu {
-  animation: megaMenuIn 240ms cubic-bezier(0.22, 1, 0.36, 1)
+  animation:
+    megaMenuIn 240ms
+    cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
+
   transform-origin: top center;
+
   will-change: transform, opacity;
 }
 
 /* =========================================================
    CARD ENTRANCE
-========================================================= */
+   ========================================================= */
 
 @keyframes megaCardIn {
   0% {
@@ -459,7 +604,9 @@ html.dark {
 
 .mega-card {
   opacity: 0;
-  animation: megaCardIn 400ms
+
+  animation:
+    megaCardIn 400ms
     cubic-bezier(0.22, 1, 0.36, 1)
     forwards;
 
@@ -468,7 +615,7 @@ html.dark {
 
 /* =========================================================
    CARD HOVER
-========================================================= */
+   ========================================================= */
 
 .mega-card {
   transition:
@@ -480,8 +627,12 @@ html.dark {
 
 .mega-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 139, 44, 0.35);
+
+  border-color:
+    rgba(255, 139, 44, 0.35);
+
   background-color: #102940;
+
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.25),
     0 0 25px rgba(255, 139, 44, 0.04);
@@ -489,7 +640,7 @@ html.dark {
 
 /* =========================================================
    ORANGE LINE
-========================================================= */
+   ========================================================= */
 
 .mega-card-line {
   transition:
@@ -499,13 +650,15 @@ html.dark {
 
 .mega-card:hover .mega-card-line {
   width: 64px;
+
   box-shadow:
-    0 0 12px rgba(255, 139, 44, 0.35);
+    0 0 12px
+    rgba(255, 139, 44, 0.35);
 }
 
 /* =========================================================
    EXPLORE ARROW
-========================================================= */
+   ========================================================= */
 
 .mega-card-arrow {
   display: inline-block;
@@ -520,7 +673,7 @@ html.dark {
 
 /* =========================================================
    SUBTLE ORANGE GLOW
-========================================================= */
+   ========================================================= */
 
 .mega-card-glow {
   transition:
@@ -530,12 +683,13 @@ html.dark {
 
 .mega-card:hover .mega-card-glow {
   transform: scale(2);
-  background-color: rgba(255, 139, 44, 0.1);
+  background-color:
+    rgba(255, 139, 44, 0.1);
 }
 
 /* =========================================================
    MOBILE RESPONSIVE
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 1023px) {
   .mega-menu {
@@ -550,7 +704,7 @@ html.dark {
 
 /* =========================================================
    SMALL MOBILE
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 639px) {
   .mega-menu {
@@ -571,7 +725,7 @@ html.dark {
 
 /* =========================================================
    REDUCE MOTION
-========================================================= */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   .mega-menu,
