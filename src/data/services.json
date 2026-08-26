@@ -1,216 +1,400 @@
 {
   "web-development": {
-    "title": "Web Development",
-    "slug": "web-development",
+  "title": "Web Development",
+  "slug": "web-development",
 
-    "card": {
-      "description": "High-performance websites and web applications built to represent your brand, generate enquiries, and support business growth.",
-      "whoItsFor": [
-        "Small Businesses",
-        "Startups",
-        "Agencies",
-        "Professional Services",
-        "Growing Companies"
-      ],
-      "whatYouGet": [
-        "Custom responsive website",
-        "Modern UI and UX",
-        "SEO-ready structure",
-        "Contact and enquiry systems"
-      ],
-      "startingFrom": "Custom Quote"
-    },
-
-    "heroTitle": "Web Experiences Built to Grow Your Business",
-
-    "heroDescription": "We build fast, responsive and conversion-focused websites that help businesses establish credibility, attract customers and grow online.",
-
-    "serviceLabel": "Web Development",
-
-    "trustChips": [
-      "Custom Development",
-      "Mobile First",
-      "SEO Ready"
+  "card": {
+    "description": "High-performance websites and web applications designed around your business goals, customer journey and long-term growth.",
+    "whoItsFor": [
+      "Small Businesses",
+      "Startups",
+      "Professional Services",
+      "Growing Companies",
+      "Established Brands"
     ],
-
-    "heroCta": "Build My Website",
-    "secondaryCta": "View Our Work",
-    "secondaryCtaLink": "/work",
-
-    "problems": [
-      {
-        "title": "Outdated Website",
-        "body": "An outdated website can make an otherwise professional business look less credible to potential customers.",
-        "icon": "Globe"
-      },
-      {
-        "title": "Poor Mobile Experience",
-        "body": "Customers increasingly browse from phones, so slow or difficult mobile websites can cost valuable enquiries.",
-        "icon": "Smartphone"
-      },
-      {
-        "title": "Low Online Visibility",
-        "body": "Without a strong technical and content structure, your website can struggle to appear prominently in search results.",
-        "icon": "Search"
-      }
+    "whatYouGet": [
+      "Custom responsive website",
+      "Modern UI and UX",
+      "Performance-focused development",
+      "SEO-ready technical structure",
+      "Contact and enquiry systems",
+      "Scalable architecture"
     ],
-
-    "whatYouGet": {
-      "label": "WHAT WE BUILD",
-      "title": "Everything Your Business Website Needs",
-      "points": [
-        "Modern responsive layouts designed around your brand.",
-        "Fast-loading pages optimized for desktop, tablet and mobile.",
-        "SEO-friendly technical structure.",
-        "Conversion-focused calls to action and enquiry flows.",
-        "WhatsApp and contact form integration."
-      ]
-    },
-
-    "features": [
-      {
-        "title": "Responsive Design",
-        "body": "A polished experience across phones, tablets and desktops.",
-        "icon": "Smartphone"
-      },
-      {
-        "title": "Fast Performance",
-        "body": "Optimized assets and modern development practices for faster loading.",
-        "icon": "Zap"
-      },
-      {
-        "title": "SEO Ready",
-        "body": "Clean structure and metadata foundations prepared for search visibility.",
-        "icon": "Search"
-      },
-      {
-        "title": "Lead Generation",
-        "body": "Contact forms, WhatsApp and clear calls to action help turn visitors into enquiries.",
-        "icon": "MessageSquare"
-      },
-      {
-        "title": "Scalable Architecture",
-        "body": "Built so new pages and features can be added as your business grows.",
-        "icon": "Layers"
-      },
-      {
-        "title": "Secure Development",
-        "body": "Modern development practices with security and maintainability in mind.",
-        "icon": "Shield"
-      }
-    ],
-
-    "process": [
-      {
-        "number": "01",
-        "title": "Discovery",
-        "body": "We understand your business, goals, audience and requirements."
-      },
-      {
-        "number": "02",
-        "title": "Design",
-        "body": "You review the visual direction before development begins."
-      },
-      {
-        "number": "03",
-        "title": "Development",
-        "body": "The approved experience is developed using modern web technologies."
-      },
-      {
-        "number": "04",
-        "title": "Testing",
-        "body": "We test responsiveness, forms, navigation, performance and functionality."
-      },
-      {
-        "number": "05",
-        "title": "Launch",
-        "body": "Your website goes live with the required deployment and support."
-      }
-    ],
-
-    "inclusions": [
-      {
-        "label": "Custom UI Design",
-        "note": "Designed around your brand and business goals."
-      },
-      {
-        "label": "Responsive Layout",
-        "note": "Optimized for mobile, tablet and desktop."
-      },
-      {
-        "label": "SEO Foundation",
-        "note": "Technical structure prepared for search engines."
-      },
-      {
-        "label": "Contact Forms",
-        "note": "Professional enquiry forms for your customers."
-      },
-      {
-        "label": "WhatsApp Integration",
-        "note": "Direct communication with potential customers."
-      },
-      {
-        "label": "Analytics Setup",
-        "note": "Understand visitors and website performance."
-      }
-    ],
-
-    "results": {
-      "stats": [
-        {
-          "stat": "98%",
-          "label": "Performance Focus"
-        },
-        {
-          "stat": "100%",
-          "label": "Responsive"
-        },
-        {
-          "stat": "24/7",
-          "label": "Online Presence"
-        }
-      ]
-    },
-
-    "consultation": {
-      "title": "Let's Build Your Website",
-      "description": "Tell us about your business and we'll recommend the right website solution for your goals.",
-      "includedTitle": "Your Consultation Includes",
-      "included": [
-        "Project requirements discussion",
-        "Recommended technology and approach",
-        "Clear scope and timeline",
-        "Custom project quotation"
-      ],
-      "cta": "Get a Free Consultation",
-      "whatsappCta": "Message on WhatsApp",
-      "whatsappUrl": "https://wa.me/919685238884"
-    },
-
-    "faqs": [
-      {
-        "question": "How long does website development take?",
-        "answer": "The timeline depends on the number of pages and functionality. A standard business website can typically be completed within a few weeks."
-      },
-      {
-        "question": "Will the website work on mobile?",
-        "answer": "Yes. Every website is designed to work across phones, tablets and desktop screens."
-      },
-      {
-        "question": "Can I update the website later?",
-        "answer": "Yes. The project can be structured so additional pages and features can be added as your business grows."
-      }
-    ],
-
-    "finalCta": {
-      "title": "Ready to Build a Better Website?",
-      "description": "Let's create a fast, modern and professional digital presence for your business.",
-      "primary": "Get a Free Consultation",
-      "whatsapp": "Chat on WhatsApp →"
-    },
-
-    "cta": "Build My Website"
+    "startingFrom": "Custom Quote"
   },
+
+  "heroTitle": "Web Experiences Built to Grow Your Business",
+
+  "heroDescription": "We design and develop fast, modern and conversion-focused websites that help businesses build credibility, communicate their value clearly and turn online visitors into meaningful enquiries.",
+
+  "serviceLabel": "Web Development",
+
+  "trustChips": [
+    "Custom Development",
+    "Mobile First",
+    "Performance Focused",
+    "SEO Ready"
+  ],
+
+  "heroCta": "Build My Website",
+  "secondaryCta": "View Our Work",
+  "secondaryCtaLink": "/portfolio",
+
+  "overview": {
+    "label": "WEB DEVELOPMENT",
+    "title": "More Than Just a Website",
+    "description": "Your website is often the first place a potential customer experiences your business. We build digital experiences that combine strong visual design, clear messaging, reliable technology and thoughtful user journeys.",
+    "body": "Whether you need a professional business website, a high-converting landing page or a more advanced web application, we focus on creating an experience that works for your customers and supports the way your business operates.",
+    "image": "/images/services/web-development-overview.webp"
+  },
+
+  "solutions": [
+    {
+      "number": "01",
+      "title": "Business Websites",
+      "description": "Professional websites that clearly communicate your services, build trust and give potential customers a simple path to contact your business.",
+      "image": "/images/services/business-websites.webp"
+    },
+    {
+      "number": "02",
+      "title": "Corporate Websites",
+      "description": "Structured digital experiences for established companies that need to present their brand, services, capabilities and information professionally.",
+      "image": "/images/services/corporate-websites.webp"
+    },
+    {
+      "number": "03",
+      "title": "Landing Pages",
+      "description": "Focused pages designed around a specific campaign, service or business objective with clear messaging and strong calls to action.",
+      "image": "/images/services/landing-pages.webp"
+    },
+    {
+      "number": "04",
+      "title": "Web Applications",
+      "description": "Interactive web applications that go beyond static pages and support users, workflows, data and business operations.",
+      "image": "/images/services/web-applications.webp"
+    },
+    {
+      "number": "05",
+      "title": "Custom Web Solutions",
+      "description": "Purpose-built digital experiences for businesses with requirements that do not fit into a standard website structure.",
+      "image": "/images/services/custom-web-solutions.webp"
+    },
+    {
+      "number": "06",
+      "title": "Website Redesign",
+      "description": "Modernize an existing website with better structure, stronger visual communication, improved usability and a more effective customer journey.",
+      "image": "/images/services/website-redesign.webp"
+    }
+  ],
+
+  "problems": [
+    {
+      "title": "Your Website Looks Outdated",
+      "body": "An outdated website can make a professional business appear less credible and can make it harder for customers to understand what you offer.",
+      "icon": "Globe"
+    },
+    {
+      "title": "Customers Struggle on Mobile",
+      "body": "A large part of your audience may discover your business from a phone. A poor mobile experience can create unnecessary friction before someone contacts you.",
+      "icon": "Smartphone"
+    },
+    {
+      "title": "Visitors Do Not Know What to Do Next",
+      "body": "A website can look attractive and still fail to generate enquiries when the content, navigation and calls to action are unclear.",
+      "icon": "MousePointer"
+    },
+    {
+      "title": "Your Website Loads Slowly",
+      "body": "Large assets, unnecessary scripts and inefficient implementation can create slow experiences that frustrate users and hurt engagement.",
+      "icon": "Zap"
+    },
+    {
+      "title": "Your Website Is Difficult to Grow",
+      "body": "A website should be able to evolve with your business. We focus on structures that allow new pages, features and integrations to be added later.",
+      "icon": "TrendingUp"
+    }
+  ],
+
+  "whatYouGet": {
+    "label": "WHAT WE BUILD",
+    "title": "A Complete Digital Experience for Your Business",
+    "description": "We bring design, development and business thinking together to create websites that are useful for your customers and practical for your team.",
+    "points": [
+      "A responsive experience designed for mobile, tablet and desktop.",
+      "A clear information structure that makes important content easy to find.",
+      "Modern interfaces aligned with your brand and business positioning.",
+      "Fast-loading pages with optimized assets and efficient implementation.",
+      "SEO-friendly foundations including clean structure and metadata.",
+      "Clear calls to action designed around customer enquiries and business goals.",
+      "Contact forms, WhatsApp and other communication integrations where required.",
+      "A scalable foundation that can support future pages and functionality."
+    ],
+    "image": "/images/services/web-development-build.webp"
+  },
+
+  "features": [
+    {
+      "title": "Responsive Design",
+      "body": "A consistent and polished experience across phones, tablets, laptops and larger screens.",
+      "icon": "Smartphone"
+    },
+    {
+      "title": "Fast Performance",
+      "body": "Optimized images, efficient code and modern development practices help create faster experiences.",
+      "icon": "Zap"
+    },
+    {
+      "title": "SEO Foundation",
+      "body": "Clean page structure, metadata and technical foundations prepared for search visibility.",
+      "icon": "Search"
+    },
+    {
+      "title": "Lead Generation",
+      "body": "Clear calls to action, contact forms and communication options help visitors take the next step.",
+      "icon": "MessageSquare"
+    },
+    {
+      "title": "API Integrations",
+      "body": "Connect your website with the tools, platforms and services your business already uses.",
+      "icon": "Link"
+    },
+    {
+      "title": "Scalable Architecture",
+      "body": "A maintainable foundation that can grow with new pages, features and business requirements.",
+      "icon": "Layers"
+    },
+    {
+      "title": "Security Focus",
+      "body": "Modern development practices with maintainability and security considered throughout the project.",
+      "icon": "Shield"
+    },
+    {
+      "title": "Analytics",
+      "body": "Connect appropriate analytics tools to understand how visitors interact with your website.",
+      "icon": "BarChart3"
+    }
+  ],
+
+  "whyEdvixo": {
+    "label": "WHY EDVIXO",
+    "title": "Built Around Your Business, Not a Template",
+    "description": "Every business has different customers, goals and challenges. Our approach focuses on understanding those requirements first and then building the right digital experience around them.",
+    "points": [
+      {
+        "title": "Business First",
+        "description": "We start by understanding what your website needs to achieve instead of choosing technology first."
+      },
+      {
+        "title": "Custom Experience",
+        "description": "Your website is shaped around your brand, audience and customer journey rather than being forced into a generic layout."
+      },
+      {
+        "title": "Performance Mindset",
+        "description": "We pay attention to loading speed, optimized assets, responsive behaviour and the overall user experience."
+      },
+      {
+        "title": "Built to Grow",
+        "description": "We consider future pages, features and integrations so your website can evolve as your business grows."
+      }
+    ],
+    "image": "/images/services/why-edvixo-web-development.webp"
+  },
+
+  "process": [
+    {
+      "number": "01",
+      "title": "Discovery",
+      "body": "We understand your business, audience, goals, existing digital presence and project requirements."
+    },
+    {
+      "number": "02",
+      "title": "Strategy",
+      "body": "We define the information structure, user journey, functionality and technical direction before development."
+    },
+    {
+      "number": "03",
+      "title": "Design",
+      "body": "We shape the visual direction and user experience around your brand and the needs of your customers."
+    },
+    {
+      "number": "04",
+      "title": "Development",
+      "body": "The approved experience is developed using appropriate modern web technologies and reusable components."
+    },
+    {
+      "number": "05",
+      "title": "Testing",
+      "body": "We check responsiveness, navigation, forms, integrations, performance and important user journeys."
+    },
+    {
+      "number": "06",
+      "title": "Launch",
+      "body": "The finished website is prepared for deployment and made ready for real users."
+    }
+  ],
+
+  "technologies": [
+    {
+      "name": "Next.js",
+      "description": "Modern React framework for fast and scalable web experiences."
+    },
+    {
+      "name": "React",
+      "description": "Component-based frontend development for interactive interfaces."
+    },
+    {
+      "name": "TypeScript",
+      "description": "Reliable and maintainable code for larger web projects."
+    },
+    {
+      "name": "Tailwind CSS",
+      "description": "Flexible styling system for responsive and consistent interfaces."
+    },
+    {
+      "name": "Node.js",
+      "description": "Backend JavaScript runtime for APIs and server-side functionality."
+    },
+    {
+      "name": "REST APIs",
+      "description": "Connect websites and applications with external and internal systems."
+    }
+  ],
+
+  "inclusions": [
+    {
+      "label": "Custom UI Design",
+      "note": "A visual experience aligned with your brand and business objectives."
+    },
+    {
+      "label": "Responsive Layout",
+      "note": "Designed and tested for mobile, tablet and desktop experiences."
+    },
+    {
+      "label": "Performance Optimisation",
+      "note": "Attention to image sizes, loading behaviour and efficient implementation."
+    },
+    {
+      "label": "SEO Foundation",
+      "note": "Technical foundations that help search engines understand your website."
+    },
+    {
+      "label": "Contact & Enquiry Systems",
+      "note": "Forms, WhatsApp and other communication options where required."
+    },
+    {
+      "label": "Analytics Setup",
+      "note": "Appropriate tracking can be connected to understand website activity."
+    },
+    {
+      "label": "Testing",
+      "note": "Responsive, functional and usability checks before launch."
+    },
+    {
+      "label": "Launch Support",
+      "note": "Deployment assistance and support around the website launch."
+    }
+  ],
+
+  "results": {
+    "stats": [
+      {
+        "stat": "24/7",
+        "label": "Online Presence"
+      },
+      {
+        "stat": "100%",
+        "label": "Responsive Experience"
+      },
+      {
+        "stat": "Custom",
+        "label": "Built Around Your Business"
+      }
+    ]
+  },
+
+  "featuredWork": {
+    "label": "SELECTED WORK",
+    "title": "Web Experiences We've Built",
+    "description": "Explore selected Edvixo projects and see how we approach different business requirements.",
+    "projects": [
+      {
+        "title": "Dental Clinic Growth Website",
+        "category": "Healthcare",
+        "image": "/images/portfolio/dental-clinic.png",
+        "link": "/portfolio/dental-clinic-growth-website"
+      },
+      {
+        "title": "Admissions Website Redesign",
+        "category": "Education",
+        "image": "/images/portfolio/education.png",
+        "link": "/portfolio/admissions-website-redesign"
+      },
+      {
+        "title": "Restaurant Ordering Experience",
+        "category": "Hospitality",
+        "image": "/images/portfolio/restaurant.png",
+        "link": "/portfolio/restaurant-ordering-experience"
+      }
+    ]
+  },
+
+  "faqs": [
+    {
+      "question": "How long does website development take?",
+      "answer": "The timeline depends on the number of pages, design requirements, integrations and functionality. After understanding your requirements, we can provide a clearer project scope and estimated timeline."
+    },
+    {
+      "question": "Can you redesign my existing website?",
+      "answer": "Yes. We can review an existing website and improve its visual design, structure, mobile experience, performance and overall customer journey."
+    },
+    {
+      "question": "Will my website work on mobile devices?",
+      "answer": "Yes. Responsive behaviour is considered throughout the design and development process so the experience works across phones, tablets and desktop screens."
+    },
+    {
+      "question": "Can you integrate APIs and third-party services?",
+      "answer": "Yes. Where the required service provides suitable integration options, we can connect your website with APIs, communication tools, analytics platforms and other business systems."
+    },
+    {
+      "question": "Will the website be SEO friendly?",
+      "answer": "We build with SEO foundations such as clean structure, responsive layouts, metadata and performance considerations. Ongoing SEO strategy and content marketing can be handled as a separate requirement."
+    },
+    {
+      "question": "Can new features be added later?",
+      "answer": "Yes. We aim to create maintainable and scalable foundations so additional pages, integrations and functionality can be introduced as your business grows."
+    },
+    {
+      "question": "Can you help after the website goes live?",
+      "answer": "Yes. Post-launch support and future improvements can be discussed according to the project's requirements."
+    }
+  ],
+
+  "consultation": {
+    "title": "Let's Build Your Website",
+    "description": "Tell us about your business, current website or project idea and we'll help identify the right web solution for your goals.",
+    "includedTitle": "Your Consultation Includes",
+    "included": [
+      "Project requirements discussion",
+      "Recommended website approach",
+      "Technology and functionality discussion",
+      "Initial project scope",
+      "Timeline discussion",
+      "Custom project quotation"
+    ],
+    "cta": "Get a Free Consultation",
+    "whatsappCta": "Message on WhatsApp",
+    "whatsappUrl": "https://wa.me/919685238884"
+  },
+
+  "finalCta": {
+    "title": "Ready to Build a Better Website?",
+    "description": "Let's create a fast, modern and professional digital experience that helps your business attract, engage and convert customers.",
+    "primary": "Get a Free Consultation",
+    "whatsapp": "Chat on WhatsApp →"
+  },
+
+  "cta": "Build My Website"
+},
 
   "app-development": {
     "title": "App Development",

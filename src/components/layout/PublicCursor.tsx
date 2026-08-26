@@ -1,16 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-
-type CursorState = {
-  x: number;
-  y: number;
-  ringX: number;
-  ringY: number;
-  visible: boolean;
-  interactive: boolean;
-  text: boolean;
-};
+import { useEffect, useRef } from "react";
 
 const INTERACTIVE_SELECTOR = [
   "a[href]",
@@ -29,20 +19,9 @@ const TEXT_INPUT_SELECTOR = [
   "[contenteditable='true']",
 ].join(",");
 
-const INITIAL_CURSOR_STATE: CursorState = {
-  x: 0,
-  y: 0,
-  ringX: 0,
-  ringY: 0,
-  visible: false,
-  interactive: false,
-  text: false,
-};
-
 export function PublicCursor() {
-  /* =========================================================
-     REFS
-  ========================================================= */
+  const ringRef = useRef<HTMLDivElement | null>(null);
+  const dotRef = useRef<HTMLDivElement | null>(null);
 
   const frameRef = useRef<number | null>(null);
 
@@ -51,51 +30,15 @@ export function PublicCursor() {
     y: 0,
   });
 
-  const ringRef = useRef({
+  const ringPositionRef = useRef({
     x: 0,
     y: 0,
   });
 
-  const hasPointerRef = useRef(false);
-
-  /* =========================================================
-     STATE
-  ========================================================= */
-
-  const [mounted, setMounted] = useState(false);
-
-  const [enabled, setEnabled] = useState(false);
-
-  const [cursor, setCursor] =
-    useState<CursorState>(INITIAL_CURSOR_STATE);
-
-  /* =========================================================
-     CLIENT MOUNT
-     
-     Important for React hydration.
-     Server render = null
-     First client render = null
-     Cursor appears only after hydration.
-  ========================================================= */
+  const visibleRef = useRef(false);
+  const interactiveRef = useRef(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  /* =========================================================
-     ENABLE CURSOR
-     
-     Only enable on:
-     - Desktop
-     - Real mouse
-     - No reduced-motion preference
-  ========================================================= */
-
-  useEffect(() => {
-    if (!mounted) {
-      return;
-    }
-
     const mediaQuery = window.matchMedia(
       "(hover: hover) and (pointer: fine)",
     );
@@ -104,93 +47,146 @@ export function PublicCursor() {
       "(prefers-reduced-motion: reduce)",
     );
 
-    const updateEnabled = () => {
-      const nextEnabled =
-        mediaQuery.matches &&
-        !reducedMotionQuery.matches;
-
-      setEnabled(nextEnabled);
-
-      document.documentElement.classList.toggle(
-        "has-public-cursor",
-        nextEnabled,
-      );
-
-      if (!nextEnabled) {
-        setCursor(INITIAL_CURSOR_STATE);
-        hasPointerRef.current = false;
-      }
-    };
-
-    updateEnabled();
-
-    mediaQuery.addEventListener(
-      "change",
-      updateEnabled,
-    );
-
-    reducedMotionQuery.addEventListener(
-      "change",
-      updateEnabled,
-    );
-
-    return () => {
-      document.documentElement.classList.remove(
-        "has-public-cursor",
-      );
-
-      mediaQuery.removeEventListener(
-        "change",
-        updateEnabled,
-      );
-
-      reducedMotionQuery.removeEventListener(
-        "change",
-        updateEnabled,
-      );
-    };
-  }, [mounted]);
-
-  /* =========================================================
-     CURSOR / RING ANIMATION
-  ========================================================= */
-
-  useEffect(() => {
-    if (!mounted || !enabled) {
+    if (
+      !mediaQuery.matches ||
+      reducedMotionQuery.matches
+    ) {
       return;
     }
 
-    const animate = () => {
+    const ring = ringRef.current;
+    const dot = dotRef.current;
+
+    if (!ring || !dot) {
+      return;
+    }
+
+    /*
+     * Enable the custom cursor immediately.
+     *
+     * No React state is required here.
+     */
+    document.documentElement.classList.add(
+      "has-public-cursor",
+    );
+
+    const setVisible = (visible: boolean) => {
+      if (visibleRef.current === visible) {
+        return;
+      }
+
+      visibleRef.current = visible;
+
+      ring.classList.toggle(
+        "opacity-100",
+        visible,
+      );
+
+      ring.classList.toggle(
+        "opacity-0",
+        !visible,
+      );
+
+      dot.classList.toggle(
+        "opacity-100",
+        visible,
+      );
+
+      dot.classList.toggle(
+        "opacity-0",
+        !visible,
+      );
+    };
+
+    const setInteractive = (
+      interactive: boolean,
+    ) => {
+      if (
+        interactiveRef.current === interactive
+      ) {
+        return;
+      }
+
+      interactiveRef.current = interactive;
+
+      ring.classList.toggle(
+        "public-cursor-ring-active",
+        interactive,
+      );
+
+      dot.classList.toggle(
+        "public-cursor-dot-active",
+        interactive,
+      );
+    };
+
+    /*
+     * Update the cursor position directly through
+     * transform instead of React state.
+     *
+     * This prevents a React render on every mouse move.
+     */
+    const updateCursor = () => {
+      frameRef.current = null;
+
       const target = targetRef.current;
-      const ring = ringRef.current;
+      const ringPosition =
+        ringPositionRef.current;
 
       /*
        * Smooth trailing ring.
        */
-      ring.x += (target.x - ring.x) * 0.18;
-      ring.y += (target.y - ring.y) * 0.18;
+      ringPosition.x +=
+        (target.x - ringPosition.x) * 0.2;
 
-      setCursor((current) => ({
-        ...current,
-        x: target.x,
-        y: target.y,
-        ringX: ring.x,
-        ringY: ring.y,
-      }));
+      ringPosition.y +=
+        (target.y - ringPosition.y) * 0.2;
 
-      frameRef.current =
-        window.requestAnimationFrame(animate);
+      ring.style.transform = `
+        translate3d(
+          ${ringPosition.x}px,
+          ${ringPosition.y}px,
+          0
+        )
+        translate(-50%, -50%)
+      `;
+
+      dot.style.transform = `
+        translate3d(
+          ${target.x}px,
+          ${target.y}px,
+          0
+        )
+        translate(-50%, -50%)
+      `;
+
+      /*
+       * Continue only while the cursor is active.
+       */
+      if (visibleRef.current) {
+        frameRef.current =
+          window.requestAnimationFrame(
+            updateCursor,
+          );
+      }
     };
 
-    /* =======================================================
-       POINTER MOVE
-    ======================================================= */
+    const scheduleUpdate = () => {
+      if (frameRef.current !== null) {
+        return;
+      }
+
+      frameRef.current =
+        window.requestAnimationFrame(
+          updateCursor,
+        );
+    };
 
     const handlePointerMove = (
       event: PointerEvent,
     ) => {
       /*
-       * Ignore touch and pen.
+       * Only respond to a real mouse.
        */
       if (
         event.pointerType &&
@@ -202,58 +198,60 @@ export function PublicCursor() {
       const x = event.clientX;
       const y = event.clientY;
 
-      targetRef.current = {
-        x,
-        y,
-      };
+      targetRef.current.x = x;
+      targetRef.current.y = y;
 
       /*
-       * Put ring directly on cursor
-       * on first movement.
+       * First movement:
+       * Put the ring directly on the pointer.
+       * This prevents the initial visible lag.
        */
-      if (!hasPointerRef.current) {
-        ringRef.current = {
-          x,
-          y,
-        };
+      if (!visibleRef.current) {
+        ringPositionRef.current.x = x;
+        ringPositionRef.current.y = y;
 
-        hasPointerRef.current = true;
+        ring.style.transform = `
+          translate3d(
+            ${x}px,
+            ${y}px,
+            0
+          )
+          translate(-50%, -50%)
+        `;
       }
+
+      setVisible(true);
 
       const target =
         event.target instanceof Element
           ? event.target
           : null;
 
-      const interactive =
-        Boolean(
-          target?.closest(
-            INTERACTIVE_SELECTOR,
-          ),
-        );
+      const interactive = Boolean(
+        target?.closest(
+          INTERACTIVE_SELECTOR,
+        ),
+      );
 
-      const text =
-        Boolean(
-          target?.closest(
-            TEXT_INPUT_SELECTOR,
-          ),
-        );
+      const text = Boolean(
+        target?.closest(
+          TEXT_INPUT_SELECTOR,
+        ),
+      );
 
-      setCursor((current) => ({
-        ...current,
-        x,
-        y,
-        ringX: ringRef.current.x,
-        ringY: ringRef.current.y,
-        visible: true,
-        interactive,
-        text,
-      }));
+      /*
+       * Don't show custom cursor over text fields.
+       */
+      if (text) {
+        setVisible(false);
+        setInteractive(false);
+        return;
+      }
+
+      setInteractive(interactive);
+
+      scheduleUpdate();
     };
-
-    /* =======================================================
-       POINTER DOWN
-    ======================================================= */
 
     const handlePointerDown = (
       event: PointerEvent,
@@ -265,15 +263,8 @@ export function PublicCursor() {
         return;
       }
 
-      setCursor((current) => ({
-        ...current,
-        interactive: true,
-      }));
+      setInteractive(true);
     };
-
-    /* =======================================================
-       POINTER UP
-    ======================================================= */
 
     const handlePointerUp = (
       event: PointerEvent,
@@ -290,42 +281,27 @@ export function PublicCursor() {
           ? event.target
           : null;
 
-      const interactive =
-        Boolean(
-          target?.closest(
-            INTERACTIVE_SELECTOR,
-          ),
-        );
+      const interactive = Boolean(
+        target?.closest(
+          INTERACTIVE_SELECTOR,
+        ),
+      );
 
-      setCursor((current) => ({
-        ...current,
-        interactive,
-      }));
+      setInteractive(interactive);
     };
-
-    /* =======================================================
-       HIDE
-    ======================================================= */
 
     const hideCursor = () => {
-      setCursor((current) => ({
-        ...current,
-        visible: false,
-        interactive: false,
-        text: false,
-      }));
+      setVisible(false);
+      setInteractive(false);
+
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(
+          frameRef.current,
+        );
+
+        frameRef.current = null;
+      }
     };
-
-    /* =======================================================
-       START ANIMATION
-    ======================================================= */
-
-    frameRef.current =
-      window.requestAnimationFrame(animate);
-
-    /* =======================================================
-       EVENT LISTENERS
-    ======================================================= */
 
     window.addEventListener(
       "pointermove",
@@ -338,11 +314,17 @@ export function PublicCursor() {
     window.addEventListener(
       "pointerdown",
       handlePointerDown,
+      {
+        passive: true,
+      },
     );
 
     window.addEventListener(
       "pointerup",
       handlePointerUp,
+      {
+        passive: true,
+      },
     );
 
     window.addEventListener(
@@ -355,18 +337,40 @@ export function PublicCursor() {
       hideCursor,
     );
 
-    /* =======================================================
-       CLEANUP
-    ======================================================= */
+    /*
+     * Re-check if the user changes device settings.
+     */
+    const handleMediaChange = () => {
+      if (
+        !mediaQuery.matches ||
+        reducedMotionQuery.matches
+      ) {
+        hideCursor();
+
+        document.documentElement.classList.remove(
+          "has-public-cursor",
+        );
+      } else {
+        document.documentElement.classList.add(
+          "has-public-cursor",
+        );
+      }
+    };
+
+    mediaQuery.addEventListener(
+      "change",
+      handleMediaChange,
+    );
+
+    reducedMotionQuery.addEventListener(
+      "change",
+      handleMediaChange,
+    );
 
     return () => {
-      if (frameRef.current !== null) {
-        window.cancelAnimationFrame(
-          frameRef.current,
-        );
-
-        frameRef.current = null;
-      }
+      document.documentElement.classList.remove(
+        "has-public-cursor",
+      );
 
       window.removeEventListener(
         "pointermove",
@@ -392,21 +396,26 @@ export function PublicCursor() {
         "pointerleave",
         hideCursor,
       );
+
+      mediaQuery.removeEventListener(
+        "change",
+        handleMediaChange,
+      );
+
+      reducedMotionQuery.removeEventListener(
+        "change",
+        handleMediaChange,
+      );
+
+      if (frameRef.current !== null) {
+        window.cancelAnimationFrame(
+          frameRef.current,
+        );
+
+        frameRef.current = null;
+      }
     };
-  }, [mounted, enabled]);
-
-  /* =========================================================
-     IMPORTANT:
-     Never render cursor during SSR or before hydration.
-  ========================================================= */
-
-  if (!mounted || !enabled || cursor.text) {
-    return null;
-  }
-
-  /* =========================================================
-     RENDER
-  ========================================================= */
+  }, []);
 
   return (
     <div
@@ -418,64 +427,22 @@ export function PublicCursor() {
         z-[220]
       "
     >
-      {/* =====================================================
-          OUTER RING
-      ===================================================== */}
-
+      {/* OUTER RING */}
       <div
-        className={`
+        ref={ringRef}
+        className="
           public-cursor-ring
-          ${
-            cursor.visible
-              ? "opacity-100"
-              : "opacity-0"
-          }
-          ${
-            cursor.interactive
-              ? "public-cursor-ring-active"
-              : ""
-          }
-        `}
-        style={{
-          transform: `
-            translate3d(
-              ${cursor.ringX}px,
-              ${cursor.ringY}px,
-              0
-            )
-            translate(-50%, -50%)
-          `,
-        }}
+          opacity-0
+        "
       />
 
-      {/* =====================================================
-          CENTER DOT
-      ===================================================== */}
-
+      {/* CENTER DOT */}
       <div
-        className={`
+        ref={dotRef}
+        className="
           public-cursor-dot
-          ${
-            cursor.visible
-              ? "opacity-100"
-              : "opacity-0"
-          }
-          ${
-            cursor.interactive
-              ? "public-cursor-dot-active"
-              : ""
-          }
-        `}
-        style={{
-          transform: `
-            translate3d(
-              ${cursor.x}px,
-              ${cursor.y}px,
-              0
-            )
-            translate(-50%, -50%)
-          `,
-        }}
+          opacity-0
+        "
       />
     </div>
   );
