@@ -397,217 +397,397 @@
 },
 
   "app-development": {
-    "title": "App Development",
-    "slug": "app-development",
+  "title": "App Development",
+  "slug": "app-development",
 
-    "card": {
-      "description": "Scalable mobile and business applications designed to simplify operations, improve customer experiences and support growth.",
-      "whoItsFor": [
-        "Startups",
-        "Businesses",
-        "Service Companies",
-        "Internal Teams",
-        "Growing Brands"
-      ],
-      "whatYouGet": [
-        "Custom application development",
-        "Modern mobile UI",
-        "API integration",
-        "Scalable architecture"
-      ],
-      "startingFrom": "Custom Quote"
-    },
-
-    "heroTitle": "Mobile Applications Built Around Your Business",
-
-    "heroDescription": "Create useful, reliable and scalable applications that connect your customers, employees and business processes in one digital experience.",
-
-    "serviceLabel": "App Development",
-
-    "trustChips": [
-      "Custom Apps",
-      "Scalable Architecture",
-      "Modern UI"
+  "card": {
+    "description": "Custom mobile and business applications designed to make everyday tasks easier, connect users and support growing digital operations.",
+    "whoItsFor": [
+      "Startups",
+      "Service Businesses",
+      "Growing Companies",
+      "Customer-Facing Brands",
+      "Internal Teams"
     ],
-
-    "heroCta": "Build My App",
-    "secondaryCta": "View Our Work",
-    "secondaryCtaLink": "/work",
-
-    "problems": [
-      {
-        "title": "Manual Processes",
-        "body": "Businesses often lose time when important operations depend on spreadsheets, calls and repetitive manual work.",
-        "icon": "Clock"
-      },
-      {
-        "title": "Disconnected Customers",
-        "body": "Customers expect fast and convenient digital experiences instead of complicated offline processes.",
-        "icon": "Users"
-      },
-      {
-        "title": "Limited Scalability",
-        "body": "Disconnected tools make it difficult to scale operations as customers and teams grow.",
-        "icon": "TrendingUp"
-      }
+    "whatYouGet": [
+      "Custom mobile application",
+      "Intuitive app interface",
+      "Secure authentication",
+      "API and database integration",
+      "Push notifications",
+      "Scalable backend"
     ],
-
-    "whatYouGet": {
-      "label": "WHAT WE BUILD",
-      "title": "Applications Designed for Real Business Needs",
-      "points": [
-        "Custom mobile and business applications.",
-        "Clean interfaces focused on usability.",
-        "Secure API and database integrations.",
-        "Scalable architecture for future growth.",
-        "Admin and management dashboards when required."
-      ]
-    },
-
-    "features": [
-      {
-        "title": "Mobile Applications",
-        "body": "Modern application experiences designed for mobile users.",
-        "icon": "Smartphone"
-      },
-      {
-        "title": "API Integration",
-        "body": "Connect applications with your existing systems and services.",
-        "icon": "Link"
-      },
-      {
-        "title": "User Authentication",
-        "body": "Secure login and account management experiences.",
-        "icon": "Shield"
-      },
-      {
-        "title": "Notifications",
-        "body": "Keep users informed through relevant application notifications.",
-        "icon": "Bell"
-      },
-      {
-        "title": "Admin Dashboard",
-        "body": "Manage users, content, data and operations from one place.",
-        "icon": "LayoutDashboard"
-      },
-      {
-        "title": "Scalable Backend",
-        "body": "A backend structure designed to support growing users and data.",
-        "icon": "Server"
-      }
-    ],
-
-    "process": [
-      {
-        "number": "01",
-        "title": "Discovery",
-        "body": "We understand the application idea, users and business objectives."
-      },
-      {
-        "number": "02",
-        "title": "UX Planning",
-        "body": "We plan user flows and the structure of the application."
-      },
-      {
-        "number": "03",
-        "title": "Development",
-        "body": "The application is developed with modern technologies."
-      },
-      {
-        "number": "04",
-        "title": "Testing",
-        "body": "We test functionality, responsiveness and user flows."
-      },
-      {
-        "number": "05",
-        "title": "Launch",
-        "body": "The application is deployed and prepared for real users."
-      }
-    ],
-
-    "inclusions": [
-      {
-        "label": "Custom Application",
-        "note": "Built specifically around your requirements."
-      },
-      {
-        "label": "Modern UI",
-        "note": "Clean and intuitive user experience."
-      },
-      {
-        "label": "API Integration",
-        "note": "Connect your application to required services."
-      },
-      {
-        "label": "Database Integration",
-        "note": "Structured storage for application data."
-      },
-      {
-        "label": "Authentication",
-        "note": "Secure account and access management."
-      },
-      {
-        "label": "Admin Panel",
-        "note": "Manage your application from one place."
-      }
-    ],
-
-    "results": {
-      "stats": [
-        {
-          "stat": "24/7",
-          "label": "Digital Access"
-        },
-        {
-          "stat": "100%",
-          "label": "Custom Built"
-        },
-        {
-          "stat": "∞",
-          "label": "Growth Potential"
-        }
-      ]
-    },
-
-    "consultation": {
-      "title": "Let's Build Your Application",
-      "description": "Share your application idea and we'll help turn it into a practical digital product.",
-      "includedTitle": "Your Consultation Includes",
-      "included": [
-        "Application requirements discussion",
-        "Technology recommendation",
-        "Development roadmap",
-        "Custom project quotation"
-      ],
-      "cta": "Discuss Your App",
-      "whatsappCta": "Message on WhatsApp",
-      "whatsappUrl": "https://wa.me/919685238884"
-    },
-
-    "faqs": [
-      {
-        "question": "Can you build a custom application?",
-        "answer": "Yes. Applications can be designed and developed around your specific business requirements."
-      },
-      {
-        "question": "Can the app connect to my existing system?",
-        "answer": "Yes. API integrations can connect the application with existing software and services where supported."
-      },
-      {
-        "question": "Can the application grow later?",
-        "answer": "Yes. The architecture can be planned to allow additional features and users as the business grows."
-      }
-    ],
-
-    "finalCta": {
-      "title": "Have an App Idea?",
-      "description": "Let's turn your idea into a useful digital product.",
-      "primary": "Get a Free Consultation",
-      "whatsapp": "Chat on WhatsApp →"
-    },
-
-    "cta": "Build My App"
+    "startingFrom": "Custom Quote"
   },
+
+  "heroTitle": "Mobile Apps Built Around the Way Your Business Works",
+
+  "heroDescription": "We design and develop practical mobile applications that give customers and teams a faster, simpler and more connected way to interact with your business.",
+
+  "serviceLabel": "App Development",
+
+  "trustChips": [
+    "Custom Applications",
+    "Mobile First",
+    "Secure & Scalable",
+    "API Ready"
+  ],
+
+  "heroCta": "Build My App",
+  "secondaryCta": "View Our Work",
+  "secondaryCtaLink": "/portfolio",
+
+  "overview": {
+    "label": "APP DEVELOPMENT",
+    "title": "More Than Just a Mobile App",
+    "description": "A good application should make an important task easier. We combine thoughtful UX, reliable technology and business-focused functionality to create apps people can actually use.",
+    "body": "Whether you need a customer-facing mobile app, an internal business application or a digital product for a new idea, we focus on creating a smooth experience from the first tap to the final action.",
+    "image": "/images/services/app-development-overview.webp"
+  },
+
+  "solutions": [
+    {
+      "number": "01",
+      "title": "Customer Apps",
+      "description": "Mobile experiences that allow customers to access your services, manage their accounts and interact with your business from anywhere.",
+      "image": "/images/services/customer-apps.webp"
+    },
+    {
+      "number": "02",
+      "title": "Business Applications",
+      "description": "Custom applications designed to simplify internal processes, manage information and help teams work more efficiently.",
+      "image": "/images/services/business-applications.webp"
+    },
+    {
+      "number": "03",
+      "title": "Service Booking Apps",
+      "description": "Convenient booking experiences that allow customers to view availability, schedule services and manage appointments.",
+      "image": "/images/services/service-booking-apps.webp"
+    },
+    {
+      "number": "04",
+      "title": "Management Apps",
+      "description": "Centralized applications for managing customers, operations, records and important business activities.",
+      "image": "/images/services/management-apps.webp"
+    },
+    {
+      "number": "05",
+      "title": "MVP Applications",
+      "description": "Focused first versions of digital products that help validate an idea before investing in a larger application.",
+      "image": "/images/services/mvp-applications.webp"
+    },
+    {
+      "number": "06",
+      "title": "Custom App Solutions",
+      "description": "Purpose-built applications for requirements that need a solution beyond standard business software.",
+      "image": "/images/services/custom-app-solutions.webp"
+    }
+  ],
+
+  "problems": [
+    {
+      "title": "Customers Depend on Manual Communication",
+      "body": "If customers have to call or message for every small task, the experience can become slow and difficult to manage.",
+      "icon": "MessageCircle"
+    },
+    {
+      "title": "Business Operations Are Scattered",
+      "body": "Important information spread across spreadsheets, messages and different tools can make everyday operations harder to manage.",
+      "icon": "Layers"
+    },
+    {
+      "title": "Your Service Is Not Available Digitally",
+      "body": "Customers increasingly expect to access services, information and support from their phones whenever they need them.",
+      "icon": "Smartphone"
+    },
+    {
+      "title": "Teams Spend Too Much Time on Repetitive Work",
+      "body": "Manual processes can consume valuable team time when common tasks could be handled through a dedicated application.",
+      "icon": "Clock"
+    },
+    {
+      "title": "Your Digital Product Cannot Scale",
+      "body": "A properly planned application creates a foundation where users, features and business processes can grow over time.",
+      "icon": "TrendingUp"
+    }
+  ],
+
+  "whatYouGet": {
+    "label": "WHAT WE BUILD",
+    "title": "A Mobile Experience Designed Around Real Users",
+    "description": "We bring product thinking, interface design and application development together to create useful digital products for customers and businesses.",
+    "points": [
+      "A mobile-first experience designed around real user needs.",
+      "Simple navigation and clear user journeys.",
+      "Secure authentication and account management.",
+      "API and database integration for connected applications.",
+      "Push notifications and communication features where required.",
+      "Admin dashboards for managing users, content and operations.",
+      "Scalable architecture prepared for future functionality.",
+      "Testing across important devices, screens and user flows."
+    ],
+    "image": "/images/services/app-development-build.webp"
+  },
+
+  "features": [
+    {
+      "title": "Mobile UI",
+      "body": "Clean and intuitive interfaces designed specifically for mobile interaction.",
+      "icon": "Smartphone"
+    },
+    {
+      "title": "User Authentication",
+      "body": "Login, registration and account management experiences for application users.",
+      "icon": "Shield"
+    },
+    {
+      "title": "API Integration",
+      "body": "Connect your application with websites, databases and external business systems.",
+      "icon": "Link"
+    },
+    {
+      "title": "Push Notifications",
+      "body": "Keep users informed with timely notifications and important updates.",
+      "icon": "Bell"
+    },
+    {
+      "title": "Admin Dashboard",
+      "body": "Manage users, content, records and important application operations from one place.",
+      "icon": "LayoutDashboard"
+    },
+    {
+      "title": "Database Integration",
+      "body": "Store and manage application information through structured and reliable data systems.",
+      "icon": "Database"
+    },
+    {
+      "title": "Payment Integration",
+      "body": "Connect suitable payment services when your application requires online transactions.",
+      "icon": "CreditCard"
+    },
+    {
+      "title": "Scalable Architecture",
+      "body": "A maintainable foundation designed to support additional users and features as the product grows.",
+      "icon": "Server"
+    }
+  ],
+
+  "whyEdvixo": {
+    "label": "WHY EDVIXO",
+    "title": "Built Around Users and Business Goals",
+    "description": "We don't build an app simply because a business needs an app. We focus on the problem it needs to solve, the people who will use it and the business outcome it should support.",
+    "points": [
+      {
+        "title": "User First",
+        "description": "We focus on making important actions simple and intuitive for the people using the application."
+      },
+      {
+        "title": "Business Focused",
+        "description": "Application functionality is planned around practical business requirements rather than unnecessary complexity."
+      },
+      {
+        "title": "Connected Systems",
+        "description": "APIs, databases and third-party services can be connected to create one connected digital experience."
+      },
+      {
+        "title": "Ready to Grow",
+        "description": "The application foundation can be planned to support future features, users and business requirements."
+      }
+    ],
+    "image": "/images/services/why-edvixo-app-development.webp"
+  },
+
+  "process": [
+    {
+      "number": "01",
+      "title": "Discovery",
+      "body": "We understand your idea, users, business goals, required features and technical requirements."
+    },
+    {
+      "number": "02",
+      "title": "UX Planning",
+      "body": "We define the user journeys, navigation and important application flows before development."
+    },
+    {
+      "number": "03",
+      "title": "UI Design",
+      "body": "We create a clear and modern interface designed around mobile usability and your brand."
+    },
+    {
+      "number": "04",
+      "title": "Development",
+      "body": "The application, backend services, APIs and required integrations are developed."
+    },
+    {
+      "number": "05",
+      "title": "Testing",
+      "body": "We test important user flows, functionality, responsiveness and application behaviour."
+    },
+    {
+      "number": "06",
+      "title": "Launch",
+      "body": "The completed application is prepared for deployment and real-world use."
+    }
+  ],
+
+  "technologies": [
+    {
+      "name": "React Native",
+      "description": "Cross-platform application development for modern mobile experiences."
+    },
+    {
+      "name": "Flutter",
+      "description": "Framework for building responsive applications across multiple platforms."
+    },
+    {
+      "name": "React",
+      "description": "Component-based technology for creating interactive digital interfaces."
+    },
+    {
+      "name": "Node.js",
+      "description": "Backend runtime for APIs and application services."
+    },
+    {
+      "name": "TypeScript",
+      "description": "Strongly typed development for maintainable application code."
+    },
+    {
+      "name": "REST APIs",
+      "description": "Connect applications with databases, websites and external services."
+    }
+  ],
+
+  "inclusions": [
+    {
+      "label": "Custom App UI",
+      "note": "A mobile interface designed around your brand and users."
+    },
+    {
+      "label": "Responsive Experience",
+      "note": "Layouts and interactions designed for different mobile screen sizes."
+    },
+    {
+      "label": "User Authentication",
+      "note": "Login, registration and account management functionality."
+    },
+    {
+      "label": "API Integration",
+      "note": "Connect your application with required systems and services."
+    },
+    {
+      "label": "Database Integration",
+      "note": "Structured storage and retrieval of application information."
+    },
+    {
+      "label": "Push Notifications",
+      "note": "Relevant updates and communication directly inside the mobile experience."
+    },
+    {
+      "label": "Testing",
+      "note": "Functional and user-flow testing before launch."
+    },
+    {
+      "label": "Launch Support",
+      "note": "Assistance with preparing the application for deployment."
+    }
+  ],
+
+  "results": {
+    "stats": [
+      {
+        "stat": "24/7",
+        "label": "Digital Access"
+      },
+      {
+        "stat": "100%",
+        "label": "Custom Built"
+      },
+      {
+        "stat": "Mobile",
+        "label": "First Experience"
+      }
+    ]
+  },
+
+  "featuredWork": {
+    "label": "SELECTED WORK",
+    "title": "Digital Experiences We've Built",
+    "description": "Explore selected Edvixo projects and see how different digital products can solve different business requirements.",
+    "projects": [
+      {
+        "title": "Dental Clinic Growth Website",
+        "category": "Healthcare",
+        "image": "/images/portfolio/dental-clinic.png",
+        "link": "/portfolio/dental-clinic-growth-website"
+      },
+      {
+        "title": "Admissions Website Redesign",
+        "category": "Education",
+        "image": "/images/portfolio/education.png",
+        "link": "/portfolio/admissions-website-redesign"
+      },
+      {
+        "title": "Restaurant Ordering Experience",
+        "category": "Hospitality",
+        "image": "/images/portfolio/restaurant.png",
+        "link": "/portfolio/restaurant-ordering-experience"
+      }
+    ]
+  },
+
+  "faqs": [
+    {
+      "question": "Can you build a completely custom mobile application?",
+      "answer": "Yes. We can design and develop an application around your specific users, business requirements and functionality."
+    },
+    {
+      "question": "Can the app connect to my existing website or software?",
+      "answer": "Yes. APIs can be used to connect the application with suitable websites, databases and external business systems."
+    },
+    {
+      "question": "Can you create an admin dashboard?",
+      "answer": "Yes. An admin interface can be developed to manage users, content, records and other application operations."
+    },
+    {
+      "question": "Can you integrate payments?",
+      "answer": "Yes. Suitable payment services can be integrated when online transactions are required."
+    },
+    {
+      "question": "Can the app support more users later?",
+      "answer": "Yes. Application architecture can be planned with future users, features and business growth in mind."
+    },
+    {
+      "question": "Can you improve an existing application?",
+      "answer": "Yes. We can review an existing application and work on its interface, functionality, performance or additional features."
+    }
+  ],
+
+  "consultation": {
+    "title": "Let's Build Your Application",
+    "description": "Tell us about your app idea, current process or business problem and we'll help identify the right application approach.",
+    "includedTitle": "Your Consultation Includes",
+    "included": [
+      "Application requirements discussion",
+      "User and feature planning",
+      "Technology discussion",
+      "Development approach",
+      "Timeline discussion",
+      "Custom project quotation"
+    ],
+    "cta": "Discuss Your App",
+    "whatsappCta": "Message on WhatsApp",
+    "whatsappUrl": "https://wa.me/919685238884"
+  },
+
+  "finalCta": {
+    "title": "Have an App Idea?",
+    "description": "Let's turn your idea into a useful, reliable and scalable mobile experience.",
+    "primary": "Get a Free Consultation",
+    "whatsapp": "Chat on WhatsApp →"
+  },
+
+  "cta": "Build My App"
+},
 
   "ecom-development": {
     "title": "Ecom Development",
