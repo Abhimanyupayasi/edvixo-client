@@ -9,6 +9,9 @@ import {
 } from "lucide-react";
 
 import company from "@/data/company.json";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import { getBreadcrumbSchema } from "@/lib/seo/schemas";
 
 const icons = {
   about: Building2,
@@ -20,7 +23,21 @@ const icons = {
 
 export default function CompanyPage() {
   return (
-    <main className="min-h-screen bg-background text-on-background">
+    <>
+      <JsonLd
+        data={getBreadcrumbSchema([
+          {
+            name: "Home",
+            url: SITE_URL,
+          },
+          {
+            name: "Company",
+            url: `${SITE_URL}/company`,
+          },
+        ])}
+      />
+
+      <main className="min-h-screen bg-background text-on-background">
       {/* HERO */}
       <section className="relative overflow-hidden bg-surface-container-low py-24 md:py-32">
         <div className="pointer-events-none absolute left-1/2 top-20 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
@@ -153,5 +170,6 @@ export default function CompanyPage() {
         </div>
       </section>
     </main>
+     </>
   );
 }

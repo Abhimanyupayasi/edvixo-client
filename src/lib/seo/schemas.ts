@@ -1,110 +1,96 @@
 import { SITE_AUTHOR, SITE_URL } from "@/lib/site";
 
+/* =========================================================
+   ORGANIZATION SCHEMA
+========================================================= */
+
 export function getPersonSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+
     name: "Edvixo",
-    url: "https://edvixo.com",
-    logo: "https://edvixo.com/logo.png",
-    image: "https://edvixo.com/og-home.jpg",
+    url: SITE_URL,
+
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo.png`,
+    },
+
+    image: `${SITE_URL}/og-home.jpg`,
+
     description:
-      "Edvixo is a digital solutions company helping businesses grow with custom websites, digital products, design, and technical support.",
-    sameAs: [
-      "https://www.linkedin.com/company/edvixo",
-      "https://www.instagram.com/edvixo",
-    ],
+      "Edvixo is a digital solutions company helping businesses build websites, digital products, software solutions, and technology experiences.",
+
     knowsAbout: [
       "Web Development",
+      "Software Development",
       "Digital Solutions",
       "UI/UX Design",
       "E-commerce",
-      "SEO",
       "Business Automation",
-      "Software Development",
+      "Cloud Solutions",
       "Digital Transformation",
     ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Remote",
-      addressCountry: "Worldwide",
-    },
   };
 }
+
+
+/* =========================================================
+   BUSINESS / COMPANY SCHEMA
+========================================================= */
 
 export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+
     name: "Edvixo",
-    alternateName: "Edvixo Digital Solutions",
-    url: "https://edvixo.com",
-    logo: "https://edvixo.com/logo.png",
-    image: "https://edvixo.com/og-home.jpg",
+    url: SITE_URL,
+
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/logo.png`,
+    },
+
+    image: `${SITE_URL}/og-home.jpg`,
+
     description:
-      "Edvixo provides web design, application development, digital transformation, and growth-focused technology services for businesses.",
-    telephone: process.env.NEXT_PUBLIC_PHONE ?? "",
-    email: "hello@edvixo.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Bhopal",
-      addressLocality: "Bhopal",
-      addressRegion: "Madhya Pradesh",
-      postalCode: "462001",
-      addressCountry: "IN",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 23.2599,
-      longitude: 77.4126,
-    },
-    areaServed: [
-      { "@type": "Country", name: "Worldwide" },
-      { "@type": "State", name: "Madhya Pradesh" },
-      { "@type": "City", name: "Bhopal" },
-    ],
-    priceRange: "$$",
-    openingHours: "Mo-Fr 09:00-19:00",
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Web Development Services",
-      itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Website Design" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Online Store Development" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Booking System Development" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Local SEO Services" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Redesign" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Business Dashboard Development" } },
-      ],
-    },
-    sameAs: [
-      "https://linkedin.com/in/sapnendra",
-      "https://github.com/sapnendra",
-    ],
+      "Edvixo provides digital solutions, software development, web development, design, automation, and technology services for growing businesses.",
   };
 }
+
+
+/* =========================================================
+   WEBSITE SCHEMA
+========================================================= */
 
 export function getWebsiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Sapnendra Jaiswal",
-    url: "https://sapnendra.dev",
-    description: "Freelance web developer for businesses worldwide",
-    author: {
-      "@type": "Person",
-      name: "Sapnendra Jaiswal",
+    "@id": `${SITE_URL}/#website`,
+
+    name: "Edvixo",
+    url: SITE_URL,
+
+    description:
+      "Edvixo digital solutions and software development website.",
+
+    publisher: {
+      "@id": `${SITE_URL}/#organization`,
     },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://sapnendra.dev/blog?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
+
+    inLanguage: "en-IN",
   };
 }
+
+
+/* =========================================================
+   BLOG POSTING SCHEMA
+========================================================= */
 
 export function getBlogPostingSchema(post: {
   title: string;
@@ -120,33 +106,43 @@ export function getBlogPostingSchema(post: {
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `${SITE_URL}/blog/${post.slug}`,
+
+    "@id": `${SITE_URL}/blog/${post.slug}#article`,
+
     headline: post.title,
+
     description: post.excerpt,
+
     url: `${SITE_URL}/blog/${post.slug}`,
+
     datePublished: new Date(post.publishedAt).toISOString(),
+
     dateModified: new Date(post.updatedAt).toISOString(),
+
     author: {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: SITE_AUTHOR,
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Edvixo",
       url: SITE_URL,
     },
+
     publisher: {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      name: SITE_AUTHOR,
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Edvixo",
+      url: SITE_URL,
+
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/logo.png`,
-        width: 200,
-        height: 200,
       },
     },
+
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/blog/${post.slug}`,
     },
+
     image: post.coverImage
       ? {
           "@type": "ImageObject",
@@ -154,19 +150,32 @@ export function getBlogPostingSchema(post: {
           width: 1200,
           height: 630,
         }
-      : undefined,
+      : `${SITE_URL}/og-default.jpg`,
+
     articleSection: post.category,
+
     keywords: post.tags?.join(", "),
+
     timeRequired: `PT${post.readTime}M`,
+
     inLanguage: "en-IN",
+
     isAccessibleForFree: true,
   };
 }
 
-export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+
+/* =========================================================
+   BREADCRUMB SCHEMA
+========================================================= */
+
+export function getBreadcrumbSchema(
+  items: { name: string; url: string }[],
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -176,13 +185,26 @@ export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-export function getFAQSchema(faqs: Array<{ question: string; answer: string }>) {
+
+/* =========================================================
+   FAQ SCHEMA
+========================================================= */
+
+export function getFAQSchema(
+  faqs: Array<{
+    question: string;
+    answer: string;
+  }>,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
+
       name: faq.question,
+
       acceptedAnswer: {
         "@type": "Answer",
         text: faq.answer,
@@ -191,29 +213,86 @@ export function getFAQSchema(faqs: Array<{ question: string; answer: string }>) 
   };
 }
 
+
+/* =========================================================
+   PORTFOLIO LIST SCHEMA
+========================================================= */
+
 export function getPortfolioListSchema(
   items: Array<{
     title: string;
     slug: string;
     excerpt?: string;
     coverImage?: string;
-  }>
+  }>,
 ) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Web Development Portfolio - Business Websites",
+
+    name: "Edvixo Portfolio",
+
     description:
-      "Case studies of websites built for restaurants, clinics, coaching institutes, and retailers worldwide.",
+      "Selected digital projects and case studies from Edvixo.",
+
     url: `${SITE_URL}/portfolio`,
+
     itemListElement: items.map((item, index) => ({
       "@type": "ListItem",
+
       position: index + 1,
+
       name: item.title,
+
       url: `${SITE_URL}/portfolio/${item.slug}`,
+
       image: item.coverImage,
+
       description: item.excerpt,
     })),
   };
 }
 
+export function getServiceListSchema(
+  services: Array<{
+    title: string;
+    slug: string;
+    description?: string;
+  }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Edvixo Digital Services",
+    description:
+      "Digital services from Edvixo including web development, application development, e-commerce, design, and business-focused technology solutions.",
+    url: `${SITE_URL}/services`,
+    itemListElement: services.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: service.title,
+      url: `${SITE_URL}/services/${service.slug}`,
+      description: service.description,
+    })),
+  };
+}
+export function getServiceSchema(service: {
+  title: string;
+  slug: string;
+  heroDescription: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${SITE_URL}/services/${service.slug}#service`,
+    name: service.title,
+    description: service.heroDescription,
+    url: `${SITE_URL}/services/${service.slug}`,
+    provider: {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Edvixo",
+      url: SITE_URL,
+    },
+  };
+}

@@ -17,28 +17,30 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
 
+  applicationName: SITE_NAME,
+
   title: {
     default:
-      "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
+      "Edvixo | Digital Solutions & Software Development Company",
     template: "%s | Edvixo",
   },
 
   description:
-    "Edvixo is a digital solutions company helping businesses grow with custom websites, app experiences, development support, design, and digital transformation services.",
+    "Edvixo helps growing businesses build better digital experiences through web development, app development, design, automation, dedicated developers, cloud solutions, and digital transformation.",
 
   keywords: [
-    "edvixo",
+    "Edvixo",
     "digital solutions company",
+    "software development company",
     "web development company",
-    "software company",
-    "website design company",
-    "business website agency",
-    "tech talent company",
+    "app development company",
+    "website development",
     "custom software development",
-    "digital transformation company",
-    "online store development",
-    "booking system development",
-    "local SEO services",
+    "UI UX design",
+    "business automation",
+    "dedicated developers",
+    "cloud and DevOps",
+    "digital transformation",
   ],
 
   authors: [
@@ -67,27 +69,36 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
-    siteName: "Edvixo - Digital Solutions & Tech Talent",
+    siteName: SITE_NAME,
+
     title:
-      "Edvixo - Digital Solutions & Tech Talent for Growing Businesses",
+      "Edvixo | Digital Solutions & Software Development Company",
+
     description:
-      "Edvixo helps businesses with digital products, web development, design, and tech talent support for scalable growth.",
+      "Digital solutions for growing businesses — from websites and apps to automation, cloud, dedicated developers, and digital transformation.",
+
     images: [
       {
         url: "/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "Edvixo - Digital Solutions Company",
+        alt:
+          "Edvixo - Digital Solutions and Software Development",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Edvixo - Digital Solutions & Tech Talent",
+
+    title:
+      "Edvixo | Digital Solutions & Software Development Company",
+
     description:
-      "Digital solutions and product development company for growing businesses.",
+      "Digital solutions, software development, design, automation, cloud, and technology support for growing businesses.",
+
     images: ["/og-home.jpg"],
+
     creator: SITE_TWITTER,
   },
 
@@ -97,6 +108,7 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: SITE_URL,
+
     languages: {
       en: SITE_URL,
     },
@@ -113,8 +125,14 @@ export const metadata: Metadata = {
         type: "image/svg+xml",
       },
     ],
+
     shortcut: ["/favicon.png"],
-    apple: [{ url: "/favicon.png" }],
+
+    apple: [
+      {
+        url: "/favicon.png",
+      },
+    ],
   },
 
   category: "technology",
@@ -143,7 +161,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      
 
       <body className="bg-background font-sans antialiased text-on-background">
         <ThemeProvider

@@ -15,6 +15,12 @@ import {
 } from "lucide-react";
 
 import solutions from "@/data/solutions.json";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import {
+  getBreadcrumbSchema,
+  getFAQSchema,
+} from "@/lib/seo/schemas";
 
 type SolutionSlug = keyof typeof solutions;
 
@@ -69,14 +75,32 @@ export default async function SolutionDetailPage({
   const { slug } = await params;
 
   const solution = solutions[slug as SolutionSlug];
+if (!solution) {
+  notFound();
+}
 
-  if (!solution) {
-    notFound();
-  }
+return (
+  <>
+    <JsonLd
+      data={getBreadcrumbSchema([
+        {
+          name: "Home",
+          url: SITE_URL,
+        },
+        {
+          name: "Solutions",
+          url: `${SITE_URL}/solutions`,
+        },
+        {
+          name: solution.title,
+          url: `${SITE_URL}/solutions/${slug}`,
+        },
+      ])}
+    />
 
-  return (
+    <JsonLd data={getFAQSchema(solution.faqs)} />
+
     <main className="min-h-screen overflow-hidden bg-background text-on-background">
-
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -1027,5 +1051,6 @@ export default async function SolutionDetailPage({
       </section>
 
     </main>
+    </>
   );
 }
