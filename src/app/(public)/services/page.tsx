@@ -1,12 +1,69 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
 import services from "@/data/services.json";
+
 import { ArrowRight } from "lucide-react";
+
+import { SITE_URL } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
+import { getServiceListSchema } from "@/lib/seo/schemas";
+
+export const metadata: Metadata = {
+  title: "Digital Solutions & Software Development Services | Edvixo",
+
+  description:
+    "Explore Edvixo digital services including web development, application development, e-commerce, design, and business-focused technology solutions.",
+
+  alternates: {
+    canonical: `${SITE_URL}/services`,
+  },
+
+  openGraph: {
+    title: "Digital Solutions & Software Development Services | Edvixo",
+    description:
+      "Web development, applications, e-commerce, design, and digital solutions built around growing businesses.",
+    url: `${SITE_URL}/services`,
+    siteName: "Edvixo",
+    type: "website",
+    images: [
+      {
+        url: "/og-services.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Edvixo Digital Services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Solutions & Software Development Services | Edvixo",
+    description:
+      "Explore Edvixo digital services for growing businesses.",
+    images: ["/og-services.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function ServicesPage() {
   const serviceList = Object.values(services);
 
   return (
-    <main className="min-h-screen bg-[#061827] text-white">
+  <main className="min-h-screen bg-[#061827] text-white">
+    <JsonLd
+      data={getServiceListSchema(
+        serviceList.map((service) => ({
+          title: service.title,
+          slug: service.slug,
+          description: service.card.description,
+        })),
+      )}
+    />
 
       {/* HERO */}
 

@@ -29,6 +29,9 @@ import {
 } from "lucide-react";
 
 import solutions from "@/data/solutions.json";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import { getBreadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
   title: "Solutions - Edvixo Digital Solutions",
@@ -110,6 +113,19 @@ const accentColors = [
 
 export default function SolutionsPage() {
   return (
+    <>
+    <JsonLd
+  data={getBreadcrumbSchema([
+    {
+      name: "Home",
+      url: SITE_URL,
+    },
+    {
+      name: "Solutions",
+      url: `${SITE_URL}/solutions`,
+    },
+  ])}
+/>
     <main className="min-h-screen overflow-hidden bg-background text-on-background">
 
       {/* =====================================================
@@ -635,7 +651,8 @@ export default function SolutionsPage() {
 
       </section>
 
-    </main>
+      </main>
+    </>
   );
 }
 

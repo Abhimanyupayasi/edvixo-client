@@ -5,6 +5,12 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { SITE_URL } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  getBreadcrumbSchema,
+  getServiceSchema,
+} from "@/lib/seo/schemas";
 
 import {
   ArrowLeft,
@@ -79,10 +85,19 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${service.title} Services - Edvixo`,
+ return {
+  title: `${service.title} | Edvixo`,
+  description: service.heroDescription,
+  alternates: {
+    canonical: `${SITE_URL}/services/${slug}`,
+  },
+  openGraph: {
+    title: `${service.title} | Edvixo`,
     description: service.heroDescription,
-  };
+    url: `${SITE_URL}/services/${slug}`,
+    type: "website",
+  },
+};
 }
 
 /* =========================================================
@@ -99,13 +114,13 @@ export default async function ServiceDetailPage({
   const service = services[slug as ServiceSlug];
 
   if (!service) {
-    notFound();
-  }
+  notFound();
+}
 
-  /*
-   * Each service gets its own visual structure.
-   */
-
+/*
+ * Each service gets its own visual structure.
+ */
+const servicePage = (() => {
   switch (slug) {
     case "web-development":
       return <WebDevelopmentPage service={service} />;
@@ -125,6 +140,38 @@ export default async function ServiceDetailPage({
     default:
       return <WebDevelopmentPage service={service} />;
   }
+})();
+
+return (
+  <>
+    <JsonLd
+      data={getServiceSchema({
+        title: service.title,
+        slug: service.slug,
+        heroDescription: service.heroDescription,
+      })}
+    />
+
+    <JsonLd
+      data={getBreadcrumbSchema([
+        {
+          name: "Home",
+          url: SITE_URL,
+        },
+        {
+          name: "Services",
+          url: `${SITE_URL}/services`,
+        },
+        {
+          name: service.title,
+          url: `${SITE_URL}/services/${slug}`,
+        },
+      ])}
+    />
+
+    {servicePage}
+  </>
+);
 }
 
 /* =========================================================

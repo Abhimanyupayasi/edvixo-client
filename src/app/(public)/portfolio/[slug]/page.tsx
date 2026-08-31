@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import portfolio from "@/data/portfolio.json";
 import PortfolioDetail from "@/components/portfolio/PortfolioDetail";
 import { SITE_URL } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
+import { getBreadcrumbSchema } from "@/lib/seo/schemas";
 
 type PortfolioSlug = keyof typeof portfolio;
 
@@ -51,8 +53,29 @@ export default async function PortfolioDetailPage({
   const item = portfolio[slug as PortfolioSlug];
 
   if (!item) {
-    notFound();
-  }
+  notFound();
+}
 
-  return <PortfolioDetail item={item} />;
+return (
+  <>
+    <JsonLd
+      data={getBreadcrumbSchema([
+        {
+          name: "Home",
+          url: SITE_URL,
+        },
+        {
+          name: "Portfolio",
+          url: `${SITE_URL}/portfolio`,
+        },
+        {
+          name: item.title,
+          url: `${SITE_URL}/portfolio/${item.slug}`,
+        },
+      ])}
+    />
+
+    <PortfolioDetail item={item} />
+  </>
+);
 }

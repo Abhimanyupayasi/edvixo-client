@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import portfolio from "@/data/portfolio.json";
 
 import { SITE_URL } from "@/lib/site";
@@ -22,10 +25,44 @@ import { FAQSection } from "@/components/home/FAQSection";
 import { CTABanner } from "@/components/home/CTABanner";
 
 export const metadata: Metadata = {
-  title: "Edvixo - Digital Solutions & Tech Talent for Businesses",
+  title: "Edvixo | Digital Solutions & Software Development Company",
+
   description:
-    "Edvixo helps businesses with custom websites, digital products, e-commerce, design, and tech support built for growth and conversion.",
-  alternates: { canonical: SITE_URL },
+    "Edvixo helps growing businesses build custom websites, digital products, e-commerce experiences, and software solutions designed for practical business growth.",
+
+  alternates: {
+    canonical: SITE_URL,
+  },
+
+  openGraph: {
+    title: "Edvixo | Digital Solutions & Software Development Company",
+    description:
+      "Custom websites, digital products, e-commerce, and software solutions for growing businesses.",
+    url: SITE_URL,
+    siteName: "Edvixo",
+    type: "website",
+    images: [
+      {
+        url: "/og-home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Edvixo Digital Solutions",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Edvixo | Digital Solutions & Software Development Company",
+    description:
+      "Custom digital solutions and software development for growing businesses.",
+    images: ["/og-home.jpg"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 const featuredProjects = Object.values(portfolio)

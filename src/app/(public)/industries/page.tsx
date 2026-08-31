@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { SITE_URL } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
+
+import {
+  getBreadcrumbSchema,
+} from "@/lib/seo/schemas";
+
 import {
   ArrowRight,
   Building2,
@@ -18,6 +25,9 @@ export const metadata: Metadata = {
   title: "Industries We Serve | Edvixo",
   description:
     "Edvixo delivers digital solutions for healthcare, education, retail, real estate and businesses across industries.",
+  alternates: {
+    canonical: `${SITE_URL}/industries`,
+  },
 };
 
 const industries = [
@@ -93,7 +103,21 @@ const benefits = [
 
 export default function IndustriesPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#061827] text-white">
+    <>
+      <JsonLd
+        data={getBreadcrumbSchema([
+          {
+            name: "Home",
+            url: SITE_URL,
+          },
+          {
+            name: "Industries",
+            url: `${SITE_URL}/industries`,
+          },
+        ])}
+      />
+
+      <main className="min-h-screen overflow-hidden bg-[#061827] text-white">
       {/* =====================================================
           HERO
       ===================================================== */}
@@ -832,5 +856,6 @@ export default function IndustriesPage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

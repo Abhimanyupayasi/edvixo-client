@@ -12,6 +12,12 @@ import {
 } from "lucide-react";
 
 import company from "@/data/company.json";
+import JsonLd from "@/components/seo/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import {
+  getBreadcrumbSchema,
+  getFAQSchema,
+} from "@/lib/seo/schemas";
 
 type CompanySlug = keyof typeof company;
 
@@ -55,10 +61,30 @@ export default async function CompanyDetailPage({
   const item = company[slug as CompanySlug];
 
   if (!item) {
-    notFound();
-  }
+  notFound();
+}
 
-  return (
+return (
+  <>
+    <JsonLd
+      data={getBreadcrumbSchema([
+        {
+          name: "Home",
+          url: SITE_URL,
+        },
+        {
+          name: "Company",
+          url: `${SITE_URL}/company`,
+        },
+        {
+          name: item.title,
+          url: `${SITE_URL}/company/${slug}`,
+        },
+      ])}
+    />
+
+    <JsonLd data={getFAQSchema(item.faqs)} />
+
     <main className="min-h-screen bg-background text-on-background">
       {/* HERO */}
       <section className="relative overflow-hidden bg-surface-container-low py-20 md:py-28">
@@ -375,5 +401,6 @@ export default async function CompanyDetailPage({
         </div>
       </section>
     </main>
+    </>
   );
 }
