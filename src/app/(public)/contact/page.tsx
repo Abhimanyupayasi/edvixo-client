@@ -127,11 +127,11 @@ export default function ContactPage() {
         data={getBreadcrumbSchema([
           {
             name: "Home",
-            url: "https://edvixo.com",
+            url: "https://edvixo.in",
           },
           {
             name: "Contact",
-            url: "https://edvixo.com/contact",
+            url: "https://edvixo.in/contact",
           },
         ])}
       />
