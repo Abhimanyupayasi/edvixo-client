@@ -10,29 +10,35 @@ export const dynamic = "force-static";
 export const revalidate = false;
 
 export const metadata: Metadata = {
-  title: "About - Know about advixo",
+  title: "About Edvixo - Digital Solutions & Software Development Company",
+
   description:
-    "Edvixo is a leading web development company offering custom website design, digital transformation, and growth-focused technology solutions for businesses worldwide.",
+    "Learn about Edvixo, a digital solutions and software development company helping growing businesses build websites, digital products, and practical technology solutions.",
+
   keywords: [
-    "contact web development company",
-    "hire digital agency",
-    "free website consultation",
-    "web development quote",
+    "about Edvixo",
+    "digital solutions company",
+    "software development company",
+    "web development company",
     "digital transformation company",
-    "website design consultancy",
   ],
-  alternates: { canonical: `${SITE_URL}/contact` },
+
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
+
   openGraph: {
-    url: `${SITE_URL}/contact`,
-    title: "Contact - Get a Free Web Development Quote",
+    url: `${SITE_URL}/about`,
+    title: "About Edvixo - Digital Solutions & Software Development Company",
     description:
-      "Get in touch with Edvixo for a free consultation on your next digital project. Fast response and clear strategy.",
+      "Learn about Edvixo and our approach to building practical digital solutions and software experiences for growing businesses.",
+
     images: [
       {
-        url: "/og-contact.jpg",
+        url: "/og-home.jpg",
         width: 1200,
         height: 630,
-        alt: "Contact Edvixo - Free Digital Consultation",
+        alt: "About Edvixo - Digital Solutions Company",
       },
     ],
   },

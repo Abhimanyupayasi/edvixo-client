@@ -23,15 +23,15 @@ import {
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Getting Started - How to Work With Sapnendra",
+  title: "Getting Started - How to Work With Edvixo",
   description:
     "A step-by-step guide for new clients. Learn how to explore the site, submit your project enquiry, share your requirements, and track progress in the client portal.",
   alternates: { canonical: `${SITE_URL}/docs` },
   openGraph: {
     url: `${SITE_URL}/docs`,
-    title: "Getting Started Guide - sapnendra.dev",
+    title: "Getting Started Guide - Edvixo",
     description:
-      "Everything you need to know about working with Sapnendra - from first visit to project launch.",
+      "Everything you need to know about working with Edvixo - from first visit to project launch.",
     images: [{ url: "/og-home.jpg", width: 1200, height: 630 }],
   },
 };
@@ -452,4 +452,6 @@ export default function DocsPage() {
     </div>
   );
 }
+
+
 
