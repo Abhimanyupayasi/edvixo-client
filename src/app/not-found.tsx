@@ -3,7 +3,7 @@ import { Home, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Page Not Found - Sapnendra Jaiswal",
+  title: "Page Not Found - Edvixo",
   description:
     "The page you're looking for doesn't exist. Head back to the homepage.",
 };
@@ -152,3 +152,4 @@ export default function NotFoundPage() {
     </main>
   );
 }
+

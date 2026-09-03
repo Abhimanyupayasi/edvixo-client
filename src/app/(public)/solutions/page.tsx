@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   title: "Solutions - Edvixo Digital Solutions",
   description:
     "Explore Edvixo digital solutions including dedicated developers, startup product development, business automation, cloud and DevOps, maintenance, and digital transformation.",
+
+  alternates: {
+    canonical: `${SITE_URL}/solutions`,
+  },
 };
 
 /* =========================================================

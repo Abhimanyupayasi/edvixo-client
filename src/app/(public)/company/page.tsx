@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -12,6 +13,16 @@ import company from "@/data/company.json";
 import JsonLd from "@/components/seo/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { getBreadcrumbSchema } from "@/lib/seo/schemas";
+
+export const metadata: Metadata = {
+  title: "Company - About Edvixo",
+  description:
+    "Learn about Edvixo, our team, approach, projects, and client experiences.",
+
+  alternates: {
+    canonical: `${SITE_URL}/company`,
+  },
+};
 
 const icons = {
   about: Building2,

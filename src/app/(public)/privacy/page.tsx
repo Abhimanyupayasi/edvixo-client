@@ -3,9 +3,9 @@ import { SITE_URL } from "@/lib/site";
 import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Sapnendra Jaiswal",
+  title: "Privacy Policy - Edvixo",
   description:
-    "How sapnendra.dev collects, uses, and protects your personal information. No data selling. No ads. Your data stays yours.",
+    "How edvixo.com collects, uses, and protects your personal information. No data selling. No ads. Your data stays yours.",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
         <LegalList
           items={[
             "Email: support@sapnendra.tech",
-            "Website: sapnendra.dev/contact",
+            "Website: edvixo.com/contact",
             "Response time: within 24–48 hours on business days",
           ]}
         />
@@ -215,4 +215,6 @@ export default function PrivacyPage() {
     </LegalLayout>
   );
 }
+
+
 

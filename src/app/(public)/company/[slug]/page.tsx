@@ -46,9 +46,12 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${item.title} - Edvixo`,
-    description: item.heroDescription,
-  };
+  title: `${item.title} - Edvixo`,
+  description: item.heroDescription,
+  alternates: {
+    canonical: `${SITE_URL}/company/${slug}`,
+  },
+};
 }
 
 export default async function CompanyDetailPage({

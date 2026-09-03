@@ -57,10 +57,13 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${solution.title} Solutions - Edvixo`,
-    description: solution.heroDescription,
-  };
+ return {
+  title: `${solution.title} Solutions - Edvixo`,
+  description: solution.heroDescription,
+  alternates: {
+    canonical: `${SITE_URL}/solutions/${slug}`,
+  },
+};
 }
 
 /* =========================================================

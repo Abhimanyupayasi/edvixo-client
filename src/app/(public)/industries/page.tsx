@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve | Edvixo",
+  title: "Industries We Serve",
   description:
     "Edvixo delivers digital solutions for healthcare, education, retail, real estate and businesses across industries.",
   alternates: {

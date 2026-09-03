@@ -3,9 +3,9 @@ import { SITE_URL } from "@/lib/site";
 import LegalLayout from "@/components/legal/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Sapnendra Jaiswal",
+  title: "Terms of Service - Edvixo",
   description:
-    "Terms and conditions for web development services at sapnendra.dev. Clear scope, fair payment terms, and honest revision policy.",
+    "Terms and conditions for web development services at edvixo.com. Clear scope, fair payment terms, and honest revision policy.",
   alternates: { canonical: `${SITE_URL}/terms` },
 };
 
@@ -261,4 +261,6 @@ export default function TermsPage() {
     </LegalLayout>
   );
 }
+
+
 
