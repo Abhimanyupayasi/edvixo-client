@@ -5,7 +5,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 export const metadata: Metadata = {
   title: "Privacy Policy - Edvixo",
   description:
-    "How edvixo.com collects, uses, and protects your personal information. No data selling. No ads. Your data stays yours.",
+    "How edvixo.in collects, uses, and protects your personal information. No data selling. No ads. Your data stays yours.",
   alternates: { canonical: `${SITE_URL}/privacy` },
 };
 
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
         <LegalList
           items={[
             "Email: support@sapnendra.tech",
-            "Website: edvixo.com/contact",
+            "Website: edvixo.in/contact",
             "Response time: within 24–48 hours on business days",
           ]}
         />
@@ -215,6 +215,7 @@ export default function PrivacyPage() {
     </LegalLayout>
   );
 }
+
 
 
 
