@@ -1,4 +1,4 @@
-const SITE_URL = "https://edvixo.com";
+const SITE_URL = "https://edvixo.in";
 
 const SITE_NAME =
   "Edvixo - Digital Solutions & Tech Talent Company";

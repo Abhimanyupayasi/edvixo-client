@@ -67,8 +67,8 @@ export default function ContactPage() {
     <>
       <JsonLd data={getLocalBusinessSchema()} />
       <JsonLd data={getBreadcrumbSchema([
-        { name: "Home", url: "https://edvixo.com" },
-        { name: "Contact", url: "https://edvixo.com/contact" }
+        { name: "Home", url: "https://edvixo.in" },
+        { name: "Contact", url: "https://edvixo.in/contact" }
       ])} />
       {/* Page header */}
       <div className="bg-surface-container-low py-16 text-center">
@@ -114,4 +114,5 @@ export default function ContactPage() {
     </>
   );
 }
+
 
