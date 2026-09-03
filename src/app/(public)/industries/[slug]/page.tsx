@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -50,10 +51,13 @@ export async function generateMetadata({
     };
   }
 
-  return {
-    title: `${industry.title} Solutions | Edvixo`,
-    description: industry.heroDescription,
-  };
+ return {
+  title: `${industry.title} Solutions`,
+  description: industry.heroDescription,
+  alternates: {
+    canonical: `${SITE_URL}/industries/${slug}`,
+  },
+};
 }
 
 /* =========================================================

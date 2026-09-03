@@ -10,7 +10,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { getServiceListSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Digital Solutions & Software Development Services | Edvixo",
+ title: "Digital Solutions & Software Development Services",
 
   description:
     "Explore Edvixo digital services including web development, application development, e-commerce, design, and business-focused technology solutions.",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Digital Solutions & Software Development Services | Edvixo",
+    title: "Digital Solutions & Software Development Services",
     description:
       "Web development, applications, e-commerce, design, and digital solutions built around growing businesses.",
     url: `${SITE_URL}/services`,

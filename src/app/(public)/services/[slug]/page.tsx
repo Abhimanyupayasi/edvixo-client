@@ -86,13 +86,13 @@ export async function generateMetadata({
   }
 
  return {
-  title: `${service.title} | Edvixo`,
+  title: service.title,
   description: service.heroDescription,
   alternates: {
     canonical: `${SITE_URL}/services/${slug}`,
   },
   openGraph: {
-    title: `${service.title} | Edvixo`,
+    title: service.title,
     description: service.heroDescription,
     url: `${SITE_URL}/services/${slug}`,
     type: "website",

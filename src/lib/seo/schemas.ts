@@ -4,7 +4,7 @@ import { SITE_AUTHOR, SITE_URL } from "@/lib/site";
    ORGANIZATION SCHEMA
 ========================================================= */
 
-export function getPersonSchema() {
+export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -14,9 +14,9 @@ export function getPersonSchema() {
     url: SITE_URL,
 
     logo: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/logo.png`,
-    },
+  "@type": "ImageObject",
+  url: `${SITE_URL}/images/edvixo-logo.png`,
+},
 
     image: `${SITE_URL}/og-home.jpg`,
 
@@ -36,27 +36,18 @@ export function getPersonSchema() {
   };
 }
 
-
-/* =========================================================
-   BUSINESS / COMPANY SCHEMA
-========================================================= */
-
 export function getLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
-
     name: "Edvixo",
     url: SITE_URL,
-
     logo: {
       "@type": "ImageObject",
       url: `${SITE_URL}/logo.png`,
     },
-
     image: `${SITE_URL}/og-home.jpg`,
-
     description:
       "Edvixo provides digital solutions, software development, web development, design, automation, and technology services for growing businesses.",
   };

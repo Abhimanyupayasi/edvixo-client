@@ -9,8 +9,7 @@ import { SITE_URL } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 
 import {
-  getLocalBusinessSchema,
-  getPersonSchema,
+  getOrganizationSchema,
   getWebsiteSchema,
 } from "@/lib/seo/schemas";
 
@@ -135,9 +134,8 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={getPersonSchema()} />
-      <JsonLd data={getLocalBusinessSchema()} />
-      <JsonLd data={getWebsiteSchema()} />
+     <JsonLd data={getOrganizationSchema()} />
+<JsonLd data={getWebsiteSchema()} />
 
       <HeroSection />
 
@@ -159,3 +157,4 @@ export default function HomePage() {
     </>
   );
 }
+
